@@ -125,8 +125,25 @@ string CCCC_Metric::value_string() const
     }
   else
     {
-      float result=numerator;
+      double result=numerator;
       result/=denominator;
+      if(result!=0.0L)
+      {
+         // Visual C++ and GCC appear to give different behaviours
+         // when rounding a value which is exactly half way between
+         // two points representable in the desired format.
+         // An example of this occurs results from prn14, where the
+         // numerator 21 and denominator 16 are combined to give the
+         // value 1.2125 exactly, which Visual Studio renders as 1.213,
+         // GCC renders as 1.212.  For consistency with the existing
+         // reference data, I choose to apply a very small downward 
+         // rounding factor.  The rounding factor is only applied if
+         // the value is not exactly equal to zero, as applying it
+         // to zero causes the value to be displayed as -0.0 instead
+         // of 0.0.
+         const double ROUNDING_FACTOR = 1.0e-9;
+         result-=ROUNDING_FACTOR;
+      }
       valuestr << result;
     }
   valuestr << std::ends;
