@@ -47,4 +47,13 @@ to prevent this would be very welcome);
 fixed minor syntax problems to enable the code to compile under GCC 
 2.95.3 (3.pre48 was released when EGCS 2.91.66 was current).
 
+version 3.pre55
+Various changes to accommodate GCC 3.0.2, including: hacking in the PCCTS
+source code to prevent #endif directives having trailing information 
+(commented or otherwise); fixing the type of an iterator to std::vector;
+introducing a using directive from strstream.  When GCC 2.95 becomes old
+enough that I don't need to support it any more I will need to modify
+the strstream stuff to use stringstream instead.
+
+
 
