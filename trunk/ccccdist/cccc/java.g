@@ -215,7 +215,10 @@ inline void endOfCommentLine(JLexer &lexer)
 #token STRINGCONST "\"" << mode(START); >>
 // thanks to Lynn Wilson for pointing out the need for a simple fix 
 // to handle escaped newlines within string constants
-#token LYNNS_FIX "\\\n"  <<  endOfLine(*this); >>   
+#token LYNNS_FIX "\\\n"  <<  endOfLine(*this); >> 
+// We also need to handle escaped double quotes
+#token ESCAPED_DQUOTE "\\\"" << skip(); >>
+#token ESCAPED_OTHER "\\~[\"]" << skip(); >>
 #token S_ANYTHING "~[\"]" << skip(); >>
 #lexclass START
 
@@ -231,6 +234,7 @@ inline void endOfCommentLine(JLexer &lexer)
 #token	BREAK		"break"		<< IncrementCount(tcMCCABES_VG);>>
 #token	KW_BYTE		"byte"		<<;>>
 #token	CATCH		"catch"		<< /* IncrementCount(tcMCCABES_VG) ? */ ;>>
+#token  DEFAULT         "default"       <<;>>
 #token	KW_CHAR		"char"		<<;>>
 #token	CLASS		"class"		<<;>>
 #token	KW_CONST		"const"		<<;>>
@@ -295,6 +299,10 @@ inline void endOfCommentLine(JLexer &lexer)
 #token NUM_INT2	"0([0-7])*{[lL]}" <<;>>
 #token NUM_INT3 "0[xX]([0-9a-fA-F])*{[lL]}" <<;>>
 #token NUM_INT4	"[1-9]([0-9])*{[lL]}" <<;>>
+
+// Option 1 above does not cover a floating point value with an f at
+// the end but no decimal point
+#token NUM_INT1A "([0-9])+{[eE]{[\+\-]}([0-9])+}{[fFdD]}" <<;>>
 
 
 class JParser
@@ -809,19 +817,21 @@ initializer
 ctorDefinition[const string& className, Visibility v]
 	:
 	<< 
-		assert(className==LT(1)->getText());
+                // The following assertion seemed like a good idea
+                // at the time, but it fails for nested classes.
+                // assert(className==LT(1)->getText());
 		int startLine=LT(1)->getLine();
 		string paramList;
 	>>
 	// constructors are the only methods allowed to occur without
 	// return types, and they must have definitions.  This makes
-    // life fairly easy
+	// life fairly easy
 	ctorHead[paramList,className,v] compoundStatement
 	<<
 		int endLine=LT(1)->getLine();
-	    ps->record_function_extent(startLine,endLine,
-					 "",className,className,paramList,
-					 "definition",v,utDEFINITION);
+		ps->record_function_extent(startLine,endLine,
+		 "",className,className,paramList,
+		 "definition",v,utDEFINITION);
 	>>	
 	;			
 
@@ -1124,8 +1134,6 @@ handler
 // Once you have a precedence chart, writing the appropriate rules as below
 //   is usually very straightfoward
 
-
-
 // the mother of all expressions
 expression
 	:	assignmentExpression
@@ -1142,19 +1150,19 @@ expressionList
 assignmentExpression
 	:	conditionalExpression
 		{
-	    (	ASSIGN
-            |   PLUS_ASSIGN
-            |   MINUS_ASSIGN
-            |   STAR_ASSIGN
-            |   DIV_ASSIGN
-            |   MOD_ASSIGN
-            |   SR_ASSIGN
-            |   BSR_ASSIGN
-            |   SL_ASSIGN
-            |   BAND_ASSIGN
-            |   BXOR_ASSIGN
-            |   BOR_ASSIGN
-            )
+			(	ASSIGN
+			|   PLUS_ASSIGN
+			|   MINUS_ASSIGN
+			|   STAR_ASSIGN
+			|   DIV_ASSIGN
+			|   MOD_ASSIGN
+			|   SR_ASSIGN
+			|   BSR_ASSIGN
+			|   SL_ASSIGN
+			|   BAND_ASSIGN
+			|   BXOR_ASSIGN
+			|   BOR_ASSIGN
+            		)
 			assignmentExpression
 		}
 	;
@@ -1199,7 +1207,12 @@ andExpression
 
 // equality/inequality (==/!=) (level 6)
 equalityExpression
-	:	relationalExpression ((NOT_EQUAL | EQUAL) relationalExpression)*
+	:	relationalExpression relationalPredicate
+	;
+
+relationalPredicate 
+	:	INSTANCEOF typeSpec
+	|	((NOT_EQUAL | EQUAL) relationalExpression)*
 	;
 
 
@@ -1213,7 +1226,6 @@ relationalExpression
 			)
 			shiftExpression
 		)*
-	|	INSTANCEOF typeSpec
 	;
 
 // bit shift expressions (level 4)
@@ -1396,7 +1408,8 @@ newArrayDeclarator
 
 
 constant
-	:	NUM_INT1
+        :       NUM_INT1
+        |       NUM_INT1A
 	|	NUM_INT2
 	|	NUM_INT3
 	|	NUM_INT4
@@ -1405,10 +1418,4 @@ constant
 	|	NUM_FLOAT
 	;
 }
-
-
-
-
-
-
 
