@@ -39,10 +39,6 @@ string CCCC_Module::name(int name_level) const
 
     default: 
       retval=module_name;
-      if(retval.size()==0)
-	{
-	  retval="anonymous";
-	}
     }
   return retval.c_str();
 }
