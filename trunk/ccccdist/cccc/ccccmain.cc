@@ -25,7 +25,7 @@
 #include "cccc_db.h"
 #include "cccc_utl.h"
 #include "cccc_htm.h"
-
+#include "cccc_xml.h"
 
 // support for languages is now a compile-time option
 #ifdef CC_INCLUDED
@@ -81,6 +81,7 @@ class Main
   string opt_infile;
   string opt_outfile;
   string html_outfile;
+  string xml_outfile;
   string lang;
   int report_mask; 
   int debug_mask;
@@ -107,6 +108,9 @@ public:
   int DumpDatabase();
   int LoadDatabase();
   void GenerateHtml();
+  void GenerateXml();
+  void DescribeOutput();
+
   friend int main(int argc, char** argv);
 };
 
@@ -189,6 +193,11 @@ void Main::HandleArgs(int argc, char **argv)
 		{
 		  html_outfile=next_val;
 		}
+	      else if(next_opt=="--xml_outfile")
+		{
+		  xml_outfile=next_val;
+		}
+
 	      else if(next_opt=="--lang")
 		{
 		  lang=next_val;
@@ -229,6 +238,10 @@ void Main::HandleArgs(int argc, char **argv)
   if(html_outfile=="")
     {
       html_outfile=outdir+"/cccc.html";
+    }
+  if(xml_outfile=="")
+    {
+      xml_outfile=outdir+"/cccc.xml";
     }
   if(opt_outfile=="")
     {
@@ -459,15 +472,18 @@ int Main::LoadDatabase()
 
 void Main::GenerateHtml()
 {
-  cerr << endl << "Generating reports" << endl;
+  cerr << endl << "Generating HTML reports" << endl;
 
   CCCC_Html_Stream::GenerateReports(prj,report_mask,html_outfile,outdir);
 
-  // make sure the user knows where the real output went
-  cerr << endl 
-       << "Primary HTML output is in " << html_outfile << endl 
-       << "Detailed reports on modules and source are in " << outdir << endl
-       << "Database dump is in " << db_outfile << endl;
+}
+
+void Main::GenerateXml()
+{
+  cerr << endl << "Generating XML reports" << endl;
+
+  CCCC_Xml_Stream::GenerateReports(prj,report_mask,xml_outfile,outdir);
+
 }
 
 void Main::HandleDebugOption(const string& arg) 
@@ -612,6 +628,24 @@ void Main::PrintCredits(ostream& os)
 
 }
 
+void Main::DescribeOutput()
+{
+  // make sure the user knows where the real output went
+  // make sure the user knows where the real output went
+  cerr << endl 
+       << "Primary HTML output is in " << html_outfile << endl;
+  if(report_mask & rtSEPARATE_MODULES)
+  { 
+     cerr << "Detailed HTML reports on modules and source are in " << outdir << endl;
+  }
+  cerr << "Primary XML output is in " << xml_outfile << endl ;
+  if(report_mask & rtSEPARATE_MODULES)
+  { 
+     cerr << "Detailed XML reports on modules are in " << outdir << endl;
+  }
+  cerr << "Database dump is in " << db_outfile << endl << endl;
+}
+
 /* 
 ** the usage message is printed on cerr if unexpected options are found,
 ** and on cout if option --help is found.  
@@ -635,6 +669,8 @@ void Main::PrintUsage(ostream& os)
     "                           (default=.cccc)",
     "--html_outfile=<fname>   * name of primary HTML report generated ",
     "                           (default=<outdir>/cccc.html)",
+    "--xml_outfile=<fname>    * name of primary XML report generated ",
+    "                           (default=<outdir>/cccc.xml)",
     "--db_infile=<fname>      * preload internal database from named file",
     "                           (default=no initial content)",
     "--db_outfile=<fname>     * save internal database to named file",
@@ -689,6 +725,8 @@ int main(int argc, char **argv)
 
   // generate html output
   app->GenerateHtml();
+  app->GenerateXml();
+  app->DescribeOutput();
 
   delete app;
   delete prj;

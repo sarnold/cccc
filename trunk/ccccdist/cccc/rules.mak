@@ -81,8 +81,8 @@ USR_G = cccc.g java.g ada.g
 
 USR_C = ccccmain.cc cccc_tok.cc cccc_met.cc cccc_utl.cc \
 		cccc_db.cc cccc_rec.cc cccc_ext.cc cccc_prj.cc cccc_mod.cc \
-		cccc_mem.cc cccc_use.cc cccc_htm.cc cccc_tbl.cc cccc_tpl.cc \
-		cccc_new.cc cccc_itm.cc cccc_opt.cc
+		cccc_mem.cc cccc_use.cc cccc_htm.cc cccc_xml.cc cccc_tbl.cc \
+		cccc_tpl.cc cccc_new.cc cccc_itm.cc cccc_opt.cc
 
 USR_H = cccc.h cccc_tok.h cccc_met.h cccc_utl.h \
 		cccc_db.h cccc_htm.h cccc_tbl.h cccc_itm.h \
@@ -121,7 +121,7 @@ USR_OBJ = \
 	ccccmain.$(OBJEXT) cccc_utl.$(OBJEXT) cccc_opt.$(OBJEXT) \
 	cccc_db.$(OBJEXT)  cccc_rec.$(OBJEXT) cccc_ext.$(OBJEXT) \
 	cccc_prj.$(OBJEXT) cccc_mod.$(OBJEXT) cccc_mem.$(OBJEXT) \
-	cccc_use.$(OBJEXT) cccc_met.$(OBJEXT) cccc_htm.$(OBJEXT) \
+	cccc_use.$(OBJEXT) cccc_met.$(OBJEXT) cccc_htm.$(OBJEXT) cccc_xml.$(OBJEXT) \
 	cccc_tok.$(OBJEXT) cccc_tbl.$(OBJEXT) \
 	cccc_tpl.$(OBJEXT) cccc_new.$(OBJEXT) cccc_itm.$(OBJEXT) \
 

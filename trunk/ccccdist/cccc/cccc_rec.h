@@ -20,6 +20,7 @@ enum NameLevel { nlRANK, nlSEARCH, nlSIMPLE, nlLOCAL, nlGLOBAL };
 class CCCC_Record 
 {
   friend class CCCC_Html_Stream;
+  friend class CCCC_Xml_Stream;
   static CCCC_Project *active_project;
  protected:
   typedef CCCC_Table<CCCC_Extent> Extent_Table;

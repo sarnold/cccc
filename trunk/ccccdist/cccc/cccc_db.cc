@@ -15,26 +15,21 @@ int ifstr_line;
 
 extern CCCC_Project *prj;
 
-
 // the file scope variable last_supplier is used to supress repeated
 // output of the supplier name in the use relationship section where
 // the current record has the same supplier as the previous one
 // the indentation makes this reasonably clear
 static string last_supplier="";
 
-
-
 // persistence facilities
 
-
-
 #define SEP '@'
-
-
 
 // This function provides the ability for the persistence functions
 // defined below to do a quick peek at the first token on the stream
 // leaving the get pointer at the start of that token. 
+// This should be static, but on MSVC++ this gives me an unresolved 
+// symbol at link.
 bool PeekAtNextLinePrefix(ifstream& ifstr, string pfx)
 {
   bool retval=false;
