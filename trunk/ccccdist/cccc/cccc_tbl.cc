@@ -45,7 +45,7 @@ template<class T>
 T* CCCC_Table<T>::find(string name)
 {
   T *retval=NULL;
-  iterator value_iterator=map_t::find(name);
+  map_t::iterator value_iterator=map_t::find(name);
   if(value_iterator!=end())
     {
       retval=(*value_iterator).second;
