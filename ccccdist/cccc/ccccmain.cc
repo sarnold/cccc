@@ -6,6 +6,8 @@
 #include "cccc.h"
 
 #include "cccc_ver.h"
+#define STRINGIFY(X) #X
+#define CCCC_VERSION_STRING STRINGIFY(CCCC_VERSION)
 
 #include <fstream>
 #include <list>
@@ -22,7 +24,6 @@
 
 #include "cccc_itm.h"
 #include "cccc_opt.h"
-#include "cccc_ast.h"
 #include "cccc_met.h"
 #include "cccc_db.h"
 #include "cccc_utl.h"
@@ -599,7 +600,7 @@ void Main::PrintCredits(ostream& os)
   // the principal purpose of the constructor is to set up the
   // two lots of boilerplate text that this class requires
   string version_string="Version ";
-  version_string.append(CCCC_VERSION);
+  version_string.append(CCCC_VERSION_STRING);
 
   const char *credit_strings[] =
   {

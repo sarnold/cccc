@@ -8,7 +8,6 @@
 #include "cccc_itm.h"
 #include "cccc_utl.h"
 #include "cccc_db.h"
-#include "cccc_ast.h"
 #include "cccc_tok.h"
 #include "AParser.h"
 #include "ATokPtr.h"
