@@ -15,9 +15,10 @@ LDFLAGS_DEBUG=-v
 PATHSEP=\\
 CCC=bcc32.exe
 LD=bcc32.exe -L"$(BCDIR)\lib" 
-CFLAGS= -c -P -D_NO_VCL -DCCCC_CONF_W32BC-I$(PCCTS_H) 
-CFLAGS+= -w-aus -w-par -w-hid -w-inl 
-CFLAGS+= -I"$(BCDIR)\include" -tWC  $(CFLAGS_DEBUG)
+CFLAGS= \
+	-c -P -D_NO_VCL -DCCCC_CONF_W32BC -I$(PCCTS_H) \
+	-w-aus -w-par -w-hid -w-inl \
+	-I"$(BCDIR)\include" -tWC  $(CFLAGS_DEBUG)
 C_OFLAG=-o
 LDFLAGS=$(LDFLAGS_DEBUG) -ap -v
 LD_OFLAG=-o

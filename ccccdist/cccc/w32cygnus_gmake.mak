@@ -15,8 +15,8 @@ EGCS=$(CYGWIN)/lib/gcc-lib/i586-cygwin32/egcs-2.91.57
 PATH=$(CYGWIN)/bin;$(EGCS)
 export PATH
 
-CCC=g++
-LD=g++
+CCC=/usr/bin/g++
+LD=/usr/bin/g++
 CFLAGS=-c -I../pccts/h -I$(CYGWIN)/../include/g++ -I$(CYGWIN)/i586-cygwin32/include -I$(EGCS)/include  $(CFLAGS_DEBUG) -x c++ -DCCCC_CONF_W32VC
 C_OFLAG=-o
 LDFLAGS=-L$(EGCS)/../lib $(LDFLAGS_DEBUG) 

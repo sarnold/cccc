@@ -11,7 +11,7 @@ LDFLAGS_DEBUG=-g
 !ENDIF
 
 PATHSEP=\\
-PATH=\cygnus\cygwin-b20\H-i586-cygwin32\bin
+PATH=\cygwin\bin
 CCC=$(PATH)\gcc.exe
 LD=$(PATH)\gcc.exe
 CFLAGS=-c -I$(PCCTS_H) $(CFLAGS_DEBUG) -x c++ -DCCCC_CONF_W32VC
