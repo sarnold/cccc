@@ -74,11 +74,11 @@ Two variants on the information flow measure IF4 are also presented, one (IF4v) 
 <TR>
 <TD>Number of modules</TD><TD>NOM</TD><TD ALIGN=RIGHT>     1</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD WIDTH=700%>Lines of Code</TD><TD WIDTH=120%>LOC</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT> 3.000</TD></TR>
+<TD WIDTH=700%>Lines of Code</TD><TD WIDTH=120%>LOC</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT> 4.000</TD></TR>
 <TR>
 <TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT> 1.000</TD></TR>
 <TR>
-<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT> 6.000</TD></TR>
+<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>    30</TD><TD ALIGN=RIGHT>30.000</TD></TR>
 <TR>
 <TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT>------</TD><TD>&nbsp;</TD></TR>
 <TR>
@@ -102,7 +102,7 @@ The label cell for each row in this table provides a link to the functions table
 <TR>
 <TD><A HREF="ImageOps.html#procdet">
 ImageOps</A>
-</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>    30</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 </TABLE>
 <H1><A NAME="procdet">Procedural Metrics Detail</A></H1>
 <TABLE BORDER WIDTH=100%>
@@ -112,13 +112,13 @@ ImageOps</A>
 ImageOps</A>
 <BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#prn16.java:         8">prn16.java:8</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#prn16.java:        35">prn16.java:35</A></CODE><BR>
 <BR>
 </TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
 <TR>
 <TD>ImageOps( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#prn16.java:         9">prn16.java:9</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#prn16.java:        37">prn16.java:37</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR><TD HEIGHT=12 COLSPAN=6></TD></TR>

@@ -309,15 +309,14 @@ insert_extent(CCCC_Item& os, int startLine, int endLine,
       // are not already listed in the inner extent).
       lineLexicalCounts.erase(extentStartIter,extentEndIter);
 
-      char lexcount_buf[1024];
-      ostrstream lexcount_str(lexcount_buf,1023);
+      ostringstream lexcount_str;
 
       lexcount_str << "LOC:" << lexical_counts_for_this_extent[tcCODELINES]
 		   << " COM:" << lexical_counts_for_this_extent[tcCOMLINES]
 		   << " MVG:" << lexical_counts_for_this_extent[tcMCCABES_VG]
 		   << ends;
 
-      os.Insert(lexcount_str.str());
+      os.Insert(lexcount_str.str().c_str());
 
     }
   else

@@ -95,11 +95,6 @@ regression_tests : \
 	prn4.do_the_test prn5.do_the_test prn6.do_the_test \
 	prn7.do_the_test prn8.do_the_test prn9.do_the_test \
 	prn10.do_the_test prn11.do_the_test prn12.do_the_test \
-	prn13.do_the_test prn14.do_the_test prn15.do_the_test
-    
-
-	
-
-
-
+	prn13.do_the_test prn14.do_the_test prn15.do_the_test \
+	prn16.do_the_test
 

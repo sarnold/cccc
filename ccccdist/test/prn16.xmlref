@@ -3,12 +3,12 @@
 <CCCC_Project>
 <project_summary>
 <number_of_modules value="1" level="0" />
-<lines_of_code value="3" level="0" />
-<lines_of_code_per_module value="3.000" level="0" />
+<lines_of_code value="4" level="0" />
+<lines_of_code_per_module value="4.000" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
 <McCabes_cyclomatic_complexity_per_module value="1.000" level="0" />
-<lines_of_comment value="6" level="0" />
-<lines_of_comment_per_module value="6.000" level="0" />
+<lines_of_comment value="30" level="0" />
+<lines_of_comment_per_module value="30.000" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <IF4 value="0" level="0" />
@@ -22,9 +22,9 @@
 <procedural_summary>
 <module>
 <name>ImageOps</name>
-<lines_of_code value="3" level="0" />
+<lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="6" level="0" />
+<lines_of_comment value="30" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </module>
@@ -34,13 +34,13 @@
 <name>ImageOps</name>
 <extent>
 <description>definition</description>
-<source_reference file="prn16.java" line="8" />
+<source_reference file="prn16.java" line="35" />
 </extent>
 <member_function>
 <name>ImageOps()</name>
 <extent>
 <description>definition</description>
-<source_reference file="prn16.java" line="9" />
+<source_reference file="prn16.java" line="37" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
