@@ -1,8 +1,9 @@
 @echo off
-doskey > NUL
+set PATH=%WINDIR%;%WINDIR%\command;%WINDIR%\system;%WINDIR%\system32
 type ccccwrap.msg
 call cccc_env.bat
-path %CCCC_PATH_DIR%
-cd %CCCC_WORK_DIR%
+doskey /echo:off cccc=%CCCC_PATH_DIR%\CCCC.exe
+cd c:\
+%COMSPEC% 
 
 
