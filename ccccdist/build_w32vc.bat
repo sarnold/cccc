@@ -8,6 +8,8 @@ if not exist "%VCDIR%\bin\vcvars32.bat" goto no_vc
 
 call "%VCDIR%\bin\vcvars32.bat"
 
+if not exist pccts\bin mkdir pccts\bin
+
 cd pccts\dlg
 if exist *.obj del *.obj
 nmake -f DlgMS.mak
