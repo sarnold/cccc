@@ -1,6 +1,10 @@
 CCCC is a command line tool.  
-This window has been set up with a command path to allow the tool to 
-be run conveniently.
+This window has been set up with a macro 'cccc' to allow the tool to 
+be run conveniently. By default the CCCC program will generate its primary
+output to the file .cccc\cccc.html (relative to the working directory).
+The macro is configured to start the user's default browser on this file
+after completion of the execution of the CCCC program, if options are used
+to redirect the primary output, the browser window should be ignored.
 
 Useful example commands:
 cccc *.h *.cpp
