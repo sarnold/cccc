@@ -134,7 +134,7 @@ all: $(CCCC_EXE)
 
 
 $(CCCC_EXE): $(USR_G) $(ANLTR_SPAWN) $(DLG_SPAWN) $(USR_H) $(USR_C) $(ALL_OBJ)
-	$(LD) $(ALL_OBJ) $(LD_EXTRA_LIBS) $(LDFLAGS) $(LD_OFLAG) $(CCCC_EXE)
+	$(LD) $(ALL_OBJ) $(LD_EXTRA_LIBS) $(LDFLAGS) $(LD_OFLAG)$(CCCC_EXE)
 
 .SUFFIXES: .cc .$(OBJEXT) .cpp .cxx .g .g_info
 
@@ -151,13 +151,13 @@ ccccmain.$(OBJEXT) : ccccmain.cc
 
 
 .cc.$(OBJEXT):
-	$(CCC) $(CFLAGS) $< $(C_OFLAG) $*.$(OBJEXT)
+	$(CCC) $(CFLAGS) $< $(C_OFLAG)$*.$(OBJEXT)
 
 .cpp.$(OBJEXT):
-	$(CCC) $(CFLAGS) $< $(C_OFLAG) $*.$(OBJEXT)
+	$(CCC) $(CFLAGS) $< $(C_OFLAG)$*.$(OBJEXT)
 
 .cxx.$(OBJEXT):
-	$(CCC) -c $(CFLAGS) $< $(C_OFLAG) $*.$(OBJEXT)
+	$(CCC) -c $(CFLAGS) $< $(C_OFLAG)$*.$(OBJEXT)
 
 # Different compilers handle the source file being in a 
 # different directory in different ways.  The easiest way
@@ -165,13 +165,13 @@ ccccmain.$(OBJEXT) : ccccmain.cc
 # PCCTS support files which give rise to linkable object
 # files.
 AParser.$(OBJEXT): $(PCCTS_H)$(PATHSEP)AParser.cpp
-	$(CCC) $(CFLAGS) $(PCCTS_H)$(PATHSEP)AParser.cpp $(C_OFLAG) $*.$(OBJEXT)
+	$(CCC) $(CFLAGS) $(PCCTS_H)$(PATHSEP)AParser.cpp $(C_OFLAG)$*.$(OBJEXT)
 
 DLexerBase.$(OBJEXT): $(PCCTS_H)$(PATHSEP)DLexerBase.cpp
-	$(CCC) $(CFLAGS) $(PCCTS_H)$(PATHSEP)DLexerBase.cpp $(C_OFLAG) $*.$(OBJEXT)
+	$(CCC) $(CFLAGS) $(PCCTS_H)$(PATHSEP)DLexerBase.cpp $(C_OFLAG)$*.$(OBJEXT)
 
 ATokenBuffer.$(OBJEXT): $(PCCTS_H)$(PATHSEP)ATokenBuffer.cpp
-	$(CCC) $(CFLAGS) $(PCCTS_H)$(PATHSEP)ATokenBuffer.cpp $(C_OFLAG) $*.$(OBJEXT)
+	$(CCC) $(CFLAGS) $(PCCTS_H)$(PATHSEP)ATokenBuffer.cpp $(C_OFLAG)$*.$(OBJEXT)
 
 
 
@@ -208,14 +208,4 @@ clean:
 	-$(RM) *.cpp
 	-$(RM) *.$(OBJEXT)
 	-$(RM) $(CCCC_EXE)
-
-
-
-
-
-
-
-
-
-
 

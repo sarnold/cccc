@@ -41,7 +41,7 @@ The pccts directory contains software for which I am not the original
 author.  The software has been placed in the public domain, with
 the expectation that appropriate credit will be given for use.  
 
-As of version 3.pre54, the recommended way of building the software is by
+As of version 3.pre62, the recommended way of building the software is by
 using the BAT and SH scripts in the top directory of the distribution as
 appropriate for your platform.  On Win32, the script build_w32vc.bat 
 builds the software with Microsoft Visual C++ version 5 or 6 (locations
@@ -86,6 +86,16 @@ The add-in is experimental at this stage.  I am aware of some issues
 with projects in locations with spaces in the path, and I have also found
 that the logic I am using to deduce the home directories of .dsp and .dsw 
 files is not always correct.
+
+As well as the addin, the current version includes a directory which contains
+a script to build a wizard-style installer for the program under Win32.
+Binary releases of the software made using this directory may be released
+in the near future.  The binary release provides Windows start menu access
+to a DOS prompt set up with an environment to enable CCCC to be run 
+easily, and also provides a shortcut to the HTML documentation. The 
+installer can be built from the supplied scripts using the splendid free
+Inno Setup and Extensions packages by Martin Laan (Inno Setup) and Jordan
+Russell (extensions), available from http://www.jrsoftware.org.
 
 Previous versions of CCCC have been released like PCCTS into the public
 domain with no restrictions, other than the pious hope that should anyone
