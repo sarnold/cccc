@@ -33,6 +33,7 @@ using std::ifstream;
 using std::ofstream;
 using std::ostrstream;
 using std::istrstream;
+using std::strstream;
 using std::endl;
 using std::cout;
 using std::cerr;

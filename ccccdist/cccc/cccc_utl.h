@@ -240,7 +240,7 @@ class ParseStore
   Visibility get_visibility();
   string filename();
 
-  char *flags() { return flag.begin(); }
+  char *flags() { return &(*flag.begin()); }
 
   // We also need the automatically generated copy constructor
   // and assignment operator to allow us to save state in the 

@@ -15,7 +15,7 @@ enum UserelNameLevel { nlSUPPLIER=-1, nlCLIENT=-2, nlMEMBER=-3 };
 
 class CCCC_UseRelationship : public CCCC_Record 
 {
-  friend CCCC_Project;
+  friend class CCCC_Project;
   string supplier, client, member;
   UseType ut;
   AugmentedBool visible, concrete;
