@@ -38,26 +38,30 @@ all : unit_tests regression_tests
 # some day soon we need to tidy up the code so that when a selective report
 # like this is generated it does not contain loose HTML HREF tags.
 .cc.do_the_test :
-	$(CCCC) --report_mask=cspPrRojh --db_outfile=$*.db --html_outfile=$*.html $(CCCC_DEBUG_FLAGS) $<
+	$(CCCC) --report_mask=cspPrRojh --db_outfile=$*.db --html_outfile=$*.html --xml_outfile=$*.xml $(CCCC_DEBUG_FLAGS) $<
 	$(DIFF) $*.db $*.dbref
 	$(DIFF) $*.html $*.htmlref
+	$(DIFF) $*.xml $*.xmlref
 
 .c.do_the_test :
-	$(CCCC) --report_mask=cspPrRojh --db_outfile=$*.db --html_outfile=$*.html $(CCCC_DEBUG_FLAGS) $<
+	$(CCCC) --report_mask=cspPrRojh --db_outfile=$*.db --html_outfile=$*.html --xml_outfile=$*.xml $(CCCC_DEBUG_FLAGS) $<
 	$(DIFF) $*.db $*.dbref
 	$(DIFF) $*.html $*.htmlref
+	$(DIFF) $*.xml $*.xmlref
 
 .java.do_the_test :
-	$(CCCC) --report_mask=cspPrRojh --db_outfile=$*.db --html_outfile=$*.html $(CCCC_DEBUG_FLAGS) $<
+	$(CCCC) --report_mask=cspPrRojh --db_outfile=$*.db --html_outfile=$*.html --xml_outfile=$*.xml $(CCCC_DEBUG_FLAGS) $<
 	$(DIFF) $*.db $*.dbref
 	$(DIFF) $*.html $*.htmlref
+	$(DIFF) $*.xml $*.xmlref
 
 # The command line for test4 is slightly different so it needs
 # an explicit rule
 test4.do_the_test :
-	$(CCCC) --opt_infile=test4.opt --report_mask=cspPrRojh --db_outfile=test4.db --html_outfile=test4.html $(CCCC_DEBUG_FLAGS) test4.cc
+	$(CCCC) --opt_infile=test4.opt --report_mask=cspPrRojh --db_outfile=test4.db --html_outfile=test4.html --xml_outfile=test4.xml $(CCCC_DEBUG_FLAGS) test4.cc
 	$(DIFF) $*.db $*.dbref
 	$(DIFF) $*.html $*.htmlref
+	$(DIFF) $*.xml $*.xmlref
 
 # the first test case is exercises the logic for procedural metrics
 # the second test case is exercises the logic for structural metrics

@@ -114,7 +114,7 @@ my PhD.  I am still getting a steady stream of enquiries about CCCC,
 and I am keen to put out a high quality reference version of the software
 as a way of thanking the people who have assisted me by participating in
 the various stages of my research.  The research project is described at
-http://www-chs.ecu.edu.au/~tlittlef.  This page includes a link to a 
+http://www.chs.ecu.edu.au/~tlittlef.  This page includes a link to a 
 downloadable PDF version of the PhD thesis.
 
 I am grateful to a number of people for assistance on this project, including
@@ -128,7 +128,7 @@ into maintaining it over the coming months and years.
 
 
 Tim Littlefair (tim_littlefair@hotmail.com)
-updated November 2001
+updated August 2003
 --------------
 
 This and future distributions of CCCC and related tools should be

@@ -62,4 +62,11 @@ the Sun Java tutorial now parse without (mentioning) errors.
 Modified the support URLs in various places to point to the email address
 of the SourceForge cccc-users list rather than my own email address.
 
+version 3.pre81
+Fixed the diff.bat script to reflect the true outcome of the comparison.
+Made cccc_met.cc round down to eliminate a difference in the output 
+on prn14.
+Added XML format output.
+Fixed command line environment for Windows XP.  
+Modified URLs to research project to reflect new naming at ecu.edu.au.
 
