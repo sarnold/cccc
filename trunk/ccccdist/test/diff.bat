@@ -7,13 +7,13 @@ rem value, so the tester must visually check the output
 rem to ensure that the test did pass, even though NMAKE thought
 rem it did.
 
-if "%2" == "" goto usage
+if not "%2" == "" goto AfterUsage
+:usage
+echo DIFF [file1] [file2]
+goto :end
+:afterUsage
 
 fc %1 %2 
-
-goto end
-
-:usage
-DIFF [file1] [file2]
-
 :end
+
+
