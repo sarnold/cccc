@@ -1,9 +1,9 @@
-Microsoft Developer Studio Workspace File, Format Version 5.00
+Microsoft Developer Studio Workspace File, Format Version 6.00
 # WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
 
 ###############################################################################
 
-Project: "ANTLR"=".\pccts\antlr\AntlrMSVC50.dsp" - Package Owner=<4>
+Project: "ANTLR"=.\pccts\antlr\AntlrMSVC50.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
@@ -15,7 +15,7 @@ Package=<4>
 
 ###############################################################################
 
-Project: "CcccDevStudioAddIn"=".\vcaddin\CcccDevStudioAddIn.dsp" - Package Owner=<4>
+Project: "CcccDevStudioAddIn"=.\vcaddin\CcccDevStudioAddIn.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
@@ -27,7 +27,7 @@ Package=<4>
 
 ###############################################################################
 
-Project: "DLG"=".\pccts\dlg\DlgMSVC50.dsp" - Package Owner=<4>
+Project: "DLG"=.\pccts\dlg\DlgMSVC50.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
@@ -39,7 +39,7 @@ Package=<4>
 
 ###############################################################################
 
-Project: "cccc"=".\cccc\Cccc.dsp" - Package Owner=<4>
+Project: "cccc"=.\cccc\Cccc.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
@@ -57,7 +57,7 @@ Package=<4>
 
 ###############################################################################
 
-Project: "documentation"=".\documentation.dsp" - Package Owner=<4>
+Project: "documentation"=.\documentation.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
@@ -69,7 +69,7 @@ Package=<4>
 
 ###############################################################################
 
-Project: "install"=".\install\install.dsp" - Package Owner=<4>
+Project: "install"=.\install\install.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
@@ -87,7 +87,7 @@ Package=<4>
 
 ###############################################################################
 
-Project: "test"=".\test\test.dsp" - Package Owner=<4>
+Project: "test"=.\test\test.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
