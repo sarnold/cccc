@@ -630,7 +630,7 @@ void Main::PrintUsage(ostream& os)
     "meaning of some options.",
     "",
     "Options:",
-    "--help		      * generate this help message",
+    "--help                   * generate this help message",
     "--outdir=<dname>         * directory for generated files",
     "                           (default=.cccc)",
     "--html_outfile=<fname>   * name of primary HTML report generated ",
