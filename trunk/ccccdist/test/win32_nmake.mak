@@ -34,6 +34,14 @@ endif
 	$(DIFF) $*.db $*.dbref
 	$(DIFF) $*.html $*.htmlref
 
+.c.do_the_test :
+	-$(RMDIR) .cccc $*.html $*.db
+	../cccc/cccc --report_mask=cspPrRojh $<
+	$(MV) .cccc/cccc.html $*.html
+	$(MV) .cccc/cccc.db $*.db
+	$(DIFF) $*.db $*.dbref
+	$(DIFF) $*.html $*.htmlref
+
 all : unit_tests regression_tests
 	@$(ECHO) ================
 	@$(ECHO) All tests passed
@@ -55,7 +63,10 @@ unit_tests : test1.do_the_test test2.do_the_test test3.do_the_test
 # PRN5 prepared by TL to check for problem due to relationships being
 # created involving built-in types
 # PRN6 based on a test case sent in by ??? 
+# PRN7 based on a test case sent in by Larry Peters of ATI
 regression_tests : \
 	prn1.do_the_test prn2.do_the_test prn3.do_the_test \
-	prn4.do_the_test prn5.do_the_test prn6.do_the_test
+	prn4.do_the_test prn5.do_the_test prn6.do_the_test \
+	prn7.do_the_test
+
 
