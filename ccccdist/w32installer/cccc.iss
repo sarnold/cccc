@@ -23,6 +23,7 @@ Source: "..\w32installer\ccccwrap.bat"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\w32installer\make_cccc_env.bat"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\cccc\cccc.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\cccc\CCCC User Guide.html"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\vcaddin\release\CcccDevStudioAddIn.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\readme.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\changes.txt"; DestDir: "{app}"; Flags: ignoreversion
 
