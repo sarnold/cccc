@@ -32,9 +32,9 @@
 <<
 #include <cassert>
 
-// Need to see definition of JLexer class before defining the 
+// Need to see definition of CLexer class before defining the 
 // next actions.
-// This will mean this file is included twice in JLexer.cpp.  This
+// This will mean this file is included twice in CLexer.cpp.  This
 // should do no harm...
 #include "CLexer.h"
 
@@ -140,8 +140,8 @@ inline void endOfLine(CLexer &lexer)
 #lexclass START
 
 
-#token LBRACE "\{" << IncrementNesting(); >>
-#token RBRACE "\}" << DecrementNesting(); >>
+#token LBRACE "\{" << ANTLRToken::IncrementNesting(); >>
+#token RBRACE "\}" << ANTLRToken::DecrementNesting(); >>
 #token LPAREN "\(" << ; >>
 #token RPAREN "\)" << ; >>
 #token LBRACK "\[" << ; >>
@@ -1265,5 +1265,6 @@ angle_block :
 #token TOKENTYPE_MAX
 
 // -*-c++-*- (Emacs mode request)
+
 
 

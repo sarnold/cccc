@@ -57,8 +57,8 @@ class ANTLRToken : public ANTLRCommonToken {
 					ANTLRChar *txt, 
 					int line);
 
-  friend void IncrementNesting() { RunningNesting++; }
-  friend void DecrementNesting() { RunningNesting--; }
+  static void IncrementNesting() { RunningNesting++; }
+  static void DecrementNesting() { RunningNesting--; }
 
   int getNestingLevel() { return CurrentNesting; }
   void CountToken();
