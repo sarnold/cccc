@@ -620,10 +620,6 @@ instance_declaration[string& scopeName] :
 >> 
 ;
 
-opt_qualifiers :
-	| /* empty */
-	;
-
 class_block [string& scope]:
 	  << 
 	      int saved_visibility=ps->get_flag(psfVISIBILITY);
@@ -643,14 +639,17 @@ class_block_item[string& scope] :
 	;
 
 class_item_qualifier_list! :
-	(
-	  	  FRIEND 
-        	| VIRTUAL           << ps->set_flag(psfVIRTUAL,abTRUE); >> 
-		| STATIC	    << ps->set_flag(psfSTATIC,abTRUE); >>
-		| INLINE
-	)*
+      (class_item_qualifier)? class_item_qualifier class_item_qualifier_list
+    | /* empty */
 	;
-	
+
+class_item_qualifier :
+      FRIEND 
+    | VIRTUAL << ps->set_flag(psfVIRTUAL,abTRUE); >> 
+    | STATIC << ps->set_flag(psfSTATIC,abTRUE); >>
+    | INLINE
+	;	
+    
 access_modifier! :
 	  access_key COLON
 	;
@@ -1021,12 +1020,18 @@ inheritance_item_list[string& childName] :
 	  inheritance_item[childName] ( COMMA inheritance_item[childName])*
 	;
 
+inheritance_access_key :
+      VIRTUAL { access_key }
+    | access_key { VIRTUAL }
+    | /* empty */
+    ;
+
 inheritance_item[string& childName]  : 
 << 
     string parent_scope,parent_name; 
     int startLine=LT(1)->getLine(); 
 >>
-	  { VIRTUAL } { access_key } { VIRTUAL } type_name[parent_name]
+	  inheritance_access_key  type_name[parent_name]
 	<<
 	        int endLine=LT(1)->getLine();
 		ps->record_userel_extent(startLine,endLine,
@@ -1071,14 +1076,14 @@ ctor_init_item :
 	;
 
 linkage_qualifiers:
-          linkage_qualifier linkage_qualifiers
+      (linkage_qualifier)? linkage_qualifier linkage_qualifiers
 	| /* empty */
 	;
 
 linkage_qualifier :
-          STATIC            << ps->set_flag(psfSTATIC,abTRUE); >>
+      STATIC            << ps->set_flag(psfSTATIC,abTRUE); >>
 	| ( EXTERN STRINGCONST )?
-        | EXTERN            
+    | EXTERN            
 	| INLINE
 	| TEMPLATE { angle_block }
 	;
@@ -1200,7 +1205,7 @@ nested_token [ int nl ] : << ANTLRTokenPtr la_ptr=LT(1); >>
 
 scoped :
 	  ( keyword )?
-	| op
+	| (op)?
 	| IDENTIFIER
 	| literal
 	;
