@@ -13,7 +13,9 @@
 
 #ifdef _WIN32
 #include <direct.h>
-#include <windows.h>
+#include <io.h>
+#define HANDLE intptr_t
+#define INVALID_HANDLE_VALUE -1
 #else
 #include <sys/stat.h>
 #endif
@@ -287,9 +289,11 @@ void Main::AddFileArgument(const string& file_arg)
       /*
       ** In Win32 we will have to expand all wildcards ourself, because the
       ** shell won't do this for us.
+      ** This code reworked for 3.1.1 because we are now using the Visual C++ 2003
+      ** Toolkit, which does not provide the same APIs as Visual Studio 5/6.
       */
-      WIN32_FIND_DATA fd;
-      HANDLE sh = FindFirstFile(file_arg.c_str(), &fd);
+      _finddata_t fd;
+      HANDLE sh = _findfirst(file_arg.c_str(), &fd);
 
       // 3.pre40
       // I discovered (by behaviour, not documentation) that
@@ -305,21 +309,20 @@ void Main::AddFileArgument(const string& file_arg)
       }
       // Was it as easy as that?...
 
-      while (sh!=INVALID_HANDLE_VALUE)
+      int findnextReturnValue = 0;
+      while (findnextReturnValue==0)
 	{
 	  string sFileName=directoryPrefix;
-          sFileName.append(fd.cFileName);
+          sFileName.append(fd.name);
 	  file_entry file_entry(sFileName,lang);
 	  file_list.push_back(file_entry);
-	  if (!FindNextFile(sh, &fd))
-	    {
-	      FindClose(sh);
-	      sh = INVALID_HANDLE_VALUE;
-	    }
+	  findnextReturnValue = _findnext(sh, &fd);
 	}
+      _findclose(sh);
 #else
       file_entry file_entry(file_arg,lang);
       file_list.push_back(file_entry);
+      cout << file_arg << endl;
 #endif      
     }
 }
