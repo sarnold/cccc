@@ -1,3 +1,4 @@
+
 # rules.mak
 # This file contains cross-platform rules to support testing of CCCC
 # it is intended to be included by a platform specific makefile.
@@ -13,9 +14,15 @@
 # PATHSEP=<path separator - \ for win32, / for Unix>
 # CCCC=<path to CCCC program>
 
+# We may also want to define CCCC_DEBUG_FLAGS on the command line
+# if we would like to see some or all of the debug output available
+# from CCCC.
+# CCCC_DEBUG_FLAGS= --debug_mask=0xFF
 
-# We define a phony target extension to enable us to force execution of tests
-.SUFFIXES : .do_the_test .cc
+# We define a phony target extensions to enable us to force execution of tests
+# under normal and debugging conditions and also to provide a shortcut way
+# of 'blessing' the results of a run as the reference values
+.SUFFIXES : .do_the_test .cc .c .java
 
 all : unit_tests regression_tests
 	@$(ECHO) ================
@@ -31,19 +38,24 @@ all : unit_tests regression_tests
 # some day soon we need to tidy up the code so that when a selective report
 # like this is generated it does not contain loose HTML HREF tags.
 .cc.do_the_test :
-	$(CCCC) --report_mask=cspPrRojh --db_outfile=$*.db --html_outfile=$*.html $<
+	$(CCCC) --report_mask=cspPrRojh --db_outfile=$*.db --html_outfile=$*.html $(CCCC_DEBUG_FLAGS) $<
 	$(DIFF) $*.db $*.dbref
 	$(DIFF) $*.html $*.htmlref
 
 .c.do_the_test :
-	$(CCCC) --report_mask=cspPrRojh --db_outfile=$*.db --html_outfile=$*.html $<
+	$(CCCC) --report_mask=cspPrRojh --db_outfile=$*.db --html_outfile=$*.html $(CCCC_DEBUG_FLAGS) $<
+	$(DIFF) $*.db $*.dbref
+	$(DIFF) $*.html $*.htmlref
+
+.java.do_the_test :
+	$(CCCC) --report_mask=cspPrRojh --db_outfile=$*.db --html_outfile=$*.html $(CCCC_DEBUG_FLAGS) $<
 	$(DIFF) $*.db $*.dbref
 	$(DIFF) $*.html $*.htmlref
 
 # The command line for test4 is slightly different so it needs
 # an explicit rule
 test4.do_the_test :
-	$(CCCC) --opt_infile=test4.opt --report_mask=cspPrRojh --db_outfile=test4.db --html_outfile=test4.html test4.cc
+	$(CCCC) --opt_infile=test4.opt --report_mask=cspPrRojh --db_outfile=test4.db --html_outfile=test4.html $(CCCC_DEBUG_FLAGS) test4.cc
 	$(DIFF) $*.db $*.dbref
 	$(DIFF) $*.html $*.htmlref
 
@@ -66,11 +78,17 @@ unit_tests : test1.do_the_test test2.do_the_test test3.do_the_test \
 # is used)
 # PRN5 prepared by TL to check for problem due to relationships being
 # created involving built-in types
-# PRN6 based on a test case sent in by ??? 
-# PRN7 based on a test case sent in by Larry Peters of ATI
+# PRN6 based on a test case reported by ??? 
+# PRN7 based on a test case reported by Larry Peters of ATI
+# PRN8 based on a test case reported by Eric Pischel
+# PRN9-PRN12 based on test cases reported by Victor B Putz
 regression_tests : \
 	prn1.do_the_test prn2.do_the_test prn3.do_the_test \
 	prn4.do_the_test prn5.do_the_test prn6.do_the_test \
-	prn7.do_the_test
+	prn7.do_the_test prn8.do_the_test prn9.do_the_test \
+	prn10.do_the_test prn11.do_the_test prn12.do_the_test \
+	
+
+
 
 
