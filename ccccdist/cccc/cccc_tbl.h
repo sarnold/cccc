@@ -20,7 +20,7 @@ template <class T> class CCCC_Table
 : public std::map<string,T*>
 {
   typedef std::map<string,T*> map_t;
-  map_t::iterator iter_;
+  typename map_t::iterator iter_;
   bool sorted;
 
  public:
