@@ -6,8 +6,6 @@
 #include "cccc.h"
 
 #include "cccc_ver.h"
-#define STRINGIFY(X) #X
-#define CCCC_VERSION_STRING STRINGIFY(CCCC_VERSION)
 
 #include <fstream>
 #include <list>
