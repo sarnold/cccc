@@ -1,0 +1,9 @@
+//SUPPRESSIONPROJ:Antlr
+//VERSION:5.00
+//ENABLE:Yes
+!include Rtl.sup
+ignore bad_address(20,23) in file EXE:"..\h\dlgauto.h"
+ignore bad_address(20,20) in file EXE:"..\h\dlgauto.h"
+ignore resource_leak(16,0) calloc in file EXE:"D:\pccts_now\pccts\support\set\set.c"
+ignore resource_leak(16,0) calloc in function EXE:"DefErrSetForC1"
+

@@ -1,0 +1,20 @@
+CCCC_Module@Test1@class@
+CCCC_ModExt@Test1@class@test1.cc@16@definition@F???2@LOC:4 COM:4 MVG:0@2@d@
+CCCC_Module@char@builtin@
+CCCC_ModExt@char@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@double@builtin@
+CCCC_ModExt@double@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@float@builtin@
+CCCC_ModExt@float@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@int@builtin@
+CCCC_ModExt@int@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@long@builtin@
+CCCC_ModExt@long@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@void@builtin@
+CCCC_ModExt@void@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Member@Test1@method1@@()@
+CCCC_MemExt@Test1@method1@@()@test1.cc@27@definition@F???0@LOC:13 COM:1 MVG:4@0@d@
+CCCC_Member@Test1@method2@@()@
+CCCC_MemExt@Test1@method2@@()@test1.cc@48@declaration@F???0@LOC:1 COM:0 MVG:0@0@D@
+CCCC_MemExt@Test1@method2@@()@test1.cc@55@definition@F????@LOC:6 COM:1 MVG:1@?@d@
+CCCC_RejExt@test1.cc@1@<file scope items>@F????@LOC:0 COM:0 MVG:0@?@r@
