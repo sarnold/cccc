@@ -18,13 +18,14 @@ set LINK_ARGS=-libpath:"%VCTDIR%\lib" -subsystem:console
 
 set arg1=%1
 
-if "%arg1%"=="-version" (
+if "%arg1%"=="--version" (
    echo // This version built on %HOSTNAME% at %DATE% > cccc\cccc_ver.h
    echo #define CCCC_VERSION %2 >> cccc\cccc_ver.h
-   set arg1=-clean
+   echo #define CCCC_VERSION_STRING "%2" >> cccc\cccc_ver.h
+   set arg1=--clean
 )
 
-if "%1"=="-clean" (
+if "%arg1%"=="--clean" (
    for %%d in ( pccts\dlg pccts\antlr cccc ) do (
       if exist %%d\*.obj del %%d\*.obj
       if exist %%d\*.exe del %%d\*.exe
@@ -152,6 +153,7 @@ for %%f in ( %CPP_SOURCES% ) do (
 )
 cd ..
 endlocal
+:afterAddIn
 
 setlocal
 cd w32installer
