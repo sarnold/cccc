@@ -8,18 +8,21 @@
 
 # support for debugging (note that debug building is on by default)
 !IF "$(DEBUG)"=="true"
-CFLAGS_DEBUG=-v -y
-LDFLAGS_DEBUG=-v
+# It would be nice to turn the CodeGuard feature on but this 
+# appears to depend on a library called CG32.lib which doesn't
+# appear to be present in my free command line version.
+CFLAGS_DEBUG=-v 
+LDFLAGS_DEBUG=-v 
 !ENDIF
 
 PATHSEP=\\
-CCC=bcc32.exe -v
+CCC=bcc32.exe 
 #LD=ilink32.exe -L"$(BCDIR)\lib" C0D32.OBJ CW32.LIB IMPORT32.LIB
 LD=bcc32.exe -v  -L"$(BCDIR)\lib"
 CFLAGS= \
-	-c -P -D_NO_VCL -DCCCC_CONF_W32BC -I$(PCCTS_H) \
+	$(CFLAGS_DEBUG) -c -P -D_NO_VCL -DCCCC_CONF_W32BC -I$(PCCTS_H) \
 	-w-aus -w-par -w-hid -w-inl \
-	-I"$(BCDIR)\include" -tWC  $(CFLAGS_DEBUG)
+	-I"$(BCDIR)\include" -tWC  
 C_OFLAG=-o
 LDFLAGS=$(LDFLAGS_DEBUG)  
 LD_OFLAG=-o
