@@ -14,6 +14,16 @@ CCCC_Item::CCCC_Item(const string& s, char c)
   good=true;
 }
 
+CCCC_Item::CCCC_Item(const string& s) 
+{
+  CCCC_Item(s, '@'); 
+}
+
+CCCC_Item::CCCC_Item() 
+{
+  CCCC_Item("", '@'); 
+}
+
 bool CCCC_Item::Insert(const string& s)
 {
   buffer+=s;
