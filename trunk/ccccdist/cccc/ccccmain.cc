@@ -64,7 +64,7 @@ int _CRT_glob = 0;
 /*
 ** global variables to hold default values for various things
 */
-string current_filename, current_rule;
+string current_filename, current_rule, parse_language;
 
 // class Main encapsulates the top level of control for the program
 // including command line handling

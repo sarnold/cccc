@@ -20,6 +20,12 @@
   // to a pointer to my variant of AST if I want to call my AST 
   // methods on them
   #define MY_AST(X) ( (AST*) X)
+
+  // we have a global variable member for the language of the parse so
+  // that we can supply the names of dialects (ansi_c, ansi_c++, mfc_c++ etc)
+  // for contexts where we wish to apply dialect-specific lexing or parsing
+  // rules
+  extern string parse_language;
 >>
 
 #lexaction
@@ -308,7 +314,31 @@ inline void endOfLine(CLexer &lexer)
  
 /* identifiers */
 #token IDENTIFIER "[A-Za-z_][A-Za-z_0-9]*" 
+<<
+	// Check whether there are any dialect-specific rules 
+	// about the current token.
+	std::string treatment = 
+		CCCC_Options::dialectKeywordPolicy(parse_language,lextext());
 
+	std::string toktext=lextext();
+        if( treatment == "ignore" )
+	{
+	    skip();
+	}
+	// Ultimately, the next two cases will need to be handled 
+	// using a #lexclass or something similar, for the moment
+	// we just try to skip the tokens themselves.
+	else if ( treatment == "start_skipping" )
+	{
+	    skip();
+	}	
+	else if ( treatment == "stop_skipping" ) 
+	{
+	    skip();
+	}
+>>
+
+	
 /* Literal elements - integer and float numbers and strings */
 
 #lexclass START
@@ -362,12 +392,6 @@ string typeCombine(const string& modifiers, const string& name, const string& in
   return retval;
 }
 
-// we have a data member for the language of the parse so
-// that we can supply the names of dialects (ansi_c, ansi_c++, mfc_c++ etc)
-// for contexts where we wish to apply dialect-specific parsing
-// rules
-string parse_language;
-
 // Many of the rules below accept string parameters to 
 // allow upward passing of attributes.
 // Where the calling context does not need to receive
@@ -400,8 +424,7 @@ start : << string fileScope; >>
 	; 
 
 link_item[string& scope] : 
-          ignored_identifier
-        | (EXTERN STRINGCONST LBRACE)? 
+          (EXTERN STRINGCONST LBRACE)? 
 	  extern_linkage_block
 	| namespace_block
         | using_statement
@@ -414,17 +437,6 @@ end_of_file : eof:Eof
 >>
         ;
 
-// This rule supports definition of a list of pseudo-keywords
-// for a particular dialect which should be ignored in various
-// contexts (primarily at the left hand edge of declarations.
-// This list can be used to build in a degree of tolerance of
-// vendor-specific things (e.g. MFC code in particular).
-ignored_identifier:
-        <<
-          CCCC_Options::dialectKeywordPolicy(
-	    parse_language,LT(1)->getText()) == "ignore"
-        >>? id:IDENTIFIER
-        ;
 
 definition_or_declaration[string& scope] : 
 	<<
