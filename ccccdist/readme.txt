@@ -41,7 +41,7 @@ The pccts directory contains software for which I am not the original
 author.  The software has been placed in the public domain, with
 the expectation that appropriate credit will be given for use.  
 
-As of version 3.pre62, the recommended way of building the software is by
+As of version 3.pre63, the recommended way of building the software is by
 using the BAT and SH scripts in the top directory of the distribution as
 appropriate for your platform.  On Win32, the script build_w32vc.bat 
 builds the software with Microsoft Visual C++ version 5 or 6 (locations

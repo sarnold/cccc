@@ -55,7 +55,7 @@ introducing a using directive from strstream.  When GCC 2.95 becomes old
 enough that I don't need to support it any more I will need to modify
 the strstream stuff to use stringstream instead.
 
-version 3.pre61
+version 3.pre63
 Added support for a setup program for Win32 using Inno Setup.
 Fixed a lot of parse issues with the Java parser.  All example programs in 
 the Sun Java tutorial now parse without (mentioning) errors.
