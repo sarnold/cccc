@@ -1,6 +1,6 @@
 # PCCTS directory
 
-PCCTS_HOME=<your PCCTS_HOME>
+PCCTS_HOME=..
 ANTLR_SRC=$(PCCTS_HOME)\antlr
 PCCTS_H=$(PCCTS_HOME)\h
 
@@ -12,7 +12,7 @@ SET=$(PCCTS_HOME)\support\set
 # Compiler stuff
 CC = cl
 CFLAGS = -I "." -I "$(PCCTS_H)" -I "$(SET)" -D "USER_ZZSYN" -D "PC" \
-        -D "ZZLEXBUFSIZE=65536"  /D "LONGFILENAMES" /Zi /W3
+        -D "ZZLEXBUFSIZE=65536"  /D "LONGFILENAMES" /W3
 
 ANTLR_OBJS = antlr.obj scan.obj err.obj bits.obj build.obj fset2.obj \
             fset.obj gen.obj globals.obj hash.obj lex.obj main.obj \
