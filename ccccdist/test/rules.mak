@@ -87,7 +87,9 @@ unit_tests : test1.do_the_test test2.do_the_test test3.do_the_test \
 # PRN8 based on a test case reported by Eric Pischel
 # PRN9-PRN12 based on test cases reported by Victor B Putz
 # PRN13-PRN14 based on example programs from Sun's Java Tutorial.
-# PRN15
+# PRN15 based on a test case reported by Jordan Zimmerman
+# PRN16 based on a test case reported by Colin Watson
+
 regression_tests : \
 	prn1.do_the_test prn2.do_the_test prn3.do_the_test \
 	prn4.do_the_test prn5.do_the_test prn6.do_the_test \
