@@ -11,7 +11,7 @@ AppUpdatesURL=http://cccc.sourceforge.net
 DefaultDirName={pf}\CCCC
 DefaultGroupName=C and C++ Code Counter
 AlwaysCreateUninstallIcon=yes
-OutputBaseFilename=CCCC_3pre58_SETUP
+OutputBaseFilename=CCCC_SETUP
 ; uncomment the following line if you want your installation to run on NT 3.51 too.
 ; MinVersion=4,3.51
 
