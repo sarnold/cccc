@@ -3,8 +3,8 @@
 #include "cccc.h"
 #include "cccc_itm.h"
 #include "cccc_met.h"
-#include <strstream>
-using std::ostrstream;
+#include <sstream>
+using std::ostringstream;
 
 #include "cccc_opt.h"
 
@@ -99,7 +99,7 @@ string CCCC_Metric::value_string() const
   char numerator_too_low='-';
   char infinity='*';
   
-  ostrstream valuestr;
+  ostringstream valuestr;
   valuestr.setf(std::ios::fixed);
   int width=6, precision=0;
   float n_threshold=0, low_threshold=1e9, high_threshold=1e9;
@@ -146,7 +146,6 @@ string CCCC_Metric::value_string() const
       }
       valuestr << result;
     }
-  valuestr << std::ends;
   retval=valuestr.str();
   return retval;
 }
