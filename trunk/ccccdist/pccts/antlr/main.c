@@ -836,6 +836,9 @@ char *argv[];
 			}
 			DumpRemainingTokSets();
 			fprintf(Parser_h, "};\n");
+			// The next line modified by TL, because GCC 3.0.2 reports
+			// a warning if a comment appears after #endif
+			// fprintf(Parser_h, "\n#endif /* %s_h */\n", CurrentClassName);
 			fprintf(Parser_h, "\n#endif /* %s_h */\n", CurrentClassName);
 			fclose( Parser_h );
 			fclose( Parser_c );

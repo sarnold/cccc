@@ -96,7 +96,10 @@ genLexDescr( )
         if (TraceGen) {
           fprintf(dlgFile,"#ifndef zzTRACE_RULES\n");  /* MR20 */
           fprintf(dlgFile,"#define zzTRACE_RULES\n");  /* MR20 */
-          fprintf(dlgFile,"#endif  zzTRACE_RULES\n");  /* MR20 */
+          // zzTRACE_RULES removed from end of #endif directive by TL
+          // because it causes a warning under GCC 3.0.2.
+          // fprintf(dlgFile,"#endif  zzTRACE_RULES\n");  /* MR20 */
+          fprintf(dlgFile,"#endif\n");  /* MR20 */
         };
 		fprintf(dlgFile, "#include \"antlr.h\"\n");
 		if ( GenAST ) {
