@@ -27,6 +27,7 @@ enum RelationshipMaskElements
 class CCCC_Project : public CCCC_Record 
 {
   friend class CCCC_Html_Stream;
+  friend class CCCC_Xml_Stream;
   friend class CCCC_Module;
   friend class CCCC_Member;
   friend class CCCC_UseRelationship;

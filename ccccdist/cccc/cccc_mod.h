@@ -25,6 +25,7 @@ class CCCC_Module : public CCCC_Record
 {
   friend class CCCC_Project;
   friend class CCCC_Html_Stream;
+  friend class CCCC_Xml_Stream;
   CCCC_Project *project;
   string module_name, module_type;
 
