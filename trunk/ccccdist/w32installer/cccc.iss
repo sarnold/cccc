@@ -38,6 +38,6 @@ Name: "{userdesktop}\CCCC"; Filename: "{app}\ccccwrap.bat"; MinVersion: 4,4; Tas
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\CCCC"; Filename: "{app}\ccccwrap.bat"; IconIndex: 2; MinVersion: 4,4; Tasks: quicklaunchicon
 
 [Run]
-Filename: "{app}\make_cccc_env.bat"; Parameters: """{app}"" ""C:\"""; StatusMsg: "Creating environment script"; Flags: shellexec
-Filename: "{app}\ccccwrap.bat"; Description: "Launch CCCC"; Flags: shellexec postinstall skipifsilent
+Filename: "{app}\make_cccc_cli.bat"; Parameters: """{app}"" ""C:\"""; StatusMsg: "Creating environment script"; Flags: shellexec
+Filename: "{app}\start_cccc_cli.bat"; Description: "Launch CCCC"; Flags: shellexec postinstall skipifsilent
 
