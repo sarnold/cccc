@@ -25,15 +25,15 @@
 #include <string>
 using std::string;
 #include <iostream>
-#include <strstream>
+#include <sstream>
 #include <fstream>
 using std::ostream;
 using std::istream;
 using std::ifstream;
 using std::ofstream;
-using std::ostrstream;
-using std::istrstream;
-using std::strstream;
+using std::istringstream;
+using std::ostringstream;
+using std::stringstream;
 using std::endl;
 using std::cout;
 using std::cerr;
@@ -74,9 +74,9 @@ extern char *skip_identifiers[SKIP_IDENTIFIERS_ARRAY_SIZE];
  
 #ifdef __GNUG__
 
-#define MAKE_STRSTREAM(X)     strstream X;
+#define MAKE_STRSTREAM(X)     stringstream X;
 #define CONVERT_STRSTREAM(X)  (X)
-#define RELEASE_STRSTREAM(X)  X.freeze(0);
+#define RELEASE_STRSTREAM(X)  
 
 #else
 		 
@@ -84,8 +84,8 @@ extern char *skip_identifiers[SKIP_IDENTIFIERS_ARRAY_SIZE];
 
 #define MAKE_STRSTREAM(X) \
 char auto_buf[STR_BUFSIZE]; \
-ostrstream X(auto_buf,STR_BUFSIZE, ios::trunc); 
-#define CONVERT_STRSTREAM(X)  istrstream(X.str(),strlen(X.str()))
+ostringstream X(auto_buf,STR_BUFSIZE, ios::trunc); 
+#define CONVERT_STRSTREAM(X)  istringstream(X.str(),strlen(X.str()))
 #define RELEASE_STRSTREAM(X) /* do nothing at all */
 
 #endif // __GNUG__
