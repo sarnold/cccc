@@ -1,5 +1,5 @@
 CCCC_Module@A@struct@
-CCCC_ModExt@A@struct@prn3.cc@93@definition@FT??0@LOC:4 COM:6 MVG:0@0@d@
+CCCC_ModExt@A@struct@prn3.cc@93@definition@FT??0@LOC:9 COM:6 MVG:0@0@d@
 CCCC_Module@FP@class@
 CCCC_ModExt@FP@class@prn3.cc@77@definition@FT??2@LOC:5 COM:0 MVG:0@2@d@
 CCCC_Module@Hugo@class@
@@ -8,8 +8,7 @@ CCCC_Module@Hugo_2@class@
 CCCC_ModExt@Hugo_2@class@prn3.cc@134@definition@FT??2@LOC:9 COM:8 MVG:0@2@d@
 CCCC_Module@InlFunc@class@
 CCCC_ModExt@InlFunc@class@prn3.cc@47@definition@F???2@LOC:4 COM:43 MVG:0@2@d@
-CCCC_Module@@struct@
-CCCC_ModExt@@struct@prn3.cc@96@definition@FT??0@LOC:5 COM:0 MVG:0@0@d@
+CCCC_Module@anonymous@@
 CCCC_Module@char@builtin@
 CCCC_ModExt@char@builtin@<nofile>@0@builtin definition@d?????@@0@d@
 CCCC_Module@double@builtin@

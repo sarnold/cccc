@@ -72,13 +72,13 @@ Two variants on the information flow measure IF4 are also presented, one (IF4v) 
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=70%>Metric</TH><TH BGCOLOR="AQUA" WIDTH=10%>Tag</TH><TH BGCOLOR="AQUA" WIDTH=10%>Overall</TH><TH BGCOLOR="AQUA" WIDTH=10%>Per Module</TH></TR>
 <TR>
-<TD>Number of modules</TD><TD>NOM</TD><TD ALIGN=RIGHT>     4</TD><TD>&nbsp;</TD></TR>
+<TD>Number of modules</TD><TD>NOM</TD><TD ALIGN=RIGHT>     5</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD WIDTH=700%>Lines of Code</TD><TD WIDTH=120%>LOC</TD><TD ALIGN=RIGHT>    47</TD><TD ALIGN=RIGHT>11.750</TD></TR>
+<TD WIDTH=700%>Lines of Code</TD><TD WIDTH=120%>LOC</TD><TD ALIGN=RIGHT>    47</TD><TD ALIGN=RIGHT> 9.400</TD></TR>
 <TR>
 <TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT> 0.000</TD></TR>
 <TR>
-<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>    93</TD><TD ALIGN=RIGHT>23.250</TD></TR>
+<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>    93</TD><TD ALIGN=RIGHT>18.600</TD></TR>
 <TR>
 <TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT> 0.505</TD><TD>&nbsp;</TD></TR>
 <TR>
@@ -115,6 +115,10 @@ Hugo_2</A>
 <TD><A HREF="InlFunc.html#procdet">
 InlFunc</A>
 </TD><TD ALIGN=RIGHT>     7</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>    43</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="anonymous.html#procdet">
+anonymous</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 </TABLE>
 <H1><A NAME="procdet">Procedural Metrics Detail</A></H1>
 <TABLE BORDER WIDTH=100%>
@@ -217,8 +221,6 @@ declaration &nbsp;
 <A HREF="procsum">
 anonymous</A>
 <BR>
-definition &nbsp;
-<CODE><A HREF="cccc_src.html#prn3.cc:        96">prn3.cc:96</A></CODE><BR>
 <BR>
 </TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
 <TR>
@@ -261,6 +263,10 @@ Hugo_2</A>
 <TD><A HREF="InlFunc.html#summary">
 InlFunc</A>
 </TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="anonymous.html#summary">
+anonymous</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
 </TABLE>
 <H1><A NAME="structsum">Structural Metrics Summary</A></H1>
 <UL>
@@ -298,6 +304,10 @@ Hugo_2</A>
 <TR>
 <TD><A HREF="InlFunc.html#structdet">
 InlFunc</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="anonymous.html#structdet">
+anonymous</A>
 </TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
 </TABLE>
 <H1><A NAME="structdet">Structural Metrics Detail</A></H1>
@@ -341,6 +351,17 @@ Hugo_2</A>
 <TD><A NAME="structdet"></A>
 <A HREF="structsum">
 InlFunc</A>
+</TD><TD WIDTH=50%>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+anonymous</A>
 </TD><TD WIDTH=50%>
 &nbsp;
 </TD>

@@ -72,13 +72,13 @@ Two variants on the information flow measure IF4 are also presented, one (IF4v) 
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=70%>Metric</TH><TH BGCOLOR="AQUA" WIDTH=10%>Tag</TH><TH BGCOLOR="AQUA" WIDTH=10%>Overall</TH><TH BGCOLOR="AQUA" WIDTH=10%>Per Module</TH></TR>
 <TR>
-<TD>Number of modules</TD><TD>NOM</TD><TD ALIGN=RIGHT>     2</TD><TD>&nbsp;</TD></TR>
+<TD>Number of modules</TD><TD>NOM</TD><TD ALIGN=RIGHT>     1</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD WIDTH=700%>Lines of Code</TD><TD WIDTH=120%>LOC</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT> 3.000</TD></TR>
+<TD WIDTH=700%>Lines of Code</TD><TD WIDTH=120%>LOC</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT> 6.000</TD></TR>
 <TR>
-<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT> 0.500</TD></TR>
+<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT> 1.000</TD></TR>
 <TR>
-<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT> 4.500</TD></TR>
+<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT> 9.000</TD></TR>
 <TR>
 <TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT>------</TD><TD>&nbsp;</TD></TR>
 <TR>
@@ -100,25 +100,12 @@ The label cell for each row in this table provides a link to the functions table
 <TR>
 <TH BGCOLOR="AQUA">Module Name</TH><TH BGCOLOR="AQUA" WIDTH=8%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=8%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=8%>COM</TH><TH BGCOLOR="AQUA" WIDTH=8%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=8%>M_C</TH></TR>
 <TR>
-<TD><A HREF="FILE.html#procdet">
-FILE</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
-<TR>
 <TD><A HREF="anonymous.html#procdet">
 anonymous</A>
 </TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 </TABLE>
 <H1><A NAME="procdet">Procedural Metrics Detail</A></H1>
 <TABLE BORDER WIDTH=100%>
-<TR>
-<TD WIDTH=50%><A NAME="procdet"></A>
-<A HREF="procsum">
-FILE</A>
-<BR>
-<BR>
-</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
-<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
-<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
 <TR>
 <TD WIDTH=50%><A NAME="procdet"></A>
 <A HREF="procsum">
@@ -151,10 +138,6 @@ The label cell for each row in this table provides a link to the module summary 
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=50%>Module Name</TH><TH BGCOLOR="AQUA" WIDTH=10%>WMC1</TH><TH BGCOLOR="AQUA" WIDTH=10%>WMCv</TH><TH BGCOLOR="AQUA" WIDTH=10%>DIT</TH><TH BGCOLOR="AQUA" WIDTH=10%>NOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>CBO</TH></TR>
 <TR>
-<TD><A HREF="FILE.html#summary">
-FILE</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
-<TR>
 <TD><A HREF="anonymous.html#summary">
 anonymous</A>
 </TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
@@ -181,10 +164,6 @@ The label cell for each row in this table provides a link to the relationships t
 </TR>
 <TH BGCOLOR="AQUA" WIDTH=7%>vis</TH><TH BGCOLOR="AQUA" WIDTH=7%>con</TH><TH BGCOLOR="AQUA" WIDTH=7%>inc</TH><TH BGCOLOR="AQUA" WIDTH=7%>vis</TH><TH BGCOLOR="AQUA" WIDTH=7%>con</TH><TH BGCOLOR="AQUA" WIDTH=7%>incl</TH><TH BGCOLOR="AQUA" WIDTH=7%>vis</TH><TH BGCOLOR="AQUA" WIDTH=7%>con</TH><TH BGCOLOR="AQUA" WIDTH=7%>inc</TH></TR>
 <TR>
-<TD><A HREF="FILE.html#structdet">
-FILE</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
-<TR>
 <TD><A HREF="anonymous.html#structdet">
 anonymous</A>
 </TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
@@ -193,17 +172,6 @@ anonymous</A>
 <TABLE BORDER WIDTH=100%>
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=20%>Module Name</TH><TH BGCOLOR="AQUA" WIDTH=40%>Clients</TH><TH BGCOLOR="AQUA" WIDTH=40%>Suppliers</TH></TR>
-<TR>
-<TD><A NAME="structdet"></A>
-<A HREF="structsum">
-FILE</A>
-</TD><TD WIDTH=50%>
-&nbsp;
-</TD>
-<TD WIDTH=50%>
-&nbsp;
-</TD>
-</TR>
 <TR>
 <TD><A NAME="structdet"></A>
 <A HREF="structsum">
