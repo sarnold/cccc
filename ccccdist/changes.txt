@@ -89,4 +89,11 @@ warnings with GCC 3.2.
 Added prn16 into list of tests which get executed and corrected reference
 output files.
 
+version 3.1.1
+Modified version numbering convention.
+Reworked build system for Win32 to use the free Microsoft Visual C++ Toolkit 2003.
+Reworked Win32 installer to create development environment.
+Reworked documentation.
+
+
 

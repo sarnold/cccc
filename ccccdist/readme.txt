@@ -1,11 +1,10 @@
-README.TXT for CCCC version 3.0
-===============================
+README.TXT for CCCC version 3.1.1
+=================================
 
 This is a new version of the program CCCC (C and C++ Code Counter).  This 
 program exists to analyze and report measurements on source code in C, C++
 and Java.  The languages Ada83 and Ada95, which were supported in previous
-versions are presently not supported, although support for these languages 
-may be restored at some time in the future if there is demonstrable demand.
+versions are presently not supported.
 The Internet site for CCCC development is: http://cccc.sourceforge.net 
 (hosting kindly donated by sourceforge.net to whom I am grateful).
 
@@ -14,7 +13,7 @@ POSIX-style platforms, but also buildable on the Win32 platform.
 Files to be analyzed are listed (typically on the command line, although 
 support does exist for the list of files to be read from standard input.   
 The program analyzes the files and generates a one or more reports in HTML 
-format on the content.
+or XML format on the content.  
 
 This distribution is intended to be a single package containing everything
 which is required to compile and install CCCC on either a POSIX or Win32 
@@ -33,25 +32,26 @@ number of subdirectories, with the following contents:
   provides integration between the command line CCCC program and the 
   Microsoft Visual Studio IDE (version 5.0 or 6.0).
 * A directory of minimal test cases for the command line CCCC tool.
-* Miscellaneous makefiles and Microsoft Visual Studio workspace and project
-  files to support building, testing and installing the software under 
-  POSIX and Win32.
+* Miscellaneous batch files, makefiles and Microsoft Visual Studio workspace 
+  and project files to support building, testing and installing the software 
+  under POSIX and Win32.
 
 The pccts directory contains software for which I am not the original 
 author.  The software has been placed in the public domain, with
 the expectation that appropriate credit will be given for use.  
 
-As of version 3.pre63, the recommended way of building the software is by
+Since version 3.pre63, the recommended way of building the software is by
 using the BAT and SH scripts in the top directory of the distribution as
 appropriate for your platform.  On Win32, the script build_w32vc.bat 
 builds the software with Microsoft Visual C++ version 5 or 6 (locations
 within the script may need to be modified according to which you have
 and whether it is installed at the default position in the filesystem).
-Thee is also a script to build the software using the Borland command
-line C++ compiler, although the version this builds presently crashes
-during the execution of the unit tests in the distribution (patches to
-fix this would be gratefully received).  On Linux and similar platforms
-the shell script build_posixgcc.sh should work. 
+On Linux and similar platforms the shell script build_posixgcc.sh should work. 
+
+As of the current release, version 3.1.1, the reference build tool for the
+Win32 platform is the freely distributed Microsoft Visual C++ Toolkit 2003.
+As this toolkit does not contain a 'make' style program the script 
+build_w32vct2003.bat has been written which automates all parts of the build.
 
 If you wish to try the Visual Studio integration, there are some additional
 steps to perform.  Within Visual Studio, select menu option 
@@ -67,7 +67,7 @@ containing 8 strings, of which the first should read
 "C:\Program Files\CCCC\CCCC.EXE" and the next should contain some path to 
 Internet Explorer (IEXPLORE.EXE).  Verify that the path to IE is valid 
 (or substitute a path to Netscape, Mozilla, Opera or any other HTML browser 
-according to your tastes).
+according to your tastes).  
 
 The add-in can now be used to run CCCC on either the current file (the "C4" 
 icon with a "f" subscript), all files in the current active project ("C4"
@@ -87,35 +87,37 @@ with projects in locations with spaces in the path, and I have also found
 that the logic I am using to deduce the home directories of .dsp and .dsw 
 files is not always correct.
 
+The add-in requires use of MFC libraries which are not provided as a part 
+of Microsoft Visual C++ Toolkit 2003, hence it is not built by the 
+build_w32vct2003.bat script, however the add-in should still be buildable 
+using Visual C++ or Visual Studio 5.0 or 6.0 (and is any case 
+useless to developers who don't have and IDE of this kind).  
+
 As well as the addin, the current version includes a directory which contains
 a script to build a wizard-style installer for the program under Win32.
-Binary releases of the software made using this directory may be released
-in the near future.  The binary release provides Windows start menu access
-to a DOS prompt set up with an environment to enable CCCC to be run 
-easily, and also provides a shortcut to the HTML documentation. The 
-installer can be built from the supplied scripts using the splendid free
-Inno Setup and Extensions packages by Martin Laan (Inno Setup) and Jordan
+The binary release provides Windows start menu access to a DOS prompt 
+set up with an environment to enable CCCC to be run  easily, and also 
+provides a shortcut to the HTML documentation. The  installer can be 
+built from the supplied scripts using the splendid free Inno Setup 
+and Extensions packages by Martijn Laan (Inno Setup) and Jordan
 Russell (extensions), available from http://www.jrsoftware.org.
 
 Previous versions of CCCC have been released like PCCTS into the public
 domain with no restrictions, other than the pious hope that should anyone
-base a derivative work on it I will be given due credit.  I have considered
-applying the GNU Public License, not because of any strong adherence to the
-GPL philosophy so much as because GPL is something of a standard for
-free software and it may ease the work of software collators for people to
-adhere to the standard.  I would be interested in hearing from such people
-whether GPL would or would not make CCCC a more likely candidate for 
-inclusion in distributions.
+base a derivative work on it I will be given due credit.  The current version 
+is released under the GNU Public License.
 
 CCCC was originally developed as a proof-of-concept tool for some ideas 
 relating to software metrics which I was investigating as an academic 
 research project.  I have now completed the project and been awarded 
-my PhD.  I am still getting a steady stream of enquiries about CCCC, 
-and I am keen to put out a high quality reference version of the software
-as a way of thanking the people who have assisted me by participating in
-the various stages of my research.  The research project is described at
-http://www.chs.ecu.edu.au/~tlittlef.  This page includes a link to a 
-downloadable PDF version of the PhD thesis.
+my PhD.  
+
+With this release, I am choosing to declare the project in a dormant 
+state.  I have no plans to do further releases, either to add new features
+or to correct existing defects. I am happy to provide advice to users of 
+CCCC via email, and I encourage all users to exercise the rights granted 
+them under the GPL to tinker with the code if this helps the software 
+to meet their needs better.
 
 I am grateful to a number of people for assistance on this project, including
 Terence Parr and his co-workers, and Tom Moog for the development and ongoing
@@ -123,15 +125,14 @@ maintenance of the excellent PCCTS tool; my academic supervisor, Dr Thomas
 O'Neill; a number of developers who have contributed source patches; and
 many people who have mailed me with constructive suggestions or merely to 
 confirm that they were using the tool. Feedback on the value or otherwise 
-of CCCC is always welcome, and will help me to decide how much effort I put 
-into maintaining it over the coming months and years.  
+of CCCC will always be welcome.
 
 
 Tim Littlefair (tim_littlefair@hotmail.com)
-updated August 2003
+updated January 2005
 --------------
 
-This and future distributions of CCCC and related tools should be
+This and past distributions of CCCC and related tools should be
 available for the forseeable future from http://cccc.sourceforge.net
 
 
