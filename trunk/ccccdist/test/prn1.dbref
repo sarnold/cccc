@@ -1,5 +1,4 @@
-CCCC_Module@STATIC@@
-CCCC_Module@@@
+CCCC_Module@anonymous@@
 CCCC_Module@char@builtin@
 CCCC_ModExt@char@builtin@<nofile>@0@builtin definition@d?????@@0@d@
 CCCC_Module@double@builtin@
@@ -10,7 +9,6 @@ CCCC_Module@int@builtin@
 CCCC_ModExt@int@builtin@<nofile>@0@builtin definition@d?????@@0@d@
 CCCC_Module@long@builtin@
 CCCC_ModExt@long@builtin@<nofile>@0@builtin definition@d?????@@0@d@
-CCCC_Module@ssim_func_port_handle@@
 CCCC_Module@void@builtin@
 CCCC_ModExt@void@builtin@<nofile>@0@builtin definition@d?????@@0@d@
 CCCC_Member@anonymous@yadda@@(STATIC *,ssim_func_port_handle)@

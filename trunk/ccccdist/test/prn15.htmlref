@@ -72,13 +72,13 @@ Two variants on the information flow measure IF4 are also presented, one (IF4v) 
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=70%>Metric</TH><TH BGCOLOR="AQUA" WIDTH=10%>Tag</TH><TH BGCOLOR="AQUA" WIDTH=10%>Overall</TH><TH BGCOLOR="AQUA" WIDTH=10%>Per Module</TH></TR>
 <TR>
-<TD>Number of modules</TD><TD>NOM</TD><TD ALIGN=RIGHT>     3</TD><TD>&nbsp;</TD></TR>
+<TD>Number of modules</TD><TD>NOM</TD><TD ALIGN=RIGHT>     2</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD WIDTH=700%>Lines of Code</TD><TD WIDTH=120%>LOC</TD><TD ALIGN=RIGHT>    64</TD><TD ALIGN=RIGHT>21.333</TD></TR>
+<TD WIDTH=700%>Lines of Code</TD><TD WIDTH=120%>LOC</TD><TD ALIGN=RIGHT>    64</TD><TD ALIGN=RIGHT>32.000</TD></TR>
 <TR>
-<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>    42</TD><TD ALIGN=RIGHT>14.000</TD></TR>
+<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>    42</TD><TD ALIGN=RIGHT>21.000</TD></TR>
 <TR>
-<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT> 1.667</TD></TR>
+<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT> 2.500</TD></TR>
 <TR>
 <TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>12.800</EM></TD><TD>&nbsp;</TD></TR>
 <TR>
@@ -107,10 +107,6 @@ Image</A>
 <TD><A HREF="Prn15.html#procdet">
 Prn15</A>
 </TD><TD ALIGN=RIGHT>    64</TD><TD ALIGN=RIGHT>    42</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>12.800</EM></TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM> 8.400</EM></TD></TR>
-<TR>
-<TD><A HREF="anonymous.html#procdet">
-anonymous</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 </TABLE>
 <H1><A NAME="procdet">Procedural Metrics Detail</A></H1>
 <TABLE BORDER WIDTH=100%>
@@ -139,15 +135,6 @@ definition &nbsp;
 <BR>
 </TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    61</EM></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>    42</STRONG></TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
-<TR>
-<TD WIDTH=50%><A NAME="procdet"></A>
-<A HREF="procsum">
-anonymous</A>
-<BR>
-<BR>
-</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
-<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
-<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
 </TABLE>
 <H1><A NAME="oodesign">Object Oriented Design</A></H1>
 <UL>
@@ -173,10 +160,6 @@ Image</A>
 <TD><A HREF="Prn15.html#summary">
 Prn15</A>
 </TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD></TR>
-<TR>
-<TD><A HREF="anonymous.html#summary">
-anonymous</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
 </TABLE>
 <H1><A NAME="structsum">Structural Metrics Summary</A></H1>
 <UL>
@@ -207,10 +190,6 @@ Image</A>
 <TD><A HREF="Prn15.html#structdet">
 Prn15</A>
 </TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
-<TR>
-<TD><A HREF="anonymous.html#structdet">
-anonymous</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
 </TABLE>
 <H1><A NAME="structdet">Structural Metrics Detail</A></H1>
 <TABLE BORDER WIDTH=100%>
@@ -245,17 +224,6 @@ return type &nbsp;
 <CODE><A HREF="cccc_src.html#prn15.java:        11">prn15.java:11</A></CODE><BR>
 <BR>
 <BR>
-&nbsp;
-</TD>
-</TR>
-<TR>
-<TD><A NAME="structdet"></A>
-<A HREF="structsum">
-anonymous</A>
-</TD><TD WIDTH=50%>
-&nbsp;
-</TD>
-<TD WIDTH=50%>
 &nbsp;
 </TD>
 </TR>

@@ -72,23 +72,23 @@ Two variants on the information flow measure IF4 are also presented, one (IF4v) 
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=70%>Metric</TH><TH BGCOLOR="AQUA" WIDTH=10%>Tag</TH><TH BGCOLOR="AQUA" WIDTH=10%>Overall</TH><TH BGCOLOR="AQUA" WIDTH=10%>Per Module</TH></TR>
 <TR>
-<TD>Number of modules</TD><TD>NOM</TD><TD ALIGN=RIGHT>     2</TD><TD>&nbsp;</TD></TR>
+<TD>Number of modules</TD><TD>NOM</TD><TD ALIGN=RIGHT>     0</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD WIDTH=700%>Lines of Code</TD><TD WIDTH=120%>LOC</TD><TD ALIGN=RIGHT>    16</TD><TD ALIGN=RIGHT> 8.000</TD></TR>
+<TD WIDTH=700%>Lines of Code</TD><TD WIDTH=120%>LOC</TD><TD ALIGN=RIGHT>    16</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR>
-<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT> 0.000</TD></TR>
+<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>******</TD></TR>
 <TR>
-<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT> 0.000</TD></TR>
+<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>******</TD></TR>
 <TR>
 <TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT>------</TD><TD>&nbsp;</TD></TR>
 <TR>
 <TD>MVG/COM</TD><TD>M_C</TD><TD ALIGN=RIGHT>------</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Information Flow measure ( &nbsp;inclusive&nbsp;)</TD><TD>IF4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>   0.000</TD></TR>
+<TD>Information Flow measure ( &nbsp;inclusive&nbsp;)</TD><TD>IF4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>********</TD></TR>
 <TR>
-<TD>Information Flow measure ( &nbsp;visible&nbsp;)</TD><TD>IF4v</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>   0.000</TD></TR>
+<TD>Information Flow measure ( &nbsp;visible&nbsp;)</TD><TD>IF4v</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>********</TD></TR>
 <TR>
-<TD>Information Flow measure ( &nbsp;concrete&nbsp;)</TD><TD>IF4c</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>   0.000</TD></TR>
+<TD>Information Flow measure ( &nbsp;concrete&nbsp;)</TD><TD>IF4c</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>********</TD></TR>
 <TR>
 <TD>Lines of Code rejected by parser</TD><TD>REJ</TD><TD ALIGN=RIGHT>    16</TD><TD>&nbsp;</TD></TR>
 </TABLE>
@@ -99,35 +99,9 @@ The label cell for each row in this table provides a link to the functions table
 <TABLE BORDER WIDTH=100%>
 <TR>
 <TH BGCOLOR="AQUA">Module Name</TH><TH BGCOLOR="AQUA" WIDTH=8%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=8%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=8%>COM</TH><TH BGCOLOR="AQUA" WIDTH=8%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=8%>M_C</TH></TR>
-<TR>
-<TD><A HREF="anonymous.html#procdet">
-anonymous</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
-<TR>
-<TD><A HREF="int64.html#procdet">
-int64</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 </TABLE>
 <H1><A NAME="procdet">Procedural Metrics Detail</A></H1>
 <TABLE BORDER WIDTH=100%>
-<TR>
-<TD WIDTH=50%><A NAME="procdet"></A>
-<A HREF="procsum">
-anonymous</A>
-<BR>
-<BR>
-</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
-<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
-<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
-<TR>
-<TD WIDTH=50%><A NAME="procdet"></A>
-<A HREF="procsum">
-int64</A>
-<BR>
-<BR>
-</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
-<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
-<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
 </TABLE>
 <H1><A NAME="oodesign">Object Oriented Design</A></H1>
 <UL>
@@ -145,14 +119,6 @@ The label cell for each row in this table provides a link to the module summary 
 <TABLE BORDER WIDTH=100%>
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=50%>Module Name</TH><TH BGCOLOR="AQUA" WIDTH=10%>WMC1</TH><TH BGCOLOR="AQUA" WIDTH=10%>WMCv</TH><TH BGCOLOR="AQUA" WIDTH=10%>DIT</TH><TH BGCOLOR="AQUA" WIDTH=10%>NOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>CBO</TH></TR>
-<TR>
-<TD><A HREF="anonymous.html#summary">
-anonymous</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
-<TR>
-<TD><A HREF="int64.html#summary">
-int64</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
 </TABLE>
 <H1><A NAME="structsum">Structural Metrics Summary</A></H1>
 <UL>
@@ -175,41 +141,11 @@ The label cell for each row in this table provides a link to the relationships t
 <TH BGCOLOR=AQUA COLSPAN=3>IF4</TH>
 </TR>
 <TH BGCOLOR="AQUA" WIDTH=7%>vis</TH><TH BGCOLOR="AQUA" WIDTH=7%>con</TH><TH BGCOLOR="AQUA" WIDTH=7%>inc</TH><TH BGCOLOR="AQUA" WIDTH=7%>vis</TH><TH BGCOLOR="AQUA" WIDTH=7%>con</TH><TH BGCOLOR="AQUA" WIDTH=7%>incl</TH><TH BGCOLOR="AQUA" WIDTH=7%>vis</TH><TH BGCOLOR="AQUA" WIDTH=7%>con</TH><TH BGCOLOR="AQUA" WIDTH=7%>inc</TH></TR>
-<TR>
-<TD><A HREF="anonymous.html#structdet">
-anonymous</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
-<TR>
-<TD><A HREF="int64.html#structdet">
-int64</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
 </TABLE>
 <H1><A NAME="structdet">Structural Metrics Detail</A></H1>
 <TABLE BORDER WIDTH=100%>
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=20%>Module Name</TH><TH BGCOLOR="AQUA" WIDTH=40%>Clients</TH><TH BGCOLOR="AQUA" WIDTH=40%>Suppliers</TH></TR>
-<TR>
-<TD><A NAME="structdet"></A>
-<A HREF="structsum">
-anonymous</A>
-</TD><TD WIDTH=50%>
-&nbsp;
-</TD>
-<TD WIDTH=50%>
-&nbsp;
-</TD>
-</TR>
-<TR>
-<TD><A NAME="structdet"></A>
-<A HREF="structsum">
-int64</A>
-</TD><TD WIDTH=50%>
-&nbsp;
-</TD>
-<TD WIDTH=50%>
-&nbsp;
-</TD>
-</TR>
 </TABLE>
 <H1><A NAME="other">Other Extents</A></H1>
 <TABLE BORDER WIDTH=100%>

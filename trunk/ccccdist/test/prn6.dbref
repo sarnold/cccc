@@ -1,4 +1,3 @@
-CCCC_Module@@@
 CCCC_Module@char@builtin@
 CCCC_ModExt@char@builtin@<nofile>@0@builtin definition@d?????@@0@d@
 CCCC_Module@double@builtin@
@@ -7,7 +6,6 @@ CCCC_Module@float@builtin@
 CCCC_ModExt@float@builtin@<nofile>@0@builtin definition@d?????@@0@d@
 CCCC_Module@int@builtin@
 CCCC_ModExt@int@builtin@<nofile>@0@builtin definition@d?????@@0@d@
-CCCC_Module@int64@@
 CCCC_Module@long@builtin@
 CCCC_ModExt@long@builtin@<nofile>@0@builtin definition@d?????@@0@d@
 CCCC_Module@void@builtin@

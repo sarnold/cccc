@@ -72,13 +72,13 @@ Two variants on the information flow measure IF4 are also presented, one (IF4v) 
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=70%>Metric</TH><TH BGCOLOR="AQUA" WIDTH=10%>Tag</TH><TH BGCOLOR="AQUA" WIDTH=10%>Overall</TH><TH BGCOLOR="AQUA" WIDTH=10%>Per Module</TH></TR>
 <TR>
-<TD>Number of modules</TD><TD>NOM</TD><TD ALIGN=RIGHT>     2</TD><TD>&nbsp;</TD></TR>
+<TD>Number of modules</TD><TD>NOM</TD><TD ALIGN=RIGHT>     1</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD WIDTH=700%>Lines of Code</TD><TD WIDTH=120%>LOC</TD><TD ALIGN=RIGHT>     7</TD><TD ALIGN=RIGHT> 3.500</TD></TR>
+<TD WIDTH=700%>Lines of Code</TD><TD WIDTH=120%>LOC</TD><TD ALIGN=RIGHT>     7</TD><TD ALIGN=RIGHT> 7.000</TD></TR>
 <TR>
 <TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT> 0.000</TD></TR>
 <TR>
-<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT> 2.500</TD></TR>
+<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT> 5.000</TD></TR>
 <TR>
 <TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT>------</TD><TD>&nbsp;</TD></TR>
 <TR>
@@ -103,10 +103,6 @@ The label cell for each row in this table provides a link to the functions table
 <TD><A HREF="A.html#procdet">
 A</A>
 </TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
-<TR>
-<TD><A HREF="anonymous.html#procdet">
-anonymous</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 </TABLE>
 <H1><A NAME="procdet">Procedural Metrics Detail</A></H1>
 <TABLE BORDER WIDTH=100%>
@@ -117,15 +113,6 @@ A</A>
 <BR>
 definition &nbsp;
 <CODE><A HREF="cccc_src.html#prn10.cc:        10">prn10.cc:10</A></CODE><BR>
-<BR>
-</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
-<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
-<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
-<TR>
-<TD WIDTH=50%><A NAME="procdet"></A>
-<A HREF="procsum">
-anonymous</A>
-<BR>
 <BR>
 </TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
 <TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
@@ -150,10 +137,6 @@ The label cell for each row in this table provides a link to the module summary 
 <TR>
 <TD><A HREF="A.html#summary">
 A</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
-<TR>
-<TD><A HREF="anonymous.html#summary">
-anonymous</A>
 </TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
 </TABLE>
 <H1><A NAME="structsum">Structural Metrics Summary</A></H1>
@@ -181,10 +164,6 @@ The label cell for each row in this table provides a link to the relationships t
 <TD><A HREF="A.html#structdet">
 A</A>
 </TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
-<TR>
-<TD><A HREF="anonymous.html#structdet">
-anonymous</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
 </TABLE>
 <H1><A NAME="structdet">Structural Metrics Detail</A></H1>
 <TABLE BORDER WIDTH=100%>
@@ -194,17 +173,6 @@ anonymous</A>
 <TD><A NAME="structdet"></A>
 <A HREF="structsum">
 A</A>
-</TD><TD WIDTH=50%>
-&nbsp;
-</TD>
-<TD WIDTH=50%>
-&nbsp;
-</TD>
-</TR>
-<TR>
-<TD><A NAME="structdet"></A>
-<A HREF="structsum">
-anonymous</A>
 </TD><TD WIDTH=50%>
 &nbsp;
 </TD>
