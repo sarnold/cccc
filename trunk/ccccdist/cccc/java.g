@@ -1413,6 +1413,7 @@ newArrayDeclarator
 constant
         :       NUM_INT1
         |       NUM_INT1A
+	| 	NUM_INT1B
 	|	NUM_INT2
 	|	NUM_INT3
 	|	NUM_INT4
