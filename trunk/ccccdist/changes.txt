@@ -83,4 +83,10 @@ case, however users should be aware that this fix changes CCCC's opinion
 on what is a module to exclude the names of types which only appear in
 parameter lists.
 
+version 3.pre84
+Recoded use of strstreams to use stringstreams instead and eliminate 
+warnings with GCC 3.2.
+Added prn16 into list of tests which get executed and corrected reference
+output files.
+
 

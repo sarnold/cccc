@@ -25,15 +25,15 @@
 #include <string>
 using std::string;
 #include <iostream>
-#include <strstream>
+#include <sstream>
 #include <fstream>
 using std::ostream;
 using std::istream;
 using std::ifstream;
 using std::ofstream;
-using std::ostrstream;
-using std::istrstream;
-using std::strstream;
+using std::istringstream;
+using std::ostringstream;
+using std::stringstream;
 using std::endl;
 using std::cout;
 using std::cerr;
@@ -61,34 +61,13 @@ extern char *skip_identifiers[SKIP_IDENTIFIERS_ARRAY_SIZE];
 #include "DLGLexer.h"
 #endif
 
-// GNU C++ has a bug in the constructor which builds an ostrstream on top of a
-// preallocated buffer, while dynamic strstreams work correctly
-// On DEC C++ for OSF, the preallocated version works, but a dynamic strstream
-// can only be inserted onto once, as it does not flex if more is added after
-// the first operation 
-
-// the use of different classes implies a difference in the finalisation needs:
-// the buffer of the dynamic stream will not be released unless a freeze(0) 
-// call is issued before the stream object goes out of scope, while this method
-// is not defined for the preallocated version
- 
-#ifdef __GNUG__
-
-#define MAKE_STRSTREAM(X)     strstream X;
+// These macros were used to cover differences between the way the
+// old strstream classes were used in Win32 and GNU builds.
+// The differences are no longer necessary.
+#define MAKE_STRSTREAM(X)     stringstream X;
 #define CONVERT_STRSTREAM(X)  (X)
-#define RELEASE_STRSTREAM(X)  X.freeze(0);
+#define RELEASE_STRSTREAM(X)  
 
-#else
-		 
-#define STR_BUFSIZE 1024
-
-#define MAKE_STRSTREAM(X) \
-char auto_buf[STR_BUFSIZE]; \
-ostrstream X(auto_buf,STR_BUFSIZE, ios::trunc); 
-#define CONVERT_STRSTREAM(X)  istrstream(X.str(),strlen(X.str()))
-#define RELEASE_STRSTREAM(X) /* do nothing at all */
-
-#endif // __GNUG__
 
 // The -gd option generates uncompilable code with a missing 
 // variable called zzTracePrevRuleName if the generated 
