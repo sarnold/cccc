@@ -3,7 +3,7 @@
 
 [Setup]
 AppName=C and C++ Code Counter
-AppVerName=CCCC 3.pre56 for Win32
+AppVerName=CCCC 3pre58 for Win32
 AppPublisher=Tim Littlefair
 AppPublisherURL=http://cccc.sourceforge.net
 AppSupportURL=http://cccc.sourceforge.net
@@ -11,7 +11,7 @@ AppUpdatesURL=http://cccc.sourceforge.net
 DefaultDirName={pf}\CCCC
 DefaultGroupName=C and C++ Code Counter
 AlwaysCreateUninstallIcon=yes
-OutputBaseFilename=CCCC_3pre56_SETUP
+OutputBaseFilename=CCCC_3pre58_SETUP
 ; uncomment the following line if you want your installation to run on NT 3.51 too.
 ; MinVersion=4,3.51
 
@@ -23,7 +23,7 @@ Name: "quicklaunchicon"; Description: "Create a &Quick Launch icon"; GroupDescri
 Source: "..\w32installer\ccccwrap.pif"; DestDir: "{app}"; CopyMode: alwaysoverwrite
 Source: "..\w32installer\ccccwrap.bat"; DestDir: "{app}"; CopyMode: alwaysoverwrite
 Source: "..\w32installer\ccccwrap.msg"; DestDir: "{app}"; CopyMode: alwaysoverwrite
-Source: "..\w32installer\make_ccccwrap.bat"; DestDir: "{app}"; CopyMode: alwaysoverwrite
+Source: "..\w32installer\make_cccc_env.bat"; DestDir: "{app}"; CopyMode: alwaysoverwrite
 Source: "..\cccc\cccc.exe"; DestDir: "{app}"; CopyMode: alwaysoverwrite
 Source: "..\cccc\CCCC User Guide.html"; DestDir: "{app}"; CopyMode: alwaysoverwrite
 Source: "..\readme.txt"; DestDir: "{app}"; CopyMode: alwaysoverwrite
@@ -38,6 +38,6 @@ Name: "{userdesktop}\CCCC"; Filename: "{app}\ccccwrap.pif"; MinVersion: 4,4; Tas
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\CCCC"; Filename: "{app}\ccccwrap.pif"; IconIndex: 2; MinVersion: 4,4; Tasks: quicklaunchicon
 
 [Run]
-Filename: "{app}\make_ccccwrap.bat"; Parameters: """{app}"" ""C:\"""; StatusMsg: "Creating environment script"; Flags: shellexec
+Filename: "{app}\make_cccc_env.bat"; Parameters: """{app}"" ""C:\"""; StatusMsg: "Creating environment script"; Flags: shellexec
 Filename: "{app}\ccccwrap.pif"; Description: "Launch CCCC"; Flags: shellexec postinstall skipifsilent
 
