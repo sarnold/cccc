@@ -41,47 +41,17 @@ The pccts directory contains software for which I am not the original
 author.  The software has been placed in the public domain, with
 the expectation that appropriate credit will be given for use.  
 
-The facilities for building, testing and installing the programs in this 
-distribution are presently somewhat crude and less consistent than I
-would like in the long term.  I have tried to make the two platform families
-(i.e. POSIX and Win32) use the same tools as far as possible, and where this
-is not possible to use differing tools which operate in similar ways.  Hence
-the Win32 build does not use a slick InstallShield-type installation 
-interface, but a rather clunky script implemented in a makefile which installs
-things to a fixed directory.  The primary platform is the POSIX one, and I
-have tried to maintain source and other text files as Unix-style text, but
-I haven't been religious about this, so there may be some stray ctrl-M's in 
-the code.  The only place this seems to make a difference in the interpretation
-of makefiles under the Unix platform, where DOS line termination causes
-ifeq lines etc. to be misinterpreted.
-
-Under POSIX, the recommended way of operating is to simply run 'make' in
-the top level directory of the distribution.  This should first build the
-PCCTS binaries, then the CCCC program itself, then run a sequence of tests.
-Providing the tests pass, the makefile should then attempt to install the
-cccc binary in /usr/local/bin.  I have assumed that this will require root
-privilege, so the top level makefile contains an 'su' command which should
-cause a request for the root password unless the build/test/install process
-is already running as root.  Please feel free to customize this process as
-you see fit, especially if you are attempting to install CCCC in a location
-convenient to you on a machine for which you do not have root privileges.
-
-Under Win32, there is a Microsoft Visual Studio workspace ccccdist.dsw in the 
-top level directory of the distribution.  This will also build the PCCTS 
-binaries, then cccc.exe.  It will then run some tests on cccc.exe.  Providing
-the testing has satisfactory results, the CcccDevStudioAddIn project will be
-built, and the system will attempt to install the binaries cccc.exe and 
-CcccDevStudioAddIn.dll to the directory C:\Program Files\CCCC.  The makefiles 
-used to build cccc.exe and to control the testing and installation share 
-build rules with those used to build on POSIX platforms (CcccDevStudioAddIn 
-is a Win32 COM project, is not compiled under POSIX, and hence uses a 'normal' 
-Visual Studio project).
-
-The DevStudio .dsw and .dsp files were all developed under version 5.0, but 
-should be OK to load into a running instance of version 6.0.  I do not 
-recommend starting DevStudio on these files by activating (double-clicking) 
-them in Explorer, as on the version 6.0 development machine I use this tends 
-to lead to DevStudio crashing as it starts up.
+As of version 3.pre54, the recommended way of building the software is by
+using the BAT and SH scripts in the top directory of the distribution as
+appropriate for your platform.  On Win32, the script build_w32vc.bat 
+builds the software with Microsoft Visual C++ version 5 or 6 (locations
+within the script may need to be modified according to which you have
+and whether it is installed at the default position in the filesystem).
+Thee is also a script to build the software using the Borland command
+line C++ compiler, although the version this builds presently crashes
+during the execution of the unit tests in the distribution (patches to
+fix this would be gratefully received).  On Linux and similar platforms
+the shell script build_posixgcc.sh should work. 
 
 If you wish to try the Visual Studio integration, there are some additional
 steps to perform.  Within Visual Studio, select menu option 
@@ -128,13 +98,14 @@ whether GPL would or would not make CCCC a more likely candidate for
 inclusion in distributions.
 
 CCCC was originally developed as a proof-of-concept tool for some ideas 
-relating to software metrics which I was investigating as an MSc project.  
-My candidature was upgraded to PhD level, and I am presently awaiting the
-examiners comments on my thesis. The research project is described on my 
-academic home page at http://www.fste.ac.cowan.edu.au/~tlittlef.  I plan 
-to develop and distribute bug fixes and enhancements to CCCC, but due to 
-family, work and academic commitments I am unable to commit to a specific 
-schedule for these activities beyond the current release.  
+relating to software metrics which I was investigating as an academic 
+research project.  I have now completed the project and been awarded 
+my PhD.  I am still getting a steady stream of enquiries about CCCC, 
+and I am keen to put out a high quality reference version of the software
+as a way of thanking the people who have assisted me by participating in
+the various stages of my research.  The research project is described at
+http://www-chs.ecu.edu.au/~tlittlef.  This page includes a link to a 
+downloadable PDF version of the PhD thesis.
 
 I am grateful to a number of people for assistance on this project, including
 Terence Parr and his co-workers, and Tom Moog for the development and ongoing
@@ -147,7 +118,7 @@ into maintaining it over the coming months and years.
 
 
 Tim Littlefair (tim_littlefair@hotmail.com)
-updated April 2001
+updated November 2001
 --------------
 
 This and future distributions of CCCC and related tools should be
