@@ -7,6 +7,7 @@ MV=mv
 ECHO=echo
 DIFF=diff
 PATHSEP=/
+CCCC=../cccc/cccc
 
 # include the file containing the platform independent rules.
 include rules.mak
