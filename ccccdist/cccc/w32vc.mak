@@ -24,6 +24,5 @@ CCCC_EXE=cccc.exe
 COPY=copy
 RM=del
 
-
 !INCLUDE rules.mak
 

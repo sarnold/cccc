@@ -1,5 +1,5 @@
 # Microsoft Developer Studio Project File - Name="test" - Package Owner=<4>
-# Microsoft Developer Studio Generated Build File, Format Version 6.00
+# Microsoft Developer Studio Generated Build File, Format Version 5.00
 # ** DO NOT EDIT **
 
 # TARGTYPE "Win32 (x86) External Target" 0x0106
@@ -22,7 +22,6 @@ CFG=test - Win32 Debug
 !MESSAGE 
 
 # Begin Project
-# PROP AllowPerConfigDependencies 0
 # PROP Scc_ProjName ""
 # PROP Scc_LocalPath ""
 
@@ -39,8 +38,8 @@ CFG=test - Win32 Debug
 # PROP Use_Debug_Libraries 0
 # PROP Output_Dir "Release"
 # PROP Intermediate_Dir "Release"
-# PROP Cmd_Line "..\w32bin\gmake -f test.mak CONF=w32vc"
-# PROP Rebuild_Opt ""
+# PROP Cmd_Line "nmake -f win32_nmake.mak"
+# PROP Rebuild_Opt "/a"
 # PROP Bsc_Name ""
 # PROP Target_Dir ""
 
@@ -57,7 +56,7 @@ CFG=test - Win32 Debug
 # PROP Use_Debug_Libraries 1
 # PROP Output_Dir "Debug"
 # PROP Intermediate_Dir "Debug"
-# PROP Cmd_Line "..\w32bin\gmake -f test.mak CONF=w32vc"
+# PROP Cmd_Line "nmake -f win32_nmake.mak"
 # PROP Rebuild_Opt "/a"
 # PROP Target_File "test.exe"
 # PROP Bsc_Name "test.bsc"
@@ -76,70 +75,29 @@ CFG=test - Win32 Debug
 
 !ENDIF 
 
+# Begin Group "makefiles"
+
+# PROP Default_Filter "*.mak"
 # Begin Source File
 
-SOURCE=.\prn1.cc
+SOURCE=.\diff.bat
 # End Source File
 # Begin Source File
 
-SOURCE=.\prn1.dbref
+SOURCE=.\posix.mak
 # End Source File
 # Begin Source File
 
-SOURCE=.\prn1.htmlref
+SOURCE=.\rules.mak
 # End Source File
 # Begin Source File
 
-SOURCE=.\prn2.cc
+SOURCE=.\win32_nmake.mak
 # End Source File
-# Begin Source File
+# End Group
+# Begin Group "test1"
 
-SOURCE=.\prn2.dbref
-# End Source File
-# Begin Source File
-
-SOURCE=.\prn2.htmlref
-# End Source File
-# Begin Source File
-
-SOURCE=.\prn3.cc
-# End Source File
-# Begin Source File
-
-SOURCE=.\prn3.htmlref
-# End Source File
-# Begin Source File
-
-SOURCE=.\prn4.cc
-# End Source File
-# Begin Source File
-
-SOURCE=.\prn4.htmlref
-# End Source File
-# Begin Source File
-
-SOURCE=.\prn5.cc
-# End Source File
-# Begin Source File
-
-SOURCE=.\prn5.htmlref
-# End Source File
-# Begin Source File
-
-SOURCE=.\prn6.cc
-# End Source File
-# Begin Source File
-
-SOURCE=.\prn6.dbref
-# End Source File
-# Begin Source File
-
-SOURCE=.\prn6.htmlref
-# End Source File
-# Begin Source File
-
-SOURCE=.\test.mak
-# End Source File
+# PROP Default_Filter ""
 # Begin Source File
 
 SOURCE=.\test1.cc
@@ -152,6 +110,10 @@ SOURCE=.\test1.dbref
 
 SOURCE=.\test1.htmlref
 # End Source File
+# End Group
+# Begin Group "test2"
+
+# PROP Default_Filter ""
 # Begin Source File
 
 SOURCE=.\test2.cc
@@ -164,6 +126,10 @@ SOURCE=.\test2.dbref
 
 SOURCE=.\test2.htmlref
 # End Source File
+# End Group
+# Begin Group "test3"
+
+# PROP Default_Filter ""
 # Begin Source File
 
 SOURCE=.\test3.cc
@@ -176,5 +142,134 @@ SOURCE=.\test3.dbref
 
 SOURCE=.\test3.htmlref
 # End Source File
+# End Group
+# Begin Group "test4"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\test4.cc
+# End Source File
+# Begin Source File
+
+SOURCE=.\test4.dbref
+# End Source File
+# Begin Source File
+
+SOURCE=.\test4.htmlref
+# End Source File
+# End Group
+# Begin Group "prn1"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\prn1.cc
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn1.dbref
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn1.htmlref
+# End Source File
+# End Group
+# Begin Group "prn2"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\prn2.cc
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn2.dbref
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn2.htmlref
+# End Source File
+# End Group
+# Begin Group "prn3"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\prn3.cc
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn3.dbref
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn3.htmlref
+# End Source File
+# End Group
+# Begin Group "prn4"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\prn4.cc
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn4.dbref
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn4.htmlref
+# End Source File
+# End Group
+# Begin Group "prn5"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\prn5.cc
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn5.dbref
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn5.htmlref
+# End Source File
+# End Group
+# Begin Group "prn6"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\prn6.cc
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn6.dbref
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn6.htmlref
+# End Source File
+# End Group
+# Begin Group "prn7"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\prn7.c
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn7.dbref
+# End Source File
+# Begin Source File
+
+SOURCE=.\prn7.htmlref
+# End Source File
+# End Group
 # End Target
 # End Project

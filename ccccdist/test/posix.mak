@@ -6,6 +6,7 @@ RMDIR=rm -rf
 MV=mv
 ECHO=echo
 DIFF=diff
+PATHSEP=/
 
 # include the file containing the platform independent rules.
 include rules.mak
