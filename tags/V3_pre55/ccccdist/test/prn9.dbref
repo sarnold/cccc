@@ -1,0 +1,23 @@
+CCCC_Module@A@class@
+CCCC_ModExt@A@class@prn9.cc@7@definition@????2@LOC:3 COM:5 MVG:0@2@d@
+CCCC_Module@B@class@
+CCCC_ModExt@B@class@prn9.cc@11@definition@????0@LOC:3 COM:0 MVG:0@0@d@
+CCCC_Module@C@class@
+CCCC_ModExt@C@class@prn9.cc@15@definition@????0@LOC:3 COM:0 MVG:0@0@d@
+CCCC_Module@char@builtin@
+CCCC_ModExt@char@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@double@builtin@
+CCCC_ModExt@double@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@float@builtin@
+CCCC_ModExt@float@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@int@builtin@
+CCCC_ModExt@int@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@long@builtin@
+CCCC_ModExt@long@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@void@builtin@
+CCCC_ModExt@void@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_UseRel@A@B@
+CCCC_UseExt@A@B@prn9.cc@11@inheritance@????0@*@0@I@
+CCCC_UseRel@A@C@
+CCCC_UseExt@A@C@prn9.cc@15@inheritance@????0@*@0@I@
+CCCC_RejExt@prn9.cc@1@<file scope items>@????0@LOC:0 COM:0 MVG:0@0@r@
