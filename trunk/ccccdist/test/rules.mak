@@ -5,14 +5,17 @@
 # Before this file is included the following variables need to be
 # defined:
 # CP=<command to copy a file>
-# RM=rm -f
-# RMDIR=rm -rf
-# MV=mv
-# ECHO=echo
-# DIFF=diff
+# RM=<program to remove a file>
+# RMDIR=<program to remove a directory>
+# MV=<program to move a file>
+# ECHO=<echo program>
+# DIFF=<differencing program>
+# PATHSEP=<path separator - \ for win32, / for Unix>
+# CCCC=<path to CCCC program>
+
 
 # We define a phony target extension to enable us to force execution of tests
-.SUFFIXES : .do_the_test 
+.SUFFIXES : .do_the_test .cc
 
 all : unit_tests regression_tests
 	@$(ECHO) ================
@@ -28,28 +31,19 @@ all : unit_tests regression_tests
 # some day soon we need to tidy up the code so that when a selective report
 # like this is generated it does not contain loose HTML HREF tags.
 .cc.do_the_test :
-	-$(RMDIR) .cccc $*.html $*.db
-	../cccc/cccc --report_mask=cspPrRojh $<
-	$(MV) .cccc/cccc.html $*.html
-	$(MV) .cccc/cccc.db $*.db
+	$(CCCC) --report_mask=cspPrRojh --db_outfile=$*.db --html_outfile=$*.html $<
 	$(DIFF) $*.db $*.dbref
 	$(DIFF) $*.html $*.htmlref
 
 .c.do_the_test :
-	-$(RMDIR) .cccc $*.html $*.db
-	../cccc/cccc --report_mask=cspPrRojh $<
-	$(MV) .cccc/cccc.html $*.html
-	$(MV) .cccc/cccc.db $*.db
+	$(CCCC) --report_mask=cspPrRojh --db_outfile=$*.db --html_outfile=$*.html $<
 	$(DIFF) $*.db $*.dbref
 	$(DIFF) $*.html $*.htmlref
 
 # The command line for test4 is slightly different so it needs
 # an explicit rule
 test4.do_the_test :
-	-$(RMDIR) .cccc $*.html $*.db
-	../cccc/cccc --opt_infile=test4.opt --report_mask=cspPrRojh test4.cc 
-	$(MV) .cccc/cccc.html $*.html
-	$(MV) .cccc/cccc.db $*.db
+	$(CCCC) --opt_infile=test4.opt --report_mask=cspPrRojh --db_outfile=test4.db --html_outfile=test4.html test4.cc
 	$(DIFF) $*.db $*.dbref
 	$(DIFF) $*.html $*.htmlref
 

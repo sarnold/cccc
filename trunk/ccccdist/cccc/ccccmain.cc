@@ -2,11 +2,10 @@
 // command line interface implementation for the cccc project
 
 
-#ifndef CCCC_VERSION
-#define CCCC_VERSION "<unnumbered>"
-#endif
 
 #include "cccc.h"
+
+#include "cccc_ver.h"
 
 #include <fstream>
 #include <list>
@@ -581,7 +580,7 @@ void Main::PrintCredits(ostream& os)
   // the principal purpose of the constructor is to set up the
   // two lots of boilerplate text that this class requires
   string version_string="Version ";
-  version_string+=CCCC_VERSION;
+  version_string.append(CCCC_VERSION);
 
   const char *credit_strings[] =
   {
