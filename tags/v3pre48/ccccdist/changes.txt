@@ -1,0 +1,36 @@
+CHANGE LOG FOR CCCC
+
+This change log was begun at the suggestion of Kenneth H. Cox.
+
+A number of early beta releases were done for CCCC in 1999, but this
+file only tracks changes after the first public beta release of
+2000, which was version 3.pre36.
+
+
+version 3.pre37
+Fixed problems prn1 and prn2 reported by Kenneth H. Cox.
+These related to the processing of preprocessor commands.
+Regression tests prn1.cc and prn2.cc added to the distribution.
+Information added to the "About CCCC" section of the generated report
+to nag people to participate in TJL's research project.
+Change log added
+
+version 3.pre40
+Many changes relating to making code compile using Borland CBuilder.
+Changes include:
+- modified pccts/dlg/output.c to generate code in CLexer.cpp and CParser.cpp
+which CBuilder can compile
+- changed tracein(char*), traceout(char*) to tracein(const char*), traceout
+(const char*) to eliminate CBuilder warning
+- modified flag buffer length in cccc_utl.cc to eliminate overrun write 
+detected by CodeGuard
+- fixed nasty bug in Win32 filename globbing logic which would have caused
+files with directories in their names not to be found
+- added support for CBuilder to makefile and ccccdist.dsw
+NB Making the code compile under CBuilder has been done as an exercise in 
+portability, and has helped identify real problems in the code which can 
+be addressed and will improve quality on all platforms.  The CBuilder port
+is not recommended as a production platform at this time.
+
+
+
