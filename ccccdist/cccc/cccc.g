@@ -937,9 +937,9 @@ opt_const_modifier :
 	     << LT(1)->getText() << endl;
 >>
 
-typedef_definition :
+typedef_definition : << string dummy; >>
 	   ( fptr_typedef_definition )?
-	|  ( struct_typedef_definition )?
+	|  ( TYPEDEF class_key[dummy])? struct_typedef_definition 
 	|  simple_typedef_definition
 	;
 
@@ -953,7 +953,7 @@ fptr_typedef_definition :
 // a typedef (either with or without a name).
 // There's a lot of this code out there...  
 struct_typedef_definition : << string dummy; >>
-	   TYPEDEF class_key[dummy] identifier_opt brace_block identifier_opt SEMICOLON
+	   TYPEDEF class_key[dummy] identifier_opt brace_block tag_list_opt SEMICOLON
 	;
 
 simple_typedef_definition :  
@@ -964,6 +964,15 @@ identifier_opt :
 	  IDENTIFIER
 	| /* empty */
 	;
+
+tag_list_opt :
+	  tag ( COMMA tag )*
+	| /* empty */
+	;
+
+tag :
+	    ( ASTERISK )* IDENTIFIER
+	  ;
 
 simple_type_alias :
 	  id:IDENTIFIER
@@ -1088,7 +1097,8 @@ init_expr :
 	;
 
 init_expr_item :
-	  paren_block
+	  SIZEOF paren_block
+	| paren_block
 	| brace_block
 	| (IDENTIFIER paren_block)?
 	| cast_keyword angle_block paren_block
@@ -1131,9 +1141,15 @@ constant :
 	;
 
 literal :
-	  STRINGCONST | CHARCONST | FNUM
+	  string_literal 
+	| CHARCONST | FNUM
 	| OCT_NUM | L_OCT_NUM | HEX_NUM | L_HEX_NUM | INT_NUM | L_INT_NUM
 	| BTRUE | BFALSE
+	;
+
+string_literal :
+	  (STRINGCONST STRINGCONST)? STRINGCONST string_literal
+	| STRINGCONST
 	;
 
 block :
