@@ -1,0 +1,209 @@
+
+                           Welcome to PCCTS 1.33
+
+                              October 5, 1995
+
+
+                          Parr Research Corporation
+                                    with
+                  Purdue University Electrical Engineering
+                                    and
+                       University of Minnesota, AHPCRC
+
+                                Terence Parr
+                                Russell Quong
+                                 Will Cohen
+                                 Hank Dietz
+
+[The "NOTES for new users" by Tom Moog is available now via web
+ browser at http:www.mcs.net/~tmoog and via anonymous ftp at
+ ftp.mcs.net/mcsnet.users/tmoog.]
+
+[We've removed PCCTS.FUTURE from the distribution and added file SERVICES,
+ which describes the services of Parr Research Corporation.]
+
+
+                                INSTALLATION
+
+     This document describes the installation of PCCTS 1.33 on UNIX
+and non-UNIX machines.  The UNIX installation is trivial while the
+non-UNIX folks have a bit more work to do as an install script
+explicitly for there machine will not exist--they will have to
+interpret the install script.
+
+     PCCTS 1.33 includes a number of different programs and examples
+in the software release package -- most of which like to live in their
+own directories.  The install script will build a standard hierarchy.
+Or, if you get the tar file off the ftp site, the hierarchy will be
+constructed automatically by tar.
+
+     The PCCTS executables (antlr, dlg) may be placed anywhere the user
+wishes but the install script places them in the bin directory created
+during installation.
+
+1.0.  UNIX USERS
+
+This section is for UNIX users and describes the most convenient
+installation procedure.
+
+1.1.  FORMAT: pccts.tar
+
+To begin installation, place the pccts.tar file into the directory
+where you want to place a pccts subdirectory.  Untar the file with
+
+     tar xvf pccts.tar
+
+and cd into it.  To install PCCTS, simply type
+ 
+     make
+
+which will build the standard PCCTS directory hierarchy (under the
+directory where you ran the install script) and build executable
+versions of antlr and dlg.
+
+1.2.  FORMAT: pccts.bag
+
+     To begin installation, the user should create a directory (usually
+called pccts) where the PCCTS source subtree is to be created.  Place
+the pccts.bag file and the install script into this directory and cd
+into it.  To install PCCTS, simply type
+ 
+     sh install
+
+which will build the standard PCCTS directory hierarchy (under the
+directory where you ran the install script), "unbag" all of the files
+and build executable versions of antlr and dlg.
+
+If you do not have the 'sh' shell, you'll need the install.unbag.reqd
+file.
+
+NOTE: If you are using the later SGI C++ compilers, use -woff 3262 to
+get rid of a bunch of noise by the compiler (warnings).
+
+
+2.0.  NON-UNIX USERS
+
+     ANTLR was written using portable (we hope), vanilla K&R-style C,
+ANSI C, and C++.  It has been successfully ported to a variety of
+environments.  We do not provide an installation script explicitly for
+non-Unix users.  You must interpret the install script and perform the
+analogous operations on your machine.  There is an install script,
+install.mpw, for Macintosh programmers.
+
+IMPORTANT NOTE:  For PC users:  You must create the parser.dlg and
+		 "touch" scan.c in antlr and dlg directories or the
+		 makefiles will try to execute antlr and dlg, which
+		 don't exist yet.  The first time, you want only to
+		 compile the C files in order to obtain an executable
+		 for antlr and dlg.  From this point, a change in
+		 antlr.g or dlg_p.g will force antlr/dlg to regenerate
+		 themselves.
+
+		 You must define symbol PC if you want things to work
+		 out right for use on a DOS, OS/2, Windows machine.
+		 This affects the config.h file, which you can change
+		 as you wish.
+
+     For Mac programmers using MPW (Macintosh Programmer's Workshop),
+define symbol MPW to get the correct config.h stuff included.
+
+3.0.  EMAIL VERSION RECIPIENTS
+
+     If you received PCCTS via email response from
+pccts@ecn.purdue.edu you have one additional installation step to
+perform over the ftp folks (and pccts.tar is unavailable).  You will
+have received a number of bite-size chunks of pccts which are small
+enough to be emailed (~1500 lines each).  You must reconstruct the
+PCCTS files before you can begin installation.  In order to rebuild an
+original file, you must have "one.c" which will take the chunks and
+pack them together.  If you are a non-UNIX type, you must have the
+"unbag.c" file which unbags the bags created by our mail archiver.
+UNIX folks use the shell to unbag as they would for shar files (this
+will be done automatically by the install script).
+
+     To install PCCTS, place all PCCTS mail messages into a pccts
+directory, remove the mail headers from one.c.  Then compile one.c
+with:
+
+     cc -o one one.c
+
+and then type:
+
+     ./one f1 f2 ... fn
+
+where f1..fn are the parts of PCCTS source sent as chunks (i.e. these
+files will be all the files you received NOT including one.c, unbag.c,
+README, install and the request acknowledge banner).  There is no need
+to remove mail headers from the chunk files and they may appear in any
+order.  The subject line of the mail will identify it as a chunk and a
+chunk of what file.  The "one" program should be used to put pccts.bag
+back together.  You are now in a position to begin normal PCCTS
+installation.  All files you receive should go into a pccts directory.
+
+     Note that all files which arrive in "chunks" must be put back
+together using "one".  Beware that you do not mix chunks from more
+than one original file.  For instance, do not specify all chunks that
+you collect from the PCCTS mailbot on the "one" command line unless
+you have requested only one original file that was split into multiple
+files.  Each chunk knows which original file it is a part of, where it
+goes in that file and how many total chunks are required to rebuild
+that original.
+
+4.0.  WORD SIZE AND PC USERS
+
+     The config.h file now sets up the word size for your compiler
+automatically.
+
+
+                                TUTORIAL
+
+     The advanced tutorial should be placed in a directory at the
+same level as antlr, dlg, support etc...  Do a
+
+     sh advtut.bag
+
+to unbag (or use the unbag program) and then type
+
+     make -s all
+
+which will create executables called tut1-tut4.  Naturally, if you got
+the tutorials from the ftp site, the tar format of the tutorials can
+be obtained for easier installation.
+
+Unfortunately, the tutorials have changed little since the 1.06
+release.  With luck, these will be enhanced and an AST tutorial will
+appear.
+
+                         MACHINE COMPATIBILITY
+
+PCCTS is known to compile "out of the box" on the following machines
+and/or operating systems:  [didn't have time to retest on all these
+machines, but seems to be highly portable still].
+
+o  DECSTATION 5000
+
+o  SGI; use "-woff 3262" in your CFLAGS make variable
+
+o  Sun SparcStation (cc, gcc, g++, Cfront, acc)
+
+o  VAX C under VMS
+
+o  Linux SLS 0.99, gcc/g++
+
+o  386 PC, NetBSD 0.9, gcc 2.4.5
+
+o  HP 9000/755, HP-UX 9.01, HP cc
+
+o  486 PC, OS/2 2.1 (w/long filenames), IBM C Set++ 2.1
+
+o  NeXTStep 3.2 running g++/gcc 2.6.3 (pentium-90)
+
+
+                           INCOMPATIBILITIES
+
+Please see the release notes.
+
+
+                                CREDITS
+
+Please see the history.ps or history.txt.
