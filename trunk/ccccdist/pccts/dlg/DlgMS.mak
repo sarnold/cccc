@@ -1,5 +1,5 @@
 # PCCTS directory
-PCCTS_HOME=<your PCCTS_HOME>
+PCCTS_HOME=..
 DLG_SRC=$(PCCTS_HOME)\dlg
 PCCTS_H=$(PCCTS_HOME)\h
 
@@ -11,7 +11,7 @@ SET=$(PCCTS_HOME)\support\set
 # Compiler stuff
 CC = cl
 CFLAGS = -I "." -I "$(PCCTS_H)" -I "$(SET)" -D "USER_ZZSYN" -D "PC" \
-        -D "ZZLEXBUFSIZE=65536"  /D "LONGFILENAMES" /W3 /Zi
+        -D "ZZLEXBUFSIZE=65536"  /D "LONGFILENAMES" /W3 
 
 DLG_OBJS = dlg_p.obj dlg_a.obj main.obj err.obj support.obj \
            output.obj relabel.obj automata.obj
