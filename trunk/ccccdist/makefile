@@ -14,10 +14,10 @@ pccts :
 	cd pccts ; make
 
 cccc : 
-	cd cccc ; make -f cccc.mak
+	cd cccc ; make -f posixgcc.mak
 
 test :
-	cd test ; make -f test.mak
+	cd test ; make -f posix.mak
 
 install : 
 	cd install ; su root -c "make -f install.mak" 
