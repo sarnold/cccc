@@ -298,7 +298,7 @@ insert_extent(CCCC_Item& os, int startLine, int endLine,
 	  // extent.
 	  for(i=0; i<tcLAST; i++)
 	    {	
-	      lexical_counts_for_this_extent[i]+=llcmIter->second[i];
+	      lexical_counts_for_this_extent[i]+=(*llcmIter).second[i];
 	    }
 	}
       // The lexical occurrences mentioned in the records processed 
@@ -428,7 +428,7 @@ static void toktrace(ANTLRAbstractToken *tok)
     }
 }
 
-enum InOrOut { IN, OUT };
+enum InOrOut { IO_IN, IO_OUT };
 
 static void rectrace(const char *rulename, 
 		     const char *dir_indic, 

@@ -43,8 +43,8 @@ void add_treatment(CCCC_Item& treatment_line)
 	
 	if(iter!=treatment_map.end())
     {
-		delete iter->second;
-		iter->second=new_treatment;
+		delete (*iter).second;
+		(*iter).second=new_treatment;
     }
 	else
     {
@@ -107,8 +107,8 @@ void CCCC_Options::Save_Options(const string& filename)
     {
 		CCCC_Item extLine;
 		extLine.Insert("CCCC_FileExt");
-		extLine.Insert(felIter->first.c_str());
-		extLine.Insert(felIter->second.c_str());
+		extLine.Insert((*felIter).first.c_str());
+		extLine.Insert((*felIter).second.c_str());
 		extLine.ToFile(optstr);
     }
 	
@@ -119,13 +119,13 @@ void CCCC_Options::Save_Options(const string& filename)
     {
 		CCCC_Item tmtLine;
 		tmtLine.Insert("CCCC_MetTmnt");
-		tmtLine.Insert(tIter->second->code); 
-		tmtLine.Insert(tIter->second->lower_threshold);
-		tmtLine.Insert(tIter->second->upper_threshold);
-		tmtLine.Insert(tIter->second->numerator_threshold);
-		tmtLine.Insert(tIter->second->width);     
-		tmtLine.Insert(tIter->second->precision);
-		tmtLine.Insert(tIter->second->name);
+		tmtLine.Insert((*tIter).second->code); 
+		tmtLine.Insert((*tIter).second->lower_threshold);
+		tmtLine.Insert((*tIter).second->upper_threshold);
+		tmtLine.Insert((*tIter).second->numerator_threshold);
+		tmtLine.Insert((*tIter).second->width);     
+		tmtLine.Insert((*tIter).second->precision);
+		tmtLine.Insert((*tIter).second->name);
 		tmtLine.ToFile(optstr);
     }
 	
@@ -136,9 +136,9 @@ void CCCC_Options::Save_Options(const string& filename)
     {
 		CCCC_Item dkLine;
 		dkLine.Insert("CCCC_Dialect");
-		dkLine.Insert(dkIter->first.first);
-		dkLine.Insert(dkIter->first.second);
-		dkLine.Insert(dkIter->second);
+		dkLine.Insert((*dkIter).first.first);
+		dkLine.Insert((*dkIter).first.second);
+		dkLine.Insert((*dkIter).second);
 		dkLine.ToFile(optstr);
     }
 }
@@ -212,7 +212,7 @@ string CCCC_Options::getFileLanguage(const string& filename)
 		iter=extension_map.find(extension);
 		if(iter!=extension_map.end())
 		{
-			retval=iter->second;
+			retval=(*iter).second;
 		}
     }
 	if(retval.size()==0)
@@ -220,7 +220,7 @@ string CCCC_Options::getFileLanguage(const string& filename)
 		iter=extension_map.find("");
 		if(iter!=extension_map.end())
 		{
-			retval=iter->second;
+			retval=(*iter).second;
 		}
 		else
 		{
@@ -238,7 +238,7 @@ Metric_Treatment *CCCC_Options::getMetricTreatment(const string& metric_tag)
 	metric_treatment_map_t::iterator iter=treatment_map.find(metric_tag);
 	if(iter!=treatment_map.end())
     {
-		retval=iter->second;
+		retval=(*iter).second;
     }
 	return retval;
 }
@@ -250,7 +250,7 @@ string CCCC_Options::dialectKeywordPolicy(const string& lang, const string& kw)
 	dialect_keyword_map_t::const_iterator iter=dialect_keyword_map.find(kt);
 	if(iter!=dialect_keyword_map.end())
     {
-		retval=iter->second;
+		retval=(*iter).second;
     }
 	return retval;
 }

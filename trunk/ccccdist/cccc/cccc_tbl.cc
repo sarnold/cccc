@@ -48,7 +48,7 @@ T* CCCC_Table<T>::find(string name)
   iterator value_iterator=map_t::find(name);
   if(value_iterator!=end())
     {
-      retval=value_iterator->second;
+      retval=(*value_iterator).second;
     }
   return retval;
 }
@@ -105,7 +105,7 @@ template <class T> T* CCCC_Table<T>::next_item()
   T* retval=NULL;
   if(iter_!=end())
     {
-      retval=iter_->second;
+      retval=(*iter_).second;
       iter_++;
     }
   return retval;

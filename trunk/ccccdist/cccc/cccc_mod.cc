@@ -69,7 +69,7 @@ int CCCC_Module::get_count(const char* count_tag)
       iter=client_map.begin();
       while(iter!=client_map.end())
 	{
-	  if(iter->second->get_usetype()==utINHERITS)
+	  if((*iter).second->get_usetype()==utINHERITS)
 	    {
 	      retval++;
 	    }
@@ -97,10 +97,10 @@ int CCCC_Module::get_count(const char* count_tag)
 	  iter=supplier_map.begin();
 	  while(iter!=supplier_map.end())
 	    {
-	      if(iter->second->get_usetype()==utINHERITS)
+	      if((*iter).second->get_usetype()==utINHERITS)
 		{
 		  int parent_depth=
-		    iter->second->supplier_module_ptr(project)->get_count("DIT");
+		    (*iter).second->supplier_module_ptr(project)->get_count("DIT");
 		  if(retval<parent_depth+1)
 		    {
 		      retval=parent_depth+1;
@@ -117,7 +117,7 @@ int CCCC_Module::get_count(const char* count_tag)
       iter=supplier_map.begin();
       while(iter!=supplier_map.end())
 	{
-	  retval+=iter->second->get_count(count_tag);
+	  retval+=(*iter).second->get_count(count_tag);
 	  iter++;
 	}
     }
@@ -127,7 +127,7 @@ int CCCC_Module::get_count(const char* count_tag)
       iter=client_map.begin();
       while(iter!=client_map.end())
 	{
-	  retval+=iter->second->get_count(count_tag);
+	  retval+=(*iter).second->get_count(count_tag);
 	  iter++;
 	}
     }
@@ -156,7 +156,7 @@ int CCCC_Module::get_count(const char* count_tag)
       member_map_t::iterator memIter=member_map.begin();
       while(memIter!=member_map.end())
 	{
-	  int member_count=memIter->second->get_count(count_tag);
+	  int member_count=(*memIter).second->get_count(count_tag);
 	  retval+=member_count;
 	  memIter++;
 	}

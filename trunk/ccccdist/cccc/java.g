@@ -227,30 +227,30 @@ inline void endOfCommentLine(JLexer &lexer)
 
 // keywords
 #token	ABSTRACT	"abstract"		<<;>>
-#token	BOOLEAN		"boolean"		<<;>>
+#token	KW_BOOLEAN		"boolean"		<<;>>
 #token	BREAK		"break"		<< IncrementCount(tcMCCABES_VG);>>
-#token	BYTE		"byte"		<<;>>
+#token	KW_BYTE		"byte"		<<;>>
 #token	CATCH		"catch"		<< /* IncrementCount(tcMCCABES_VG) ? */ ;>>
-#token	CHAR		"char"		<<;>>
+#token	KW_CHAR		"char"		<<;>>
 #token	CLASS		"class"		<<;>>
-#token	CONST		"const"		<<;>>
+#token	KW_CONST		"const"		<<;>>
 #token	CONTINUE	"continue"		<< IncrementCount(tcMCCABES_VG); >>
 #token	DO			"do"		<<;>>
-#token	DOUBLE		"double"		<<;>>
+#token	KW_DOUBLE		"double"		<<;>>
 #token	ELSE		"else"		<<;>>
 #token	EXTENDS		"extends"		<<;>>
 #token	BFALSE		"false"		<<;>>
 #token	FINAL		"final"		<<;>>
 #token	FINALLY		"finally"		<<;>>
-#token	FLOAT		"float"		<<;>>
+#token	KW_FLOAT		"float"		<<;>>
 #token	FOR			"for"		<< IncrementCount(tcMCCABES_VG); >>
 #token	IF			"if"		<< IncrementCount(tcMCCABES_VG); >>
 #token	IMPLEMENTS	"implements"		<<;>>
 #token	IMPORT		"import"		<<;>>
 #token	INSTANCEOF	"instanceof"		<<;>>
-#token	INT			"int"		<<;>>
+#token	KW_INT			"int"		<<;>>
 #token	INTERFACE	"interface"		<<;>>
-#token	LONG		"long"		<<;>>
+#token	KW_LONG		"long"		<<;>>
 #token	NATIVE		"native"		<<;>>
 #token	NEW			"new"		<<;>>
 #token	PNULL		"null"		<<;>>
@@ -259,7 +259,7 @@ inline void endOfCommentLine(JLexer &lexer)
 #token	PROTECTED	"protected"		<<;>>
 #token	PUBLIC		"public"		<<;>>
 #token	RETURN		"return"		<<;>>
-#token	SHORT		"short"		<<;>>
+#token	KW_SHORT		"short"		<<;>>
 #token	SHUTUP		"shutup"		<<;>>
 #token	STATIC		"static"		<<;>>
 #token	STRING		"string"		<<;>>
@@ -267,14 +267,14 @@ inline void endOfCommentLine(JLexer &lexer)
 #token	SWITCH		"switch"		<< IncrementCount(tcMCCABES_VG); >>
 #token	SYNCHRONIZED	"synchronized"		<<;>>
 #token	THINGS		"things"		<<;>>
-#token	THIS		"this"		<<;>>
+#token	KW_THIS		"this"		<<;>>
 #token	THREADSAFE	"threadsafe"		<<;>>
 #token	THROW		"throw"		<<;>>
 #token	THROWS		"throws"		<<;>>
 #token	TRANSIENT	"transient"		<<;>>
 #token	BTRUE		"true"		<<;>>
 #token	TRY			"try"		<<;>>
-#token	VOID		"void"		<<;>>
+#token	KW_VOID		"void"		<<;>>
 #token	VOLATILE	"volatile"		<<;>>
 #token	WHILE		"while"		<< IncrementCount(tcMCCABES_VG); >>
 
@@ -455,15 +455,15 @@ type
 
 // The primitive types.
 builtInType
-	:	VOID
-	|	BOOLEAN
-	|	BYTE
-	|	CHAR
-	|	SHORT
-	|	INT
-	|	FLOAT
-	|	LONG
-	|	DOUBLE
+	:	KW_VOID
+	|	KW_BOOLEAN
+	|	KW_BYTE
+	|	KW_CHAR
+	|	KW_SHORT
+	|	KW_INT
+	|	KW_FLOAT
+	|	KW_LONG
+	|	KW_DOUBLE
 	;
 
 // A (possibly-qualified) java identifier.  We start with the first IDENT
@@ -519,7 +519,7 @@ modifier[Visibility& v]
 	|	NATIVE
 	|	THREADSAFE
 	|	SYNCHRONIZED
-//	|	CONST			// reserved word; leave out
+//	|	KW_CONST			// reserved word; leave out
 	|	VOLATILE
 	;
 
@@ -1230,7 +1230,7 @@ postfixExpression
 
 		(	// qualified id (id.id.id.id...) -- build the name
 			DOT ( IDENT
-				| THIS
+				| KW_THIS
 				| CLASS
 				| newExpression
 				| SUPER LPAREN { expressionList } RPAREN
@@ -1274,7 +1274,7 @@ primaryExpression
 	|	SUPER
 	|	BTRUE
 	|	BFALSE
-	|	THIS
+	|	KW_THIS
 	|	PNULL
 	|	LPAREN assignmentExpression RPAREN
 	;
