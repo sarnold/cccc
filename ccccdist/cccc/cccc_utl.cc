@@ -336,12 +336,17 @@ void ParseStore::record_module_extent(int startLine, int endLine,
 				      const string& description,
 				      UseType ut)
 {
-  CCCC_Item module_line;
-  module_line.Insert(moduleName);
-  module_line.Insert(moduleType);
-  insert_extent(module_line,startLine,endLine,
-		description,flags(),ut,true);
-  prj->add_module(module_line);
+  // See the lengthy comment in record_userel_extent about
+  // why we are filtering for empty module names.
+  if(moduleName.size()>0)
+  {
+    CCCC_Item module_line;
+    module_line.Insert(moduleName);
+    module_line.Insert(moduleType);
+    insert_extent(module_line,startLine,endLine,
+	 description,flags(),ut,true);
+    prj->add_module(module_line);
+  }
 }
 
 void ParseStore::record_function_extent(int startLine, int endLine, 
@@ -353,18 +358,32 @@ void ParseStore::record_function_extent(int startLine, int endLine,
 					Visibility visibility,
 					UseType ut)
 {
-  CCCC_Item function_line;
-  function_line.Insert(moduleName);
-  function_line.Insert(memberName);
-  function_line.Insert(returnType);
-  function_line.Insert(paramList);
+  // We require every call to this function to specify a member
+  // function name and a parameter list.
+  if(memberName.size()>0)
+  {
+    // If the moduleName is an empty string, we remap this to the
+	// string "anonymous".  This implies that we treat all
+	// C-style functions as belonging to a single module.
+	string mappedModuleName = moduleName;
+    if(mappedModuleName.size()==0)
+	{
+	   mappedModuleName = "anonymous";
+	}
 
-  string baseFlags=flags();
-  baseFlags[psfVISIBILITY]=visibility;
+    CCCC_Item function_line;
+    function_line.Insert(mappedModuleName);
+    function_line.Insert(memberName);
+    function_line.Insert(returnType);
+    function_line.Insert(paramList);
 
-  insert_extent(function_line,startLine,endLine,
-		description,baseFlags,ut,true);
-  prj->add_member(function_line);
+    string baseFlags=flags();
+    baseFlags[psfVISIBILITY]=visibility;
+
+    insert_extent(function_line,startLine,endLine,
+     description,baseFlags,ut,true);
+    prj->add_member(function_line);
+  }
 }
 
 void ParseStore::record_userel_extent(int startLine, int endLine,
@@ -376,29 +395,42 @@ void ParseStore::record_userel_extent(int startLine, int endLine,
 				      UseType ut)
 {
   CCCC_Item userel_line;
-  userel_line.Insert(clientName);
-  userel_line.Insert(memberName);
-  userel_line.Insert(serverName);
+  
+  // This function should not be invoked unless the clientName
+  // and serverName are non-empty strings, however it appears
+  // that in test case prn16.java the parser does execute the 
+  // actions of the 'implementsClause' rule, even though there
+  // is no 'implements' keyword outside comments in the program
+  // text.
+  // I don't understand this, but as a workaround, I filter at 
+  // this point and ensure that if either clientName or serverName
+  // is empty, no action is taken.
+  if(clientName.size()>0 && serverName.size()>0)
+  {
+	  userel_line.Insert(clientName);
+	  userel_line.Insert(memberName);
+	  userel_line.Insert(serverName);
 
-  // for data member definitions, we record lexical data for the
-  // extent,
-  // for inheritance and parameter relationships we do not
-  bool record_lexcounts=false;
-  switch(ut)
-    {
-    case utHASBYVAL:
-    case utHASBYREF:
-      record_lexcounts=true;
-      break;
-    default:
-      record_lexcounts=false;
-    }
+	  // for data member definitions, we record lexical data for the
+	  // extent,
+	  // for inheritance and parameter relationships we do not
+	  bool record_lexcounts=false;
+	  switch(ut)
+		{
+		case utHASBYVAL:
+		case utHASBYREF:
+		  record_lexcounts=true;
+		  break;
+		default:
+		  record_lexcounts=false;
+		}
 
-  string baseFlags=flags();
-  baseFlags[psfVISIBILITY]=visibility;
-  insert_extent(userel_line,startLine,endLine,
-		description,baseFlags,ut,record_lexcounts);
-  prj->add_userel(userel_line);
+	  string baseFlags=flags();
+	  baseFlags[psfVISIBILITY]=visibility;
+	  insert_extent(userel_line,startLine,endLine,
+			description,baseFlags,ut,record_lexcounts);
+	  prj->add_userel(userel_line);
+   }
 }
 
 void ParseStore::record_other_extent(int startLine, int endLine, 
