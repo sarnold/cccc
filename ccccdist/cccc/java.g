@@ -1061,12 +1061,17 @@ casesGroup
 	;
 
 cases	
-	:	(aCase cases)?
-	|	aCase
+	:	aCase optMoreCases
+	;
+
+optMoreCases
+	:	(CASE | DEFAULT)? aCase optMoreCases
+	|	/* empty */
 	; 
 	
 aCase
-	:	(CASE expression | DEFAULT) COLON
+	:	DEFAULT COLON
+	|	CASE expression COLON
 	;
 
 caseSList
