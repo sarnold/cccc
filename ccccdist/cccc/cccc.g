@@ -596,9 +596,8 @@ named_enum_definition :
 */
 instance_declaration[string& scopeName] : 
 << int startLine=LT(1)->getLine(); string cvQuals,typeName,varName,indir; >>
-(cv_qualifier[cvQuals])* 
-type_name[typeName]
-instance_item[indir,varName] ( COMMA instance_item[d1,d2] )* SEMICOLON
+	  (cv_qualifier[cvQuals])* { STATIC }  type_name[typeName]
+	instance_item[indir,varName] ( COMMA instance_item[d1,d2] )* SEMICOLON
 <<
     if(indir.size()!=0)
     {
@@ -618,6 +617,10 @@ instance_item[indir,varName] ( COMMA instance_item[d1,d2] )* SEMICOLON
     }
 >> 
 ;
+
+opt_qualifiers :
+	| /* empty */
+	;
 
 class_block [string& scope]:
 	  << 
@@ -725,8 +728,8 @@ method_signature[string& scope, string& methodName, string& paramList] :
 	 ;
 
 type[string& cvQualifiers, string& typeName, string& indirMods] :
-           (cv_qualifier[cvQualifiers])* 
-           type_name[typeName]
+           (cv_qualifier[cvQualifiers])* { STATIC }
+           type_name[typeName] 
            indirection_modifiers[indirMods]
          ;
 
@@ -1021,7 +1024,7 @@ inheritance_item[string& childName]  :
     string parent_scope,parent_name; 
     int startLine=LT(1)->getLine(); 
 >>
-	  { VIRTUAL } { access_key } type_name[parent_name]
+	  { VIRTUAL } { access_key } { VIRTUAL } type_name[parent_name]
 	<<
 	        int endLine=LT(1)->getLine();
 		ps->record_userel_extent(startLine,endLine,
@@ -1157,6 +1160,7 @@ literal :
 	| CHARCONST | FNUM
 	| OCT_NUM | L_OCT_NUM | HEX_NUM | L_HEX_NUM | INT_NUM | L_INT_NUM
 	| BTRUE | BFALSE
+	| ADD_OP literal
 	;
 
 string_literal :
