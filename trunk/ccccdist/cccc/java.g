@@ -277,6 +277,7 @@ inline void endOfCommentLine(JLexer &lexer)
 #token	KW_VOID		"void"		<<;>>
 #token	VOLATILE	"volatile"		<<;>>
 #token	WHILE		"while"		<< IncrementCount(tcMCCABES_VG); >>
+#token  CASE		"case"		<< IncrementCount(tcMCCABES_VG); >>
 
 // an identifier.  
 
@@ -934,7 +935,19 @@ statement
 	// A list of statements in curly braces -- start a new scope!
 	:
 << string scope; >>
-	compoundStatement
+	  ifStatement
+	| forStatement
+	| whileStatement
+	| doWhileStatement
+	| breakStatement
+	| continueStatement
+	| returnStatement
+	| switchStatement
+	| throwStatement
+	| tryBlock
+	| syncStatement
+	| emptyStatement
+	| compoundStatement
 
 	// class definition
 	|	classDefinition[scope]
@@ -958,51 +971,71 @@ statement
 
 	// Attach a label to the front of a statement
 	|	IDENT c:COLON statement
-
+	;
+	
 	// If-else statement
-	|	IF LPAREN expression RPAREN statement
-		optElseClause
+ifStatement :
+	IF LPAREN expression RPAREN statement
+	optElseClause
+	;
 
 	// For statement
-	|	FOR
-			LPAREN
-				forInit SEMI   // initializer
-				forCond	SEMI   // condition test
-				forIter         // updater
-			RPAREN
-			statement                     // statement to loop over
+forStatement :
+	FOR
+		LPAREN
+			forInit SEMI   // initializer
+			forCond	SEMI   // condition test
+			forIter         // updater
+		RPAREN
+		statement                     // statement to loop over
+	;
 
 	// While statement
-	|	WHILE LPAREN expression RPAREN statement
+whileStatement :
+	WHILE LPAREN expression RPAREN statement
+	;
 
 	// do-while statement
-	|	DO statement "while" LPAREN expression RPAREN SEMI
+doWhileStatement :
+	DO statement "while" LPAREN expression RPAREN SEMI
+	;
 
 	// get out of a loop (or switch)
-	|	BREAK { IDENT } SEMI
+breakStatement :
+	BREAK { IDENT } SEMI
+	;
 
 	// do next iteration of a loop
-	|	CONTINUE { IDENT } SEMI
+continueStatement :
+	CONTINUE { IDENT } SEMI
+	;
 
 	// Return an expression
-	|	RETURN { expression } SEMI
+returnStatement :
+	RETURN { expression } SEMI
+	;
 
 	// switch/case statement
-	|	SWITCH LPAREN expression RPAREN LCURLY
-			( casesGroup )*
-		RCURLY
+switchStatement :
+	SWITCH LPAREN expression RPAREN LCURLY
+		( casesGroup )*
+	RCURLY
+	;
 
-	// exception try-catch block
-	|	tryBlock
 
 	// throw an exception
-	|	THROW expression SEMI
+throwStatement :
+	THROW expression SEMI
+	;
 
 	// synchronize a statement
-	|	SYNCHRONIZED LPAREN expression RPAREN compoundStatement
+syncStatement :
+	SYNCHRONIZED LPAREN expression RPAREN compoundStatement
+	;
 
 	// empty statement
-	|	SEMI 
+emptyStatement :
+	SEMI 
 	;
 
 optElseClause
