@@ -1,10 +1,7 @@
 @echo off
-call cccc_env.bat
-echo CCCC is a command line tool.  
-echo This window has been set up with a PATH to allow the tool to
-echo be run conveniently.
-set path=%CCCC_PATH_DIR%
-cd %CCCC_WORK_DIR%
+doskey > NUL
+type ccccwrap.msg
+rem The remainder of this file will be created by the action of 
+rem the postinstallation script make_ccccwrap.bat
 
-%COMSPEC% 
 
