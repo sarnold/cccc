@@ -1,0 +1,740 @@
+CCCC - a code counter for C and C++
+===================================
+
+A program to analyse C and C++ source code and report on
+some simple software metrics
+Version <unnumbered>
+Copyright Tim Littlefair, 1995, 1996, 1997, 1998, 1999, 2000
+with contributions from Bill McLean, Herman Hueni, Lynn Wilson 
+Peter Bell, Thomas Hieber and Kenneth H. Cox.
+
+The development of this program was heavily dependent on
+the Purdue Compiler Construction Tool Set (PCCTS) 
+by Terence Parr, Will Cohen, Hank Dietz, Russel Quoung,
+Tom Moog and others.
+
+This software is provided with NO WARRANTY
+Parsing
+Processing prn8.java as Java
+TOK:  public 0 0
+makeToken(tt=>101, txt=>public,line=>5)
+TOK:  class 0 0
+makeToken(tt=>76, txt=>class,line=>5)
+     5 101public              -> compilationUnit
+5     101 public              -> typeDefinition
+5     101 public              -> modifiers
+5     101 public              -> modifier
+TOK:  EwoisErrorHandler 0 0
+makeToken(tt=>121, txt=>EwoisErrorHandler,line=>5)
+5     76  class               <- modifier
+5     76  class               <- modifiers
+5     76  class               -> classDefinition
+TOK:  { 0 0
+makeToken(tt=>7, txt=>{,line=>6)
+TOK:  public 0 0
+makeToken(tt=>101, txt=>public,line=>7)
+6     7   {                   -> superClassClause
+6     7   {                   <- superClassClause
+6     7   {                   -> implementsClause
+6     7   {                   <- implementsClause
+6     7   {                   -> classBlock
+TOK:  synchronized 0 0
+makeToken(tt=>109, txt=>synchronized,line=>7)
+7     101 public              -> field
+7     101 public              -> modifiers
+7     101 public              -> modifier
+TOK:  void 0 0
+makeToken(tt=>118, txt=>void,line=>7)
+7     109 synchronized        <- modifier
+7     109 synchronized        -> modifier
+TOK:  handleError 0 0
+makeToken(tt=>121, txt=>handleError,line=>7)
+7     118 void                <- modifier
+7     118 void                <- modifiers
+7     118 void                -> typeSpec2
+7     118 void                -> builtInTypeSpec2
+7     118 void                -> builtInType
+TOK:  ( 0 0
+makeToken(tt=>3, txt=>(,line=>7)
+7     121 handleError         <- builtInType
+7     121 handleError         <- builtInTypeSpec2
+7     121 handleError         <- typeSpec2
+7     121 handleError         -> typedDeclaration
+7     121 handleError         -> methodDefinition
+TOK:  int 0 0
+makeToken(tt=>92, txt=>int,line=>7)
+TOK:  fehlertyp 0 0
+makeToken(tt=>121, txt=>fehlertyp,line=>7)
+7     92  int                 -> parameterDeclarationList
+7     92  int                 -> parameterDeclaration
+7     92  int                 -> parameterModifier
+7     92  int                 <- parameterModifier
+7     92  int                 -> typeSpec2
+7     92  int                 -> builtInTypeSpec2
+7     92  int                 -> builtInType
+TOK:  ) 0 0
+makeToken(tt=>4, txt=>),line=>7)
+7     121 fehlertyp           <- builtInType
+7     121 fehlertyp           <- builtInTypeSpec2
+7     121 fehlertyp           <- typeSpec2
+TOK:  { 0 0
+makeToken(tt=>7, txt=>{,line=>8)
+7     4   )                   -> parameterDeclaratorBrackets
+7     4   )                   <- parameterDeclaratorBrackets
+7     4   )                   <- parameterDeclaration
+7     4   )                   <- parameterDeclarationList
+TOK:  String 0 0
+makeToken(tt=>121, txt=>String,line=>9)
+8     7   {                   -> returnTypeBrackersOnEndOfMethodHead
+8     7   {                   <- returnTypeBrackersOnEndOfMethodHead
+8     7   {                   -> compoundStatement
+TOK:  lvTyp 0 0
+makeToken(tt=>121, txt=>lvTyp,line=>9)
+9     121 String              -> statement
+9     121 String               -> ?declaration
+9     121 String               -> ?modifiers
+9     121 String               <- ?modifiers
+9     121 String               -> ?typeSpec
+9     121 String               -> ?classTypeSpec
+9     121 String               -> ?identifier
+TOK:  = 0 0
+makeToken(tt=>12, txt=>=,line=>9)
+9     121 lvTyp                <- ?identifier
+9     121 lvTyp                <- ?classTypeSpec
+9     121 lvTyp                <- ?typeSpec
+9     121 lvTyp                -> ?variableDefinitions
+9     121 lvTyp                -> ?variableDeclarator
+TOK:  " 0 0
+makeToken(tt=>64, txt=>",line=>9)
+9     12  =                    -> ?declaratorBrackets
+9     12  =                    <- ?declaratorBrackets
+9     12  =                    -> ?varInitializer
+TOK:  ; 0 0
+makeToken(tt=>47, txt=>;,line=>9)
+9     64  "                    -> ?initializer
+9     64  "                    -> ?expression
+9     64  "                    -> ?assignmentExpression
+9     64  "                    -> ?conditionalExpression
+9     64  "                    -> ?logicalOrExpression
+9     64  "                    -> ?logicalAndExpression
+9     64  "                    -> ?inclusiveOrExpression
+9     64  "                    -> ?exclusiveOrExpression
+9     64  "                    -> ?andExpression
+9     64  "                    -> ?equalityExpression
+9     64  "                    -> ?relationalExpression
+9     64  "                    -> ?shiftExpression
+9     64  "                    -> ?additiveExpression
+9     64  "                    -> ?multiplicativeExpression
+9     64  "                    -> ?unaryExpression
+9     64  "                    -> ?unaryExpressionNotPlusMinus
+9     64  "                    -> ?postfixExpression
+9     64  "                    -> ?primaryExpression
+9     64  "                    -> ?constant
+TOK:  switch 0 0
+makeToken(tt=>108, txt=>switch,line=>10)
+9     47  ;                    <- ?constant
+9     47  ;                    <- ?primaryExpression
+9     47  ;                    <- ?postfixExpression
+9     47  ;                    <- ?unaryExpressionNotPlusMinus
+9     47  ;                    <- ?unaryExpression
+9     47  ;                    <- ?multiplicativeExpression
+9     47  ;                    <- ?additiveExpression
+9     47  ;                    <- ?shiftExpression
+9     47  ;                    <- ?relationalExpression
+9     47  ;                    <- ?equalityExpression
+9     47  ;                    <- ?andExpression
+9     47  ;                    <- ?exclusiveOrExpression
+9     47  ;                    <- ?inclusiveOrExpression
+9     47  ;                    <- ?logicalAndExpression
+9     47  ;                    <- ?logicalOrExpression
+9     47  ;                    <- ?conditionalExpression
+9     47  ;                    <- ?assignmentExpression
+9     47  ;                    <- ?expression
+9     47  ;                    <- ?initializer
+9     47  ;                    <- ?varInitializer
+9     47  ;                    <- ?variableDeclarator
+9     47  ;                    <- ?variableDefinitions
+9     47  ;                    <- ?declaration
+9     121 String              -> declaration
+9     121 String              -> modifiers
+9     121 String              <- modifiers
+9     121 String              -> typeSpec
+9     121 String              -> classTypeSpec
+9     121 String              -> identifier
+9     121 lvTyp               <- identifier
+9     121 lvTyp               <- classTypeSpec
+9     121 lvTyp               <- typeSpec
+9     121 lvTyp               -> variableDefinitions
+9     121 lvTyp               -> variableDeclarator
+9     12  =                   -> declaratorBrackets
+9     12  =                   <- declaratorBrackets
+9     12  =                   -> varInitializer
+9     64  "                   -> initializer
+9     64  "                   -> expression
+9     64  "                   -> assignmentExpression
+9     64  "                   -> conditionalExpression
+9     64  "                   -> logicalOrExpression
+9     64  "                   -> logicalAndExpression
+9     64  "                   -> inclusiveOrExpression
+9     64  "                   -> exclusiveOrExpression
+9     64  "                   -> andExpression
+9     64  "                   -> equalityExpression
+9     64  "                   -> relationalExpression
+9     64  "                   -> shiftExpression
+9     64  "                   -> additiveExpression
+9     64  "                   -> multiplicativeExpression
+9     64  "                   -> unaryExpression
+9     64  "                   -> unaryExpressionNotPlusMinus
+9     64  "                   -> postfixExpression
+9     64  "                   -> primaryExpression
+9     64  "                   -> constant
+9     47  ;                   <- constant
+9     47  ;                   <- primaryExpression
+9     47  ;                   <- postfixExpression
+9     47  ;                   <- unaryExpressionNotPlusMinus
+9     47  ;                   <- unaryExpression
+9     47  ;                   <- multiplicativeExpression
+9     47  ;                   <- additiveExpression
+9     47  ;                   <- shiftExpression
+9     47  ;                   <- relationalExpression
+9     47  ;                   <- equalityExpression
+9     47  ;                   <- andExpression
+9     47  ;                   <- exclusiveOrExpression
+9     47  ;                   <- inclusiveOrExpression
+9     47  ;                   <- logicalAndExpression
+9     47  ;                   <- logicalOrExpression
+9     47  ;                   <- conditionalExpression
+9     47  ;                   <- assignmentExpression
+9     47  ;                   <- expression
+9     47  ;                   <- initializer
+9     47  ;                   <- varInitializer
+9     47  ;                   <- variableDeclarator
+9     47  ;                   <- variableDefinitions
+9     47  ;                   <- declaration
+TOK:  ( 0 0
+makeToken(tt=>3, txt=>(,line=>10)
+10    108 switch              <- statement
+10    108 switch              -> statement
+10    108 switch              -> switchStatement
+TOK:  fehlertyp 0 0
+makeToken(tt=>121, txt=>fehlertyp,line=>10)
+TOK:  ) 0 0
+makeToken(tt=>4, txt=>),line=>10)
+10    121 fehlertyp           -> expression
+10    121 fehlertyp           -> assignmentExpression
+10    121 fehlertyp           -> conditionalExpression
+10    121 fehlertyp           -> logicalOrExpression
+10    121 fehlertyp           -> logicalAndExpression
+10    121 fehlertyp           -> inclusiveOrExpression
+10    121 fehlertyp           -> exclusiveOrExpression
+10    121 fehlertyp           -> andExpression
+10    121 fehlertyp           -> equalityExpression
+10    121 fehlertyp           -> relationalExpression
+10    121 fehlertyp           -> shiftExpression
+10    121 fehlertyp           -> additiveExpression
+10    121 fehlertyp           -> multiplicativeExpression
+10    121 fehlertyp           -> unaryExpression
+10    121 fehlertyp           -> unaryExpressionNotPlusMinus
+10    121 fehlertyp           -> postfixExpression
+10    121 fehlertyp           -> primaryExpression
+TOK:  { 0 0
+makeToken(tt=>7, txt=>{,line=>11)
+10    4   )                   <- primaryExpression
+10    4   )                   <- postfixExpression
+10    4   )                   <- unaryExpressionNotPlusMinus
+10    4   )                   <- unaryExpression
+10    4   )                   <- multiplicativeExpression
+10    4   )                   <- additiveExpression
+10    4   )                   <- shiftExpression
+10    4   )                   <- relationalExpression
+10    4   )                   <- equalityExpression
+10    4   )                   <- andExpression
+10    4   )                   <- exclusiveOrExpression
+10    4   )                   <- inclusiveOrExpression
+10    4   )                   <- logicalAndExpression
+10    4   )                   <- logicalOrExpression
+10    4   )                   <- conditionalExpression
+10    4   )                   <- assignmentExpression
+10    4   )                   <- expression
+TOK:  case 0 0
+makeToken(tt=>121, txt=>case,line=>12)
+TOK:  WARNING 0 0
+makeToken(tt=>121, txt=>WARNING,line=>12)
+prn8.java(12): syntax error at token case
+prn8.java(10): trying to match switchStatement at 'switch'
+12    121 case                <- switchStatement
+12    121 case                <- statement
+12    121 case                -> statement
+12    121 case                 -> ?declaration
+12    121 case                 -> ?modifiers
+12    121 case                 <- ?modifiers
+12    121 case                 -> ?typeSpec
+12    121 case                 -> ?classTypeSpec
+12    121 case                 -> ?identifier
+TOK:  : 0 0
+makeToken(tt=>9, txt=>:,line=>12)
+12    121 WARNING              <- ?identifier
+12    121 WARNING              <- ?classTypeSpec
+12    121 WARNING              <- ?typeSpec
+12    121 WARNING              -> ?variableDefinitions
+12    121 WARNING              -> ?variableDeclarator
+TOK:  lvTyp 0 0
+makeToken(tt=>121, txt=>lvTyp,line=>13)
+12    9   :                    -> ?declaratorBrackets
+12    9   :                    <- ?declaratorBrackets
+12    9   :                    -> ?varInitializer
+12    9   :                    <- ?varInitializer
+12    9   :                    <- ?variableDeclarator
+12    9   :                    <- ?variableDefinitions
+12    9   :                    <- ?declaration
+12    121 case                -> declaration
+12    121 case                -> modifiers
+12    121 case                <- modifiers
+12    121 case                -> typeSpec
+12    121 case                -> classTypeSpec
+12    121 case                -> identifier
+12    121 WARNING             <- identifier
+12    121 WARNING             <- classTypeSpec
+12    121 WARNING             <- typeSpec
+12    121 WARNING             -> variableDefinitions
+12    121 WARNING             -> variableDeclarator
+12    9   :                   -> declaratorBrackets
+12    9   :                   <- declaratorBrackets
+12    9   :                   -> varInitializer
+12    9   :                   <- varInitializer
+12    9   :                   <- variableDeclarator
+12    9   :                   <- variableDefinitions
+12    9   :                   <- declaration
+prn8.java(12): syntax error at token :
+prn8.java(12): trying to match statement at 'case'
+freeing token public on line 5 c1:1 c2:27 c3:0 freed:1
+freeing token class on line 5 c1:1 c2:27 c3:0 freed:2
+freeing token { on line 6 c1:1 c2:27 c3:0 freed:3
+freeing token public on line 7 c1:1 c2:27 c3:0 freed:4
+freeing token synchronized on line 7 c1:1 c2:27 c3:0 freed:5
+freeing token void on line 7 c1:1 c2:27 c3:0 freed:6
+freeing token ( on line 7 c1:1 c2:27 c3:0 freed:7
+freeing token int on line 7 c1:1 c2:27 c3:0 freed:8
+freeing token fehlertyp on line 7 c1:1 c2:27 c3:0 freed:9
+freeing token ) on line 7 c1:1 c2:27 c3:0 freed:10
+freeing token { on line 8 c1:1 c2:27 c3:0 freed:11
+freeing token String on line 9 c1:1 c2:27 c3:0 freed:12
+freeing token lvTyp on line 9 c1:1 c2:27 c3:0 freed:13
+freeing token = on line 9 c1:1 c2:27 c3:0 freed:14
+freeing token " on line 9 c1:1 c2:27 c3:0 freed:15
+freeing token ; on line 9 c1:1 c2:27 c3:0 freed:16
+freeing token switch on line 10 c1:1 c2:27 c3:0 freed:17
+freeing token ( on line 10 c1:1 c2:27 c3:0 freed:18
+freeing token fehlertyp on line 10 c1:1 c2:27 c3:0 freed:19
+freeing token ) on line 10 c1:1 c2:27 c3:0 freed:20
+freeing token { on line 11 c1:1 c2:27 c3:0 freed:21
+freeing token case on line 12 c1:1 c2:27 c3:0 freed:22
+freeing token WARNING on line 12 c1:1 c2:27 c3:0 freed:23
+freeing token : on line 12 c1:1 c2:27 c3:0 freed:24
+TOK:  = 0 0
+makeToken(tt=>12, txt=>=,line=>13)
+13    121 lvTyp               <- statement
+13    121 lvTyp               -> statement
+13    121 lvTyp               -> expression
+13    121 lvTyp               -> assignmentExpression
+13    121 lvTyp               -> conditionalExpression
+13    121 lvTyp               -> logicalOrExpression
+13    121 lvTyp               -> logicalAndExpression
+13    121 lvTyp               -> inclusiveOrExpression
+13    121 lvTyp               -> exclusiveOrExpression
+13    121 lvTyp               -> andExpression
+13    121 lvTyp               -> equalityExpression
+13    121 lvTyp               -> relationalExpression
+13    121 lvTyp               -> shiftExpression
+13    121 lvTyp               -> additiveExpression
+13    121 lvTyp               -> multiplicativeExpression
+13    121 lvTyp               -> unaryExpression
+13    121 lvTyp               -> unaryExpressionNotPlusMinus
+13    121 lvTyp               -> postfixExpression
+13    121 lvTyp               -> primaryExpression
+TOK:  " 0 0
+makeToken(tt=>64, txt=>",line=>13)
+13    12  =                   <- primaryExpression
+13    12  =                   <- postfixExpression
+13    12  =                   <- unaryExpressionNotPlusMinus
+13    12  =                   <- unaryExpression
+13    12  =                   <- multiplicativeExpression
+13    12  =                   <- additiveExpression
+13    12  =                   <- shiftExpression
+13    12  =                   <- relationalExpression
+13    12  =                   <- equalityExpression
+13    12  =                   <- andExpression
+13    12  =                   <- exclusiveOrExpression
+13    12  =                   <- inclusiveOrExpression
+13    12  =                   <- logicalAndExpression
+13    12  =                   <- logicalOrExpression
+13    12  =                   <- conditionalExpression
+TOK:  ; 0 0
+makeToken(tt=>47, txt=>;,line=>13)
+13    64  "                   -> assignmentExpression
+13    64  "                   -> conditionalExpression
+13    64  "                   -> logicalOrExpression
+13    64  "                   -> logicalAndExpression
+13    64  "                   -> inclusiveOrExpression
+13    64  "                   -> exclusiveOrExpression
+13    64  "                   -> andExpression
+13    64  "                   -> equalityExpression
+13    64  "                   -> relationalExpression
+13    64  "                   -> shiftExpression
+13    64  "                   -> additiveExpression
+13    64  "                   -> multiplicativeExpression
+13    64  "                   -> unaryExpression
+13    64  "                   -> unaryExpressionNotPlusMinus
+13    64  "                   -> postfixExpression
+13    64  "                   -> primaryExpression
+13    64  "                   -> constant
+TOK:  break 0 0
+makeToken(tt=>72, txt=>break,line=>14)
+13    47  ;                   <- constant
+13    47  ;                   <- primaryExpression
+13    47  ;                   <- postfixExpression
+13    47  ;                   <- unaryExpressionNotPlusMinus
+13    47  ;                   <- unaryExpression
+13    47  ;                   <- multiplicativeExpression
+13    47  ;                   <- additiveExpression
+13    47  ;                   <- shiftExpression
+13    47  ;                   <- relationalExpression
+13    47  ;                   <- equalityExpression
+13    47  ;                   <- andExpression
+13    47  ;                   <- exclusiveOrExpression
+13    47  ;                   <- inclusiveOrExpression
+13    47  ;                   <- logicalAndExpression
+13    47  ;                   <- logicalOrExpression
+13    47  ;                   <- conditionalExpression
+13    47  ;                   <- assignmentExpression
+13    47  ;                   <- assignmentExpression
+13    47  ;                   <- expression
+TOK:  ; 0 0
+makeToken(tt=>47, txt=>;,line=>14)
+14    72  break               <- statement
+14    72  break               -> statement
+14    72  break               -> breakStatement
+TOK:  case 0 0
+makeToken(tt=>121, txt=>case,line=>15)
+TOK:  LOGINFO 0 0
+makeToken(tt=>121, txt=>LOGINFO,line=>15)
+15    121 case                <- breakStatement
+15    121 case                <- statement
+15    121 case                -> statement
+15    121 case                 -> ?declaration
+15    121 case                 -> ?modifiers
+15    121 case                 <- ?modifiers
+15    121 case                 -> ?typeSpec
+15    121 case                 -> ?classTypeSpec
+15    121 case                 -> ?identifier
+TOK:  : 0 0
+makeToken(tt=>9, txt=>:,line=>15)
+15    121 LOGINFO              <- ?identifier
+15    121 LOGINFO              <- ?classTypeSpec
+15    121 LOGINFO              <- ?typeSpec
+15    121 LOGINFO              -> ?variableDefinitions
+15    121 LOGINFO              -> ?variableDeclarator
+TOK:  lvTyp 0 0
+makeToken(tt=>121, txt=>lvTyp,line=>16)
+15    9   :                    -> ?declaratorBrackets
+15    9   :                    <- ?declaratorBrackets
+15    9   :                    -> ?varInitializer
+15    9   :                    <- ?varInitializer
+15    9   :                    <- ?variableDeclarator
+15    9   :                    <- ?variableDefinitions
+15    9   :                    <- ?declaration
+15    121 case                -> declaration
+15    121 case                -> modifiers
+15    121 case                <- modifiers
+15    121 case                -> typeSpec
+15    121 case                -> classTypeSpec
+15    121 case                -> identifier
+15    121 LOGINFO             <- identifier
+15    121 LOGINFO             <- classTypeSpec
+15    121 LOGINFO             <- typeSpec
+15    121 LOGINFO             -> variableDefinitions
+15    121 LOGINFO             -> variableDeclarator
+15    9   :                   -> declaratorBrackets
+15    9   :                   <- declaratorBrackets
+15    9   :                   -> varInitializer
+15    9   :                   <- varInitializer
+15    9   :                   <- variableDeclarator
+15    9   :                   <- variableDefinitions
+15    9   :                   <- declaration
+prn8.java(15): syntax error at token :
+prn8.java(15): trying to match statement at 'case'
+TOK:  = 0 0
+makeToken(tt=>12, txt=>=,line=>16)
+16    121 lvTyp               <- statement
+16    121 lvTyp               -> statement
+16    121 lvTyp               -> expression
+16    121 lvTyp               -> assignmentExpression
+16    121 lvTyp               -> conditionalExpression
+16    121 lvTyp               -> logicalOrExpression
+16    121 lvTyp               -> logicalAndExpression
+16    121 lvTyp               -> inclusiveOrExpression
+16    121 lvTyp               -> exclusiveOrExpression
+16    121 lvTyp               -> andExpression
+16    121 lvTyp               -> equalityExpression
+16    121 lvTyp               -> relationalExpression
+16    121 lvTyp               -> shiftExpression
+16    121 lvTyp               -> additiveExpression
+16    121 lvTyp               -> multiplicativeExpression
+16    121 lvTyp               -> unaryExpression
+16    121 lvTyp               -> unaryExpressionNotPlusMinus
+16    121 lvTyp               -> postfixExpression
+16    121 lvTyp               -> primaryExpression
+TOK:  " 0 0
+makeToken(tt=>64, txt=>",line=>16)
+16    12  =                   <- primaryExpression
+16    12  =                   <- postfixExpression
+16    12  =                   <- unaryExpressionNotPlusMinus
+16    12  =                   <- unaryExpression
+16    12  =                   <- multiplicativeExpression
+16    12  =                   <- additiveExpression
+16    12  =                   <- shiftExpression
+16    12  =                   <- relationalExpression
+16    12  =                   <- equalityExpression
+16    12  =                   <- andExpression
+16    12  =                   <- exclusiveOrExpression
+16    12  =                   <- inclusiveOrExpression
+16    12  =                   <- logicalAndExpression
+16    12  =                   <- logicalOrExpression
+16    12  =                   <- conditionalExpression
+TOK:  ; 0 0
+makeToken(tt=>47, txt=>;,line=>16)
+16    64  "                   -> assignmentExpression
+16    64  "                   -> conditionalExpression
+16    64  "                   -> logicalOrExpression
+16    64  "                   -> logicalAndExpression
+16    64  "                   -> inclusiveOrExpression
+16    64  "                   -> exclusiveOrExpression
+16    64  "                   -> andExpression
+16    64  "                   -> equalityExpression
+16    64  "                   -> relationalExpression
+16    64  "                   -> shiftExpression
+16    64  "                   -> additiveExpression
+16    64  "                   -> multiplicativeExpression
+16    64  "                   -> unaryExpression
+16    64  "                   -> unaryExpressionNotPlusMinus
+16    64  "                   -> postfixExpression
+16    64  "                   -> primaryExpression
+16    64  "                   -> constant
+TOK:  break 0 0
+makeToken(tt=>72, txt=>break,line=>17)
+16    47  ;                   <- constant
+16    47  ;                   <- primaryExpression
+16    47  ;                   <- postfixExpression
+16    47  ;                   <- unaryExpressionNotPlusMinus
+16    47  ;                   <- unaryExpression
+16    47  ;                   <- multiplicativeExpression
+16    47  ;                   <- additiveExpression
+16    47  ;                   <- shiftExpression
+16    47  ;                   <- relationalExpression
+16    47  ;                   <- equalityExpression
+16    47  ;                   <- andExpression
+16    47  ;                   <- exclusiveOrExpression
+16    47  ;                   <- inclusiveOrExpression
+16    47  ;                   <- logicalAndExpression
+16    47  ;                   <- logicalOrExpression
+16    47  ;                   <- conditionalExpression
+16    47  ;                   <- assignmentExpression
+16    47  ;                   <- assignmentExpression
+16    47  ;                   <- expression
+TOK:  ; 0 0
+makeToken(tt=>47, txt=>;,line=>17)
+17    72  break               <- statement
+17    72  break               -> statement
+17    72  break               -> breakStatement
+TOK:  } 0 0
+makeToken(tt=>8, txt=>},line=>18)
+TOK:  StringBuffer 0 0
+makeToken(tt=>121, txt=>StringBuffer,line=>19)
+18    8   }                   <- breakStatement
+18    8   }                   <- statement
+TOK:  buffer 0 0
+makeToken(tt=>121, txt=>buffer,line=>19)
+19    121 StringBuffer        <- compoundStatement
+19    121 StringBuffer        <- methodDefinition
+freeing token handleError on line 7 c1:1 c2:44 c3:0 freed:25
+19    121 StringBuffer        <- typedDeclaration
+19    121 StringBuffer        <- field
+19    121 StringBuffer        -> field
+19    121 StringBuffer        -> modifiers
+19    121 StringBuffer        <- modifiers
+19    121 StringBuffer        -> typeSpec2
+19    121 StringBuffer        -> classTypeSpec2
+19    121 StringBuffer        -> identifier2
+TOK:  = 0 0
+makeToken(tt=>12, txt=>=,line=>19)
+19    121 buffer              <- identifier2
+19    121 buffer              <- classTypeSpec2
+19    121 buffer              <- typeSpec2
+19    121 buffer              -> typedDeclaration
+19    121 buffer              -> variableDefinitions
+19    121 buffer              -> variableDeclarator
+TOK:  new 0 0
+makeToken(tt=>96, txt=>new,line=>19)
+19    12  =                   -> declaratorBrackets
+19    12  =                   <- declaratorBrackets
+19    12  =                   -> varInitializer
+TOK:  StringBuffer 0 0
+makeToken(tt=>121, txt=>StringBuffer,line=>19)
+19    96  new                 -> initializer
+19    96  new                 -> expression
+19    96  new                 -> assignmentExpression
+19    96  new                 -> conditionalExpression
+19    96  new                 -> logicalOrExpression
+19    96  new                 -> logicalAndExpression
+19    96  new                 -> inclusiveOrExpression
+19    96  new                 -> exclusiveOrExpression
+19    96  new                 -> andExpression
+19    96  new                 -> equalityExpression
+19    96  new                 -> relationalExpression
+19    96  new                 -> shiftExpression
+19    96  new                 -> additiveExpression
+19    96  new                 -> multiplicativeExpression
+19    96  new                 -> unaryExpression
+19    96  new                 -> unaryExpressionNotPlusMinus
+19    96  new                 -> postfixExpression
+19    96  new                 -> primaryExpression
+19    96  new                 -> newExpression
+TOK:  ( 0 0
+makeToken(tt=>3, txt=>(,line=>19)
+19    121 StringBuffer        -> type
+19    121 StringBuffer        -> identifier
+TOK:  lvTyp 0 0
+makeToken(tt=>121, txt=>lvTyp,line=>19)
+19    3   (                   <- identifier
+19    3   (                   <- type
+TOK:  ) 0 0
+makeToken(tt=>4, txt=>),line=>19)
+19    121 lvTyp               -> argList
+19    121 lvTyp               -> expressionList
+19    121 lvTyp               -> expression
+19    121 lvTyp               -> assignmentExpression
+19    121 lvTyp               -> conditionalExpression
+19    121 lvTyp               -> logicalOrExpression
+19    121 lvTyp               -> logicalAndExpression
+19    121 lvTyp               -> inclusiveOrExpression
+19    121 lvTyp               -> exclusiveOrExpression
+19    121 lvTyp               -> andExpression
+19    121 lvTyp               -> equalityExpression
+19    121 lvTyp               -> relationalExpression
+19    121 lvTyp               -> shiftExpression
+19    121 lvTyp               -> additiveExpression
+19    121 lvTyp               -> multiplicativeExpression
+19    121 lvTyp               -> unaryExpression
+19    121 lvTyp               -> unaryExpressionNotPlusMinus
+19    121 lvTyp               -> postfixExpression
+19    121 lvTyp               -> primaryExpression
+TOK:  ; 0 0
+makeToken(tt=>47, txt=>;,line=>19)
+19    4   )                   <- primaryExpression
+19    4   )                   <- postfixExpression
+19    4   )                   <- unaryExpressionNotPlusMinus
+19    4   )                   <- unaryExpression
+19    4   )                   <- multiplicativeExpression
+19    4   )                   <- additiveExpression
+19    4   )                   <- shiftExpression
+19    4   )                   <- relationalExpression
+19    4   )                   <- equalityExpression
+19    4   )                   <- andExpression
+19    4   )                   <- exclusiveOrExpression
+19    4   )                   <- inclusiveOrExpression
+19    4   )                   <- logicalAndExpression
+19    4   )                   <- logicalOrExpression
+19    4   )                   <- conditionalExpression
+19    4   )                   <- assignmentExpression
+19    4   )                   <- expression
+19    4   )                   <- expressionList
+19    4   )                   <- argList
+TOK:  buffer 0 0
+makeToken(tt=>121, txt=>buffer,line=>20)
+19    47  ;                   <- newExpression
+19    47  ;                   <- primaryExpression
+19    47  ;                   <- postfixExpression
+19    47  ;                   <- unaryExpressionNotPlusMinus
+19    47  ;                   <- unaryExpression
+19    47  ;                   <- multiplicativeExpression
+19    47  ;                   <- additiveExpression
+19    47  ;                   <- shiftExpression
+19    47  ;                   <- relationalExpression
+19    47  ;                   <- equalityExpression
+19    47  ;                   <- andExpression
+19    47  ;                   <- exclusiveOrExpression
+19    47  ;                   <- inclusiveOrExpression
+19    47  ;                   <- logicalAndExpression
+19    47  ;                   <- logicalOrExpression
+19    47  ;                   <- conditionalExpression
+19    47  ;                   <- assignmentExpression
+19    47  ;                   <- expression
+19    47  ;                   <- initializer
+19    47  ;                   <- varInitializer
+19    47  ;                   <- variableDeclarator
+19    47  ;                   <- variableDefinitions
+freeing token lvTyp on line 13 c1:1 c2:52 c3:0 freed:26
+freeing token = on line 13 c1:1 c2:52 c3:0 freed:27
+freeing token " on line 13 c1:1 c2:52 c3:0 freed:28
+freeing token ; on line 13 c1:1 c2:52 c3:0 freed:29
+freeing token break on line 14 c1:1 c2:52 c3:0 freed:30
+freeing token ; on line 14 c1:1 c2:52 c3:0 freed:31
+freeing token case on line 15 c1:1 c2:52 c3:0 freed:32
+freeing token LOGINFO on line 15 c1:1 c2:52 c3:0 freed:33
+freeing token : on line 15 c1:1 c2:52 c3:0 freed:34
+freeing token lvTyp on line 16 c1:1 c2:52 c3:0 freed:35
+freeing token = on line 16 c1:1 c2:52 c3:0 freed:36
+freeing token " on line 16 c1:1 c2:52 c3:0 freed:37
+freeing token ; on line 16 c1:1 c2:52 c3:0 freed:38
+freeing token break on line 17 c1:1 c2:52 c3:0 freed:39
+freeing token ; on line 17 c1:1 c2:52 c3:0 freed:40
+freeing token } on line 18 c1:1 c2:52 c3:0 freed:41
+freeing token StringBuffer on line 19 c1:1 c2:52 c3:0 freed:42
+freeing token buffer on line 19 c1:1 c2:52 c3:0 freed:43
+freeing token = on line 19 c1:1 c2:52 c3:0 freed:44
+freeing token new on line 19 c1:1 c2:52 c3:0 freed:45
+freeing token StringBuffer on line 19 c1:1 c2:52 c3:0 freed:46
+freeing token ( on line 19 c1:1 c2:52 c3:0 freed:47
+freeing token lvTyp on line 19 c1:1 c2:52 c3:0 freed:48
+freeing token ) on line 19 c1:1 c2:52 c3:0 freed:49
+freeing token ; on line 19 c1:1 c2:52 c3:0 freed:50
+TOK:  . 0 0
+makeToken(tt=>11, txt=>.,line=>20)
+20    121 buffer              <- typedDeclaration
+20    121 buffer              <- field
+20    121 buffer              -> field
+20    121 buffer              -> modifiers
+20    121 buffer              <- modifiers
+20    121 buffer              -> typeSpec2
+20    121 buffer              -> classTypeSpec2
+20    121 buffer              -> identifier2
+TOK:  append 0 0
+makeToken(tt=>121, txt=>append,line=>20)
+TOK:  ( 0 0
+makeToken(tt=>3, txt=>(,line=>20)
+TOK:  " 0 0
+makeToken(tt=>64, txt=>",line=>20)
+20    3   (                   <- identifier2
+20    3   (                   <- classTypeSpec2
+20    3   (                   <- typeSpec2
+20    3   (                   -> typedDeclaration
+prn8.java(20): syntax error at token (
+prn8.java(20): trying to match typedDeclaration at '('
+TOK:  ) 0 0
+makeToken(tt=>4, txt=>),line=>20)
+TOK:  . 0 0
+makeToken(tt=>11, txt=>.,line=>20)
+TOK:  append 0 0
+makeToken(tt=>121, txt=>append,line=>20)
+TOK:  ( 0 0
+makeToken(tt=>3, txt=>(,line=>20)
+20    121 append              <- typedDeclaration
+20    121 append              <- field
+20    121 append              -> field
+20    121 append              -> modifiers
+20    121 append              <- modifiers
+20    121 append              -> ctorDefinition
+Assertion failed: className==LT(1)->getText(), file java.cpp, line 1278
+
+abnormal program termination
+make: *** [prn8.do_the_test] Error 3

@@ -1,0 +1,543 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<!-- Server: sf-web1 -->
+<html lang="en">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <TITLE>SourceForge: Modify: 233585 - Does not handle namespace declarations</TITLE>
+	<SCRIPT language="JavaScript">
+	<!--
+	function help_window(helpurl) {
+		HelpWin = window.open( 'https://sourceforge.net' + helpurl,'HelpWindow','scrollbars=yes,resizable=yes,toolbar=no,height=400,width=400');
+	}
+	// -->
+	</SCRIPT>
+
+		<link rel="SHORTCUT ICON" href="/images/favicon.ico">
+		<style type="text/css">
+			<!--
+	OL,UL,P,BODY,TD,TR,TH,FORM { font-family: verdana,arial,helvetica,sans-serif; font-size:small; color: #333333; }
+
+	H1 { font-size: x-large; font-family: verdana,arial,helvetica,sans-serif; }
+	H2 { font-size: large; font-family: verdana,arial,helvetica,sans-serif; }
+	H3 { font-size: medium; font-family: verdana,arial,helvetica,sans-serif; }
+	H4 { font-size: small; font-family: verdana,arial,helvetica,sans-serif; }
+	H5 { font-size: x-small; font-family: verdana,arial,helvetica,sans-serif; }
+	H6 { font-size: xx-small; font-family: verdana,arial,helvetica,sans-serif; }
+
+	PRE,TT { font-family: courier,sans-serif }
+
+	SPAN.center { text-align: center }
+	SPAN.boxspace { font-size: 2pt; }
+	SPAN.osdn {font-size: x-small; font-family: verdana,arial,helvetica,sans-serif;}
+	SPAN.search {font-size: x-small; font-family:  verdana,arial,helvetica,sans-serif;}
+	SPAN.slogan {font-size: large; font-weight: bold; font-family: verdana,arial,helvetica,sans-serif;}
+	SPAN.footer {font-size: x-small; font-family: verdana,arial,helvetica,sans-serif;}
+
+	A.maintitlebar { color: #FFFFFF }
+	A.maintitlebar:visited { color: #FFFFFF }
+
+	A.sortbutton { color: #FFFFFF; text-decoration: underline; }
+	A.sortbutton:visited { color: #FFFFFF; text-decoration: underline; }
+
+	.menus { color: #6666aa; text-decoration: none; }
+	.menus:visited { color: #6666aa; text-decoration: none; }
+
+	A:link { text-decoration:none }
+	A:visited { text-decoration:none }
+	A:active { text-decoration:none }
+	A:hover { text-decoration:underline; color:#FF0000 }
+
+	.tabs { color: #000000; }
+	.tabs:visited { color: #000000; }
+	.tabs:hover { color:#FF0000; }
+	.tabselect { color: #000000; font-weight: bold; }
+	.tabselect:visited { font-weight: bold;}
+	.tabselect:hover { color:#FF0000; font-weight: bold; }
+
+	.titlebar { text-decoration:none; color:#000000; font-family: Helvetica,verdana,arial,helvetica,sans-serif; font-size: small; font-weight: bold; }
+	.develtitle { color:#000000; font-weight: bold; }
+	.legallink { color:#000000; font-weight: bold; }
+
+	.osdn-search {
+		background-color:#fff;
+		border:1px #666666 solid;
+		font-size: 10px;
+		color: #666666;
+		//margin: 0px;
+		font-family: arial,sans-serif;
+	}
+
+	input[type="text"].osdn-search {
+		padding-top: 0.1em;
+		padding-left: 0.2em;
+		padding-right: 0.2em;
+	}
+
+	.osdn-button {
+		margin-top: 1px;
+		margin-bottom: 1px;
+	}
+
+	select.osdn-search {
+		text-align: center;
+	}
+
+	.osdn-navtext {color: #666666; font-family: verdana, arial, sans-serif; font-size: 10px; text-decoration: none;}
+			-->
+		</style>
+
+ 	   </HEAD>
+<body text="#333333" link="#6666aa" alink="#aa6666" vlink="#6666aa" bgcolor="#6C7198" leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
+
+<!--
+
+OSDN navbar
+
+-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+    <form action="http://www.osdn.com/osdnsearch.pl" method="POST">
+
+      <tr bgcolor="#999999">
+        <td colspan="5"><img src="/images/blank.gif" width="1" height="1" alt=""></td>
+        </tr>
+
+      <tr bgcolor="#eeeeee">
+        <td nowrap class="osdn-navtext">&nbsp;&nbsp;<a href="http://www.osdn.com" class="osdn-navtext" title="click to visit OSDN.com!"><B>OSDN:</B>&nbsp;Open&nbsp;Source&nbsp;Development&nbsp;Network</a>:&nbsp;<a href="http://www.osdn.com/newsletters/">Newsletters</a> - <a href="http://jobs.osdn.com">Jobs</a>&nbsp;</td>
+        <td align="right" valign="middle" width="100%" class="osdn-navtext"><B>SEARCH:</B>&nbsp; </td>
+
+        <td align="right" valign="middle" nowrap class="osdn-navtext">
+          <select name="site" class="osdn-search">
+            <option value="all" SELECTED>All OSDN Sites</option>
+            <option value="">-----------</option>
+            <option value="Freshmeat">freshmeat</option>
+            <option value="Jobs.OSDN.com">Jobs.OSDN.com</option>
+            <option value="Kuro5hin">Kuro5hin</option>
+            <option value="LinuxGram">LinuxGram</option>
+            <option value="NewsForge">NewsForge</option>
+            <option value="OSDN">OSDN.com</option>
+            <option value="Slashcode">Slashcode</option>
+            <option value="Slashdot">Slashdot</option>
+            <option value="SourceForge">SourceForge.net</option>
+            </select>
+          <input type="text" name="query" size="12" class="osdn-search">&nbsp;
+            </td>
+        <td nowrap width="40"><input type="image" border="0" name="Submit" value="GO" src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net/images/osdn_nav_go.gif" alt="Go" width="30" height="20" align="middle" class="osdn-button"></td>
+        </tr>
+
+      <tr bgcolor="#999999">
+        <td colspan="5"><img src="/images/blank.gif" width="1" height="1" alt=""></td>
+        </tr>
+
+      </form>
+</table>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+                <td bgcolor="#d5d7d9" background="/images/steel3.jpg" WIDTH="70%" align="left"><a href="/"><IMG width=210 height=60 border=0 src="/images/sf_logo_metal2.jpg"></a></TD><TD bgcolor="#d5d7d9" background="/images/steel3.jpg" WIDTH="30%">
+
+      <IFRAME SRC="https://sfads.osdn.com/1.html" width="468" height="60" frameborder="no" border="0" MARGINWIDTH="0" MARGINHEIGHT="0" SCROLLING="no"><A HREF="https://sfads.osdn.com/cgi-bin/ad_default.pl?click"><IMG SRC="https://sfads.osdn.com/cgi-bin/ad_default.pl?display" border=0 height="60" width="468"></A>
+      </IFRAME>
+    </td><td bgcolor="#d5d7d9" background="/images/steel3.jpg" width=20><img src="/images/blank.gif" width="20" height="1" alt=""></td>
+       </tr>
+</table>
+<!--
+
+
+End OSDN NavBar
+
+
+--><img src="/images/blank.gif" width="100" height="5" alt=""><br>
+<!-- start page body -->
+<div align="center">
+<table cellpadding="0" cellspacing="0" border="0" width="99%">
+	<tr>
+		<td background="//a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/tbar1.png" width="1%" height="17"><IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/tleft1.png" border=0 width=17 height=17></td>
+		<td background="//a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/tbar1.png" align="center" colspan="3" width="99%"><IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/tbar1.png" border=0 width=1 height=17></td>
+		<td><IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/tright1.png" border=0 width=17 height=17></td>
+	</tr>
+	<tr>
+		<td width="17" background="//a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/leftbar1.png" align="left" valign="bottom"><IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/leftbar1.png" border=0 width=17 height=25></td>
+		<td colspan="3" bgcolor="#ffffff">
+<!-- start main body cell -->
+
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td width="141" background="//a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/steel3.jpg" bgcolor="#cfd1d4" align="left" valign="top">
+
+	<!-- VA Linux Stats Counter -->
+	<IMG src="https://www2.valinux.com/clear.gif?id=105" width=140 height=1 alt="Counter"><BR>
+	<P>
+	<!-- menus -->
+	<table cellpadding="0" cellspacing="0" border="0" width="140">
+	<tr>
+		<td align="left" valign="middle"><b>Logged In: tim_littlefair</b><br></td>
+	</tr>
+	<tr>
+		<td align="right" valign="middle">
+	<A class="menus" href="/account/logout.php">Logout</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/register/">Register New Project</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/account/">Account Maintenance</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br><P>	<A class="menus" href="/themes/">Change My Theme</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/my/">My Personal Page</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br><P>	<A class="menus" href="/my/bookmark_add.php?bookmark_url=%2Ftracker%2Findex.php%3Ffunc%3Ddetail%26aid%3D233585%26group_id%3D7763%26atid%3D107763&bookmark_title=Modify%3A+233585+-+Does+not+handle+namespace+declarations">Bookmark this page</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>
+			<BR>
+			</td>
+		</tr>
+	</table>
+<table cellpadding="0" cellspacing="0" border="0" width="140">
+	<tr>
+		<td align="left" valign="middle"><b>Search</b><br></td>
+	</tr>
+	<tr>
+		<td align="right" valign="middle">
+<CENTER>
+		<FONT SIZE="1">
+		<FORM action="/search/" method="POST" target="_blank">
+
+		<SELECT name="type_of_search">
+					<OPTION value="artifact">Bugs</OPTION>
+		<OPTION value="soft">Software/Group</OPTION>
+		<OPTION value="people">People</OPTION>
+		<OPTION value="freshmeat">Freshmeat.net</OPTION>
+		</SELECT><BR>
+		<INPUT TYPE="CHECKBOX" NAME="exact" VALUE="1" CHECKED> Require All Words<BR>
+		<INPUT TYPE="HIDDEN" VALUE="7763" NAME="group_id">
+		<INPUT TYPE="HIDDEN" VALUE="107763" NAME="atid">
+		<INPUT TYPE="text" SIZE="12" NAME="words" VALUE=""><BR><INPUT TYPE="submit" NAME="Search" VALUE="Search"></FORM></FONT>
+			<BR>
+			</td>
+		</tr>
+	</table>
+<table cellpadding="0" cellspacing="0" border="0" width="140">
+	<tr>
+		<td align="left" valign="middle"><b>Project: C and C++ Code Counter</b><br></td>
+	</tr>
+	<tr>
+		<td align="right" valign="middle">
+	<A class="menus" href="/projects/cccc/">Project Summary</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br><P>	<A class="menus" href="/project/admin/?group_id=7763">Project Admin</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>
+			<BR>
+			</td>
+		</tr>
+	</table>
+<table cellpadding="0" cellspacing="0" border="0" width="140">
+	<tr>
+		<td align="left" valign="middle"><b>Software</b><br></td>
+	</tr>
+	<tr>
+		<td align="right" valign="middle">
+	<A class="menus" href="/softwaremap/">Software Map</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/new/">New Releases</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/docman/display_doc.php?docid=6041&group_id=1">Other Site Mirrors</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/snippet/">Code Snippet Library</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>
+			<BR>
+			</td>
+		</tr>
+	</table>
+<table cellpadding="0" cellspacing="0" border="0" width="140">
+	<tr>
+		<td align="left" valign="middle"><b>SourceForge.net</b><br></td>
+	</tr>
+	<tr>
+		<td align="right" valign="middle">
+	<A class="menus" href="/docman/?group_id=1"><b>Site Docs</b></A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/docman/display_doc.php?docid=7438&group_id=1">Work for Sourceforge!</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/forum/?group_id=1">Discussion Forums</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/people/">Project Help Wanted</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/top/">Top Projects</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/docman/display_doc.php?docid=2352&group_id=1">Site Status</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/docman/display_doc.php?docid=7632&group_id=1">Contact Support</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br><P>	<A class="menus" href="http://jobs.osdn.com">jobs.osdn.com</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br><P>	<A class="menus" href="/docman/display_doc.php?docid=762&group_id=1">Compile Farm</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br><P>	<A class="menus" href="/docman/display_doc.php?docid=7632&group_id=1">Contact SourceForge.net</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/docman/display_doc.php?docid=6025&group_id=1">About SourceForge.net</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>
+			<BR>
+			</td>
+		</tr>
+	</table>
+<table cellpadding="0" cellspacing="0" border="0" width="140">
+	<tr>
+		<td align="left" valign="middle"><b>SourceForge.net Foundries</b><br></td>
+	</tr>
+	<tr>
+		<td align="right" valign="middle">
+	<A class="menus" href="/docman/display_doc.php?docid=6029&group_id=1">About Foundries</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br><P>	<A class="menus" href="http://foundries.sourceforge.net/clusters/">Clustering</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="http://foundries.sourceforge.net/distributed/">Distributed Computing</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="http://foundries.sourceforge.net/large/">Linux on Large Systems</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/foundry/linuxkernel/">Linux Kernel</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/foundry/linuxdrivers/">Linux Drivers</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/foundry/3d/">3D</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/foundry/games/">Games</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/foundry/java/">Java</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/foundry/printing/">Printing</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>	<A class="menus" href="/foundry/storage/">Storage</A> &nbsp;<IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/point1.png" border=0 width=7 height=7><br>
+			<BR>
+			</td>
+		</tr>
+	</table>
+	<P>
+	</TD>
+
+	<td width="20" background="//a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/fade1.png" nowrap>&nbsp;</td>
+	<td valign="top" bgcolor="#FFFFFF" width="99%">
+	<BR>
+
+	<b>Project: C and C++ Code Counter</b>
+<h2>Trackers</h2>
+</H2>
+		<P>
+		<HR SIZE="1" NoShade>
+		<A class=tabs href="/projects/cccc/">Summary</A>&nbsp;|&nbsp;
+		<A class=tabs href="/project/admin/?group_id=7763">Admin</A>&nbsp;|&nbsp;
+		<A class=tabs href="http://cccc.sourceforge.net">Home Page</A>&nbsp;|&nbsp;
+		<A class=tabs href="/forum/?group_id=7763">Forums</A>&nbsp;|&nbsp;
+		<A class=tabselect href="/tracker/?group_id=7763">Tracker</A>&nbsp;|&nbsp;
+		<A class=tabs href="/tracker/?group_id=7763&atid=107763">Bugs</A>&nbsp;|&nbsp;
+		<A class=tabs href="/tracker/?group_id=7763&atid=207763">Support</A>&nbsp;|&nbsp;
+		<A class=tabs href="/mail/?group_id=7763">Lists</A>&nbsp;|&nbsp;
+		<A class=tabs href="/pm/?group_id=7763">Tasks</A>&nbsp;|&nbsp;
+		<A class=tabs href="/news/?group_id=7763">News</A>&nbsp;|&nbsp;
+		<A class=tabs href="/project/showfiles.php?group_id=7763">Files</A>&nbsp;|&nbsp;<HR SIZE="1" NoShade><BR><B><A HREF="/tracker/?func=add&group_id=7763&atid=107763">Submit New</A> | <A HREF="/tracker/?func=browse&group_id=7763&atid=107763">Browse</A> | <A HREF="/tracker/reporting/?group_id=7763&atid=107763">Reporting</A> | <A HREF="/tracker/admin/?group_id=7763">Admin</A></B><P>	<H2>[ #233585 ] Does not handle namespace declarations</H2>
+
+	<TABLE WIDTH="100%">
+            <FORM ACTION="/tracker/index.php?group_id=7763&atid=107763" METHOD="POST">
+            <INPUT TYPE="HIDDEN" NAME="func" VALUE="monitor"> 
+            <INPUT TYPE="HIDDEN" NAME="artifact_id" VALUE="233585">
+        <TR>
+            <TD COLSPAN=2">
+            <INPUT TYPE="SUBMIT" NAME="SUBMIT" VALUE="Monitor">&nbsp;<A href="javascript:help_window('/help/tracker.php?helpname=monitor')"><B>(?)</B></A>
+            </FORM>
+            </TD>
+        </TR>
+
+	<FORM ACTION="/tracker/index.php?group_id=7763&atid=107763" METHOD="POST" enctype="multipart/form-data">
+	<INPUT TYPE="HIDDEN" NAME="func" VALUE="postmod">
+	<INPUT TYPE="HIDDEN" NAME="artifact_id" VALUE="233585">
+
+	<TR>
+		<TD><B>Submitted By:</B><BR>Victor B. Putz (<tt>vputz</tt>)</TD>
+		<TD><B>Date Submitted:</B><BR>
+		2001-02-22 12:45		</TD>
+	</TR>
+
+	<TR>
+		<TD><B>Data Type: <A href="javascript:help_window('/help/tracker.php?helpname=data_type')"><B>(?)</B></A></B><BR>
+		
+		<SELECT NAME="new_artfact_type_id">
+				<OPTION VALUE="107763" SELECTED>Bugs</OPTION>
+				<OPTION VALUE="357763">Feature Requests</OPTION>
+				<OPTION VALUE="307763">Patches</OPTION>
+				<OPTION VALUE="207763">Support Requests</OPTION>
+		</SELECT>		</TD>
+		<TD>
+			<INPUT TYPE="SUBMIT" NAME="SUBMIT" VALUE="Submit Changes">
+		</TD>
+	</TR>
+
+	<TR>
+		<TD><B>Category: <A href="javascript:help_window('/help/tracker.php?helpname=category')"><b>(?)</b></a></B><BR>
+		
+		<SELECT NAME="category_id">
+		<OPTION VALUE="100">None</OPTION>
+				<OPTION VALUE="102986">C++ Parser</OPTION>
+				<OPTION VALUE="102985">Command Line Processing</OPTION>
+				<OPTION VALUE="102989">HTML Output</OPTION>
+				<OPTION VALUE="102988">Internal Database</OPTION>
+				<OPTION VALUE="102987">Java Parser</OPTION>
+				<OPTION VALUE="102990">Other</OPTION>
+		<OPTION VALUE="100100" SELECTED>No Change</OPTION>
+		</SELECT>&nbsp;<A HREF="/tracker/admin/?group_id=7763&atid=107763&add_cat=1">(admin)</A>		</TD>
+		<TD><B>Group: <A href="javascript:help_window('/help/tracker.php?helpname=group')"><b>(?)</b></a></B><BR>
+		
+		<SELECT NAME="artifact_group_id">
+		<OPTION VALUE="100">None</OPTION>
+				<OPTION VALUE="101753">Enhancement requests</OPTION>
+				<OPTION VALUE="101757">Other</OPTION>
+				<OPTION VALUE="101754">Program crashes</OPTION>
+				<OPTION VALUE="101756">Program output ill-formed</OPTION>
+				<OPTION VALUE="101755">Program output incorrect</OPTION>
+		<OPTION VALUE="100100" SELECTED>No Change</OPTION>
+		</SELECT>&nbsp;<A HREF="/tracker/admin/?group_id=7763&atid=107763&add_group=1">(admin)</A>		</TD>
+	</TR>
+
+	<TR>
+		<TD><B>Assigned To: <A href="javascript:help_window('/help/tracker.php?helpname=assignee')"><b>(?)</b></a></B><BR>
+		
+		<SELECT NAME="assigned_to">
+		<OPTION VALUE="100">None</OPTION>
+				<OPTION VALUE="47535">tim_littlefair</OPTION>
+				<OPTION VALUE="370579">topless</OPTION>
+		</SELECT>&nbsp;<A HREF="/tracker/admin/?group_id=7763&atid=107763&update_users=1">(admin)</A>		</TD><TD>
+		<B>Priority: <A href="javascript:help_window('/help/tracker.php?helpname=priority')"><b>(?)</b></a></B><BR>
+			<SELECT NAME="priority">
+	<OPTION VALUE="1">1 - Lowest</OPTION>
+	<OPTION VALUE="2">2</OPTION>
+	<OPTION VALUE="3">3</OPTION>
+	<OPTION VALUE="4">4</OPTION>
+	<OPTION VALUE="5" SELECTED>5 - Medium</OPTION>
+	<OPTION VALUE="6">6</OPTION>
+	<OPTION VALUE="7">7</OPTION>
+	<OPTION VALUE="8">8</OPTION>
+	<OPTION VALUE="9">9 - Highest</OPTION>
+	</SELECT>
+		</TD>
+	</TR>
+
+	<TR>
+		<TD>
+		<B>Status: <A href="javascript:help_window('/help/tracker.php?helpname=status')"><b>(?)</b></a></B><BR>
+		
+		<SELECT NAME="status_id">
+				<OPTION VALUE="1" SELECTED>Open</OPTION>
+				<OPTION VALUE="2">Closed</OPTION>
+				<OPTION VALUE="3">Deleted</OPTION>
+				<OPTION VALUE="4">Pending</OPTION>
+		</SELECT>		</TD>
+		<TD>
+		
+			<B>Resolution: <A href="javascript:help_window('/help/tracker.php?helpname=resolution')"><b>(?)</b></a></B><BR>
+		<SELECT NAME="resolution_id">
+				<OPTION VALUE="102">Accepted</OPTION>
+				<OPTION VALUE="101">Duplicate</OPTION>
+				<OPTION VALUE="1">Fixed</OPTION>
+				<OPTION VALUE="2">Invalid</OPTION>
+				<OPTION VALUE="4">Later</OPTION>
+				<OPTION VALUE="100" SELECTED>None</OPTION>
+				<OPTION VALUE="103">Out of Date</OPTION>
+				<OPTION VALUE="104">Postponed</OPTION>
+				<OPTION VALUE="105">Rejected</OPTION>
+				<OPTION VALUE="5">Remind</OPTION>
+				<OPTION VALUE="3">Wont Fix</OPTION>
+				<OPTION VALUE="6">Works For Me</OPTION>
+		</SELECT>		</TD>
+	</TR>
+
+	<TR>
+		<TD COLSPAN="2"><B>Summary: <A href="javascript:help_window('/help/tracker.php?helpname=summary')"><b>(?)</b></a></B><BR>
+		<INPUT TYPE="TEXT" NAME="summary" SIZE="45" VALUE="Does not handle namespace declarations" MAXLENGTH="60">
+		</TD>
+	</TR>
+
+	<TR><TD COLSPAN="2">
+		Current version of cccc does not appear to handle namespace declarations.  The following program compiles under gcc 2.96-69 but generates errors when parsed under gcc:
+<br>
+
+<br>
+namespace a {
+<br>
+  void b( void );
+<br>
+};
+<br>
+
+<br>
+void a::b( void )
+<br>
+{
+<br>
+}
+<br>
+
+<br>
+CCCC generates the following output:
+<br>
+
+<br>
+Parsing
+<br>
+Processing test.cpp as C/C++ (c++.ansi)
+<br>
+test.cpp(2): syntax error at token void
+<br>
+Parser context:
+<br>
+test.cpp(1): trying to match namespace_block at 'namespace
+<br>
+test.cpp(1): trying to match link_item at 'namespace
+<br>
+test.cpp(1): trying to match start at 'namespace
+<br>
+
+<br>
+test.cpp(3): syntax error at token }
+<br>
+Parser context:
+<br>
+test.cpp(3): trying to match start at '}
+<br>
+test.cpp(2): trying to match start at 'void
+<br>
+test.cpp(1): trying to match start at 'namespace
+<br>
+
+<br>
+
+<br>
+
+<br>
+Unlike my other reports, I cannot seem to restate the code in a manner acceptable to CCCC.
+<br>
+
+<br>
+--&gt;VPutz	</TD></TR>
+
+	<TR><TD COLSPAN="2">
+		<B>Use Canned Response: <A href="javascript:help_window('/help/tracker.php?helpname=canned_response')"><b>(?)</b></a></B><BR>
+		
+		<SELECT NAME="canned_response">
+		<OPTION VALUE="100">None</OPTION>
+		</SELECT>&nbsp;<A HREF="/tracker/admin/?group_id=7763&atid=107763&add_canned=1">(admin)</A>		<P>
+		<B>OR Attach A Comment: <A href="javascript:help_window('/help/tracker.php?helpname=comment')"><b>(?)</b></a></B><BR>
+		<TEXTAREA NAME="details" ROWS="7" COLS="60" WRAP="HARD"></TEXTAREA>
+		<P>
+		<H3>Followups:</H3>
+		<P>
+		
+				<H3>No Followups Have Been Posted</H3>	</TD></TR>
+
+	<TR><TD COLSPAN=2>
+		<B>Check to Upload &amp; Attach File:</B> <input type="checkbox" name="add_file" VALUE="1"> 
+		<A href="javascript:help_window('/help/tracker.php?helpname=attach_file')"><b>(?)</b></a><BR>
+		<P>
+		<input type="file" name="input_file" size="30">
+		<P>
+		<B>File Description:</B><BR>
+		<input type="text" name="file_description" size="40" maxlength="255">
+		<P>
+		<H4>Existing Files:</H4>
+		
+	<TABLE WIDTH="100%" BORDER="0" CELLSPACING="1" CELLPADDING="2">
+		<TR BGCOLOR="#D1D5D7">
+			<TD ALIGN="MIDDLE"><FONT COLOR="#333333"><B>Delete</B></FONT></TD>
+			<TD ALIGN="MIDDLE"><FONT COLOR="#333333"><B>Name</B></FONT></TD>
+			<TD ALIGN="MIDDLE"><FONT COLOR="#333333"><B>Description</B></FONT></TD>
+			<TD ALIGN="MIDDLE"><FONT COLOR="#333333"><B>Download</B></FONT></TD></TR><TR><TD COLSPAN=3>No Files Currently Attached</TD></TR>		</TABLE>
+	</TD><TR>
+
+	<TR><TD COLSPAN="2">
+		<H4>Change Log:</H4>
+		
+			<H3>No Changes Have Been Made to This Item</H3>	</TD></TR>
+
+	<TR><TD COLSPAN="2" ALIGN="MIDDLE">
+		<INPUT TYPE="SUBMIT" NAME="SUBMIT" VALUE="Submit Changes">
+		</FORM>
+	</TD></TR>
+
+	</TABLE>
+
+	<!-- end content -->
+	<p>&nbsp;</p>
+	</td>
+	<td width="9" bgcolor="#FFFFFF">&nbsp;
+	</td>
+
+	</tr>
+	</table>
+		</td>
+		<td width="17" background="//a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/rightbar1.png" align="right" valign="bottom"><IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/rightbar1.png" border=0 width=17 height=17></td>
+	</tr>
+	<tr>
+		<td background="//a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/bbar1.png" height="17"><IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/bleft1.png" border=0 width=17 height=17></td>
+		<td background="//a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/bbar1.png" align="center" colspan="3"><IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/bbar1.png" border=0 width=1 height=17></td>
+		<td background="//a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/bbar1.png" bgcolor="#7c8188"><IMG src="https://a248.e.akamai.net/7/248/1710/949111342/sourceforge.net//themes/forged/images/bright1.png" border=0 width=17 height=17></td>
+	</tr>
+</table>
+</div>
+
+<!-- themed page footer -->
+<P><A HREF="/source.php?page_url=/tracker/index.php"><B><FONT COLOR="WHITE">Show Source</FONT></B></A><P><P class="footer">
+<font face="arial, helvetica" size="1" color="#cccccc">
+VA Linux Systems and SourceForge are trademarks of VA Linux Systems, Inc.
+Linux is a registered trademark of Linus Torvalds.  All other trademarks and
+copyrights on this page are property of their respective owners.
+For information about other site Content ownership and sitewide
+terms of service, please see the
+<a href="/docman/display_doc.php?docid=6048&group_id=1" class="legallink">SourceForge.net Terms of Service</a>.
+For privacy
+policy information, please see the <a href="/docman/display_doc.php?docid=6049&group_id=1
+" class="legallink"
+>SourceForge.net Privacy Policy</a>.
+Content owned by VA Linux Systems is copyright 
+1999, 2000, 2001 VA Linux Systems, Inc.  All rights reserved.
+</font>
+<BR>&nbsp;
+
+
+</body>
+</html>
+	
