@@ -128,6 +128,8 @@ inline void endOfLine(CLexer &lexer)
 // thanks to Lynn Wilson for pointing out the need for a simple fix 
 // to handle escaped newlines within string constants
 #token LYNNS_FIX "\\\n"  <<  endOfLine(*this); >>   
+#token ESCAPED_DQUOTE "\\\"" << skip(); >>
+#token ESCAPED_OTHER "\\~[\"]" << skip(); >>
 #token S_ANYTHING "~[\"]" << skip(); >>
 #lexclass START
 
