@@ -70,3 +70,17 @@ Added XML format output.
 Fixed command line environment for Windows XP.  
 Modified URLs to research project to reflect new naming at ecu.edu.au.
 
+version 3.pre82
+Implemented workaround for prn16.  This was a problem reported by Colin 
+Watson, giving different test case output on different architectures.
+The problem turns out to be due to unexpected (and so far unexplained)
+actions being invoked from the parser, the workaround consists of filtering
+the record_XXXXXX_extent functions so that they take no action if 
+parameters which are expected to be non-empty strings turn out to be empty.
+This change has modified the expected output for many of the test cases:
+on inspection the new behaviour appears to be at least as valid in each
+case, however users should be aware that this fix changes CCCC's opinion
+on what is a module to exclude the names of types which only appear in
+parameter lists.
+
+
