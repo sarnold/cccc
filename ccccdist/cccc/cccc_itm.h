@@ -20,7 +20,10 @@ private:
   bool good;
 
 public:
-  CCCC_Item(const string& s="", char c='@');
+  CCCC_Item(const string& s, char c);
+  CCCC_Item(const string& s) {CCCC_Item(s, '@'); }
+  CCCC_Item() {CCCC_Item("", '@'); }
+ 
 
   bool Insert(const string& s); 
   bool Insert(const char* cptr); 
