@@ -1,0 +1,33 @@
+CCCC_Module@Test2a@class@
+CCCC_ModExt@Test2a@class@test2.cc@18@definition@F???0@LOC:6 COM:0 MVG:0@0@d@
+CCCC_Module@Test2b@@
+CCCC_Module@Test2c@class@
+CCCC_ModExt@Test2c@class@test2.cc@26@definition@F???2@LOC:5 COM:0 MVG:0@2@d@
+CCCC_Module@Test2d@@
+CCCC_Module@Test2e@@
+CCCC_Module@char@builtin@
+CCCC_ModExt@char@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@double@builtin@
+CCCC_ModExt@double@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@float@builtin@
+CCCC_ModExt@float@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@int@builtin@
+CCCC_ModExt@int@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@long@builtin@
+CCCC_ModExt@long@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@void@builtin@
+CCCC_ModExt@void@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Member@Test2a@doSomething@@(Test2b)@
+CCCC_MemExt@Test2a@doSomething@@(Test2b)@test2.cc@23@declaration@F???2@LOC:1 COM:0 MVG:0@2@D@
+CCCC_Member@Test2e@Test2e@@(const Test2a &)@
+CCCC_MemExt@Test2e@Test2e@@(const Test2a &)@test2.cc@39@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_UseRel@Test2b@Test2a@
+CCCC_UseExt@Test2b@Test2a@test2.cc@21@has by reference@????0@LOC:0 COM:0 MVG:0@0@h@
+CCCC_UseExt@Test2b@Test2a@test2.cc@23@pass by value@F???2@*@2@P@
+CCCC_UseRel@Test2e@Test2a@
+CCCC_UseExt@Test2e@Test2a@test2.cc@18@inheritance@????0@*@0@I@
+CCCC_UseRel@Test2d@Test2c@
+CCCC_UseExt@Test2d@Test2c@test2.cc@29@has by value@F???1@LOC:0 COM:0 MVG:0@1@H@
+CCCC_UseRel@Test2a@Test2e@
+CCCC_UseExt@Test2a@Test2e@test2.cc@39@pass by reference@F????@*@?@p@
+CCCC_RejExt@test2.cc@1@<file scope items>@F????@LOC:0 COM:0 MVG:0@?@r@
