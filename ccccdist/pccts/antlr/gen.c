@@ -3497,7 +3497,10 @@ int file;
     if (TraceGen) {
       _gen("#ifndef zzTRACE_RULES\n");  /* MR20 */
       _gen("#define zzTRACE_RULES\n");  /* MR20 */
-      _gen("#endif  zzTRACE_RULES\n");  /* MR20 */
+      // zzTRACE_RULES removed from #endif by TL because it causes
+      // a warning under GCC 3.0.2
+      // _gen("#endif  zzTRACE_RULES\n");  /* MR20 */
+      _gen("#endif\n");  /* MR20 */
     };
 	if ( !GenCC ) {_gen("#include \"antlr.h\"\n");}
 	else {
@@ -3660,7 +3663,10 @@ char * gate;                                    /* MR10 */
         if (TraceGen) {
           fprintf(f,"#ifndef zzTRACE_RULES\n");  /* MR20 */
           fprintf(f,"#define zzTRACE_RULES\n");  /* MR20 */
-          fprintf(f,"#endif  zzTRACE_RULES\n");  /* MR20 */
+          // zzTRACE_RULES removed from #endif by TL because it causes
+          // a warning under GCC 3.0.2
+          // fprintf(f,"#endif  zzTRACE_RULES\n");  /* MR20 */
+          fprintf(f,"#endif\n");  /* MR20 */
         };
 
 		fprintf(f,"#include \"%s\"\n", APARSER_H);
@@ -3685,7 +3691,10 @@ char * gate;                                    /* MR10 */
     if (TraceGen) {
       fprintf(f,"#ifndef zzTRACE_RULES\n");  /* MR20 */
       fprintf(f,"#define zzTRACE_RULES\n");  /* MR20 */
-      fprintf(f,"#endif  zzTRACE_RULES\n");  /* MR20 */
+      // zzTRACE_RULES removed from #endif by TL because it causes
+      // a warning under GCC 3.0.2
+      // fprintf(f,"#endif  zzTRACE_RULES\n");  /* MR20 */
+      fprintf(f,"#endif\n");  /* MR20 */
     };
 	if ( OutputLL_k > 1 ) fprintf(f,"#define LL_K %d\n", OutputLL_k);
 	if ( GenAST ) fprintf(f,"#define GENAST\n");
@@ -3707,7 +3716,10 @@ char * gate;                                    /* MR10 */
     if (TraceGen) {
       fprintf(f,"#ifndef zzTRACE_RULES\n");  /* MR20 */
       fprintf(f,"#define zzTRACE_RULES\n");  /* MR20 */
-      fprintf(f,"#endif  zzTRACE_RULES\n");  /* MR20 */
+      // zzTRACE_RULES removed from #endif by TL because it causes
+      // a warning under GCC 3.0.2
+      // fprintf(f,"#endif  zzTRACE_RULES\n");  /* MR20 */
+      fprintf(f,"#endif\n");  /* MR20 */
     };
 	fprintf(f,"#include \"antlr.h\"\n");
 	if ( GenAST ) fprintf(f,"#include \"ast.h\"\n");

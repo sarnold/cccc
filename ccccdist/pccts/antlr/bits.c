@@ -801,7 +801,10 @@ GenParser_h_Hdr()
     if (TraceGen) {
       fprintf(Parser_h,"#ifndef zzTRACE_RULES\n");  /* MR20 */
       fprintf(Parser_h,"#define zzTRACE_RULES\n");  /* MR20 */
-      fprintf(Parser_h,"#endif  zzTRACE_RULES\n");  /* MR20 */
+      // zzTRACE_RULES removed from end of #endif directory by TL,
+      // because GCC 3.0.2 generates a warning for this.
+      //fprintf(Parser_h,"#endif  zzTRACE_RULES\n");  /* MR20 */
+      fprintf(Parser_h,"#endif\n");  /* MR20 */
     };
 	fprintf(Parser_h, "#include \"%s\"\n\n", APARSER_H);
 
@@ -864,7 +867,10 @@ GenErrHdr( )
     if (TraceGen) {
       fprintf(ErrFile,"#ifndef zzTRACE_RULES\n");  /* MR20 */
       fprintf(ErrFile,"#define zzTRACE_RULES\n");  /* MR20 */
-      fprintf(ErrFile,"#endif  zzTRACE_RULES\n");  /* MR20 */
+      // zzTRACE_RULES removed from end of #endif directory by TL,
+      // because GCC 3.0.2 generates a warning for this.
+      //fprintf(Parser_h,"#endif  zzTRACE_RULES\n");  /* MR20 */
+      fprintf(Parser_h,"#endif\n");  /* MR20 */
     };
 
 	if ( OutputLL_k > 1 ) fprintf(ErrFile, "#define LL_K %d\n", OutputLL_k);
