@@ -16,6 +16,13 @@ set CL_ARGS=-c -I "%VCTDIR%\include" -EHsc
 set LINK_EXE="%VCTDIR%\bin\link.exe"
 set LINK_ARGS=-libpath:"%VCTDIR%\lib" -subsystem:console
 
+set arg1=%1
+
+if "%arg1%"=="-version" (
+   echo // This version built on %HOSTNAME% at %DATE% > cccc\cccc_ver.h
+   echo #define CCCC_VERSION %2 >> cccc\cccc_ver.h
+   set arg1=-clean
+)
 
 if "%1"=="-clean" (
    for %%d in ( pccts\dlg pccts\antlr cccc ) do (
@@ -74,14 +81,14 @@ set DFLAGS=-C2 -CC
 ..\pccts\bin\antlr.exe %AFLAGS% -ft Jtokens.h java.g
 ..\pccts\bin\dlg.exe %DFLAGS% -cl JLexer parser.dlg
 
-set CC_SOURCES=ccccmain cccc_ast cccc_db cccc_ext cccc_htm
+set CC_SOURCES=ccccmain cccc_db cccc_ext cccc_htm
 set CC_SOURCES=%CC_SOURCES% cccc_itm cccc_mem cccc_met cccc_mod
 set CC_SOURCES=%CC_SOURCES% cccc_new cccc_opt cccc_prj cccc_rec
 set CC_SOURCES=%CC_SOURCES% cccc_tbl cccc_tok cccc_tpl cccc_use 
 set CC_SOURCES=%CC_SOURCES% cccc_utl cccc_xml
 set CPP_SOURCES=cccc CLexer CParser java JLexer JParser
 set A_SOURCES=..\pccts\h\AParser ..\pccts\h\DLexerBase ..\pccts\h\ATokenBuffer
-set CL_ARGS=-I ..\pccts\h -D CC_INCLUDED -D CCCC_CONF_W32VC %CL_ARGS% 
+set CL_ARGS=-I ..\pccts\h -D CC_INCLUDED -D JAVA_INCLUDED -D CCCC_CONF_W32VC %CL_ARGS% 
 for %%f in ( %CC_SOURCES% ) do (
    if not exist %%f.obj (
       %CL_EXE% %CL_ARGS% %%f.cc
@@ -105,18 +112,55 @@ for %%f in ( %A_SOURCES% ) do (
 cd ..
 endlocal
 
+
+setlocal
+cd test
+call run_test cc    test1
+call run_test cc    test2
+call run_test cc    test3
+call run_test test4 test4
+call run_test cc    prn1
+call run_test cc    prn2
+call run_test cc    prn3
+call run_test cc    prn4
+call run_test cc    prn5
+call run_test cc    prn6
+call run_test c     prn7
+call run_test java  prn8
+call run_test cc    prn9
+call run_test cc    prn10
+call run_test cc    prn11
+call run_test cc    prn12
+call run_test java  prn13
+call run_test java  prn14
+call run_test java  prn15
+call run_test java  prn16
+cd ..
+endlocal
+
+rem The visual C++ addin can't be built using MS Visual C++ Toolkit 2003
+rem because it doesn't provide MFC header files and libraries
+goto :afterAddIn
+setlocal
+cd vcaddin
+set CPP_SOURCES=CcccDevStudioAddIn CommandForm Commands DSAddIn
+set CPP_SOURCES=%CPP_SOURCES% FileList StdAfx WorkspaceInfo
+for %%f in ( %CPP_SOURCES% ) do (
+   if not exist %%f.obj (
+      %CL_EXE% %CL_ARGS% %%f.cpp
+   )
+)
+cd ..
+endlocal
+
+setlocal
+cd w32installer
+set CL_CPP_ARGS=/FI ..\cccc\cccc_ver.h /EP 
+%CL_EXE% %CL_CPP_ARGS% cccc.iss.nover > cccc.iss
+"c:\Program Files\My Inno Setup Extensions\iscc.exe" cccc.iss
+copy output\CCCC_SETUP.exe ..
 goto :end
 
-cd test
-nmake -f w32vc.mak
-cd ..
-
-cd vcaddin
-nmake -f CcccDevStudioAddIn.mak CFG="CcccDevStudioAddIn - Win32 Release"
-cd ..
-
-
-goto end
 
 :no_vc
 echo This script expects MS Visual C++ Toolkit 2003 to be in %VCTDIR%

@@ -53,7 +53,6 @@
 #define zzTRACE_RULES
   #include "AParser.h"
   #include "cccc.h"
-  #include "cccc_ast.h"
   #include "cccc_utl.h"
   #include "cccc_opt.h"
 
