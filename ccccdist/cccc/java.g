@@ -266,7 +266,6 @@ inline void endOfCommentLine(JLexer &lexer)
 #token	KW_SHORT		"short"		<<;>>
 #token	SHUTUP		"shutup"		<<;>>
 #token	STATIC		"static"		<<;>>
-#token	STRING		"string"		<<;>>
 #token	SUPER		"super"		<<;>>
 #token	SWITCH		"switch"		<< IncrementCount(tcMCCABES_VG); >>
 #token	SYNCHRONIZED	"synchronized"		<<;>>
@@ -303,6 +302,10 @@ inline void endOfCommentLine(JLexer &lexer)
 // Option 1 above does not cover a floating point value with an f at
 // the end but no decimal point
 #token NUM_INT1A "([0-9])+{[eE]{[\+\-]}([0-9])+}{[fFdD]}" <<;>>
+
+// Nor does it cover a floating point value with a decimal point but 
+// no following mantissa.
+#token NUM_INT1B "([0-9])+\.{[eE]{[\+\-]}([0-9])+}{[fFdD]}" <<;>>
 
 
 class JParser
