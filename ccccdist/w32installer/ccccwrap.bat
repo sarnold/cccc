@@ -1,4 +1,11 @@
+@rem ccccwrap.bat
+@rem Wrapper script to provide a command line environment with CCCC in the path.
 @echo off 
+
+rem Give the command prompt a distinctive colour scheme so that 
+rem the user can tell it from other command prompt windows.
+color 2e
+
 set CCCC_ENV=cccc_env.bat
 set CCCC_EXE=cccc.exe
 
@@ -13,6 +20,7 @@ cd %CCCC_WORK_DIR%
 
 rem Request the usage message.
 %CCCC_PATH_DIR%\cccc.exe --help
+
 
 rem Start the shell
 %COMSPEC% 
