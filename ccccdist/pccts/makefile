@@ -51,8 +51,6 @@ pccts:
 clean:
 	(cd antlr; make -s clean)
 	(cd dlg; make -s clean)
-	(cd sorcerer; make -s clean)
-	(cd support/genmk; make -s clean)
 
 
 manpages:
