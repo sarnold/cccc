@@ -10,6 +10,7 @@
 
 #include <fstream>
 #include <list>
+#include <iterator>
 
 #ifdef _WIN32
 #include <direct.h>
@@ -322,8 +323,10 @@ int Main::ParseFiles()
   std::list<file_entry>::iterator file_iterator=file_list.begin();
   while(file_iterator!=file_list.end())
     {
-      string filename=file_iterator->first;
-      string file_language=file_iterator->second;
+	  const file_entry &entry=*file_iterator;
+
+      string filename=entry.first;
+      string file_language=entry.second;
       ParseStore ps(filename);
 
       // The following objects are used to assist in the parsing 

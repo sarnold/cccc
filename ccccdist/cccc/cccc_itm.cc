@@ -33,11 +33,12 @@ bool CCCC_Item::Insert(const char* cptr)
 bool CCCC_Item::Extract(string& s)
 {
   size_t delimiter_position=buffer.find(delimiter);
-  if(delimiter_position>=0)
+  if(delimiter_position!=string::npos)
     {
       good=true;
       s=buffer.substr(0,delimiter_position);
-      buffer=buffer.substr(delimiter_position+1);
+      string tempBuffer=buffer.substr(delimiter_position+1);
+	  buffer=tempBuffer;
     }
   else
     { 

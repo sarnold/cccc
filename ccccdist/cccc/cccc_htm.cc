@@ -664,7 +664,7 @@ void CCCC_Html_Stream::Put_Structural_Details_Cell(
 	  iter++
 	  )
 	{
-	  CCCC_UseRelationship *ur_ptr=iter->second;
+	  CCCC_UseRelationship *ur_ptr=(*iter).second;
 	  fstr << ur_ptr->name(nl) << " ";
 	  AugmentedBool vis=ur_ptr->is_visible();
 	  AugmentedBool con=ur_ptr->is_concrete();
@@ -1107,7 +1107,7 @@ void CCCC_Html_Stream::Module_Detail(CCCC_Module *module_ptr)
     {
       while(eIter!=module_ptr->extent_table.end())
 		{
-	  CCCC_Extent *ext_ptr=eIter->second;
+	  CCCC_Extent *ext_ptr=(*eIter).second;
 	  fstr << "<TR>" << endl;
 	  Put_Extent_Cell(*ext_ptr,0,true);
 	  int loc=ext_ptr->get_count("LOC");
@@ -1157,7 +1157,7 @@ void CCCC_Html_Stream::Procedural_Detail(CCCC_Module *module_ptr)
     {
       while(iter!=module_ptr->member_map.end())
 	{ 
-	  CCCC_Member *mem_ptr=iter->second;
+	  CCCC_Member *mem_ptr=(*iter).second;
 	  fstr << "<TR>" << endl;
 	  Put_Label_Cell(mem_ptr->name(nlLOCAL).c_str(),0,"","",mem_ptr);
 	  int loc=mem_ptr->get_count("LOC");
@@ -1384,7 +1384,7 @@ void CCCC_Html_Stream::Source_Listing()
   while(iter!=source_anchor_map.end())
     {
       char linebuf[1024];
-      Source_Anchor& nextAnchor=iter->second;
+      Source_Anchor& nextAnchor=(*iter).second;
       if(current_filename!=nextAnchor.get_file())
 	{
 	  current_filename=nextAnchor.get_file();
@@ -1402,16 +1402,16 @@ void CCCC_Html_Stream::Source_Listing()
 	  current_line++;
 	  if(
 	     (iter!=source_anchor_map.end()) &&
-	     (current_filename==iter->second.get_file()) &&
-	     (current_line==iter->second.get_line())
+	     (current_filename==(*iter).second.get_file()) &&
+	     (current_line==(*iter).second.get_line())
 	     )
 	    {
-	      iter->second.Emit_NAME(source_html_str.fstr);
+	      (*iter).second.Emit_NAME(source_html_str.fstr);
 	      iter++;
 	    }
 	  else
 	    {
-	      iter->second.Emit_SPACE(source_html_str.fstr);
+	      (*iter).second.Emit_SPACE(source_html_str.fstr);
 	    }
  	  source_html_str << linebuf;
  	  source_html_str.fstr << "<BR>" << endl;
@@ -1423,10 +1423,10 @@ void CCCC_Html_Stream::Source_Listing()
       // complain and ignore
       while(
 	    (iter!=source_anchor_map.end()) &&
-	    (current_filename==iter->second.get_file())
+	    (current_filename==(*iter).second.get_file())
 	    )
 	{
-	  iter->second.Emit_NAME(source_html_str.fstr);
+	  (*iter).second.Emit_NAME(source_html_str.fstr);
 	  iter++;
 	  source_html_str.fstr << "<BR>" << endl;
 	}

@@ -19,12 +19,12 @@ CCCC_Project::CCCC_Project(const string& name)
   // as the parent of all non-member functions
   char *builtin_type_info[]=
   {
-    "void@builtin@<nofile>@0@builtin definition@d?????@@0@d",
-    "int@builtin@<nofile>@0@builtin definition@d?????@@0@d",
-    "char@builtin@<nofile>@0@builtin definition@d?????@@0@d",
-    "long@builtin@<nofile>@0@builtin definition@d?????@@0@d",
-    "float@builtin@<nofile>@0@builtin definition@d?????@@0@d",
-    "double@builtin@<nofile>@0@builtin definition@d?????@@0@d",
+    "void@builtin@<nofile>@0@builtin definition@d?????@@0@d@",
+    "int@builtin@<nofile>@0@builtin definition@d?????@@0@d@",
+    "char@builtin@<nofile>@0@builtin definition@d?????@@0@d@",
+    "long@builtin@<nofile>@0@builtin definition@d?????@@0@d@",
+    "float@builtin@<nofile>@0@builtin definition@d?????@@0@d@",
+    "double@builtin@<nofile>@0@builtin definition@d?????@@0@d@",
     NULL
   };
   for(char **ptr=builtin_type_info; *ptr!=NULL; ptr++)
