@@ -1,3 +1,21 @@
+/*
+    CCCC - C and C++ Code Counter
+    Copyright (C) 1994-2005 Tim Littlefair (tim_littlefair@hotmail.com)
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+*/
 #ifndef __CCCC_MET_H
 #define __CCCC_MET_H
 
@@ -9,6 +27,7 @@
 enum EmphasisLevel { elLOW=0, elMEDIUM=1, elHIGH=2 };
 
 class CCCC_Html_Stream;
+class CCCC_Metric;
 
 // the single class CCCC_Metric which will be defined later in this file 
 // will be used for all metrics
@@ -19,7 +38,7 @@ class Metric_Treatment
 {
   friend class CCCC_Metric;
   friend void add_treatment(CCCC_Item&);
-  friend CCCC_Html_Stream& operator <<(CCCC_Html_Stream&,const CCCC_Metric&);
+  friend CCCC_Html_Stream& ::operator <<(CCCC_Html_Stream&,const CCCC_Metric&);
 
   // a short code string is used to search for the metric treatment, and
   // it has a full name

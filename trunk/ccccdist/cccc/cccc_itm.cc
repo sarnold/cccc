@@ -16,12 +16,16 @@ CCCC_Item::CCCC_Item(const string& s, char c)
 
 CCCC_Item::CCCC_Item(const string& s) 
 {
-  CCCC_Item(s, '@'); 
+  buffer=s;
+  delimiter='@';
+  good=true;
 }
 
 CCCC_Item::CCCC_Item() 
 {
-  CCCC_Item("", '@'); 
+  buffer="";
+  delimiter='@';
+  good=true;
 }
 
 bool CCCC_Item::Insert(const string& s)
