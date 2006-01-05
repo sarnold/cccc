@@ -1,21 +1,3 @@
-/*
-    CCCC - C and C++ Code Counter
-    Copyright (C) 1994-2005 Tim Littlefair (tim_littlefair@hotmail.com)
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
-*/
-// This version built on  at Fri 01/14/2005 
-#define CCCC_VERSION 3.0.72 
-#define CCCC_VERSION_STRING "3.0.72" 
+// This version built on  at Fri 01/06/2006 
+#define CCCC_VERSION 3.99 
+#define CCCC_VERSION_STRING "3.99" 
