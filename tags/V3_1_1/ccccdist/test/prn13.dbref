@@ -1,0 +1,123 @@
+CCCC_Module@AnimatingControlsSurface@@
+CCCC_Module@BasicStroke@@
+CCCC_Module@BufferedImage@@
+CCCC_Module@ChangeEvent@@
+CCCC_Module@ChangeListener@@
+CCCC_Module@Component@@
+CCCC_Module@CustomControls@@
+CCCC_Module@DemoControls@class@
+CCCC_ModExt@DemoControls@class@prn13.java@350@definition@?????@LOC:5 COM:1 MVG:0@?@d@
+CCCC_Module@Dimension@@
+CCCC_Module@FadeAnim@class@
+CCCC_ModExt@FadeAnim@class@prn13.java@54@definition@?????@LOC:36 COM:4 MVG:0@?@d@
+CCCC_Module@Font@@
+CCCC_Module@Graphics2D@@
+CCCC_Module@JSlider@@
+CCCC_Module@Object@@
+CCCC_Module@ObjectData@class@
+CCCC_ModExt@ObjectData@class@prn13.java@257@definition@?????@LOC:11 COM:0 MVG:0@?@d@
+CCCC_Module@Paint@@
+CCCC_Module@String@@
+CCCC_Module@TextData@class@
+CCCC_ModExt@TextData@class@prn13.java@241@definition@?????@LOC:5 COM:0 MVG:0@?@d@
+CCCC_Module@TexturePaint@@
+CCCC_Module@Vector@@
+CCCC_Module@char@builtin@
+CCCC_ModExt@char@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@double@builtin@
+CCCC_ModExt@double@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@float@builtin@
+CCCC_ModExt@float@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@int@builtin@
+CCCC_ModExt@int@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@long@builtin@
+CCCC_ModExt@long@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@void@builtin@
+CCCC_ModExt@void@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Member@DemoControls@DemoControls@@(FadeAnim)@
+CCCC_MemExt@DemoControls@DemoControls@@(FadeAnim)@prn13.java@356@definition@????0@LOC:39 COM:0 MVG:0@?@d@
+CCCC_Member@DemoControls@getPreferredSize@Dimension@()@
+CCCC_MemExt@DemoControls@getPreferredSize@Dimension@()@prn13.java@422@definition@????0@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@DemoControls@run@void@()@
+CCCC_MemExt@DemoControls@run@void@()@prn13.java@427@definition@????0@LOC:8 COM:0 MVG:0@?@d@
+CCCC_Member@DemoControls@stateChanged@void@(ChangeEvent)@
+CCCC_MemExt@DemoControls@stateChanged@void@(ChangeEvent)@prn13.java@401@definition@????0@LOC:19 COM:0 MVG:4@?@d@
+CCCC_Member@FadeAnim@FadeAnim@@()@
+CCCC_MemExt@FadeAnim@FadeAnim@@()@prn13.java@92@definition@????0@LOC:8 COM:0 MVG:0@?@d@
+CCCC_Member@FadeAnim@main@void@(String[])@
+CCCC_MemExt@FadeAnim@main@void@(String[])@prn13.java@236@definition@????0@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@FadeAnim@render@void@(int,int,Graphics2D)@
+CCCC_MemExt@FadeAnim@render@void@(int,int,Graphics2D)@prn13.java@209@definition@????0@LOC:24 COM:0 MVG:6@?@d@
+CCCC_Member@FadeAnim@reset@void@(int,int)@
+CCCC_MemExt@FadeAnim@reset@void@(int,int)@prn13.java@195@definition@????0@LOC:5 COM:0 MVG:1@?@d@
+CCCC_Member@FadeAnim@setImages@void@(int)@
+CCCC_MemExt@FadeAnim@setImages@void@(int)@prn13.java@102@definition@????0@LOC:29 COM:0 MVG:5@?@d@
+CCCC_Member@FadeAnim@setShapes@void@(int)@
+CCCC_MemExt@FadeAnim@setShapes@void@(int)@prn13.java@161@definition@????0@LOC:31 COM:0 MVG:19@?@d@
+CCCC_Member@FadeAnim@setStrings@void@(int)@
+CCCC_MemExt@FadeAnim@setStrings@void@(int)@prn13.java@134@definition@????0@LOC:24 COM:0 MVG:4@?@d@
+CCCC_Member@FadeAnim@step@void@(int,int)@
+CCCC_MemExt@FadeAnim@step@void@(int,int)@prn13.java@202@definition@????0@LOC:5 COM:0 MVG:1@?@d@
+CCCC_Member@ObjectData@ObjectData@@(Object,Paint)@
+CCCC_MemExt@ObjectData@ObjectData@@(Object,Paint)@prn13.java@268@definition@????0@LOC:11 COM:0 MVG:2@?@d@
+CCCC_Member@ObjectData@getRandomXY@void@(int,int)@
+CCCC_MemExt@ObjectData@getRandomXY@void@(int,int)@prn13.java@281@definition@????2@LOC:14 COM:0 MVG:4@?@d@
+CCCC_Member@ObjectData@reset@void@(int,int)@
+CCCC_MemExt@ObjectData@reset@void@(int,int)@prn13.java@297@definition@????0@LOC:28 COM:0 MVG:9@?@d@
+CCCC_Member@ObjectData@step@void@(int,int)@
+CCCC_MemExt@ObjectData@step@void@(int,int)@prn13.java@327@definition@????0@LOC:20 COM:0 MVG:6@?@d@
+CCCC_Member@TextData@TextData@@(String,Font,Component)@
+CCCC_MemExt@TextData@TextData@@(String,Font,Component)@prn13.java@247@definition@????0@LOC:7 COM:0 MVG:0@?@d@
+CCCC_UseRel@ChangeEvent@DemoControls@
+CCCC_UseExt@ChangeEvent@DemoControls@prn13.java@401@normal parameter@????0@*@?@p@
+CCCC_UseRel@ChangeListener@DemoControls@
+CCCC_UseExt@ChangeListener@DemoControls@prn13.java@350@implements@????0@*@?@I@
+CCCC_UseRel@CustomControls@DemoControls@
+CCCC_UseExt@CustomControls@DemoControls@prn13.java@350@extends@????0@*@?@I@
+CCCC_UseRel@Dimension@DemoControls@
+CCCC_UseExt@Dimension@DemoControls@prn13.java@422@return type@????0@*@?@p@
+CCCC_UseRel@FadeAnim@DemoControls@
+CCCC_UseExt@FadeAnim@DemoControls@prn13.java@352@member variable@?????@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseExt@FadeAnim@DemoControls@prn13.java@356@normal parameter@????0@*@?@p@
+CCCC_UseRel@Font@DemoControls@
+CCCC_UseExt@Font@DemoControls@prn13.java@354@member variable@?????@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseRel@JSlider@DemoControls@
+CCCC_UseExt@JSlider@DemoControls@prn13.java@353@member variable@?????@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseRel@AnimatingControlsSurface@FadeAnim@
+CCCC_UseExt@AnimatingControlsSurface@FadeAnim@prn13.java@54@extends@????0@*@?@I@
+CCCC_UseRel@BasicStroke@FadeAnim@
+CCCC_UseExt@BasicStroke@FadeAnim@prn13.java@72@member variable@????2@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseRel@Font@FadeAnim@
+CCCC_UseExt@Font@FadeAnim@prn13.java@73@member variable@????2@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseRel@Graphics2D@FadeAnim@
+CCCC_UseExt@Graphics2D@FadeAnim@prn13.java@209@normal parameter@????0@*@?@p@
+CCCC_UseRel@Paint@FadeAnim@
+CCCC_UseExt@Paint@FadeAnim@prn13.java@84@member variable@????2@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseRel@String@FadeAnim@
+CCCC_UseExt@String@FadeAnim@prn13.java@79@member variable@????2@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseExt@String@FadeAnim@prn13.java@82@member variable@????2@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseExt@String@FadeAnim@prn13.java@236@normal parameter@????0@*@?@p@
+CCCC_UseRel@TexturePaint@FadeAnim@
+CCCC_UseExt@TexturePaint@FadeAnim@prn13.java@56@member variable@????2@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseRel@Vector@FadeAnim@
+CCCC_UseExt@Vector@FadeAnim@prn13.java@88@member variable@????2@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseRel@BufferedImage@ObjectData@
+CCCC_UseExt@BufferedImage@ObjectData@prn13.java@261@member variable@?????@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseRel@Object@ObjectData@
+CCCC_UseExt@Object@ObjectData@prn13.java@257@extends@????0@*@?@I@
+CCCC_UseExt@Object@ObjectData@prn13.java@260@member variable@?????@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseExt@Object@ObjectData@prn13.java@268@normal parameter@????0@*@?@p@
+CCCC_UseRel@Paint@ObjectData@
+CCCC_UseExt@Paint@ObjectData@prn13.java@262@member variable@?????@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseExt@Paint@ObjectData@prn13.java@268@normal parameter@????0@*@?@p@
+CCCC_UseRel@Component@TextData@
+CCCC_UseExt@Component@TextData@prn13.java@247@normal parameter@????0@*@?@p@
+CCCC_UseRel@Font@TextData@
+CCCC_UseExt@Font@TextData@prn13.java@244@member variable@????0@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseExt@Font@TextData@prn13.java@247@normal parameter@????0@*@?@p@
+CCCC_UseRel@Object@TextData@
+CCCC_UseExt@Object@TextData@prn13.java@241@extends@????0@*@?@I@
+CCCC_UseRel@String@TextData@
+CCCC_UseExt@String@TextData@prn13.java@243@member variable@????0@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseExt@String@TextData@prn13.java@247@normal parameter@????0@*@?@p@
+CCCC_RejExt@prn13.java@1@<file scope items>@?????@LOC:11 COM:32 MVG:0@?@r@
