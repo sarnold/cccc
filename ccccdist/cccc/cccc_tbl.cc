@@ -1,4 +1,24 @@
+/*
+    CCCC - C and C++ Code Counter
+    Copyright (C) 1994-2005 Tim Littlefair (tim_littlefair@hotmail.com)
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+*/
 // cccc_tbl.cc
+#ifndef _CCCC_TBL_BODY
+#define _CCCC_TBL_BODY
 
 #include "cccc_itm.h"
 #include "cccc_tbl.h"
@@ -8,8 +28,9 @@
 
 
 template <class T> CCCC_Table<T>::CCCC_Table() 
-: iter_(end()), sorted(true)
+: sorted(true)
 {
+  iter_ = map_t::end(); 
 }
 
 template <class T> CCCC_Table<T>::~CCCC_Table() 
@@ -46,7 +67,7 @@ T* CCCC_Table<T>::find(string name)
 {
   T *retval=NULL;
   typename map_t::iterator value_iterator=map_t::find(name);
-  if(value_iterator!=end())
+  if(value_iterator!=map_t::end())
     {
       retval=(*value_iterator).second;
     }
@@ -61,7 +82,7 @@ T* CCCC_Table<T>::find_or_insert(T* new_item_ptr)
   if(retval==NULL)
     {
       typename map_t::value_type new_pair(new_key,new_item_ptr);
-      insert(new_pair);
+      map_t::insert(new_pair);
       sorted=false;
       retval=new_item_ptr;
     }
@@ -91,7 +112,7 @@ template <class T> void CCCC_Table<T>::sort()
 
 template <class T> void CCCC_Table<T>::reset_iterator()
 {
-  iter_=begin();
+  iter_=map_t::begin();
 }
 
 template <class T> T* CCCC_Table<T>::first_item()
@@ -103,7 +124,7 @@ template <class T> T* CCCC_Table<T>::first_item()
 template <class T> T* CCCC_Table<T>::next_item()
 {
   T* retval=NULL;
-  if(iter_!=end())
+  if(iter_!=map_t::end())
     {
       retval=(*iter_).second;
       iter_++;
@@ -113,24 +134,10 @@ template <class T> T* CCCC_Table<T>::next_item()
 
 template <class T> int CCCC_Table<T>::records()
 { 
-  return size(); 
+  return map_t::size(); 
 }
 
-#include "cccc_db.h"
-
-// The lines below are, I believe, the standard way of
-// performing explicit template instantiation under ANSI C++.
-// On some compilers, these lines may cause problems, either
-// because they do not support the standard syntax for this
-// purpose, or because they are performing implicit 
-// instantiation.
-// If their are problems, first try commenting this section 
-// out, then try the specific #pragma documented for your 
-// compiler.
-template class CCCC_Table<CCCC_Extent>;
-template class CCCC_Table<CCCC_Module>;
-template class CCCC_Table<CCCC_Member>;
-template class CCCC_Table<CCCC_UseRelationship>;
+#endif // _CCCC_TBL_BODY
 
 
 

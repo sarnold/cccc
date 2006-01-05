@@ -617,7 +617,10 @@ void Main::PrintCredits(ostream& os)
     "by Terence Parr, Will Cohen, Hank Dietz, Russel Quoung,",
     "Tom Moog and others.",
     "",
-    "This software is provided with NO WARRANTY",
+    "CCCC comes with ABSOLUTELY NO WARRANTY.",
+    "This is free software, and you are welcome to redistribute it",
+    "under certain conditions.  See the file COPYING in the source"
+    "code distribution for details.",
     NULL
   };
   const char **string_ptr=credit_strings;
