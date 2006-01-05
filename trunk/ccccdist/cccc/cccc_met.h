@@ -38,7 +38,7 @@ class Metric_Treatment
 {
   friend class CCCC_Metric;
   friend void add_treatment(CCCC_Item&);
-  friend CCCC_Html_Stream& ::operator <<(CCCC_Html_Stream&,const CCCC_Metric&);
+  friend CCCC_Html_Stream& operator <<(CCCC_Html_Stream&,const CCCC_Metric&);
 
   // a short code string is used to search for the metric treatment, and
   // it has a full name
