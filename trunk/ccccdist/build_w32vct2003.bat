@@ -12,7 +12,7 @@ set VCTDIR=c:\Program Files\Microsoft Visual C++ Toolkit 2003
 if not exist "%VCTDIR%\bin\cl.exe" goto no_vc
 
 set CL_EXE="%VCTDIR%\bin\cl.exe"
-set CL_ARGS=-c -I "%VCTDIR%\include" -EHsc
+set CL_ARGS=-nologo -c -I "%VCTDIR%\include" -EHsc
 set LINK_EXE="%VCTDIR%\bin\link.exe"
 set LINK_ARGS=-libpath:"%VCTDIR%\lib" -subsystem:console
 
@@ -93,7 +93,7 @@ set CC_SOURCES=%CC_SOURCES% cccc_tbl cccc_tok cccc_tpl cccc_use
 set CC_SOURCES=%CC_SOURCES% cccc_utl cccc_xml
 set CPP_SOURCES=cccc CLexer CParser java JLexer JParser
 set A_SOURCES=..\pccts\h\AParser ..\pccts\h\DLexerBase ..\pccts\h\ATokenBuffer
-set CL_ARGS=-I ..\pccts\h -D CC_INCLUDED -D JAVA_INCLUDED -D CCCC_CONF_W32VC %CL_ARGS% 
+set CL_ARGS=-nologo -I ..\pccts\h -D CC_INCLUDED -D JAVA_INCLUDED -D CCCC_CONF_W32VC %CL_ARGS% 
 for %%f in ( %CC_SOURCES% ) do (
    if not exist %%f.obj (
       %CL_EXE% %CL_ARGS% %%f.cc
@@ -117,6 +117,10 @@ for %%f in ( %A_SOURCES% ) do (
 cd ..
 endlocal
 
+if not exist cccc\cccc.exe (
+   echo Failed to build cccc.exe
+   goto :end
+)
 
 setlocal
 cd test
