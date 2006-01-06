@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Report on software metrics-->
+<CCCC_Project>
+<project_summary>
+<number_of_modules value="5" level="0" />
+<lines_of_code value="15" level="0" />
+<lines_of_code_per_module value="3.000" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<McCabes_cyclomatic_complexity_per_module value="0.000" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_comment_per_module value="0.000" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<IF4 value="5" level="0" />
+<IF4_per_module value="1.000" level="0" />
+<IF4_visible value="5" level="0" />
+<IF4_visible_per_module value="1.000" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete value="0.000" level="0" />
+<rejected_lines_of_code value="0" level="0" />
+</project_summary>
+<procedural_summary>
+<module>
+<name>Test2a</name>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>Test2b</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>Test2c</name>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>Test2d</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>Test2e</name>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+</procedural_summary>
+<procedural_detail>
+<module>
+<name>Test2a</name>
+<extent>
+<description>definition</description>
+<source_reference file="test2.cc" line="18" />
+</extent>
+<member_function>
+<name>doSomething(Test2b)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="test2.cc" line="23" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</module>
+<module>
+<name>Test2b</name>
+</module>
+<module>
+<name>Test2c</name>
+<extent>
+<description>definition</description>
+<source_reference file="test2.cc" line="26" />
+</extent>
+</module>
+<module>
+<name>Test2d</name>
+</module>
+<module>
+<name>Test2e</name>
+<member_function>
+<name>Test2e(const Test2a &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="test2.cc" line="39" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</module>
+</procedural_detail>
+<oo_design>
+<module>
+<name>Test2a</name>
+<weighted_methods_per_class_unity value="1" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="3" level="0" />
+</module>
+<module>
+<name>Test2b</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>Test2c</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>Test2d</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>Test2e</name>
+<weighted_methods_per_class_unity value="1" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="1" level="0" />
+<coupling_between_objects value="2" level="0" />
+</module>
+</oo_design>
+<structural_summary>
+<module>
+<name>Test2a</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="2" level="0" />
+<fan_in_concrete value="2" level="0" />
+<fan_in value="2" level="0" />
+<IF4_visible value="4" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="4" level="0" />
+</module>
+<module>
+<name>Test2b</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Test2c</name>
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="0" level="0" />
+<fan_in_visible value="1" level="0" />
+<fan_in_concrete value="1" level="0" />
+<fan_in value="1" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Test2d</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Test2e</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="1" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="1" level="0" />
+<IF4_visible value="1" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="1" level="0" />
+</module>
+</structural_summary>
+<structural_detail>
+<module>
+<name>Test2a</name>
+<client_module>
+<name>Test2e</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="test2.cc" line="39" />
+</extent>
+</client_module>
+<supplier_module>
+<name>Test2b</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="test2.cc" line="21" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="test2.cc" line="23" />
+</extent>
+<name>Test2e</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="test2.cc" line="18" />
+</extent>
+</supplier_module>
+</module>
+<module>
+<name>Test2b</name>
+<client_module>
+<name>Test2a</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="test2.cc" line="21" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="test2.cc" line="23" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>Test2c</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>Test2d</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="test2.cc" line="29" />
+</extent>
+</supplier_module>
+</module>
+<module>
+<name>Test2d</name>
+<client_module>
+<name>Test2c</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="test2.cc" line="29" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>Test2e</name>
+<client_module>
+<name>Test2a</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="test2.cc" line="18" />
+</extent>
+</client_module>
+<supplier_module>
+<name>Test2a</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="test2.cc" line="39" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+<other_extents>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="test2.cc" line="1" />
+<lines_of_code value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+</other_extents>
+</CCCC_Project>
