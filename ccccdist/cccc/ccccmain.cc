@@ -86,6 +86,7 @@ class Main
   string lang;
   int report_mask; 
   int debug_mask;
+  int files_parsed;
 
   // As we gather up the list of files to be processed
   // we work out and record the appropriate language to 
@@ -111,6 +112,7 @@ public:
   void GenerateHtml();
   void GenerateXml();
   void DescribeOutput();
+  int filesParsed();
 
   friend int main(int argc, char** argv);
 };
@@ -121,6 +123,7 @@ Main::Main()
 {
   report_mask=0xFFFF&(~(rtPROC2|rtSTRUCT2)) ;  
   debug_mask=0;
+  files_parsed=0;
 }
 
 void Main::HandleArgs(int argc, char **argv)
@@ -404,6 +407,7 @@ int Main::ParseFiles()
 	      theParser.traceGuessOption(-1);
 
 	      theParser.start();
+              files_parsed++;
 	    }
 #endif // CC_INCLUDED
 #ifdef JAVA_INCLUDED
@@ -418,6 +422,7 @@ int Main::ParseFiles()
 	      theParser.init(filename,file_language);
 	      theParser.traceGuessOption(-1);
 	      theParser.compilationUnit();
+              files_parsed++;
 	    }
 #endif // JAVA_INCLUDED
 #ifdef ADA_INCLUDED
@@ -432,6 +437,7 @@ int Main::ParseFiles()
 	      theParser.init(filename,file_language);
 	      theParser.traceGuessOption(-1);
 	      theParser.goal_symbol();
+              files_parsed++;
 	    }
 #endif // ADA_INCLUDED
 	  else if(base_language=="")
@@ -619,7 +625,7 @@ void Main::PrintCredits(ostream& os)
     "",
     "CCCC comes with ABSOLUTELY NO WARRANTY.",
     "This is free software, and you are welcome to redistribute it",
-    "under certain conditions.  See the file COPYING in the source"
+    "under certain conditions.  See the file COPYING in the source",
     "code distribution for details.",
     NULL
   };
@@ -635,20 +641,27 @@ void Main::PrintCredits(ostream& os)
 
 void Main::DescribeOutput()
 {
-  // make sure the user knows where the real output went
-  // make sure the user knows where the real output went
-  cerr << endl 
-       << "Primary HTML output is in " << html_outfile << endl;
-  if(report_mask & rtSEPARATE_MODULES)
-  { 
-     cerr << "Detailed HTML reports on modules and source are in " << outdir << endl;
+  if(files_parsed>0)
+  {
+      // make sure the user knows where the real output went
+      // make sure the user knows where the real output went
+      cerr << endl 
+           << "Primary HTML output is in " << html_outfile << endl;
+      if(report_mask & rtSEPARATE_MODULES)
+      { 
+         cerr << "Detailed HTML reports on modules and source are in " << outdir << endl;
+      }
+      cerr << "Primary XML output is in " << xml_outfile << endl ;
+      if(report_mask & rtSEPARATE_MODULES)
+      { 
+         cerr << "Detailed XML reports on modules are in " << outdir << endl;
+      }
+      cerr << "Database dump is in " << db_outfile << endl << endl;
   }
-  cerr << "Primary XML output is in " << xml_outfile << endl ;
-  if(report_mask & rtSEPARATE_MODULES)
-  { 
-     cerr << "Detailed XML reports on modules are in " << outdir << endl;
+  else
+  {
+      cerr << endl << "No files parsed on this run" << endl << endl;
   }
-  cerr << "Database dump is in " << db_outfile << endl << endl;
 }
 
 /* 
@@ -691,6 +704,11 @@ void Main::PrintUsage(ostream& os)
     }
 }
 
+int Main::filesParsed()
+{
+  return files_parsed;
+}
+
 int main(int argc, char **argv)
 {
   app=new Main;
@@ -707,19 +725,22 @@ int main(int argc, char **argv)
   app->ParseFiles();
   CCCC_Record::set_active_project(NULL);
 
-  prj->reindex();
+  if(app->filesParsed()>0)
+  {
+      prj->reindex();
 #ifdef _WIN32
-  _mkdir(app->outdir.c_str());
+      _mkdir(app->outdir.c_str());
 #else
-  mkdir(app->outdir.c_str(),0777);
+      mkdir(app->outdir.c_str(),0777);
 #endif
-  app->DumpDatabase();
+      app->DumpDatabase();
 
-  // generate html output
-  app->GenerateHtml();
-  app->GenerateXml();
+      // generate html output
+      app->GenerateHtml();
+      app->GenerateXml();
+  }
+
   app->DescribeOutput();
-
   delete app;
   delete prj;
 
