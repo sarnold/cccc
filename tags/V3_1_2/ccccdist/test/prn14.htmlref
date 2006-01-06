@@ -1,0 +1,892 @@
+<HTML><HEAD><TITLE>
+Report on software metrics
+</TITLE>
+</HEAD>
+<BODY>
+<TABLE BORDER WIDTH=100%>
+<TR><TH COLSPAN=2>
+CCCC Software Metrics Report
+</TR>
+<TR>
+<TH><H4><A HREF="#projsum">Project Summary</A></H4></TH>
+<TD>
+Summary table of high level measures summed over all files processed in the current run.
+</TR>
+<TR>
+<TH><H4><A HREF="#procsum">Procedural Metrics Summary</A></H4></TH>
+<TD>
+Table of procedural measures (i.e. lines of code, lines of comment, McCabe's cyclomatic complexity summed over each module.
+</TR>
+<TR>
+<TH><H4><A HREF="#procdet">Procedural Metrics Detail</A></H4></TH>
+<TD>
+The same procedural metrics as in the procedural metrics summary, reported for individual functions, grouped by module.
+</TR>
+<TR>
+<TH><H4><A HREF="#oodesign">Object Oriented Design</A></H4></TH>
+<TD>
+Table of four of the 6 metrics proposed by Chidamber and Kemerer in their various papers on 'a metrics suite for object oriented design'.
+</TR>
+<TR>
+<TH><H4><A HREF="#structsum">Structural Metrics Summary</A></H4></TH>
+<TD>
+Structural metrics based on the relationships of each module with others.  Includes fan-out (i.e. number of other modules the current module uses), fan-in (number of other modules which use the current module), and the Information Flow measure suggested by Henry and Kafura, which combines these to give a measure of coupling for the module.
+</TR>
+<TR>
+<TH><H4><A HREF="#structdet">Structural Metrics Detail</A></H4></TH>
+<TD>
+The names of the modules included as clients and suppliers in the counts for the Structural Metrics Summary.
+</TR>
+<TR>
+<TH><H4><A HREF="#other">Other Extents</A></H4></TH>
+<TD>
+Lexical counts for parts of submitted source files which the analyser was unable to assign to a module. Each record in this table relates to either a part of the code which triggered a parse failure, or to the residual lexical counts relating to parts of a file not associated with a specific module.
+</TR>
+<TR>
+<TH><H4><A HREF="#infocccc">About CCCC</A></H4></TH>
+<TD>
+A description of the CCCC program.
+</TR>
+</TR></TABLE>
+<H1><A NAME="projsum">Project Summary</A></H1>
+This table shows measures over the project as a whole.
+<UL>
+<LI>NOM = Number of modules<BR>
+Number of non-trivial modules identified by the analyser.  Non-trivial modules include all classes, and any other module for which member functions are identified.
+<LI>LOC = Lines of Code<BR>
+Number of non-blank, non-comment lines of source code counted by the analyser.
+<LI>COM = Lines of Comments<BR>
+Number of lines of comment identified by the analyser
+<LI>MVG = McCabe's Cyclomatic Complexity<BR>
+A measure of the decision complexity of the functions which make up the program.The strict definition of this measure is that it is the number of linearly independent routes through a directed acyclic graph which maps the flow of control of a subprogram.  The analyser counts this by recording the number of distinct decision outcomes contained within each function, which yields a good approximation to the formally defined version of the measure.
+<LI>L_C = Lines of code per line of comment<BR>
+Indicates density of comments with respect to textual size of program
+<LI>M_C = Cyclomatic Complexity per line of comment<BR>
+Indicates density of comments with respect to logical complexity of program
+<LI>IF4 = Information Flow measure<BR>
+Measure of information flow between modules suggested by Henry and Kafura. The analyser makes an approximate count of this by counting inter-module couplings identified in the module interfaces.
+</UL>
+Two variants on the information flow measure IF4 are also presented, one (IF4v) calculated using only relationships in the visible part of the module interface, and the other (IF4c) calculated using only those relationships which imply that changes to the client must be recompiled of the supplier's definition changes.
+
+<TABLE BORDER WIDTH=100%>
+<TR>
+<TH BGCOLOR="AQUA" WIDTH=70%>Metric</TH><TH BGCOLOR="AQUA" WIDTH=10%>Tag</TH><TH BGCOLOR="AQUA" WIDTH=10%>Overall</TH><TH BGCOLOR="AQUA" WIDTH=10%>Per Module</TH></TR>
+<TR>
+<TD>Number of modules</TD><TD>NOM</TD><TD ALIGN=RIGHT>    16</TD><TD>&nbsp;</TD></TR>
+<TR>
+<TD WIDTH=700%>Lines of Code</TD><TD WIDTH=120%>LOC</TD><TD ALIGN=RIGHT>   188</TD><TD ALIGN=RIGHT>11.750</TD></TR>
+<TR>
+<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>    21</TD><TD ALIGN=RIGHT> 1.312</TD></TR>
+<TR>
+<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>    44</TD><TD ALIGN=RIGHT> 2.750</TD></TR>
+<TR>
+<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT> 4.273</TD><TD>&nbsp;</TD></TR>
+<TR>
+<TD>MVG/COM</TD><TD>M_C</TD><TD ALIGN=RIGHT> 0.477</TD><TD>&nbsp;</TD></TR>
+<TR>
+<TD>Information Flow measure ( &nbsp;inclusive&nbsp;)</TD><TD>IF4</TD><TD ALIGN=RIGHT>    64</TD><TD ALIGN=RIGHT>   4.000</TD></TR>
+<TR>
+<TD>Information Flow measure ( &nbsp;visible&nbsp;)</TD><TD>IF4v</TD><TD ALIGN=RIGHT>    64</TD><TD ALIGN=RIGHT>   4.000</TD></TR>
+<TR>
+<TD>Information Flow measure ( &nbsp;concrete&nbsp;)</TD><TD>IF4c</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>   0.000</TD></TR>
+<TR>
+<TD>Lines of Code rejected by parser</TD><TD>REJ</TD><TD ALIGN=RIGHT>     9</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<H1><A NAME="procsum">Procedural Metrics Summary</A></H1>
+For descriptions of each of these metrics see the information preceding the project summary table.
+
+The label cell for each row in this table provides a link to the functions table in the detailed report for the module in question
+<TABLE BORDER WIDTH=100%>
+<TR>
+<TH BGCOLOR="AQUA">Module Name</TH><TH BGCOLOR="AQUA" WIDTH=8%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=8%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=8%>COM</TH><TH BGCOLOR="AQUA" WIDTH=8%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=8%>M_C</TH></TR>
+<TR>
+<TD><A HREF="ActionEvent.html#procdet">
+ActionEvent</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="ActionListener.html#procdet">
+ActionListener</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="BufferedImage.html#procdet">
+BufferedImage</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="BufferedImageOp.html#procdet">
+BufferedImageOp</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="ChangeEvent.html#procdet">
+ChangeEvent</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="ChangeListener.html#procdet">
+ChangeListener</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="ControlsSurface.html#procdet">
+ControlsSurface</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="CustomControls.html#procdet">
+CustomControls</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="DemoControls.html#procdet">
+DemoControls</A>
+</TD><TD ALIGN=RIGHT>    71</TD><TD ALIGN=RIGHT>    11</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>71.000</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>11.000</STRONG></TD></TR>
+<TR>
+<TD><A HREF="Dimension.html#procdet">
+Dimension</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="Font.html#procdet">
+Font</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="Graphics2D.html#procdet">
+Graphics2D</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="ImageOps.html#procdet">
+ImageOps</A>
+</TD><TD ALIGN=RIGHT>   108</TD><TD ALIGN=RIGHT>    10</TD><TD ALIGN=RIGHT>    11</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM> 9.818</EM></TD><TD ALIGN=RIGHT> 0.909</TD></TR>
+<TR>
+<TD><A HREF="JComboBox.html#procdet">
+JComboBox</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="JSlider.html#procdet">
+JSlider</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD><A HREF="String.html#procdet">
+String</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TABLE>
+<H1><A NAME="procdet">Procedural Metrics Detail</A></H1>
+<TABLE BORDER WIDTH=100%>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+ActionEvent</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+ActionListener</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+BufferedImage</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+BufferedImageOp</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+ChangeEvent</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+ChangeListener</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+ControlsSurface</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+CustomControls</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+DemoControls</A>
+<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       176">prn14.java:176</A></CODE><BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR>
+<TD>DemoControls( &nbsp;ImageOps&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       182">prn14.java:182</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>    17</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD>actionPerformed( &nbsp;ActionEvent&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       201">prn14.java:201</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>    22</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD>getPreferredSize( &nbsp;&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       225">prn14.java:225</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD>run( &nbsp;&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       230">prn14.java:230</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>    24</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD><TD ALIGN=RIGHT>******</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+Dimension</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+Font</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+Graphics2D</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+ImageOps</A>
+<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        52">prn14.java:52</A></CODE><BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR>
+<TD>ImageOps( &nbsp;&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       100">prn14.java:100</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>    19</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD>main( &nbsp;String[]&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       171">prn14.java:171</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD>render( &nbsp;int, &nbsp;int, &nbsp;Graphics2D&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       136">prn14.java:136</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>     7</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD>stateChanged( &nbsp;ChangeEvent&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       145">prn14.java:145</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>    21</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>10.500</EM></TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
+<TD>thresholdOp( &nbsp;int, &nbsp;int&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       121">prn14.java:121</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>    13</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+JComboBox</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+JSlider</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+<TR>
+<TD WIDTH=50%><A NAME="procdet"></A>
+<A HREF="procsum">
+String</A>
+<BR>
+<BR>
+</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH></TR>
+<TR><TD COLSPAN=6>No member functions have been identified for this module</TD></TR>
+<TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
+</TABLE>
+<H1><A NAME="oodesign">Object Oriented Design</A></H1>
+<UL>
+<LI>WMC = Weighted methods per class<BR>
+The sum of a weighting function over the functions of the module.  Two different weighting functions are applied: WMC1 uses the nominal weight of 1 for each function, and hence measures the number of functions, WMCv uses a weighting function which is 1 for functions accessible to other modules, 0 for private functions.
+<LI>DIT = Depth of inheritance tree<BR>
+The length of the longest path of inheritance ending at the current module.  The deeper the inheritance tree for a module, the harder it may be to predict its behaviour.  On the other hand, increasing depth gives the potential of greater reuse by the current module of behaviour defined for ancestor classes.
+<LI>NOC = Number of children<BR>
+The number of modules which inherit directly from the current module.  Moderate values of this measure indicate scope for reuse, however high values may indicate an inappropriate abstraction in the design.
+<LI>CBO = Coupling between objects<BR>
+The number of other modules which are coupled to the current module either as a client or a supplier. Excessive coupling indicates weakness of module encapsulation and may inhibit reuse.
+</UL>
+
+The label cell for each row in this table provides a link to the module summary table in the detailed report for the module in question
+<TABLE BORDER WIDTH=100%>
+<TR>
+<TH BGCOLOR="AQUA" WIDTH=50%>Module Name</TH><TH BGCOLOR="AQUA" WIDTH=10%>WMC1</TH><TH BGCOLOR="AQUA" WIDTH=10%>WMCv</TH><TH BGCOLOR="AQUA" WIDTH=10%>DIT</TH><TH BGCOLOR="AQUA" WIDTH=10%>NOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>CBO</TH></TR>
+<TR>
+<TD><A HREF="ActionEvent.html#summary">
+ActionEvent</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD></TR>
+<TR>
+<TD><A HREF="ActionListener.html#summary">
+ActionListener</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD></TR>
+<TR>
+<TD><A HREF="BufferedImage.html#summary">
+BufferedImage</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD></TR>
+<TR>
+<TD><A HREF="BufferedImageOp.html#summary">
+BufferedImageOp</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD></TR>
+<TR>
+<TD><A HREF="ChangeEvent.html#summary">
+ChangeEvent</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD></TR>
+<TR>
+<TD><A HREF="ChangeListener.html#summary">
+ChangeListener</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD></TR>
+<TR>
+<TD><A HREF="ControlsSurface.html#summary">
+ControlsSurface</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD></TR>
+<TR>
+<TD><A HREF="CustomControls.html#summary">
+CustomControls</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD></TR>
+<TR>
+<TD><A HREF="DemoControls.html#summary">
+DemoControls</A>
+</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     7</TD></TR>
+<TR>
+<TD><A HREF="Dimension.html#summary">
+Dimension</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD></TR>
+<TR>
+<TD><A HREF="Font.html#summary">
+Font</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD></TR>
+<TR>
+<TD><A HREF="Graphics2D.html#summary">
+Graphics2D</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD></TR>
+<TR>
+<TD><A HREF="ImageOps.html#summary">
+ImageOps</A>
+</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     9</TD></TR>
+<TR>
+<TD><A HREF="JComboBox.html#summary">
+JComboBox</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD></TR>
+<TR>
+<TD><A HREF="JSlider.html#summary">
+JSlider</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD></TR>
+<TR>
+<TD><A HREF="String.html#summary">
+String</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD></TR>
+</TABLE>
+<H1><A NAME="structsum">Structural Metrics Summary</A></H1>
+<UL>
+<LI>FI = Fan-in<BR>
+The number of other modules which pass information into the current module.
+<LI>FO = Fan-out<BR>
+The number of other modules into which the current module passes information
+<LI>IF4 = Information Flow measure<BR>
+A composite measure of structural complexity, calculated as the square of the product of the fan-in and fan-out of a single module.  Proposed by Henry and Kafura.
+</UL>
+Note that the fan-in and fan-out are calculated by examining the interface of each module.  As noted above, three variants of each each of these measures are presented: a count restricted to the part of the interface which is externally visible, a count which only includes relationships which imply the client module needs to be recompiled if the supplier's implementation changes, and an inclusive count
+
+The label cell for each row in this table provides a link to the relationships table in the detailed report for the module in question
+
+<TABLE BORDER WIDTH=100%>
+<TR>
+<TH BGCOLOR=AQUA ROWSPAN=2>Module Name</TH>
+<TH BGCOLOR=AQUA COLSPAN=3>Fan-out</TH>
+<TH BGCOLOR=AQUA COLSPAN=3>Fan-in</TH>
+<TH BGCOLOR=AQUA COLSPAN=3>IF4</TH>
+</TR>
+<TH BGCOLOR="AQUA" WIDTH=7%>vis</TH><TH BGCOLOR="AQUA" WIDTH=7%>con</TH><TH BGCOLOR="AQUA" WIDTH=7%>inc</TH><TH BGCOLOR="AQUA" WIDTH=7%>vis</TH><TH BGCOLOR="AQUA" WIDTH=7%>con</TH><TH BGCOLOR="AQUA" WIDTH=7%>incl</TH><TH BGCOLOR="AQUA" WIDTH=7%>vis</TH><TH BGCOLOR="AQUA" WIDTH=7%>con</TH><TH BGCOLOR="AQUA" WIDTH=7%>inc</TH></TR>
+<TR>
+<TD><A HREF="ActionEvent.html#structdet">
+ActionEvent</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="ActionListener.html#structdet">
+ActionListener</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="BufferedImage.html#structdet">
+BufferedImage</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="BufferedImageOp.html#structdet">
+BufferedImageOp</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="ChangeEvent.html#structdet">
+ChangeEvent</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="ChangeListener.html#structdet">
+ChangeListener</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="ControlsSurface.html#structdet">
+ControlsSurface</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="CustomControls.html#structdet">
+CustomControls</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="DemoControls.html#structdet">
+DemoControls</A>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>     7</EM></TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>     7</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="Dimension.html#structdet">
+Dimension</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="Font.html#structdet">
+Font</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="Graphics2D.html#structdet">
+Graphics2D</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="ImageOps.html#structdet">
+ImageOps</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>     8</EM></TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>     8</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    64</EM></TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>    64</TD></TR>
+<TR>
+<TD><A HREF="JComboBox.html#structdet">
+JComboBox</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="JSlider.html#structdet">
+JSlider</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+<TR>
+<TD><A HREF="String.html#structdet">
+String</A>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+</TABLE>
+<H1><A NAME="structdet">Structural Metrics Detail</A></H1>
+<TABLE BORDER WIDTH=100%>
+<TR>
+<TH BGCOLOR="AQUA" WIDTH=20%>Module Name</TH><TH BGCOLOR="AQUA" WIDTH=40%>Clients</TH><TH BGCOLOR="AQUA" WIDTH=40%>Suppliers</TH></TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+ActionEvent</A>
+</TD><TD WIDTH=50%>
+DemoControls [V] <BR>
+normal parameter &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       201">prn14.java:201</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+ActionListener</A>
+</TD><TD WIDTH=50%>
+DemoControls [CV] <BR>
+implements &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       176">prn14.java:176</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+BufferedImage</A>
+</TD><TD WIDTH=50%>
+ImageOps [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        56">prn14.java:56</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+BufferedImageOp</A>
+</TD><TD WIDTH=50%>
+ImageOps [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        60">prn14.java:60</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+ChangeEvent</A>
+</TD><TD WIDTH=50%>
+ImageOps [V] <BR>
+normal parameter &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       145">prn14.java:145</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+ChangeListener</A>
+</TD><TD WIDTH=50%>
+ImageOps [CV] <BR>
+implements &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        52">prn14.java:52</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+ControlsSurface</A>
+</TD><TD WIDTH=50%>
+ImageOps [CV] <BR>
+extends &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        52">prn14.java:52</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+CustomControls</A>
+</TD><TD WIDTH=50%>
+DemoControls [CV] <BR>
+extends &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       176">prn14.java:176</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+DemoControls</A>
+</TD><TD WIDTH=50%>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+ActionEvent [V] <BR>
+normal parameter &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       201">prn14.java:201</A></CODE><BR>
+<BR>
+<BR>
+ActionListener [CV] <BR>
+implements &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       176">prn14.java:176</A></CODE><BR>
+<BR>
+<BR>
+CustomControls [CV] <BR>
+extends &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       176">prn14.java:176</A></CODE><BR>
+<BR>
+<BR>
+Dimension [V] <BR>
+return type &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       225">prn14.java:225</A></CODE><BR>
+<BR>
+<BR>
+Font [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       180">prn14.java:180</A></CODE><BR>
+<BR>
+<BR>
+ImageOps [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       178">prn14.java:178</A></CODE><BR>
+normal parameter &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       182">prn14.java:182</A></CODE><BR>
+<BR>
+<BR>
+JComboBox [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       179">prn14.java:179</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+Dimension</A>
+</TD><TD WIDTH=50%>
+DemoControls [V] <BR>
+return type &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       225">prn14.java:225</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+Font</A>
+</TD><TD WIDTH=50%>
+DemoControls [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       180">prn14.java:180</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+Graphics2D</A>
+</TD><TD WIDTH=50%>
+ImageOps [V] <BR>
+normal parameter &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       136">prn14.java:136</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+ImageOps</A>
+</TD><TD WIDTH=50%>
+DemoControls [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       178">prn14.java:178</A></CODE><BR>
+normal parameter &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       182">prn14.java:182</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+BufferedImage [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        56">prn14.java:56</A></CODE><BR>
+<BR>
+<BR>
+BufferedImageOp [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        60">prn14.java:60</A></CODE><BR>
+<BR>
+<BR>
+ChangeEvent [V] <BR>
+normal parameter &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       145">prn14.java:145</A></CODE><BR>
+<BR>
+<BR>
+ChangeListener [CV] <BR>
+implements &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        52">prn14.java:52</A></CODE><BR>
+<BR>
+<BR>
+ControlsSurface [CV] <BR>
+extends &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        52">prn14.java:52</A></CODE><BR>
+<BR>
+<BR>
+Graphics2D [V] <BR>
+normal parameter &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       136">prn14.java:136</A></CODE><BR>
+<BR>
+<BR>
+JSlider [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        54">prn14.java:54</A></CODE><BR>
+<BR>
+<BR>
+String [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        55">prn14.java:55</A></CODE><BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        57">prn14.java:57</A></CODE><BR>
+normal parameter &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       171">prn14.java:171</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+JComboBox</A>
+</TD><TD WIDTH=50%>
+DemoControls [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       179">prn14.java:179</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+JSlider</A>
+</TD><TD WIDTH=50%>
+ImageOps [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        54">prn14.java:54</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+<TR>
+<TD><A NAME="structdet"></A>
+<A HREF="structsum">
+String</A>
+</TD><TD WIDTH=50%>
+ImageOps [V] <BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        55">prn14.java:55</A></CODE><BR>
+member variable &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:        57">prn14.java:57</A></CODE><BR>
+normal parameter &nbsp;
+<CODE><A HREF="cccc_src.html#prn14.java:       171">prn14.java:171</A></CODE><BR>
+<BR>
+<BR>
+&nbsp;
+</TD>
+<TD WIDTH=50%>
+&nbsp;
+</TD>
+</TR>
+</TABLE>
+<H1><A NAME="other">Other Extents</A></H1>
+<TABLE BORDER WIDTH=100%>
+<TR>
+<TH BGCOLOR="AQUA" WIDTH=25%>Location</TH><TH BGCOLOR="AQUA" WIDTH=45%>Text</TH><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH></TR>
+<TR><TD><CODE><A HREF="cccc_src.html#prn14.java:         1">prn14.java:1</A></CODE><BR>
+</TD>
+<TD>&lt;file scope items&gt;</TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT>    32</TD><TD ALIGN=RIGHT>     0</TD></TR>
+</TABLE>
+<H1><A NAME="infocccc">About CCCC</A></H1>
+<P>This report was generated by the program CCCC, which is FREELY REDISTRIBUTABLE but carries NO WARRANTY.
+<P>CCCC was developed by Tim Littlefair. 
+as part of a PhD research project. This project is now completed and descriptions of the findings can be accessed at <A HREF=http://www.chs.ecu.edu.au/~tlittlef>http://www.chs.ecu.edu.au/~tlittlef</A>. <P>User support for CCCC can be obtained by <A HREF=mailto:cccc-users@lists.sourceforge.net>mailing the list cccc-users@lists.sourceforge.net</A>.<P>Please also visit the CCCC development website at <A HREF=http://cccc.sourceforge.net>http://cccc.sourceforge.net</A>.
+</BODY></HTML>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Report on software metrics-->
+<CCCC_Project>
+<project_summary>
+<number_of_modules value="0" level="0" />
+<lines_of_code value="16" level="0" />
+<lines_of_code_per_module value="******" level="2" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<McCabes_cyclomatic_complexity_per_module value="******" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_comment_per_module value="******" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_module value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_module value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete value="********" level="0" />
+<rejected_lines_of_code value="16" level="0" />
+</project_summary>
+<procedural_summary>
+</procedural_summary>
+<procedural_detail>
+</procedural_detail>
+<oo_design>
+</oo_design>
+<structural_summary>
+</structural_summary>
+<structural_detail>
+</structural_detail>
+<other_extents>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="prn6.cc" line="1" />
+<lines_of_code value="16" level="0" />
+<lines_of_comment value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+</other_extents>
+</CCCC_Project>

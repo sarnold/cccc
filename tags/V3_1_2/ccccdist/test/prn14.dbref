@@ -1,0 +1,82 @@
+CCCC_Module@ActionEvent@@
+CCCC_Module@ActionListener@@
+CCCC_Module@BufferedImage@@
+CCCC_Module@BufferedImageOp@@
+CCCC_Module@ChangeEvent@@
+CCCC_Module@ChangeListener@@
+CCCC_Module@ControlsSurface@@
+CCCC_Module@CustomControls@@
+CCCC_Module@DemoControls@class@
+CCCC_ModExt@DemoControls@class@prn14.java@176@definition@?????@LOC:5 COM:1 MVG:0@?@d@
+CCCC_Module@Dimension@@
+CCCC_Module@Font@@
+CCCC_Module@Graphics2D@@
+CCCC_Module@ImageOps@class@
+CCCC_ModExt@ImageOps@class@prn14.java@52@definition@?????@LOC:45 COM:9 MVG:2@?@d@
+CCCC_Module@JComboBox@@
+CCCC_Module@JSlider@@
+CCCC_Module@String@@
+CCCC_Module@char@builtin@
+CCCC_ModExt@char@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@double@builtin@
+CCCC_ModExt@double@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@float@builtin@
+CCCC_ModExt@float@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@int@builtin@
+CCCC_ModExt@int@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@long@builtin@
+CCCC_ModExt@long@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@void@builtin@
+CCCC_ModExt@void@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Member@DemoControls@DemoControls@@(ImageOps)@
+CCCC_MemExt@DemoControls@DemoControls@@(ImageOps)@prn14.java@182@definition@????0@LOC:17 COM:0 MVG:2@?@d@
+CCCC_Member@DemoControls@actionPerformed@void@(ActionEvent)@
+CCCC_MemExt@DemoControls@actionPerformed@void@(ActionEvent)@prn14.java@201@definition@????0@LOC:22 COM:0 MVG:4@?@d@
+CCCC_Member@DemoControls@getPreferredSize@Dimension@()@
+CCCC_MemExt@DemoControls@getPreferredSize@Dimension@()@prn14.java@225@definition@????0@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@DemoControls@run@void@()@
+CCCC_MemExt@DemoControls@run@void@()@prn14.java@230@definition@????0@LOC:24 COM:0 MVG:5@?@d@
+CCCC_Member@ImageOps@ImageOps@@()@
+CCCC_MemExt@ImageOps@ImageOps@@()@prn14.java@100@definition@????0@LOC:19 COM:0 MVG:1@?@d@
+CCCC_Member@ImageOps@main@void@(String[])@
+CCCC_MemExt@ImageOps@main@void@(String[])@prn14.java@171@definition@????0@LOC:3 COM:0 MVG:0@?@d@
+CCCC_Member@ImageOps@render@void@(int,int,Graphics2D)@
+CCCC_MemExt@ImageOps@render@void@(int,int,Graphics2D)@prn14.java@136@definition@????0@LOC:7 COM:0 MVG:0@?@d@
+CCCC_Member@ImageOps@stateChanged@void@(ChangeEvent)@
+CCCC_MemExt@ImageOps@stateChanged@void@(ChangeEvent)@prn14.java@145@definition@????0@LOC:21 COM:2 MVG:4@?@d@
+CCCC_Member@ImageOps@thresholdOp@void@(int,int)@
+CCCC_MemExt@ImageOps@thresholdOp@void@(int,int)@prn14.java@121@definition@????0@LOC:13 COM:0 MVG:3@?@d@
+CCCC_UseRel@ActionEvent@DemoControls@
+CCCC_UseExt@ActionEvent@DemoControls@prn14.java@201@normal parameter@????0@*@?@p@
+CCCC_UseRel@ActionListener@DemoControls@
+CCCC_UseExt@ActionListener@DemoControls@prn14.java@176@implements@????0@*@?@I@
+CCCC_UseRel@CustomControls@DemoControls@
+CCCC_UseExt@CustomControls@DemoControls@prn14.java@176@extends@????0@*@?@I@
+CCCC_UseRel@Dimension@DemoControls@
+CCCC_UseExt@Dimension@DemoControls@prn14.java@225@return type@????0@*@?@p@
+CCCC_UseRel@Font@DemoControls@
+CCCC_UseExt@Font@DemoControls@prn14.java@180@member variable@?????@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseRel@ImageOps@DemoControls@
+CCCC_UseExt@ImageOps@DemoControls@prn14.java@178@member variable@?????@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseExt@ImageOps@DemoControls@prn14.java@182@normal parameter@????0@*@?@p@
+CCCC_UseRel@JComboBox@DemoControls@
+CCCC_UseExt@JComboBox@DemoControls@prn14.java@179@member variable@?????@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseRel@BufferedImage@ImageOps@
+CCCC_UseExt@BufferedImage@ImageOps@prn14.java@56@member variable@????2@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseRel@BufferedImageOp@ImageOps@
+CCCC_UseExt@BufferedImageOp@ImageOps@prn14.java@60@member variable@????2@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseRel@ChangeEvent@ImageOps@
+CCCC_UseExt@ChangeEvent@ImageOps@prn14.java@145@normal parameter@????0@*@?@p@
+CCCC_UseRel@ChangeListener@ImageOps@
+CCCC_UseExt@ChangeListener@ImageOps@prn14.java@52@implements@????0@*@?@I@
+CCCC_UseRel@ControlsSurface@ImageOps@
+CCCC_UseExt@ControlsSurface@ImageOps@prn14.java@52@extends@????0@*@?@I@
+CCCC_UseRel@Graphics2D@ImageOps@
+CCCC_UseExt@Graphics2D@ImageOps@prn14.java@136@normal parameter@????0@*@?@p@
+CCCC_UseRel@JSlider@ImageOps@
+CCCC_UseExt@JSlider@ImageOps@prn14.java@54@member variable@????1@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseRel@String@ImageOps@
+CCCC_UseExt@String@ImageOps@prn14.java@55@member variable@????2@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseExt@String@ImageOps@prn14.java@57@member variable@????2@LOC:0 COM:0 MVG:0@?@h@
+CCCC_UseExt@String@ImageOps@prn14.java@171@normal parameter@????0@*@?@p@
+CCCC_RejExt@prn14.java@1@<file scope items>@?????@LOC:9 COM:32 MVG:0@?@r@
