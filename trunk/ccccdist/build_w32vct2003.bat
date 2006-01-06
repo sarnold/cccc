@@ -24,6 +24,10 @@ if "%arg1%"=="--version" (
    echo #define CCCC_VERSION_STRING "%2" >> cccc\cccc_ver.h
    set arg1=--clean
 )
+if "%arg1%"=="--installer" (
+   goto :buildInstaller
+)
+
 
 if "%arg1%"=="--clean" (
    for %%d in ( pccts\dlg pccts\antlr cccc ) do (
@@ -155,6 +159,7 @@ cd ..
 endlocal
 :afterAddIn
 
+:buildInstaller
 setlocal
 cd w32installer
 set CL_CPP_ARGS=/FI ..\cccc\cccc_ver.h /EP 
