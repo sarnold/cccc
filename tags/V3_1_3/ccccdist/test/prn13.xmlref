@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Report on software metrics-->
+<CCCC_Project>
+<project_summary>
+<number_of_modules value="20" level="0" />
+<lines_of_code value="346" level="0" />
+<lines_of_code_per_module value="17.300" level="0" />
+<McCabes_cyclomatic_complexity value="61" level="0" />
+<McCabes_cyclomatic_complexity_per_module value="3.050" level="0" />
+<lines_of_comment value="37" level="0" />
+<lines_of_comment_per_module value="1.850" level="0" />
+<lines_of_code_per_line_of_comment value="9.351" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="1.649" level="0" />
+<IF4 value="64" level="0" />
+<IF4_per_module value="3.200" level="0" />
+<IF4_visible value="64" level="0" />
+<IF4_visible_per_module value="3.200" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete value="0.000" level="0" />
+<rejected_lines_of_code value="11" level="0" />
+</project_summary>
+<procedural_summary>
+<module>
+<name>AnimatingControlsSurface</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>BasicStroke</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>BufferedImage</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>ChangeEvent</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>ChangeListener</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>Component</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>CustomControls</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>DemoControls</name>
+<lines_of_code value="74" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="74.000" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>Dimension</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>FadeAnim</name>
+<lines_of_code value="165" level="0" />
+<McCabes_cyclomatic_complexity value="36" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="41.250" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="9.000" level="1" />
+</module>
+<module>
+<name>Font</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>Graphics2D</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>JSlider</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>Object</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>ObjectData</name>
+<lines_of_code value="84" level="0" />
+<McCabes_cyclomatic_complexity value="21" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+</module>
+<module>
+<name>Paint</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>String</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>TextData</name>
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>TexturePaint</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+<module>
+<name>Vector</name>
+<lines_of_code value="0" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module>
+</procedural_summary>
+<procedural_detail>
+<module>
+<name>AnimatingControlsSurface</name>
+</module>
+<module>
+<name>BasicStroke</name>
+</module>
+<module>
+<name>BufferedImage</name>
+</module>
+<module>
+<name>ChangeEvent</name>
+</module>
+<module>
+<name>ChangeListener</name>
+</module>
+<module>
+<name>Component</name>
+</module>
+<module>
+<name>CustomControls</name>
+</module>
+<module>
+<name>DemoControls</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="350" />
+</extent>
+<member_function>
+<name>DemoControls(FadeAnim)</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="356" />
+</extent>
+<lines_of_code value="39" level="1" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getPreferredSize()</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="422" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>run()</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="427" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>stateChanged(ChangeEvent)</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="401" />
+</extent>
+<lines_of_code value="19" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</module>
+<module>
+<name>Dimension</name>
+</module>
+<module>
+<name>FadeAnim</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="54" />
+</extent>
+<member_function>
+<name>FadeAnim()</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="92" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>main(String[])</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="236" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>render(int,int,Graphics2D)</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="209" />
+</extent>
+<lines_of_code value="24" level="0" />
+<McCabes_cyclomatic_complexity value="6" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+</member_function>
+<member_function>
+<name>reset(int,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="195" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setImages(int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="102" />
+</extent>
+<lines_of_code value="29" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>setShapes(int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="161" />
+</extent>
+<lines_of_code value="31" level="1" />
+<McCabes_cyclomatic_complexity value="19" level="1" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+</member_function>
+<member_function>
+<name>setStrings(int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="134" />
+</extent>
+<lines_of_code value="24" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>step(int,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="202" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</module>
+<module>
+<name>Font</name>
+</module>
+<module>
+<name>Graphics2D</name>
+</module>
+<module>
+<name>JSlider</name>
+</module>
+<module>
+<name>Object</name>
+</module>
+<module>
+<name>ObjectData</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="257" />
+</extent>
+<member_function>
+<name>ObjectData(Object,Paint)</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="268" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getRandomXY(int,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="281" />
+</extent>
+<lines_of_code value="14" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>reset(int,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="297" />
+</extent>
+<lines_of_code value="28" level="0" />
+<McCabes_cyclomatic_complexity value="9" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+</member_function>
+<member_function>
+<name>step(int,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="327" />
+</extent>
+<lines_of_code value="20" level="0" />
+<McCabes_cyclomatic_complexity value="6" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+</member_function>
+</module>
+<module>
+<name>Paint</name>
+</module>
+<module>
+<name>String</name>
+</module>
+<module>
+<name>TextData</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="241" />
+</extent>
+<member_function>
+<name>TextData(String,Font,Component)</name>
+<extent>
+<description>definition</description>
+<source_reference file="prn13.java" line="247" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</module>
+<module>
+<name>TexturePaint</name>
+</module>
+<module>
+<name>Vector</name>
+</module>
+</procedural_detail>
+<oo_design>
+<module>
+<name>AnimatingControlsSurface</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="1" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>BasicStroke</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>BufferedImage</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>ChangeEvent</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>ChangeListener</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="1" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>Component</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>CustomControls</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="1" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>DemoControls</name>
+<weighted_methods_per_class_unity value="4" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="7" level="0" />
+</module>
+<module>
+<name>Dimension</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>FadeAnim</name>
+<weighted_methods_per_class_unity value="8" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="9" level="0" />
+</module>
+<module>
+<name>Font</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="3" level="0" />
+</module>
+<module>
+<name>Graphics2D</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>JSlider</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>Object</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="2" level="0" />
+<coupling_between_objects value="2" level="0" />
+</module>
+<module>
+<name>ObjectData</name>
+<weighted_methods_per_class_unity value="4" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="3" level="0" />
+</module>
+<module>
+<name>Paint</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="2" level="0" />
+</module>
+<module>
+<name>String</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="2" level="0" />
+</module>
+<module>
+<name>TextData</name>
+<weighted_methods_per_class_unity value="1" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="4" level="0" />
+</module>
+<module>
+<name>TexturePaint</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+<module>
+<name>Vector</name>
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="1" level="0" />
+</module>
+</oo_design>
+<structural_summary>
+<module>
+<name>AnimatingControlsSurface</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>BasicStroke</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>BufferedImage</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>ChangeEvent</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>ChangeListener</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Component</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>CustomControls</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>DemoControls</name>
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="0" level="0" />
+<fan_in_visible value="7" level="1" />
+<fan_in_concrete value="2" level="0" />
+<fan_in value="7" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Dimension</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>FadeAnim</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="8" level="1" />
+<fan_in_concrete value="1" level="0" />
+<fan_in value="8" level="0" />
+<IF4_visible value="64" level="1" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="64" level="0" />
+</module>
+<module>
+<name>Font</name>
+<fan_out_visible value="3" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="3" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Graphics2D</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>JSlider</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Object</name>
+<fan_out_visible value="2" level="0" />
+<fan_out_concrete value="2" level="0" />
+<fan_out value="2" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>ObjectData</name>
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="0" level="0" />
+<fan_in_visible value="3" level="0" />
+<fan_in_concrete value="1" level="0" />
+<fan_in value="3" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Paint</name>
+<fan_out_visible value="2" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="2" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>String</name>
+<fan_out_visible value="2" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="2" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>TextData</name>
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="0" level="0" />
+<fan_in_visible value="4" level="0" />
+<fan_in_concrete value="1" level="0" />
+<fan_in value="4" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>TexturePaint</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Vector</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+</structural_summary>
+<structural_detail>
+<module>
+<name>AnimatingControlsSurface</name>
+<client_module>
+<name>FadeAnim</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>extends</description>
+<source_reference file="prn13.java" line="54" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>BasicStroke</name>
+<client_module>
+<name>FadeAnim</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="72" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>BufferedImage</name>
+<client_module>
+<name>ObjectData</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="261" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>ChangeEvent</name>
+<client_module>
+<name>DemoControls</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="401" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>ChangeListener</name>
+<client_module>
+<name>DemoControls</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>implements</description>
+<source_reference file="prn13.java" line="350" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>Component</name>
+<client_module>
+<name>TextData</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="247" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>CustomControls</name>
+<client_module>
+<name>DemoControls</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>extends</description>
+<source_reference file="prn13.java" line="350" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>DemoControls</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>ChangeEvent</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="401" />
+</extent>
+<name>ChangeListener</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>implements</description>
+<source_reference file="prn13.java" line="350" />
+</extent>
+<name>CustomControls</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>extends</description>
+<source_reference file="prn13.java" line="350" />
+</extent>
+<name>Dimension</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>return type</description>
+<source_reference file="prn13.java" line="422" />
+</extent>
+<name>FadeAnim</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="352" />
+</extent>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="356" />
+</extent>
+<name>Font</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="354" />
+</extent>
+<name>JSlider</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="353" />
+</extent>
+</supplier_module>
+</module>
+<module>
+<name>Dimension</name>
+<client_module>
+<name>DemoControls</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>return type</description>
+<source_reference file="prn13.java" line="422" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>FadeAnim</name>
+<client_module>
+<name>DemoControls</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="352" />
+</extent>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="356" />
+</extent>
+</client_module>
+<supplier_module>
+<name>AnimatingControlsSurface</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>extends</description>
+<source_reference file="prn13.java" line="54" />
+</extent>
+<name>BasicStroke</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="72" />
+</extent>
+<name>Font</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="73" />
+</extent>
+<name>Graphics2D</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="209" />
+</extent>
+<name>Paint</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="84" />
+</extent>
+<name>String</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="79" />
+</extent>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="82" />
+</extent>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="236" />
+</extent>
+<name>TexturePaint</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="56" />
+</extent>
+<name>Vector</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="88" />
+</extent>
+</supplier_module>
+</module>
+<module>
+<name>Font</name>
+<client_module>
+<name>DemoControls</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="354" />
+</extent>
+<name>FadeAnim</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="73" />
+</extent>
+<name>TextData</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="244" />
+</extent>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="247" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>Graphics2D</name>
+<client_module>
+<name>FadeAnim</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="209" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>JSlider</name>
+<client_module>
+<name>DemoControls</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="353" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>Object</name>
+<client_module>
+<name>ObjectData</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>extends</description>
+<source_reference file="prn13.java" line="257" />
+</extent>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="260" />
+</extent>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="268" />
+</extent>
+<name>TextData</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>extends</description>
+<source_reference file="prn13.java" line="241" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>ObjectData</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>BufferedImage</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="261" />
+</extent>
+<name>Object</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>extends</description>
+<source_reference file="prn13.java" line="257" />
+</extent>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="260" />
+</extent>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="268" />
+</extent>
+<name>Paint</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="262" />
+</extent>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="268" />
+</extent>
+</supplier_module>
+</module>
+<module>
+<name>Paint</name>
+<client_module>
+<name>FadeAnim</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="84" />
+</extent>
+<name>ObjectData</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="262" />
+</extent>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="268" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>String</name>
+<client_module>
+<name>FadeAnim</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="79" />
+</extent>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="82" />
+</extent>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="236" />
+</extent>
+<name>TextData</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="243" />
+</extent>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="247" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>TextData</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>Component</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="247" />
+</extent>
+<name>Font</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="244" />
+</extent>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="247" />
+</extent>
+<name>Object</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>extends</description>
+<source_reference file="prn13.java" line="241" />
+</extent>
+<name>String</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="243" />
+</extent>
+<extent>
+<description>normal parameter</description>
+<source_reference file="prn13.java" line="247" />
+</extent>
+</supplier_module>
+</module>
+<module>
+<name>TexturePaint</name>
+<client_module>
+<name>FadeAnim</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="56" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+<module>
+<name>Vector</name>
+<client_module>
+<name>FadeAnim</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>member variable</description>
+<source_reference file="prn13.java" line="88" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+</structural_detail>
+<other_extents>
+<rejected_extent>
+<name>&lt;file scope items&gt;</name>
+<source_reference file="prn13.java" line="1" />
+<lines_of_code value="11" level="0" />
+<lines_of_comment value="32" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+</rejected_extent>
+</other_extents>
+</CCCC_Project>

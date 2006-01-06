@@ -1,0 +1,54 @@
+// CcccDevStudioAddIn.odl : type library source for CcccDevStudioAddIn.dll
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (CcccDevStudioAddIn.tlb).
+
+[	uuid(2AB447AF-A834-11D3-AFED-444553540000), version(1.0),
+	helpstring ("CCCCDEVSTUDIOADDIN Developer Studio Add-in") ]
+library CcccDevStudioAddIn
+{
+	importlib("stdole32.tlb");
+	
+
+	//  Dual interface for CCommands
+	//
+	//  All commands that your add-in adds to DevStudio
+	//   must appear in this interface.  You may use the
+	//   ClassView to add methods to this interface, which
+	//   will cause stub implementations of those methods to
+	//   appear in your CCommands class.
+	
+	[	uuid(2AB447AB-A834-11D3-AFED-444553540000),
+		oleautomation,
+		dual
+	]
+
+	interface ICommands : IDispatch
+	{
+		// methods
+		[id(1)]
+		HRESULT CcccDevStudioAddInCommandMethod();
+		[id(2), helpstring("method configureCCCCDevStudioAddIn")] HRESULT configureCCCCDevStudioAddIn();
+		[id(3), helpstring("method runCCCCOnActiveFile")] HRESULT runCCCCOnActiveFile();
+		[id(4), helpstring("method runCCCCOnProjectFiles")] HRESULT runCCCCOnProjectFiles();
+		[id(5), helpstring("method runCCCCOnWorkspaceFiles")] HRESULT runCCCCOnWorkspaceFiles();
+		[id(6), helpstring("method configureAddIn")] HRESULT configureAddIn();
+		[id(7), helpstring("method UserCommand1")] HRESULT userCommand1();
+		[id(8), helpstring("method UserCommand2")] HRESULT userCommand2();
+		[id(9), helpstring("method UserCommand3")] HRESULT userCommand3();
+		[id(10), helpstring("method UserCommand4")] HRESULT userCommand4();
+		[id(11), helpstring("method UserCommand5")] HRESULT userCommand5();
+		[id(12), helpstring("method UserCommand6")] HRESULT userCommand6();
+	};
+
+	//  Class information for CCommands
+
+	[ uuid(2AB447AC-A834-11D3-AFED-444553540000) ]
+	coclass Commands
+	{
+		[default] interface ICommands;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

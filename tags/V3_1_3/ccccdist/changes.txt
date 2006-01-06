@@ -1,0 +1,100 @@
+CHANGE LOG FOR CCCC
+
+This change log was begun at the suggestion of Kenneth H. Cox.
+
+A number of early beta releases were done for CCCC in 1999, but this
+file only tracks changes after the first public beta release of
+2000, which was version 3.pre36.
+
+
+version 3.pre37
+Fixed problems prn1 and prn2 reported by Kenneth H. Cox.
+These related to the processing of preprocessor commands.
+Regression tests prn1.cc and prn2.cc added to the distribution.
+Information added to the "About CCCC" section of the generated report
+to nag people to participate in TJL's research project.
+Change log added
+
+version 3.pre40
+Many changes relating to making code compile using Borland CBuilder.
+Changes include:
+- modified pccts/dlg/output.c to generate code in CLexer.cpp and CParser.cpp
+which CBuilder can compile
+- changed tracein(char*), traceout(char*) to tracein(const char*), traceout
+(const char*) to eliminate CBuilder warning
+- modified flag buffer length in cccc_utl.cc to eliminate overrun write 
+detected by CodeGuard
+- fixed nasty bug in Win32 filename globbing logic which would have caused
+files with directories in their names not to be found
+- added support for CBuilder to makefile and ccccdist.dsw
+NB Making the code compile under CBuilder has been done as an exercise in 
+portability, and has helped identify real problems in the code which can 
+be addressed and will improve quality on all platforms.  The CBuilder port
+is not recommended as a production platform at this time.
+
+version 3.pre48
+This version was the latest packaged version at SourceForge for over 
+a year but I note to my shame that I didn't record any changes against 
+it.
+
+version 3.pre54
+Relative to 3.pre48, this version has the following features:
+redid build technology to rely on .bat files under win32 rather than
+shipping a prebuilt binary of GNU make;
+added build technology to build using Borland command line C++ compiler
+(this version crashes in some of the unit tests at present, patches
+to prevent this would be very welcome);  
+fixed minor syntax problems to enable the code to compile under GCC 
+2.95.3 (3.pre48 was released when EGCS 2.91.66 was current).
+
+version 3.pre55
+Various changes to accommodate GCC 3.0.2, including: hacking in the PCCTS
+source code to prevent #endif directives having trailing information 
+(commented or otherwise); fixing the type of an iterator to std::vector;
+introducing a using directive from strstream.  When GCC 2.95 becomes old
+enough that I don't need to support it any more I will need to modify
+the strstream stuff to use stringstream instead.
+
+version 3.pre63
+Added support for a setup program for Win32 using Inno Setup.
+Fixed a lot of parse issues with the Java parser.  All example programs in 
+the Sun Java tutorial now parse without (mentioning) errors.
+Modified the support URLs in various places to point to the email address
+of the SourceForge cccc-users list rather than my own email address.
+
+version 3.pre81
+Fixed the diff.bat script to reflect the true outcome of the comparison.
+Made cccc_met.cc round down to eliminate a difference in the output 
+on prn14.
+Added XML format output.
+Fixed command line environment for Windows XP.  
+Modified URLs to research project to reflect new naming at ecu.edu.au.
+
+version 3.pre82
+Implemented workaround for prn16.  This was a problem reported by Colin 
+Watson, giving different test case output on different architectures.
+The problem turns out to be due to unexpected (and so far unexplained)
+actions being invoked from the parser, the workaround consists of filtering
+the record_XXXXXX_extent functions so that they take no action if 
+parameters which are expected to be non-empty strings turn out to be empty.
+This change has modified the expected output for many of the test cases:
+on inspection the new behaviour appears to be at least as valid in each
+case, however users should be aware that this fix changes CCCC's opinion
+on what is a module to exclude the names of types which only appear in
+parameter lists.
+
+version 3.pre84
+Recoded use of strstreams to use stringstreams instead and eliminate 
+warnings with GCC 3.2.
+Added prn16 into list of tests which get executed and corrected reference
+output files.
+
+version 3.1.2
+Modified version numbering convention.
+Reworked build system for Win32 to use the free Microsoft Visual C++ Toolkit 2003.
+Reworked Win32 installer to create development environment.
+Reworked documentation.
+Released under GPL.
+Documentation modified to make it clear that the project is now dormant.
+
+
