@@ -13,7 +13,7 @@ set release_number=%1.%2.%3
 
 %cvs% export -r %release_tag% -d %release_name% ccccdist
 echo #define CCCC_VERSION %release_number% > %release_name%\cccc\cccc_ver.h
-echo #define CCCC_VERSION_STRING "%release_number%" > %release_name%\cccc\cccc_ver.h
+echo #define CCCC_VERSION_STRING "%release_number%" >> %release_name%\cccc\cccc_ver.h
 setlocal
 cd %release_name%
 call build_w32vct2003.bat --clean
