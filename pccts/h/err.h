@@ -48,7 +48,7 @@
 #ifdef PCCTS_USE_STDARG
 #include "pccts_stdarg.h"
 #else
-#include <varargs.h>
+#include <stdarg.h>
 #endif
 
 #ifdef DUM

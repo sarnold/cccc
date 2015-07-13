@@ -32,7 +32,7 @@
 #ifdef PCCTS_USE_STDARG
 #include "pccts_stdarg.h"
 #else
-#include <varargs.h>
+#include <stdarg.h>
 #endif
 
 /* ensure that tree manipulation variables are current after a rule

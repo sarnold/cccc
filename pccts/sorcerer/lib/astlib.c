@@ -39,7 +39,7 @@
 #ifdef PCCTS_USE_STDARG
 #include <stdarg.h>
 #else
-#include <varargs.h>
+#include <stdarg.h>
 #endif
 
                /* String Scanning/Parsing Stuff */

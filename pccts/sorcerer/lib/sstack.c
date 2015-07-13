@@ -34,7 +34,7 @@
 #ifdef PCCTS_USE_STDARG
 #include <stdarg.h>
 #else
-#include <varargs.h>
+#include <stdarg.h>
 #endif
 
 #include "CASTBase.h"
