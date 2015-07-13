@@ -70,6 +70,10 @@ genmk:
 	cd support/genmk && mv genmk ../../$(BINDIR) || exit $$?
 	@echo genmk executable now in $(BINDIR)
 
+sorcerer:
+	cd sorcerer && $(MAKE)sorcerer CCC="$(CC)" COPT="$(COPT)"
+	@echo sorcerer executable now in $(BINDIR)
+
 fini:
 	@echo
 	@echo "       PCCTS 1.33MR33 installation complete"  # MRXXX
