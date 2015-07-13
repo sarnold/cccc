@@ -11,10 +11,10 @@
 all : pccts cccc
 
 pccts :
-	cd pccts && +$(MAKE) pccts
+	cd pccts && $(MAKE) pccts
 
 cccc :
-	cd cccc && +$(MAKE) -f posixgcc.mak cccc
+	cd cccc && $(MAKE) -f posixgcc.mak cccc
 
 .NOTPARALLEL:	test
 test :
