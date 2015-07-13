@@ -25,7 +25,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2001
  */
 
 #define StrSame			0
@@ -34,9 +34,10 @@
 
 /* MR9  JVincent@novell.com     Allow user to override default ZZLEXBUFSIZE  */
 /* MR11 thm                     Raise antlr's own default ZZLEXBUFSIZE to 8k */
+/* MR22 thm                     Raise antlr's own default ZZLEXBUFSIZE to 32k */
 
 #ifndef ZZLEXBUFSIZE
-#define ZZLEXBUFSIZE 8000
+#define ZZLEXBUFSIZE 32000
 #endif
 
 /* Tree/FIRST/FOLLOW defines -- valid only after all grammar has been read */
@@ -89,7 +90,11 @@ typedef struct _TCnode {
 			set tset;
 			int lexclass;		/* which lex class is it in? */
 			unsigned char dumped; /* this def has been been dumped */
+			unsigned char dumpedComplement; /* this def has been been dumped */
 			unsigned setnum;	/* which set number is this guy? (if dumped) */
+			unsigned setnumComplement;		 /* MR23 */
+			unsigned setnumErrSet;			 /* MR23 which set is this #tokclass error set (if dumped) */
+			unsigned setnumErrSetComplement; /* MR23 */
 		} TCnode;
 
 typedef struct _ft {
@@ -125,7 +130,12 @@ typedef struct _r {				/* Rule name and ptr to start of rule */
 			int rulenum;		/* RulePtr[rulenum]== ptr to RuleBlk junction */
 			unsigned char noAST;/* gen AST construction code? (def==gen code) */
 			char *egroup;		/* which error group (err reporting stuff) */
+#if 0
+			/* MR27  This appears to never be used.  Delete this code later. */
+
 			ListNode *el_labels;/* list of element labels ref in all of rule */
+#endif
+			ListNode *ast_labels_in_actions; /* MR27 */
             unsigned char has_rule_exception;
             char dontComputeErrorSet;    /* MR14 - don't compute error set
                                           special for rule in alpha part of
@@ -260,14 +270,15 @@ typedef Graph Attrib;
         Don't understand why this never caused problems before
     */
 
-////	#ifndef ANTLRm
-////	#define ANTLRm(st, f, _m)	zzbufsize = ZZLEXBUFSIZE;\
-////						zzmode(_m);					\
-////						zzenterANTLR(f);			\
-////						st; ++zzasp;				\
-////						zzleaveANTLR(f);
-////	#endif						
-
+    /*********************************************************
+    #ifndef ANTLRm
+	#define ANTLRm(st, f, _m)	zzbufsize = ZZLEXBUFSIZE;\
+					zzmode(_m);					\
+					zzenterANTLR(f);			\
+					st; ++zzasp;				\
+					zzleaveANTLR(f);
+	#endif						
+    *********************************************************/
 #endif
 
 #include "proto.h"

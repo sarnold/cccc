@@ -23,14 +23,14 @@
  * DLG 1.33
  * Will Cohen
  * With mods by Terence Parr; AHPCRC, University of Minnesota
- * 1989-1999
+ * 1989-2001
  */
 
 #include <stdio.h>
 #include "stdpccts.h"
 
 char	program[] = "dlg";
-char	version[] = "1.33MR20";					/* MRXXX */
+char	version[] = "1.33MR33";					/* MRXXX */
 int	numfiles = 0;
 char	*file_str[2] = {NULL, NULL};
 char	*mode_file = "mode.h";
@@ -183,7 +183,7 @@ char *argv[];
 #endif
 {
 	init();
-	fprintf(stderr, "%s  Version %s   1989-1999\n", &(program[0]),
+	fprintf(stderr, "%s  Version %s   1989-2001\n", &(program[0]),
 		&(version[0]));
 	if ( argc == 1 )
 	{
@@ -201,9 +201,12 @@ char *argv[];
 		ProcessArgs(argc-1, &(argv[1]), options);
 		if (interactive && gen_cpp) {
 			fprintf(stderr,"\n");
-			fprintf(stderr,"Interactive lexer option (\"-i\") has no effect when in C++ mode\n");
-			fprintf(stderr,"because of extra buffering provided by ANTLRTokenBuffer class.\n");
-			fprintf(stderr,"\n");
+/***  MR21a This statement is wrong ! ***/
+#if 0
+***			fprintf(stderr,"Interactive lexer option (\"-i\") has no effect when in C++ mode\n");
+***			fprintf(stderr,"because of extra buffering provided by ANTLRTokenBuffer class.\n");
+***			fprintf(stderr,"\n");
+#endif
 		}
 		input_stream = read_stream(file_str[0]);
 		if (input_stream) {

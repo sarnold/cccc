@@ -7,6 +7,10 @@ Project: "ANTLR"=.\AntlrMSVC60.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
+    begin source code control
+    AntlrMSVC60
+    ..
+    end source code control
 }}}
 
 Package=<4>

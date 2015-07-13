@@ -77,6 +77,8 @@ fini:
 clean:
 	(cd ./antlr; $(MAKE) -s clean)
 	(cd ./dlg; $(MAKE) -s clean)
+	(cd ./sorcerer; $(MAKE) -s clean)
+	(cd ./sorcerer/lib; $(MAKE) -s clean)
 	(cd ./support/genmk; $(MAKE) -s clean)
 
 scrub:

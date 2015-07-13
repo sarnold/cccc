@@ -24,7 +24,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2000
  */
 
 #include "pcctscfg.h"
@@ -194,6 +194,11 @@ void (*func)(),   /* apply this to each tree node */
             NULL NULL
 */
 
+/*
+   MR21 Another refinement to replace recursion with iteration
+   NAKAJIMA Mutsuki (muc@isr.co.jp).
+*/
+
 void
 #ifdef __USE_PROTOS
 zzfree_ast(AST *tree)
@@ -223,9 +228,12 @@ AST *tree;
         zztfree( otree );
     }
 
-    zzfree_ast( tree->down );
-    zzfree_ast( tree->right );
-    zztfree( tree );
+    while (tree != NULL) {
+        zzfree_ast(tree->down);
+        otree = tree;
+        tree = otree->right;
+        zztfree(otree);
+    }
 }
 
 /* build a tree (root child1 child2 ... NULL)

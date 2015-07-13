@@ -24,7 +24,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2000
  */
 
 #ifndef ANTLR_H
@@ -85,8 +85,9 @@ typedef struct _zzjmp_buf {
 
 
 /* can make this a power of 2 for more efficient lookup */
+
 #ifndef ZZLEXBUFSIZE
-#define ZZLEXBUFSIZE	2000
+#define ZZLEXBUFSIZE	8000 /* MR22 raise from 2k to 8k */
 #endif
 
 #define zzOvfChk														\
@@ -105,16 +106,28 @@ typedef struct _zzjmp_buf {
 
 #ifndef zzfailed_pred
 #ifdef ZZCAN_GUESS
-#define zzfailed_pred(_p) \
+#define zzfailed_pred(_p,_hasuseraction,_useraction) \
   if (zzguessing) { \
     zzGUESS_FAIL; \
   } else { \
-    fprintf(stderr, "semantic error; failed predicate: '%s'\n",_p); \
+    zzfailed_pred_action(_p,_hasuseraction,_useraction); \
   }
 #else
-#define zzfailed_pred(_p)	\
-	fprintf(stderr, "semantic error; failed predicate: '%s'\n",_p)
+#define zzfailed_pred(_p,_hasuseraction,_useraction) \
+    zzfailed_pred_action(_p,_hasuseraction,_useraction);
 #endif
+#endif
+
+/*  MR23            Provide more control over failed predicate action
+                    without any need for user to worry about guessing internals.
+                    _hasuseraction == 0 => no user specified error action
+                    _hasuseraction == 1 => user specified error action
+*/
+
+#ifndef zzfailed_pred_action
+#define zzfailed_pred_action(_p,_hasuseraction,_useraction) \
+    if (_hasuseraction) { _useraction } \
+    else { fprintf(stderr, "semantic error; failed predicate: '%s'\n",_p); }
 #endif
 
 /* MR19 zzchar_t additions */
@@ -510,8 +523,8 @@ extern void _inf_zzgettok();
 #endif
 
 
-#define zzsetmatch(_es)						\
-	if ( !_zzsetmatch(_es, &zzBadText, &zzMissText, &zzMissTok, &zzBadTok, &zzMissSet) ) goto fail;
+#define zzsetmatch(_es,_tokclassErrset)						\
+	if ( !_zzsetmatch(_es, &zzBadText, &zzMissText, &zzMissTok, &zzBadTok, &zzMissSet, _tokclassErrset) ) goto fail; /* MR23 */
 
 #ifdef ZZCAN_GUESS
 #define zzsetmatch_wsig(_es, handler)		\
@@ -522,7 +535,7 @@ extern void _inf_zzgettok();
 #endif
 
 #ifdef __USE_PROTOS
-extern int _zzsetmatch(SetWordType *, char **, char **, int *, int *, SetWordType **);
+extern int _zzsetmatch(SetWordType *, char **, char **, int *, int *, SetWordType **, SetWordType * /* MR23 */); 
 extern int _zzsetmatch_wsig(SetWordType *);
 #else
 extern int _zzsetmatch();
@@ -672,7 +685,7 @@ extern int _zzsetmatch_wdfltsig();
 #define zzTRACEdata
 #else
 #ifndef zzTRACEdata
-#define zzTRACEdata     ANTLRChar *zzTracePrevRuleName;
+#define zzTRACEdata     ANTLRChar *zzTracePrevRuleName = NULL;
 #endif
 #endif
 
@@ -693,6 +706,14 @@ extern int _zzsetmatch_wdfltsig();
 #endif
 #endif
 
+
+/* MR26 */
+
+#ifdef PCCTS_USE_STDARG
+extern void zzFAIL(int k, ...);
+#else
+extern void zzFAIL();
+#endif
 				/* E x t e r n  D e f s */
 
 #ifdef __USE_PROTOS
@@ -702,7 +723,7 @@ extern void zzsyn(char *, int, char *, SetWordType *, int, int, char *);
 extern int zzset_el(unsigned, SetWordType *);
 extern int zzset_deg(SetWordType *);
 extern void zzedecode(SetWordType *);
-extern void zzFAIL(int k, ...);
+
 extern void zzresynch(SetWordType *, SetWordType);
 extern void zzsave_antlr_state(zzantlr_state *);
 extern void zzrestore_antlr_state(zzantlr_state *);
@@ -725,7 +746,6 @@ extern void zzsyn();
 extern int zzset_el();
 extern int zzset_deg();
 extern void zzedecode();
-extern void zzFAIL();
 extern void zzresynch();
 extern void zzsave_antlr_state();
 extern void zzrestore_antlr_state();

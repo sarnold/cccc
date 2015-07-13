@@ -125,11 +125,12 @@ set a;
 	   and that SETSIZE(a) is a multiple of WORDSIZE.
 	*/
 	register unsigned *p = &(a.setword[0]);
-	register unsigned *endp = &(a.setword[a.n]);
+	register unsigned *endp = NULL; /* MR27 Avoid false memory check report */
 	register unsigned degree = 0;
 
 	CHK(a);
 	if ( a.n == 0 ) return(0);
+	endp = &(a.setword[a.n]);
 	while ( p < endp )
 	{
 		register unsigned t = *p;

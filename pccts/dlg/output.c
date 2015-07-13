@@ -61,7 +61,7 @@
  * DLG 1.33
  * Will Cohen
  * With mods by Terence Parr; AHPCRC, University of Minnesota
- * 1989-1999
+ * 1989-2001
  */
 
 #include <stdio.h>
@@ -156,7 +156,7 @@ void p_class_hdr()
 	fprintf(class_stream, " %s", file_str[0]);
 	fprintf(class_stream, "\n");
 	fprintf(class_stream, " *\n");
-	fprintf(class_stream, " * 1989-1999 by  Will Cohen, Terence Parr, and Hank Dietz\n");
+	fprintf(class_stream, " * 1989-2001 by  Will Cohen, Terence Parr, and Hank Dietz\n");
 	fprintf(class_stream, " * Purdue University Electrical Engineering\n");
 	fprintf(class_stream, " * DLG Version %s\n", version);
 	fprintf(class_stream, " */\n\n");
@@ -274,7 +274,7 @@ void p_head()
 	fprintf(OUT, " %s", file_str[0]);
 	fprintf(OUT, "\n");
 	fprintf(OUT, " *\n");
-	fprintf(OUT, " * 1989-1999 by  Will Cohen, Terence Parr, and Hank Dietz\n");
+	fprintf(OUT, " * 1989-2001 by  Will Cohen, Terence Parr, and Hank Dietz\n");
 	fprintf(OUT, " * Purdue University Electrical Engineering\n");
 	fprintf(OUT, " * DLG Version %s\n", version);
 	fprintf(OUT, " */\n\n");
@@ -306,7 +306,7 @@ void p_tail()						/* MR1 */
 	if ( gen_cpp ) {
 		if ( strcmp(ClassName(""), DEFAULT_CLASSNAME)!=0 )
 			fprintf(OUT, "#define DLGLexer %s\n", ClassName(""));
-		fprintf(OUT, "#include \"%s\"\n", DLEXER_C);
+		fprintf(OUT, "#include \"%s\"\n", DLEXER_H);  /* MR23 Rename DLexer.cpp to DLexer.h */
 		return;
 	}
 	fprintf(OUT, "\n");
@@ -670,9 +670,9 @@ void p_alternative_table()					/* MR1 */
 
 	if ( !gen_cpp ) fprintf(OUT, "#define ZZINTERACTIVE\n\n");
 	if ( gen_cpp )
-		fprintf(OUT, "DLGChar %salternatives[%d+1] = {\n",
+		fprintf(OUT, "DLGChar %salternatives[%d] = {\n",  /* mr23 vhs %sDfaStates+1 */
 				ClassName("::"),
-				dfa_allocated);
+				dfa_allocated+1); /* vhs ClassName("::")); */
 	else
 		fprintf(OUT, "static %s zzalternatives[DfaStates+1] = {\n",
 				minsize(dfa_allocated));

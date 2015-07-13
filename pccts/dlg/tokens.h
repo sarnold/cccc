@@ -4,9 +4,9 @@
  *
  * Generated from: dlg_p.g
  *
- * Terence Parr, Will Cohen, and Hank Dietz: 1989-1999
+ * Terence Parr, Will Cohen, and Hank Dietz: 1989-2001
  * Purdue University Electrical Engineering
- * ANTLR Version 1.33MR20
+ * ANTLR Version 1.33MR33
  */
 #define zzEOF_TOKEN 1
 #define L_EOF 4
@@ -121,10 +121,13 @@ extern void anychar();
 #endif
 extern SetWordType zzerr1[];
 extern SetWordType zzerr2[];
-extern SetWordType setwd1[];
 extern SetWordType zzerr3[];
+extern SetWordType setwd1[];
 extern SetWordType zzerr4[];
 extern SetWordType zzerr5[];
-extern SetWordType setwd2[];
 extern SetWordType zzerr6[];
+extern SetWordType setwd2[];
+extern SetWordType zzerr7[];
+extern SetWordType zzerr8[];
+extern SetWordType zzerr9[];
 extern SetWordType setwd3[];

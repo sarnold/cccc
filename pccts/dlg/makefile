@@ -119,7 +119,7 @@ ANTLR = ../bin/antlr
 DLG = ../bin/dlg
 CPPFLAGS += -I. -I$(SET) -I$(PCCTS_H) -DUSER_ZZSYN
 OBJ_EXT = o
-OUT_OBJ = -o 
+OUT_OBJ = -o
 OBJ = dlg_p.o dlg_a.o main.o err.o set.o support.o output.o \
         relabel.o automata.o
 

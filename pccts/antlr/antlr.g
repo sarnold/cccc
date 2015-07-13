@@ -373,7 +373,7 @@ int tokenActionActive=0;                                            /* MR1 */
 							}
 							else if ( CurRetDef != NULL &&
 									  strmember(CurRetDef, &zzbegexpr[1])) {
-								 if ( HasComma( CurRetDef ) ) {
+								 if ( hasMultipleOperands( CurRetDef ) ) {
 									require (strlen(zzbegexpr)<=(size_t)285,
 											 "$retval attrib ref too big");
 									sprintf(buf,"_retv.%s",&zzbegexpr[1]);
@@ -468,6 +468,7 @@ int tokenActionActive=0;                                            /* MR1 */
 							{
 								static char buf[100];
 								sprintf(buf, "%s_ast", zzbegexpr+1);
+/* MR27 */						list_add(&CurAstLabelsInActions, mystrdup(zzbegexpr+1));
 								zzreplstr(buf);
 								chkGTFlag();
 							}
@@ -484,9 +485,17 @@ int tokenActionActive=0;                                            /* MR1 */
 							>>
 #token "#\("				<<
 							pushint('}');
-							if ( GenCC )
-							    zzreplstr("ASTBase::tmake(");
-							else zzreplstr("zztmake(");
+							if ( GenCC ) {
+								if (tmakeInParser) {
+									zzreplstr("tmake(");
+								}
+								else {
+									zzreplstr("ASTBase::tmake(");
+								}
+							}
+							else {
+								zzreplstr("zztmake(");
+							}
 							zzmore();
 							chkGTFlag();
 							>>
@@ -598,6 +607,8 @@ int tokenActionActive=0;                                            /* MR1 */
 #errclass "grammar-element" { element }
 #errclass "meta-symbol"		{ "\}" "!" ";" "\|" "\~" "^" "\)" }
 
+#token Pragma			"{\\}#pragma"			/* MR21 */
+#token FirstSetSymbol	"{\\}#FirstSetSymbol"	/* MR21 */
 /*
  * Get a grammar -- Build a list of rules like:
  *
@@ -609,6 +620,9 @@ int tokenActionActive=0;                                            /* MR1 */
  *	|
  *	o-->RuleN--o
  */
+
+/* rule grammar */
+
 grammar :	<<Graph g;>>
 			(	"{\\}#header" Action    /* MR13 */
 				<<
@@ -689,8 +703,22 @@ grammar :	<<Graph g;>>
 				class_nest_level--;
 				>>
 			)*
+            
 			rule		<<g=$3; SynDiag = (Junction *) $3.left;>>
-			(	rule	<<if ( $1.left!=NULL ) {g.right = NULL; g = Or(g, $1);}>>
+			(	rule
+
+                	<<if ( $1.left!=NULL ) {
+                        g.right = NULL;
+
+/* MR21a */             /*  Avoid use of a malformed graph when CannotContinue */
+/* MR21a */             /*  is already set                                     */
+/* MR21a */
+/* MR21a */             if (! (CannotContinue && g.left == NULL)) {
+/* MR21a */               g = Or(g, $1);
+/* MR21a */             }
+/* MR21a */		      }
+                    >>
+
 			|	aLexclass
 			|	token
 			|	error
@@ -729,6 +757,8 @@ grammar :	<<Graph g;>>
 		;
 		<<CannotContinue=TRUE;>>
 
+/* rule class_def */
+
 class_def
 	:	<<int go=1; char name[MaxRuleName+1];>>
 		"class"
@@ -751,6 +781,18 @@ class_def
 /* MR10 */              };
 /* MR10 */              strncat(ClassDeclStuff," ",MaxClassDeclStuff);
 /* MR10 */              strncat(ClassDeclStuff,LATEXT(1),MaxClassDeclStuff);
+/* MR22 */              do {
+/* MR22 */                if (0 == strcmp(LATEXT(1),"public")) break;
+/* MR22 */                if (0 == strcmp(LATEXT(1),"private")) break;
+/* MR22 */                if (0 == strcmp(LATEXT(1),"protected")) break;
+/* MR22 */                if (0 == strcmp(LATEXT(1),"virtual")) break;
+/* MR22 */                if (0 == strcmp(LATEXT(1),",")) break;
+/* MR22 */                if (0 == strcmp(LATEXT(1),":")) break;
+/* MR22 */                if (BaseClassName != NULL) break;
+/* MR22 */                BaseClassName=(char *)calloc(strlen(LATEXT(1))+1,sizeof(char));
+/* MR22 */                require(BaseClassName!=NULL, "rule grammar: cannot allocate base class name");
+/* MR22 */				  strcpy(BaseClassName,LATEXT(1));
+/* MR22 */              } while (0);
 /* MR10 */            >>
 /* MR10 */  )*
 
@@ -775,14 +817,18 @@ class_def
  *
  * Return the left graph pointer == NULL to indicate error/dupl rule def.
  */
+
+/* rule rule */
+
 rule	:	<<
-/***		ListNode *ex_groups = NULL;    MR20 G. Hobbelt Uunused variable ***/
+
 			ExceptionGroup *eg;
 			RuleEntry *q; Junction *p; Graph r; int f, l; ECnode *e;
 			set toksrefd, rulesrefd;
 			char *pdecl=NULL, *ret=NULL, *a; CurRetDef = CurParmDef = NULL;
 			CurExGroups = NULL;
 			CurElementLabels = NULL;
+			CurAstLabelsInActions = NULL; /* MR27 */
 			/* We want a new element label hash table for each rule */
 			if ( Elabel!=NULL ) killHashTable(Elabel);
 			Elabel = newHashTable();
@@ -845,10 +891,15 @@ rule	:	<<
 				}
 			}
 			>>
-			<<BlkLevel++;>>
+			<<BlkLevel++;
+              if (BlkLevel >= MAX_BLK_LEVEL) fatal("Blocks nested too deeply");
+/* MR23 */    CurBlockID_array[BlkLevel] = CurBlockID;
+/* MR23 */    CurAltNum_array[BlkLevel] = CurAltNum;                
+            >>
+
 			":" <<inAlt=1;>>
 			block[&toksrefd, &rulesrefd]
-			<<r = makeBlk($7,0);
+			<<r = makeBlk($7,0, NULL /* pFirstSetSymbol */ );
 			  CurRuleBlk = (Junction *)r.left;
 			  CurRuleBlk->blockid = CurBlockID;
 			  CurRuleBlk->jtype = RuleBlk;
@@ -871,7 +922,11 @@ rule	:	<<
 			  if ( q!=NULL ) q->rulenum = NumRules;
 			  $7 = r;
 			>>
-			<<--BlkLevel;>>
+			<<
+                /* MR23 */      CurBlockID_array[BlkLevel] = (-1);
+                /* MR23 */      CurAltNum_array[BlkLevel] = (-1);                
+                --BlkLevel;
+            >>
             <<altFixup();leFixup();egFixup();>>                      /* MR7 */
 			";" <<inAlt=0;>>
 			{	Action
@@ -889,19 +944,23 @@ rule	:	<<
 				>>
 			)*
 			<<if ( q==NULL ) $0.left = NULL; else $0 = $7;>>
-			<<CurRuleNode = NULL;>>
 			<<CurRuleBlk->exceptions = CurExGroups;>>
 			<<CurRuleBlk->el_labels = CurElementLabels;>>
+			<<CurRuleNode->ast_labels_in_actions = CurAstLabelsInActions;>> /* MR27 */
+			<<CurRuleNode = NULL;>> /* MR27 Moved */
 		;
 		<<CannotContinue=TRUE;>>
 
 /*
-pragma	:	"{\\}#pragma" "dup\-labeled\-tokens"
-			<<Pragma_DupLabeledTokens=1;>>
-		;
-*/
+ * pragma	:	"{\\}#pragma" "dup\-labeled\-tokens"
+ *			<<Pragma_DupLabeledTokens=1;>>
+ *		;
+ */
+
+/* rule laction */
 
 laction	:	<<char *a;>>
+
 			"{\\}#lexaction"
 			Action
 			<<
@@ -918,7 +977,10 @@ laction	:	<<char *a;>>
 /* MR1			  via #lexmember <<....>> & #lexprefix <<...>>      */
 /* MR1									    */
 
+/* rule lmember */
+
 lmember:	<<char *a;>>					     /* MR1 */
+
 /* MR1 */		"{\\}#lexmember"
 /* MR1 */		Action
 /* MR1 */		<<
@@ -934,12 +996,15 @@ lmember:	<<char *a;>>					     /* MR1 */
 /* MR1 */	;
 /* MR1 */	<<CannotContinue=TRUE;>>
 
+/* rule lprefix */
+
 lprefix:	<<char *a;>>					     /* MR1 */
+
 /* MR1 */		"{\\}#lexprefix"
 /* MR1 */		Action
 /* MR1 */		<<
 /* MR1 */		if (! GenCC) {
-/* MR1 */		  err("Use #lexprefixr only in C++ mode (to insert code in DLG class header");
+/* MR1 */		  err("Use #lexprefix only in C++ mode (to insert code in DLG class header");
 /* MR1 */	        } else {
 /* MR1 */		  a = (char *) calloc(strlen(LATEXT(1))+1, sizeof(char));
 /* MR1 */		  require(a!=NULL, "rule lprefix: cannot allocate action");
@@ -951,14 +1016,16 @@ lprefix:	<<char *a;>>					     /* MR1 */
 /* MR1 */	<<CannotContinue=TRUE;>>
 
 /*
- #pred upper        <<isupper()>>?            predicate literal
- #pred lower        <<islower()>>?            predicate literal
- #pred up_or_low    upper || lower            predicate expression
-                                                concealed interdependence
- #pred up_or_low_2  <<isletter()>>?  A || B   predicate literal equals predicate expr
-                                                analyze using lower||upper
-                                                generate using isLetter()
-*/
+ * #pred upper        <<isupper()>>?            predicate literal
+ * #pred lower        <<islower()>>?            predicate literal
+ * #pred up_or_low    upper || lower            predicate expression
+ *                                                concealed interdependence
+ * #pred up_or_low_2  <<isletter()>>?  A || B   predicate literal equals predicate expr
+ *                                                analyze using lower||upper
+ *                                                generate using isLetter()
+ */
+
+/* rule aPref */
 
 aPred:  <<PredEntry     *predEntry=NULL;
           char          *name=NULL;
@@ -1061,6 +1128,8 @@ aPred:  <<PredEntry     *predEntry=NULL;
 <<predicate_free(predExpr);
 >>
 
+/* rule predOrExpr */
+
 predOrExpr>[Predicate *result] :
             <<Predicate     *ORnode;
               Predicate     *predExpr;
@@ -1092,6 +1161,8 @@ predOrExpr>[Predicate *result] :
 /* fail */
 
 <<predicate_free(ORnode);>>
+
+/* rule predAndExpr */
 
 predAndExpr>[Predicate *result] :
             <<Predicate     *ANDnode;
@@ -1125,6 +1196,8 @@ predAndExpr>[Predicate *result] :
 
 <<predicate_free(ANDnode);>>
 
+
+/* rule predPrimary */
 
 predPrimary>[Predicate *result] :
             <<
@@ -1165,9 +1238,13 @@ predPrimary>[Predicate *result] :
               predicate_free(predExpr);
             >>
 
+/* rule aLexclass */
+
 aLexclass:	"{\\}#lexclass" TokenTerm <<lexclass(mystrdup(LATEXT(1)));>>
 		;
 		<<CannotContinue=TRUE;>>
+
+/* rule error */
 
 error	:	<<char *t=NULL; ECnode *e; int go=1; TermEntry *p;>>
 			"{\\}#errclass"
@@ -1212,7 +1289,10 @@ error	:	<<char *t=NULL; ECnode *e; int go=1; TermEntry *p;>>
 		;
 		<<CannotContinue=TRUE;>>
 
+/* rule tclass */
+
 tclass	:	<<char *t=NULL; TCnode *e; int go=1,tok,totok; TermEntry *p, *term, *toterm;>>
+            <<char *akaString=NULL; int save_file; int save_line;>>
             <<char *totext=NULL; >>
 			"{\\}#tokclass" TokenTerm <<t=mystrdup(LATEXT(1));>>
 			<<e = newTCnode;
@@ -1236,6 +1316,30 @@ tclass	:	<<char *t=NULL; TCnode *e; int go=1,tok,totok; TermEntry *p, *term, *to
 				go=0;
 			  }
 			>>
+/* MR23 */      {
+/* MR23 */          "\("
+/* MR23 */          QuotedTerm
+/* MR23 */                 <<akaString=mystrdup(StripQuotes(LATEXT(1)));
+/* MR11 */                   save_file=CurFile;save_line=zzline;
+/* MR23 */                 >>
+/* MR23 */          "\)"
+/* MR23 */      }
+/* MR23 */
+/* MR23 */
+/* MR23 */		<<
+/* MR23 */         if (p!= NULL && akaString != NULL) {
+/* MR23 */           if (p->akaString != NULL) {
+/* MR23 */             if (strcmp(p->akaString,akaString) != 0) {
+/* MR23 */                warnFL(eMsg2("this #tokclass statment conflicts with a previous #tokclass %s(\"%s\") statement",
+/* MR23 */                              t,p->akaString),
+/* MR23 */			                    FileStr[save_file],save_line);
+/* MR23 */             };
+/* MR23 */            } else {
+/* MR23 */              p->akaString=akaString;
+/* MR23 */            };
+/* MR23 */          };
+/* MR23 */		>>
+
 			"\{"
 				(
     				( TokenTerm
@@ -1289,6 +1393,8 @@ tclass	:	<<char *t=NULL; TCnode *e; int go=1,tok,totok; TermEntry *p, *term, *to
 			"\}"
 		;
 		<<CannotContinue=TRUE;>>
+
+/* rule token */
 
 token	:	<<char *t=NULL, *e=NULL, *a=NULL; int tnum=0;>>
             <<char *akaString=NULL; TermEntry *te;int save_file=0,save_line=0;>>           /* MR11 */
@@ -1345,21 +1451,27 @@ token	:	<<char *t=NULL, *e=NULL, *a=NULL; int tnum=0;>>
 		;
 		<<CannotContinue=TRUE;>>
 
+/* rule block */
+
 block[set *toksrefd, set *rulesrefd]
 		:	<<
-			Graph g, b;
-			set saveblah;
-			int saveinalt = inAlt;
-			ExceptionGroup *eg;
-			*$toksrefd = empty;
-			*$rulesrefd = empty;
-			set_clr(AST_nodes_refd_in_actions);
-			CurBlockID++;
-			CurAltNum = 1;
-			saveblah = attribsRefdFromAction;
-			attribsRefdFromAction = empty;
+    			Graph g, b;
+    			set saveblah;
+    			int saveinalt = inAlt;
+    			ExceptionGroup *eg;
+    			*$toksrefd = empty;
+    			*$rulesrefd = empty;
+    			set_clr(AST_nodes_refd_in_actions);
+    			CurBlockID++;
+/* MR23 */      CurBlockID_array[BlkLevel] = CurBlockID;
+    			CurAltNum = 1;
+/* MR23 */      CurAltNum_array[BlkLevel] = CurAltNum;                
+    			saveblah = attribsRefdFromAction;
+    			attribsRefdFromAction = empty;
 			>>
+
 			alt[toksrefd,rulesrefd]		<<b = g = $1;>>
+
 			<<
 			if ( ((Junction *)g.left)->p1->ntype == nAction )
 			{
@@ -1386,7 +1498,9 @@ block[set *toksrefd, set *rulesrefd]
 				}
 				>>
 			)*
-			<<CurAltNum++;>>
+			<<CurAltNum++;
+/* MR23 */    CurAltNum_array[BlkLevel] = CurAltNum;
+            >>
 
 			(	"\|" <<inAlt=1;>>
 				alt[toksrefd,rulesrefd]		<<g = Or(g, $2);>>
@@ -1404,7 +1518,9 @@ block[set *toksrefd, set *rulesrefd]
 					>>
 				)*
 
-				<<CurAltNum++;>>
+				<<CurAltNum++;
+/* MR23 */        CurAltNum_array[BlkLevel] = CurAltNum;                
+                >>
 
 			)*
 			<<$0 = b;>>
@@ -1412,8 +1528,10 @@ block[set *toksrefd, set *rulesrefd]
 		;
 		<<CannotContinue=TRUE;>>
 
+/* rule alt */
+
 alt[set *toksrefd, set *rulesrefd]
-		:	<<int n=0; Graph g; int e_num=0, not=0; Node *node; set elems, dif;
+		:	<<int n=0; Graph g; int e_num=0, old_not=0; Node *node; set elems, dif;
 			int first_on_line = 1, use_def_MT_handler = 0;
 			g.left=NULL; g.right=NULL;
 
@@ -1424,9 +1542,10 @@ alt[set *toksrefd, set *rulesrefd]
 			{	"\@"	/* handle MismatchedToken signals with default handler */
 				<<use_def_MT_handler = 1;>>
 			}
+
 			(	<<;>>       /* MR9 Removed unreferenced variable "tok" */
-				{ <<not=0;>> "\~" <<not=1;>> }
-				element[not, first_on_line, use_def_MT_handler] > [node]
+				{ <<old_not=0;>> "\~" <<old_not=1;>> }
+				element[old_not, first_on_line, use_def_MT_handler] > [node]
 				<<if ( node!=NULL && node->ntype!=nAction ) first_on_line = 0;>>
 				<<
 				if ( $2.left!=NULL ) {
@@ -1479,6 +1598,8 @@ alt[set *toksrefd, set *rulesrefd]
 		;
 		<<CannotContinue=TRUE;>>
 
+/* rule element_label */
+
 element_label > [LabelEntry *label]
 	:	<<TermEntry *t=NULL; LabelEntry *l=NULL; RuleEntry *r=NULL; char *lab;>>
 		LABEL	<<lab = mystrdup(LATEXT(1));>>
@@ -1517,7 +1638,9 @@ element_label > [LabelEntry *label]
 		":"
 	;
 
-element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
+/* rule element */
+
+element[int old_not, int first_on_line, int use_def_MT_handler] > [Node *node]
 		: <<
 		  Attrib blk;
 		  Predicate *pred = NULL;
@@ -1533,6 +1656,8 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
           int   ampersandStyle;
           int   height;         /* MR11 */
           int   equal_height;   /* MR11 */
+
+          char* pFirstSetSymbol = NULL; /* MR21 */
 
 		  $node = NULL;
 		  >>
@@ -1550,7 +1675,7 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
 				term = (TermEntry *) hash_get(Tname, LATEXT(1));
 				require( term!= NULL, "hash table mechanism is broken");
 				p->tclass = term->tclass;
-				p->complement = $not;
+				p->complement = $old_not;
 				if ( label!=NULL ) {
 					p->el_label = label->str;
 					label->elem = (Node *)p;
@@ -1565,7 +1690,7 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
 				)
 			}
 			<<
-			if ( p!=NULL && (p->upper_range!=0 || p->tclass || $not) )
+			if ( p!=NULL && (p->upper_range!=0 || p->tclass || $old_not) )
 				list_add(&MetaTokenNodes, (void *)p);
 			>>
 			(	"^"	<<if ( p!=NULL ) p->astnode=ASTroot;>>
@@ -1592,7 +1717,7 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
 			}
 			else {
 				$$ = buildToken(LATEXT(1)); p=((TokNode *)((Junction *)$$.left)->p1);
-				p->complement = $not;
+				p->complement = $old_not;
 				if ( label!=NULL ) {
 					p->el_label = label->str;
 	   				label->elem = (Node *)p;
@@ -1612,7 +1737,7 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
 			)
 			{ "\@" <<local_use_def_MT_handler = 1;>> }
 			<<
-			if ( p!=NULL && (p->upper_range!=0 || p->tclass || $not) )
+			if ( p!=NULL && (p->upper_range!=0 || p->tclass || $old_not) )
 				list_add(&MetaTokenNodes, (void *)p);
 			>>
 			<<
@@ -1626,7 +1751,7 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
 			$node = (Node *)p;
 			>>
 
-		  | <<if ( $not ) warn("~ WILDCARD is an undefined operation (implies 'nothing')");>>
+		  | <<if ( $old_not ) warn("~ WILDCARD is an undefined operation (implies 'nothing')");>>
 			"."
 			<<$$ = buildWildCard(LATEXT(1)); p=((TokNode *)((Junction *)$$.left)->p1);>>
 			(	"^"	<<p->astnode=ASTroot;>>
@@ -1647,7 +1772,7 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
 			$node = (Node *)p;
 			>>
 
-		  | <<if ( $not ) warn("~ NONTERMINAL is an undefined operation");>>
+		  | <<if ( $old_not ) warn("~ NONTERMINAL is an undefined operation");>>
 			NonTerminal
 			<<$$ = buildRuleRef(LATEXT(1));>>
 			{ "!" <<q = (RuleRefNode *) ((Junction *)$$.left)->p1;
@@ -1681,7 +1806,7 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
 			>>
 		  )
 
-		|	<<if ( $not )	warn("~ ACTION is an undefined operation");>>
+		|	<<if ( $old_not )	warn("~ ACTION is an undefined operation");>>
 			Action <<$0 = buildAction(LATEXT(1),action_file,action_line, 0);>>
 			<<if ( $first_on_line ) {                                /* MR7 */
                 CurAltStart = (Junction *)$0.left;                   /* MR7 */
@@ -1689,7 +1814,7 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
               };>>                                                   /* MR7 */
 			<<$node = (Node *) ((Junction *)$0.left)->p1;>>
 
-		|	<<if ( $not )	warn("~ SEMANTIC-PREDICATE is an undefined operation");>>
+		|	<<if ( $old_not )	warn("~ SEMANTIC-PREDICATE is an undefined operation");>>
 			Pred   <<$0 = buildAction(LATEXT(1),action_file,action_line, 1);>>
 			<<act = (ActionNode *) ((Junction *)$0.left)->p1;>>
             <<if (numericActionLabel) {             /* MR10 */
@@ -1709,21 +1834,55 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
 			<<if ( $first_on_line ) {                                /* MR7 */
                 CurAltStart = (Junction *)$0.left;                   /* MR7 */
                 altAdd(CurAltStart);                                 /* MR7 */
-              };>>                                                    /* MR7 */
+              };>>                                                   /* MR7 */
 			<<$node = (Node *)act;>>
 
-		|	<<if ( $not )	warn("~ BLOCK is an undefined operation");>>
-			<<BlkLevel++;>>
-			{	"{\\}#pragma"
+		|	<<if ( $old_not )	warn("~ BLOCK is an undefined operation");>>
+			<<BlkLevel++;
+              if (BlkLevel >= MAX_BLK_LEVEL) fatal("Blocks nested too deeply");
+/* MR23 */    CurBlockID_array[BlkLevel] = CurBlockID;
+/* MR23 */    CurAltNum_array[BlkLevel] = CurAltNum;                
+            >>
+			{	Pragma
 				(	"approx" <<approx=LL_k;>>
 				|	"LL\(1\)"  <<approx = 1;>>  /* MR20 */
 				|	"LL\(2\)"  <<approx = 2;>>  /* MR20 */
-				)
-			}
-			(	"\(" block[&toksrefd,&rulesrefd] "\)"
-				<<blk = $$ = $2; --BlkLevel;>>
-				(	"\*"		<<$$ = makeLoop($$,approx);>>
-				|	"\+"		<<$$ = makePlus($$,approx);>>
+                )
+            }
+
+/* MR21 */  {  FirstSetSymbol
+/* MR21 */     "\("
+/* MR21 */    		(	NonTerminal
+/* MR21 */                <<
+/* MR21 */                     pFirstSetSymbol = (char *) calloc(strlen(LATEXT(1))+1,
+/* MR21 */                                                    sizeof(char));
+/* MR21 */                          require(pFirstSetSymbol!=NULL,
+/* MR21 */                                  "cannot allocate first set name");
+/* MR21 */                          strcpy(pFirstSetSymbol, LATEXT(1));
+/* MR21 */                      >>
+/* MR21 */          |    TokenTerm
+/* MR21 */                  <<
+/* MR21 */                      pFirstSetSymbol = (char *) calloc(strlen(LATEXT(1))+1,
+/* MR21 */                                                        sizeof(char));
+/* MR21 */                      require(pFirstSetSymbol!=NULL,
+/* MR21 */                              "cannot allocate first set name");
+/* MR21 */                      strcpy(pFirstSetSymbol, LATEXT(1));
+/* MR21 */                  >>
+/* MR21 */          )
+/* MR21 */      "\)"
+/* MR21 */  }
+
+            (
+
+        	"\(" block[&toksrefd,&rulesrefd] "\)"
+				<<blk = $$ = $2;
+                        /* MR23 */      CurBlockID_array[BlkLevel] = (-1);
+                        /* MR23 */      CurAltNum_array[BlkLevel] = (-1);                
+                  --BlkLevel;
+            >>
+
+				(	"\*"		<<$$ = makeLoop($$,approx,pFirstSetSymbol);>>
+				|	"\+"		<<$$ = makePlus($$,approx,pFirstSetSymbol);>>
 				|	"?"
 					(	
                         ( "=>" <<ampersandStyle=0;>>
@@ -1756,7 +1915,7 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
 
 						/* for now, just snag context */
 						<<
-						pred = computePredicateFromContextGuard(blk,&predMsgDone);      /* MR10 */
+						pred = computePredFromContextGuard(blk,&predMsgDone);           /* MR10 */
 						if ( pred==NULL) {                                              /* MR10 */
                           if ( !predMsgDone) err("invalid or missing context guard");   /* MR10 */
                           predMsgDone=1;                                                /* MR10 */
@@ -1788,7 +1947,7 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
 /* MR10 */                  };
 						}
 						>>
-					|	<<$$ = makeBlk($$,approx);
+					|	<<$$ = makeBlk($$,approx,pFirstSetSymbol);
 						  FoundGuessBlk = 1;
 						  ((Junction *) ((Junction *)$$.left)->p1)->guess=1;
 						  if ( !$first_on_line ) {
@@ -1796,7 +1955,7 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
 						  }
 						>>
 					)
-				|	<<$$ = makeBlk($$,approx);>>
+				|	<<$$ = makeBlk($$,approx,pFirstSetSymbol);>>
 				)
 				<<
 				if ( pred==NULL && !predMsgDone) {                                      /* MR10 */
@@ -1812,7 +1971,11 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
 				>>
 
 			|	"\{"	block[&toksrefd,&rulesrefd]
-						<<$$ = makeOpt($2,approx); --BlkLevel;>>
+						<<$$ = makeOpt($2,approx,pFirstSetSymbol);
+                                /* MR23 */      CurBlockID_array[BlkLevel] = (-1);
+                                /* MR23 */      CurAltNum_array[BlkLevel] = (-1);                
+                                --BlkLevel;
+                        >>
 				"\}"
 				<<
 				((Junction *)((Junction *)$$.left)->p1)->blockid = CurBlockID;
@@ -1837,9 +2000,13 @@ element[int not, int first_on_line, int use_def_MT_handler] > [Node *node]
 		;
 		<<CannotContinue=TRUE;>>
 
+/* rule default_exception_handler */
+
 default_exception_handler
 	:	exception_group > [DefaultExGroup]
 	;
+
+/* rule exception_group */
 
 exception_group > [ExceptionGroup *eg]
 	:	<<ExceptionHandler *h; LabelEntry *label=NULL;	  /* MR6 */
@@ -1913,7 +2080,7 @@ exception_group > [ExceptionGroup *eg]
 /* MR7 */   if (BlkLevel == 1 && label == NULL) {
 /* MR7 */     $eg->forRule=1;
 /* MR7 */   } else if (label == NULL) {
-/* MR7 */     $eg->altID = makeAltID(CurBlockID,CurAltNum);
+/* MR7 */     $eg->altID = makeAltID(CurBlockID_array[BlkLevel], CurAltNum_array[BlkLevel]);
 /* MR7 */     egAdd($eg);
 /* MR7 */   } else {
 /* MR7 */     $eg->labelEntry=label;
@@ -1929,6 +2096,8 @@ exception_group > [ExceptionGroup *eg]
 		>>
 	;
 	<<CannotContinue=TRUE;>>
+
+/* rule exception_handler */
 
 exception_handler > [ExceptionHandler *eh]
 	:	<<;>>                               /* MR9 Removed unreferenced variable "a" */
@@ -1993,6 +2162,8 @@ exception_handler > [ExceptionHandler *eh]
 #token "#import"			<< zzmode(TOK_DEF_CPP_COMMENTS); zzskip(); >>
 #token "@"					<< ; >>
 
+/* rule enum_file */
+
 enum_file[char *fname]
 	:	{	"#ifndef" ID
 			{	"#define" ID /* ignore if it smells like a gate */
@@ -2004,6 +2175,8 @@ enum_file[char *fname]
 		)
 	|
 	;
+
+/* rule defines */
 
 defines[char *fname]
 	:	<<int v; int maxt=(-1); char *t;>>		/* MR3 */
@@ -2033,6 +2206,8 @@ defines[char *fname]
 		)+
 		<<TokenNum = maxt + 1;>>
 	;
+
+/* rule enum_def */
 
 enum_def[char *fname]
 	:	<<int v= 0; int maxt=(-1); char *t;>>			/* MR3 */

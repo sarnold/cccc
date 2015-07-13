@@ -26,3 +26,29 @@ clean:
 #remove everything in clean plus the PCCTS files generated
 scrub:
 	del *.$(OBJ_EXT)
+EOF_watgenmk.mak
+cat << \EOF_makefile | sed 's/^>//' > makefile
+SRC=genmk.c
+OBJ=genmk.o
+# Define PC if you use a PC OS (changes directory symbol and object file extension)
+# see pccts/h/pcctscfg.h
+#CFLAGS=-I../../h -DPC
+CFLAGS=-I../../h
+CC=cc
+BAG=../../bin/bag
+
+genmk: $(OBJ) $(SRC) ../../h/pcctscfg.h
+	$(CC) -o genmk $(OBJ)
+
+clean:
+	rm -rf core *.o
+
+scrub:
+	rm -rf genmk core *.o
+
+shar:
+	shar genmk.c makefile > genmk.shar
+
+archive:
+	$(BAG) genmk.c watgenmk.mak makefile > genmk.bag
+EOF_makefile

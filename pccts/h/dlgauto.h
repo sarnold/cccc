@@ -24,7 +24,7 @@
  * Will Cohen and Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2000
  */
 
 #ifndef ZZDEFAUTO_H
@@ -306,7 +306,12 @@ zzchar_t c;
 		*(zzbegexpr+1) = '\0';
 	}
 	zzendexpr = zzbegexpr;
-	zznextpos = zzbegexpr + 1;
+	if (c != '\0') {
+		zznextpos = zzbegexpr + 1;
+	}
+	else {
+		zznextpos = zzbegexpr;	/* MR30 Zero terminates string. */
+	}
 }
 
 /* replace the string s for the reg. expr last matched and in the buffer */
@@ -345,7 +350,7 @@ void zzgettok()
 {
 	register int state, newstate;
 	/* last space reserved for the null char */
-	register zzchar_t *lastpos;
+	zzchar_t *lastpos;  /* MR27 Remove register since address operator used. */
 
 skip:
 	zzreal_line = zzline;

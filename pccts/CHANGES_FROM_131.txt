@@ -261,7 +261,7 @@ Note the use of smart pointers rather than "ANTLRToken *".
 --------------------------------------------------------
 5	SUN C++
 
-From robertb@oakhill.sps.mot.com Bob Bailey. Changed ANTLR C++ output
+From robertb oakhill.sps.mot.com Bob Bailey. Changed ANTLR C++ output
 to avoid an error in Sun C++ 3.0.1.  Made "public" return value
 structs created to hold multiple return values public.
 
@@ -274,7 +274,7 @@ called SList.* anyway.
 --------------------------------------------------------
 7	\r vs \n
 
-Scott Vorthmann <vorth@cmu.edu> fixed antlr.g in ANTLR so that \r
+Scott Vorthmann <vorth cmu.edu> fixed antlr.g in ANTLR so that \r
 is allowed as the return character as well as \n.
 
 --------------------------------------------------------
@@ -314,7 +314,7 @@ genmk now correctly uses config file for CPP_FILE_SUFFIX stuff.
 --------------------------------------------------------
 10	general cleanup / PURIFY
 
-Anthony Green <green@vizbiz.com> suggested a bunch of good general
+Anthony Green <green vizbiz.com> suggested a bunch of good general
 clean up things for the code; he also suggested a few things to
 help out the "PURIFY" memory allocation checker.
 
@@ -507,7 +507,7 @@ o	Added warning when #-stuff is used w/o -gt option.
 
 o	Updated MPW installation.
 
-o	"Miller, Philip W." <MILLERPW@f1groups.fsd.jhuapl.edu> suggested
+o	"Miller, Philip W." <MILLERPW f1groups.fsd.jhuapl.edu> suggested
 	that genmk be use RENAME_OBJ_FLAG RENAME_EXE_FLAG instead of
 	hardcoding "-o" in genmk.c.
 

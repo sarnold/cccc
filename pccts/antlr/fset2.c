@@ -27,7 +27,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2001
  */
 
 #include <stdio.h>
@@ -193,7 +193,7 @@ va_dcl
 	Tree *w;
 	va_list ap;
 	Tree *child, *sibling=NULL, *tail=NULL;
-#ifndef __USE_PROTOS
+#ifndef PCCTS_USE_STDARG
 	Tree *root;
 #endif
 
@@ -1577,9 +1577,9 @@ Fail:
  */
 Predicate *
 #ifdef __USE_PROTOS
-computePredicateFromContextGuard(Graph blk,int *msgDone)    /* MR10 */
+computePredFromContextGuard(Graph blk,int *msgDone)    /* MR10 */
 #else
-computePredicateFromContextGuard(blk,msgDone)               /* MR10 */
+computePredFromContextGuard(blk,msgDone)               /* MR10 */
   Graph     blk;
   int       *msgDone;                                       /* MR10 */
 #endif
@@ -2147,8 +2147,9 @@ void MR_backTraceReport()
 #endif
 {
   int       i;
-  int       match;
+  int       match = 0;
   int       limitMatch;
+
   Node      *p;
   TokNode   *tn;
   set       remainder;
@@ -2172,7 +2173,10 @@ void MR_backTraceReport()
 /* MR14 */     require (depth <= MR_AmbSourceSearchLimit,"depth > MR_AmbSourceSearchLimit");
 /* MR14 */  }
 
-  if (depth < MR_AmbSourceSearchLimit) {
+  /* MR23 THM - Traceback report was being called at the wrong time for -alpha reports */
+  /*            Reported by Arpad Beszedes (beszedes@inf.u-szeged.hu)                  */
+
+  if (MR_AmbSourceSearchLimit == 0 || depth < MR_AmbSourceSearchLimit) {
     return;
   };
 

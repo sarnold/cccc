@@ -11,7 +11,7 @@ $!
 $!
 $ delete/nolog *.obj;*  !Get rid of existing .OBJ files.
 $!
-$ options = "/INCLUDE=([--.h])/define=(__STDC__)"
+$ options = "/INCLUDE=([--.h])"
 $ CC 'options' genmms
 $!
 $relink:

@@ -168,7 +168,7 @@ CC ?= gcc
 ANTLR = ../bin/antlr
 DLG = ../bin/dlg
 OBJ_EXT = o
-OUT_OBJ = -o 
+OUT_OBJ = -o
 CPPFLAGS += -I. -I$(SET) -I$(PCCTS_H) -DUSER_ZZSYN
 
 #

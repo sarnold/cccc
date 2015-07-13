@@ -44,3 +44,4 @@ set.$(OBJ_EXT) : $(SET)\set.c
 #clean up all the intermediate files
 clean:
 	del *.$(OBJ_EXT)
+EOF_watdlg.mak

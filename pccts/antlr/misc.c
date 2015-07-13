@@ -44,7 +44,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2001
  */
 
 #include <stdio.h>
@@ -54,6 +54,7 @@
 #include "hash.h"
 #include "generic.h"
 #include "dlgdef.h"
+#include <ctype.h>
 
 static int tsize=TSChunk;		/* size of token str arrays */
 
@@ -648,6 +649,25 @@ void (*f)();
 
 	if ( list == NULL ) return;
 	for (p = list->next; p!=NULL; p=p->next) (*f)( p->elem );
+}
+
+/* MR27 */
+
+#ifdef __USE_PROTOS
+int list_search_cstring(ListNode *list, char * cstring)
+#else
+int list_search_cstring(list, cstring)
+  ListNode * list;
+  char * cstring;
+#endif
+{
+	ListNode *p;
+	if (list == NULL ) return 0;
+	for (p = list->next; p!=NULL; p=p->next) {
+		if (p->elem == NULL) continue;
+		if (0 == strcmp((char *) p->elem , cstring)) return 1;
+	}
+	return 0;
 }
 
 			/* F O L L O W  C y c l e  S t u f f */
@@ -1388,4 +1408,457 @@ Junction *p;
 		printf(" }\n");
 	}
 	set_free( a );
+}
+
+/*
+   The single argument is a pointer to the start of an element of a
+   C++ style function prototypet list.  Given a pointer to the start of
+   an formal we must locate the comma (or the end of the string)
+   and locate the datatype, formal name, and initial value expression.
+
+   The function returns a pointer to the character following the comma
+   which terminates the formal declaration, or a pointer to the end of
+   the string if none was found.
+
+   I thought we were parsing specialists, how come I'm doing this by
+   hand written code ?
+
+   Examples of input:
+ 
+        Foo f,
+        Foo f = Foo(1),
+        Foo f = Foo(1,2),
+        Foo f = &farray[1,2],
+        Foo f = ",",
+        Foo f = ',',
+        TFoo<int,char> f = TFoo<int,char>(1,2),
+
+   A non-zero value for nesting indicates a problem matching '(' and ')',
+   '[' and ']', '<' and '>', '{' and '}', or improperly terminated string
+   or character literal.
+
+*/
+
+
+/*
+ *  Don't care if it is a valid string literal or not, just find the end
+ *  Start with pointer to leading "\""
+ */
+
+#ifdef __USE_PROTOS
+char * skipStringLiteral(char *pCurrent)
+#else
+char * skipStringLiteral(pCurrent)
+char *pCurrent;
+#endif
+{
+  char *p = pCurrent;
+  if (*p == 0) return p;
+  require (*p == '\"', "skipStringLiteral")
+  p++;
+  for (p = p; *p != 0; p++) {
+    if (*p == '\\') {
+      p++;
+      if (*p == 0) break;
+      p++;
+    }
+    if (*p == '\"') {
+      p++;
+      break;
+    }
+  }
+  return p;
+}
+
+/*
+ *  Don't care if it is a valid character literal or not, just find the end
+ *  Start with pointer to leading "'"
+ */
+
+#ifdef __USE_PROTOS
+char * skipCharLiteral(char *pStart)
+#else
+char * skipCharLiteral(pStart)
+ char *pStart;
+#endif
+{
+  char *p = pStart;
+  if (*p == 0) return p;
+  require (*p == '\'', "skipCharLiteral")
+  p++;
+  for (p = p; *p != 0; p++) {
+    if (*p == '\\') {
+      p++;
+      if (*p == 0) break;
+      p++;
+    }
+    if (*p == '\'') {
+      p++;
+      break;
+    }
+  }
+  return p;
+}
+
+#ifdef __USE_PROTOS
+char * skipSpaces(char *pStart)
+#else
+char * skipSpaces(pStart)
+char * pStart;
+#endif
+{
+  char *p = pStart;
+  while (*p != 0 && isspace(*p)) p++;
+  return p;
+}
+
+#ifdef __USE_PROTOS
+char * skipToSeparatorOrEqualSign(char *pStart, int *pNest)
+#else
+char * skipToSeparatorOrEqualSign(pStart, pNest)
+char *pStart;
+int *pNest;
+#endif
+{
+  char *p = pStart;
+  
+  int nest = 0;
+
+  *pNest = (-1);
+
+  while (*p != 0) {
+    switch (*p) {
+
+      case '(' :
+      case '[' :
+      case '<' :
+      case '{' :
+        nest++;
+        p++;
+        break;
+
+      case ')' :
+      case ']' :
+      case '>' :
+      case '}' :
+        nest--;
+        p++;
+        break;
+      
+      case '"' :
+        p = skipStringLiteral(p);
+        break;
+  
+      case '\'' :
+        p = skipCharLiteral(p);
+        break;
+
+      case '\\':
+        p++;
+        if (*p == 0) goto EXIT;
+        p++;
+        break;
+
+      case ',':
+      case '=':
+        if (nest == 0) goto EXIT;
+		p++;
+        break;
+
+      default:
+        p++;
+    }
+  }
+EXIT:
+  *pNest = nest;
+  return p;
+}
+
+#ifdef __USE_PROTOS
+char * skipToSeparator(char *pStart, int *pNest)
+#else
+char * skipToSeparator(pStart, pNest)
+char *pStart;
+int *pNest;
+#endif
+{
+  char * p = pStart;
+  for ( ; ; ) {
+    p = skipToSeparatorOrEqualSign(p, pNest);
+    if (*pNest != 0) return p;
+    if (*p == ',') return p;
+    if (*p == 0) return p;
+	p++;
+  }
+}
+
+/* skip to just past the "=" separating the declaration from the initialization value */
+
+#ifdef __USE_PROTOS
+char * getInitializer(char *pStart)
+#else
+char * getInitializer(pStart)
+char * pStart;
+#endif
+{
+	char *p;
+	char *pDataType;
+	char *pSymbol;
+	char *pEqualSign;
+	char *pValue;
+	char *pSeparator;
+	int nest = 0;
+
+	require(pStart!=NULL, "getInitializer: invalid string"); 
+
+	p = endFormal(pStart,
+			      &pDataType,
+				  &pSymbol,
+				  &pEqualSign,
+				  &pValue,
+				  &pSeparator,
+				  &nest);
+    if (nest != 0) return NULL;
+    if (pEqualSign == NULL) return NULL;
+    if (pValue == NULL) return NULL;
+	return strBetween(pValue, NULL, pSeparator);
+}
+
+/*
+   Examines the string from pStart to pEnd-1.
+   If the string has 0 length or is entirely white space
+   returns 1.  Otherwise 0.
+*/
+
+#ifdef __USE_PROTOS
+int isWhiteString(const char *pStart, const char *pEnd)
+#else
+int isWhiteString(pStart, pEnd)
+const char *pStart;
+const char *pEnd;
+#endif
+{
+  const char *p;
+  for (p = pStart; p < pEnd; p++) {
+    if (! isspace(*p)) return 0;
+  }
+  return 1;
+}
+
+/*
+   This replaces HasComma() which couldn't distinguish
+
+        foo ["a,b"]
+
+   from:
+
+        foo[a,b]
+
+*/
+
+#ifdef __USE_PROTOS
+int hasMultipleOperands(char *pStart)
+#else
+int hasMultipleOperands(pStart)
+char *pStart;
+#endif
+{
+  char *p = pStart;
+  int nest = 0;
+
+  p = skipSpaces(p);
+  if (*p == 0) return 0;
+  p = skipToSeparator(p, &nest);
+  if (nest == 0 && *p == ',') return 1;
+  return 0;
+}
+
+
+#define MAX_STR_BETWEEN_WORK_AREA 1000
+
+static char strBetweenWorkArea[MAX_STR_BETWEEN_WORK_AREA];
+
+
+/*
+	strBetween(pStart, pNext, pStop)
+
+    Creates a null terminated string by copying the text between two pointers
+	to a work area.  The start of the string is pStart.  The end of the string
+	is the character before pNext, or if pNext is null then the character before
+	pStop.  Trailing spaces are not included in the copy operation.
+	
+	This is used when a string contains several parts.  The pNext part may be
+	optional.  The pStop will stop the scan when the optional part is not present
+	(is a null pointer).
+*/
+
+#ifdef __USE_PROTOS
+char *strBetween(char *pStart, char *pNext, char *pStop)
+#else
+char *strBetween(pStart, pNext, pStop)
+char *pStart;
+char *pNext;
+char *pStop;
+#endif
+{
+  char *p;
+  char *q = strBetweenWorkArea;
+  const char *pEnd;
+
+  pEnd = (pNext != NULL) ? pNext : pStop;
+
+  require (pEnd != NULL, "pEnd == NULL");
+  require (pEnd >= pStart, "pEnd < pStart");
+  for (pEnd--; pEnd >= pStart; pEnd--) { /* MR31 */
+	if (! isspace(*pEnd)) break;
+  }
+  for (p = pStart;
+       p <= pEnd && q < &strBetweenWorkArea[MAX_STR_BETWEEN_WORK_AREA-2];
+	   p++, q++) {
+	 *q = *p;
+  }
+  *q = 0;
+  return strBetweenWorkArea;
+}
+
+/*
+   function     Returns pointer to character following separator at
+   value        which to continue search for next formal.  If at the
+                end of the string a pointer to the null byte at the
+                end of the string is returned.
+
+   pStart       Pointer to the starting position of the formal list
+
+                This may be the middle of a longer string, for example
+                when looking for the end of formal #3 starting from
+                the middle of the complete formal list.
+
+   ppDataType   Returns a pointer to the start of the data type in the
+                formal. Example: pointer to "Foo".
+
+   ppSymbol     Returns a pointer to the start of the formal symbol.
+                Example: pointer to "f".
+
+   ppEqualSign  Returns a pointer to the equal sign separating the
+                formal symbol from the initial value.  If there is 
+                no "=" then this will be NULL.
+
+   ppValue      Returns a pointer to the initial value part of the
+                formal declaration.  Example: pointer to "&farray[1,2]"
+
+   ppSeparator  Returns a pointer to the character which terminated the
+                scan.  This should be a pointer to a comma or a null
+                byte which terminates the string.
+
+   pNest        Returns the nesting level when a separator was found.
+                This is non-zero for any kind of error.  This is zero
+                for a successful parse of this portion of the formal
+                list.
+
+*/ 
+ 
+#ifdef __USE_PROTOS
+char * endFormal(char *pStart,
+                 char **ppDataType,
+                 char **ppSymbol,
+                 char **ppEqualSign,
+                 char **ppValue,
+                 char **ppSeparator,
+                 int *pNest)
+#else
+char * endFormal(pStart,
+			     ppDataType,
+				 ppSymbol,
+				 ppEqualSign,
+				 ppValue,
+				 ppSeparator,
+				 pNest)
+char *pStart;
+char **ppDataType;
+char **ppSymbol;
+char **ppEqualSign;
+char **ppValue;
+char **ppSeparator;
+int *pNest;
+
+#endif
+{
+  char *p = pStart;
+  char *q;
+
+  *ppDataType = NULL;
+  *ppSymbol = NULL;
+  *ppEqualSign = NULL;
+  *ppValue = NULL;
+  *ppSeparator = NULL;
+
+  *pNest = 0;
+
+  /* The first non-blank is the start of the datatype */
+
+  p = skipSpaces(p);
+  if (*p == 0) goto EXIT;
+  *ppDataType = p;
+
+  /* We are not looking for the symbol, we are looking
+     for the separator that follows the symbol.  Then
+     we'll back up.
+   
+     Search for the ',' or '=" or null terminator.
+   */
+
+  p = skipToSeparatorOrEqualSign(p, pNest);
+
+  if (*pNest != 0) goto EXIT;
+
+  /*
+     Work backwards to find start of symbol
+     Skip spaces between the end of symbol and separator
+     Assume that there are no spaces in the formal, but
+     there is a space preceding the formal
+  */
+
+  for (q = &p[-1]; q >= *ppDataType; q--) {
+    if (! isspace(*q)) break;
+  }
+  if (q < *ppDataType) goto EXIT;
+
+  /*
+     MR26 Handle things like: IIR_Bool (IIR_Decl::*constraint)()
+     Backup until we hit the end of a symbol string, then find the
+     start of the symbol string.  This wont' work for functions
+     with prototypes, but works for the most common cases.  For
+     others, use typedef names.
+   */
+
+/* MR26 */  for (q = q; q >= *ppDataType; q--) {
+/* MR26 */    if (isalpha(*q) || isdigit(*q) || *q == '_' || *q == '$') break;
+/* MR26 */  }
+/* MR26 */  if (q < *ppDataType) goto EXIT;
+
+  for (q = q; q >= *ppDataType; q--) {
+    if ( ! (isalpha(*q) || isdigit(*q) || *q == '_' || *q == '$')) break;
+  }
+
+  *ppSymbol = &q[1];
+
+  if (*p == ',' || *p == 0) {
+    *ppSeparator = p;
+    goto EXIT;
+  }
+
+  *ppEqualSign = p;
+  p = skipSpaces(++p);
+  *ppValue = p;
+  if (*p == 0) goto EXIT;
+
+
+  while (*p != 0 && *pNest == 0 && *p != ',') {
+      p = skipToSeparator(p, pNest);
+  }
+  if (*pNest == 0) *ppSeparator = p;
+
+EXIT:
+  if (*p == ',') p++;
+  return p;
 }

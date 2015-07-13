@@ -967,7 +967,7 @@
         the && form always does.  What is the significance ?
 
         If you have a predicate which is not on the "leading edge"
-        it is cannot be hoisted.  Suppose you need a predicate that
+        it cannot be hoisted.  Suppose you need a predicate that
         looks at LA(2).  You must introduce it manually.  The
         classic example is:
 
@@ -980,9 +980,9 @@
                      | STRUCT ID
                      ;
 
-        The problem  is that isTypeName() isn't on the leading edge
-        of typeName, so it won't be hoisted into castExpr to help
-        make a decision on which production to choose.
+        The problem  is that typeName isn't on the leading edge
+        of castExpr, so the predicate isTypeName won't be hoisted into
+        castExpr to help make a decision on which production to choose.
 
         The *first* attempt to fix it is this:
 
@@ -1400,7 +1400,7 @@
       the non-covered lookahead.  The code resembles:
 
         while {
-            if ( (LA(1)==A || LA(1)==B) &&
+            if ( (LA(1)==A || LA(1)==X) &&
                   (! (LA(1)==X) || isUpper()) {
               a();
             }
@@ -2242,7 +2242,7 @@
 
       Expression trees are used for k>1 grammars and predicates with
       lookahead depth >1.  This optimization must be enabled using
-      "-mrhost on".  (Clarification added for 1.33MR11).
+      "-mrhoist on".  (Clarification added for 1.33MR11).
 
       In the processing of expression trees, antlr can generate long chains
       of token comparisons.  Prior to 1.33MR10 there were many redundant
@@ -2302,7 +2302,7 @@
       Below is an excerpt of the output for rule "start" for the three
       predicate options (off, on, and maintenance release style hoisting).
 
-      For those who do not wish to use the "-mrhost on" option for code
+      For those who do not wish to use the "-mrhoist on" option for code
       generation the option can be used in a "diagnostic" mode to provide
       valuable information:
 

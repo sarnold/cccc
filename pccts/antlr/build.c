@@ -25,7 +25,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2001
  */
 
 #include <stdio.h>
@@ -38,10 +38,11 @@
 #include "generic.h"
 #include "dlgdef.h"
 
-#define SetBlk(g, t, approx) {						   			\
-			((Junction *)g.left)->jtype = t;					\
-			((Junction *)g.left)->approx = approx;				\
-			((Junction *)g.left)->end = (Junction *) g.right;	\
+#define SetBlk(g, t, approx, first_set_symbol) {         		        \
+			((Junction *)g.left)->jtype = t;					        \
+			((Junction *)g.left)->approx = approx;				        \
+			((Junction *)g.left)->pFirstSetSymbol = first_set_symbol;   \
+			((Junction *)g.left)->end = (Junction *) g.right;	        \
 			((Junction *)g.right)->jtype = EndBlk;}
 
 /* Add the parameter string 'parm' to the parms field of a block-type junction
@@ -140,7 +141,7 @@ int is_predicate;
 /* MR12c */      if (ci_strequ(strStart,"nohoist")) {
 /* MR12c */        a->noHoist=1;
 /* MR12c */      }
-    };
+	}
 
 	g.left = (Node *) j1; g.right = (Node *) j2;
 	a->file = file;
@@ -367,11 +368,12 @@ Graph g2;
  */
 Graph
 #ifdef __USE_PROTOS
-makeOpt( Graph g1, int approx )
+makeOpt( Graph g1, int approx, char * pFirstSetSymbol )
 #else
-makeOpt( g1, approx )
+makeOpt( g1, approx, pFirstSetSymbol )
 Graph g1;
 int approx;
+char * pFirstSetSymbol;
 #endif
 {
 	Junction *j1,*j2,*p;
@@ -381,7 +383,15 @@ int approx;
 	j1 = newJunction();
 	j2 = newJunction();
 	((Junction *)g1.right)->p1 = (Node *) j2;	/* add node to G at end */
-	g = emptyAlt();
+
+    /*  MR21
+     *
+     *  There is code in genBlk which recognizes the node created
+     *  by emptyAlt() as a special case and bypasses it.  We don't
+     *  want this to happen for the optBlk.
+     */
+
+	g = emptyAlt3(); /* MR21 */
 	if ( ((Junction *)g1.left)->altnum == 0 ) ((Junction *)g1.left)->altnum = 1;
 	((Junction *)g.left)->altnum = ((Junction *)g1.left)->altnum + 1;
 	for(p=(Junction *)g1.left; p->p2!=NULL; p=(Junction *)p->p2)
@@ -389,11 +399,10 @@ int approx;
 	p->p2 = g.left;								/* add optional alternative */
 	((Junction *)g.right)->p1 = (Node *)j2;		/* opt alt points to EndBlk */
 	g1.right = (Node *)j2;
-	SetBlk(g1, aOptBlk, approx);
+	SetBlk(g1, aOptBlk, approx, pFirstSetSymbol);
 	j1->p1 = g1.left;							/* add generic node in front */
 	g.left = (Node *) j1;
 	g.right = g1.right;
-
 	return g;
 }
 
@@ -407,11 +416,12 @@ int approx;
  */
 Graph
 #ifdef __USE_PROTOS
-makeBlk( Graph g1, int approx )
+makeBlk( Graph g1, int approx, char * pFirstSetSymbol )
 #else
-makeBlk( g1, approx )
+makeBlk( g1, approx, pFirstSetSymbol )
 Graph g1;
 int approx;
+char * pFirstSetSymbol;
 #endif
 {
 	Junction *j,*j2;
@@ -422,7 +432,7 @@ int approx;
 	j2 = newJunction();
 	((Junction *)g1.right)->p1 = (Node *) j2;	/* add node to G at end */
 	g1.right = (Node *)j2;
-	SetBlk(g1, aSubBlk, approx);
+	SetBlk(g1, aSubBlk, approx, pFirstSetSymbol);
 	j->p1 = g1.left;							/* add node in front */
 	g.left = (Node *) j;
 	g.right = g1.right;
@@ -453,11 +463,12 @@ int approx;
  */
 Graph
 #ifdef __USE_PROTOS
-makeLoop( Graph g1, int approx )
+makeLoop( Graph g1, int approx, char * pFirstSetSymbol )
 #else
-makeLoop( g1, approx )
+makeLoop( g1, approx, pFirstSetSymbol)
 Graph g1;
 int approx;
+char * pFirstSetSymbol;
 #endif
 {
 	Junction *back, *front, *begin;
@@ -467,7 +478,7 @@ int approx;
 	back = newJunction();
 	front = newJunction();
 	begin = newJunction();
-	g = emptyAlt();
+	g = emptyAlt3();
 	((Junction *)g1.right)->p2 = g1.left;		/* add loop branch to G */
 	((Junction *)g1.right)->p1 = (Node *) back;	/* add node to G at end */
 	((Junction *)g1.right)->jtype = EndBlk;		/* mark 1st EndBlk node */
@@ -480,7 +491,7 @@ int approx;
 	g1.left = (Node *) begin;
 	begin->p2 = (Node *) g.left;				/* make bypass arc */
 	((Junction *)g.right)->p1 = (Node *) back;
-	SetBlk(g1, aLoopBegin, approx);
+	SetBlk(g1, aLoopBegin, approx, pFirstSetSymbol);
 	front->p1 = g1.left;						/* add node to front */
 	g1.left = (Node *) front;
 
@@ -504,11 +515,12 @@ int approx;
  */
 Graph
 #ifdef __USE_PROTOS
-makePlus( Graph g1, int approx )
+makePlus( Graph g1, int approx, char * pFirstSetSymbol)
 #else
-makePlus( g1, approx )
+makePlus( g1, approx, pFirstSetSymbol)
 Graph g1;
 int approx;
+char * pFirstSetSymbol;
 #endif
 {
 	int has_empty_alt_already = 0;
@@ -525,7 +537,7 @@ int approx;
 	((Junction *)g1.right)->p1 = (Node *) j2;	/* add node to G at end */
 	((Junction *)g1.right)->jtype = EndBlk;		/* mark 1st EndBlk node */
 	g1.right = (Node *) j2;
-	SetBlk(g1, aPlusBlk, approx);
+	SetBlk(g1, aPlusBlk, approx, pFirstSetSymbol);
 	((Junction *)g1.left)->lock = makelocks();
 	((Junction *)g1.left)->pred_lock = makelocks();
 	j3->p1 = g1.left;							/* add node to front */
@@ -568,6 +580,7 @@ int approx;
 /*
  * Return an optional path:  --o-->o--
  */
+
 Graph
 #ifdef __USE_PROTOS
 emptyAlt( void )
@@ -583,6 +596,34 @@ emptyAlt( )
 	j1->p1 = (Node *) j2;
 	g.left = (Node *) j1;
 	g.right = (Node *) j2;
+	
+	return g;
+}
+
+/*  MR21
+ *
+ *  There is code in genBlk which recognizes the node created
+ *  by emptyAlt() as a special case and bypasses it.  We don't
+ *  want this to happen for the optBlk.
+ */
+
+Graph
+#ifdef __USE_PROTOS
+emptyAlt3( void )
+#else
+emptyAlt3( )
+#endif
+{
+	Junction *j1, *j2, *j3;
+	Graph g;
+
+	j1 = newJunction();
+	j2 = newJunction();
+    j3 = newJunction();
+	j1->p1 = (Node *) j2;
+	j2->p1 = (Node *) j3;
+	g.left = (Node *) j1;
+	g.right = (Node *) j3;
 	
 	return g;
 }

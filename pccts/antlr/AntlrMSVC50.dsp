@@ -1,5 +1,5 @@
 # Microsoft Developer Studio Project File - Name="ANTLR" - Package Owner=<4>
-# Microsoft Developer Studio Generated Build File, Format Version 6.00
+# Microsoft Developer Studio Generated Build File, Format Version 5.00
 # ** DO NOT EDIT **
 
 # TARGTYPE "Win32 (x86) Console Application" 0x0103
@@ -22,7 +22,6 @@ CFG=ANTLR - Win32 Debug
 !MESSAGE 
 
 # Begin Project
-# PROP AllowPerConfigDependencies 0
 # PROP Scc_ProjName ""
 # PROP Scc_LocalPath ""
 CPP=cl.exe
@@ -53,10 +52,10 @@ LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /machine:I386
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /machine:I386 /out:"./Antlr.exe"
 # Begin Special Build Tool
-TargetPath=.\Antlr.exe
-SOURCE="$(InputPath)"
-PostBuild_Desc=Copying to ../bin
-PostBuild_Cmds=mkdir ..\bin	copy $(TargetPath) ..\bin
+SOURCE=$(InputPath)
+PostBuild_Desc=Copy antlr to ..\bin directory
+PostBuild_Cmds=mkdir ..\bin	copy ..\bin\antlr.exe antlr_old.exe	copy antlr.exe\
+       ..\bin\.
 # End Special Build Tool
 
 !ELSEIF  "$(CFG)" == "ANTLR - Win32 Debug"
@@ -73,7 +72,7 @@ PostBuild_Cmds=mkdir ..\bin	copy $(TargetPath) ..\bin
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /YX /FD /c
-# ADD CPP /nologo /W3 /Gm /ZI /Od /I "." /I "..\h" /I "..\support\set" /D "__STDC__" /D "LONGFILENAMES" /D "PC" /D "USER_ZZSYN" /D ZZLEXBUFSIZE=65536 /D "_DEBUG" /D "WIN32" /D "_CONSOLE" /D "_MBCS" /FR /FD /c
+# ADD CPP /nologo /W3 /Gm /Zi /Od /I "." /I "..\h" /I "..\support\set" /D "__STDC__" /D "LONGFILENAMES" /D "PC" /D "USER_ZZSYN" /D ZZLEXBUFSIZE=65536 /D "_DEBUG" /D "WIN32" /D "_CONSOLE" /D "_MBCS" /FR /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE RSC /l 0x409 /d "_DEBUG"
 # ADD RSC /l 0x409 /d "_DEBUG"
@@ -84,10 +83,10 @@ LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386 /pdbtype:sept
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386 /out:"./Antlr.exe" /pdbtype:sept
 # Begin Special Build Tool
-TargetPath=.\Antlr.exe
-SOURCE="$(InputPath)"
-PostBuild_Desc=Copying to ../bin
-PostBuild_Cmds=mkdir ..\bin	copy $(TargetPath) ..\bin
+SOURCE=$(InputPath)
+PostBuild_Desc=Copy antlr to ..\bin
+PostBuild_Cmds=mkdir ..\bin	copy ..\bin\antlr.exe antlr_old.exe	copy antlr.exe\
+       ..\bin\.
 # End Special Build Tool
 
 !ENDIF 
@@ -99,6 +98,73 @@ PostBuild_Cmds=mkdir ..\bin	copy $(TargetPath) ..\bin
 # Begin Source File
 
 SOURCE=.\antlr.c
+# End Source File
+# Begin Source File
+
+SOURCE=.\antlr.g
+
+!IF  "$(CFG)" == "ANTLR - Win32 Release"
+
+# Begin Custom Build - Building ANTLR Parser from ANTLR Grammar
+InputPath=.\antlr.g
+InputName=antlr
+
+BuildCmds= \
+	../bin/antlr -gh $(InputName).g \
+	../bin/dlg -C2 parser.dlg scan.c \
+	
+
+"antlr.c" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"err.c" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"mode.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"scan.c" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"tokens.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"parser.dlg" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+# End Custom Build
+
+!ELSEIF  "$(CFG)" == "ANTLR - Win32 Debug"
+
+# Begin Custom Build - Building ANTLR Parser from ANTLR Grammar
+InputPath=.\antlr.g
+InputName=antlr
+
+BuildCmds= \
+	..\bin\antlr -gh $(InputName).g \
+	..\bin\dlg -C2 parser.dlg scan.c \
+	
+
+"antlr.c" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"err.c" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"mode.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"scan.c" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"tokens.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+
+"parser.dlg" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+   $(BuildCmds)
+# End Custom Build
+
+!ENDIF 
+
 # End Source File
 # Begin Source File
 

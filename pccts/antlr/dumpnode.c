@@ -213,6 +213,7 @@ void d(p)
            fprintf(stderr," (p2 valid)");
         };
       };
+	  if (j->ignore) fprintf(stderr, " ignore/plus-block-bypass");
       if (j->fset != NULL && set_deg(*j->fset) != 0) {
          fprintf(stderr,"\nfset:\n");
          dumpset(*j->fset);
@@ -325,7 +326,7 @@ void df(p)
   int       count=0;
   Node      *next;
 
-  fprintf(stderr,"#%d ",++count);
+  fprintf(stderr,"\n#%d ",++count);
   d(p);
 
   for (next=p; next != NULL && !isEndRule(next) ; ) {

@@ -22,7 +22,7 @@
  * completed.
  *
  * ANTLR 1.33MR10
- * 1998
+ * 2001
  *
  */
 
@@ -76,7 +76,7 @@ ExceptionGroup *eg;
   eg->pendingLink=egArray[BlkLevel];
   egArray[BlkLevel]=eg;
 
-  /* EG for alternates already have their atlID filled in      */
+  /* EG for alternates already have their altID filled in      */
 
   for (i=BlkLevel+1; i<=highWater ; i++) {
     for (innerEG=egArray[i]; innerEG != NULL ; innerEG=nextEG) {
@@ -102,7 +102,7 @@ ExceptionGroup *eg;
     for (innerLE=leArray[i]; innerLE != NULL ; innerLE=nextLE) {
       nextLE=innerLE->pendingLink;
       if (BlkLevel != i ||
-        innerLE->curAltNum == CurAltNum) {
+        innerLE->curAltNum == CurAltNum_array[BlkLevel]) {
         if (innerLE->outerEG == NULL) {
           innerLE->outerEG=eg;
         };
@@ -157,10 +157,10 @@ ExceptionGroup *eg;
 
 #if 0
       printf("BlkLevel=%d i=%d altnum=%d CurAltNum=%d altID=%s\n",
-        BlkLevel,i,innerAlt->curAltNum,CurAltNum,eg->altID);
+        BlkLevel,i,innerAlt->curAltNum,CurAltNum_array[BlkLevel],eg->altID);
 #endif
       if (BlkLevel != i ||
-          innerAlt->curAltNum == CurAltNum) {
+          innerAlt->curAltNum == CurAltNum_array[BlkLevel]) {
         if (innerAlt->exception_label == NULL) {
           innerAlt->exception_label=eg->altID;
         };
@@ -190,7 +190,7 @@ LabelEntry *le;
 {
   arrayCheck();
   le->pendingLink=leArray[BlkLevel];
-  le->curAltNum=CurAltNum;
+  le->curAltNum=CurAltNum_array[BlkLevel];
   leArray[BlkLevel]=le;
 }
 
@@ -205,9 +205,9 @@ Junction *alt;
   arrayCheck();
 #if 0
   printf("BlkLevel=%d CurAltNum=%d\n",
-            BlkLevel,CurAltNum);
+            BlkLevel,CurAltNum_array[BlkLevel]);
 #endif
-  alt->curAltNum=CurAltNum;
+  alt->curAltNum=CurAltNum_array[BlkLevel];
   alt->pendingLink=altArray[BlkLevel];
   altArray[BlkLevel]=alt;
 }
