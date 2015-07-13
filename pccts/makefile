@@ -19,9 +19,11 @@ MANFILES=dlg/dlg.1 antlr/antlr.1
 #CC=gcc
 #COPT=-O2
 
-.PHONY : pccts dlg antlr sorcerer genmk
+.PHONY : pccts dlg antlr sorcerer genmk welcome
 
-pccts:	antlr dlg
+pccts:	welcome antlr dlg
+
+welcome:
 	@echo " "
 	@echo "             Welcome to PCCTS 1.33MR33 installation"
 	@echo " "
