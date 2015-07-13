@@ -27,7 +27,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2001
  */
 
 #include <stdio.h>
@@ -123,10 +123,10 @@ TAB
 #ifdef __USE_PROTOS
 static char *tokenFollowSet(TokNode *);
 static ActionNode *findImmedAction( Node * );
-static void dumpRetValAssign(char *, char *);
+static void dumpRetValAssign(char *, char *, RuleRefNode *);		/* MR30 */
 static void dumpAfterActions(FILE *output);
-static set ComputeErrorSet(Junction *, int);
-static void makeErrorClause(Junction *, set, int);
+static set ComputeErrorSet(Junction *, int, int);
+static void makeErrorClause(Junction *, set, int, int);
 static void DumpFuncHeader( Junction *, RuleEntry * );
 static int has_guess_block_as_first_item(Junction *);
 static int genExprSets(set *, int);
@@ -189,9 +189,10 @@ static void genTraceOut(q)
   Junction  *q;
 #endif
 {
-  if ( TraceGen )
+  if ( TraceGen ) {
 		if ( GenCC ) {gen1("zzTRACEOUT(\"%s\");\n", q->rname);}
     		else gen1("zzTRACEOUT((ANTLRChar *)\"%s\");\n", q->rname);
+  }
 }
 
 static void
@@ -329,12 +330,12 @@ int no_default_case;
 				gen("default :\n");
 				tabs++;
 				dumpAction(eh->action, output, tabs, -1, 1, 1);
-                gen("_signal=NoSignal;  /* MR7 */\n");               /* MR7 */
-                gen("break;  /* MR7 */\n");                          /* MR7 */
+                gen("_signal=NoSignal;  /* MR7 */\n");                  /* MR7 */
+                gen("break;  /* MR7 */\n");                             /* MR7 */
 				tabs--;
 				gen("}\n");
 
-                /* copied from later code in dumpException              MR7 */
+                /* copied from later code in dumpException */        /* MR7 */
 
                 if (namedHandler) {                                  /* MR7 */
                   gen("if (_signal != NoSignal)");                   /* MR7 */
@@ -533,8 +534,8 @@ Junction *q;
 	else
 		a = findImmedAction( q->p1 );
 	if ( a!=NULL && !a->is_predicate) {
-		if (!a->noHoist) dumpAction(a->action, output, tabs, a->file, a->line, 1);
-		a->done = 1;	/* remove action. We have already handled it */
+/* MR21 */ if (!a->noHoist) dumpActionPlus(a, a->action, output, tabs, a->file, a->line, 1);
+		   a->done = 1;	/* remove action. We have already handled it */
 	}
 }
 
@@ -1538,13 +1539,14 @@ int limit;
  */
 static set
 #ifdef __USE_PROTOS
-genBlk( Junction *q, int jtype, int *max_k, int *need_right_curly )
+genBlk( Junction *q, int jtype, int *max_k, int *need_right_curly, int * lastAltEmpty /* MR23 */)
 #else
-genBlk( q, jtype, max_k, need_right_curly )
+genBlk( q, jtype, max_k, need_right_curly, lastAltEmpty /* MR23 */)
 Junction *q;
 int jtype;
 int *max_k;
 int *need_right_curly;
+int *lastAltEmpty; /* MR23 */
 #endif
 {
 	set f;
@@ -1552,8 +1554,8 @@ int *need_right_curly;
 	int a_guess_in_block = 0;
 	require(q!=NULL,				"genBlk: invalid node");
 	require(q->ntype == nJunction,	"genBlk: not junction");
-
 	*need_right_curly=0;
+	*lastAltEmpty = 0;		/* MR23 */
 	if ( q->p2 == NULL )	/* only one alternative?  Then don't need if */
 	{	
 		if (first_item_is_guess_block((Junction *)q->p1)!=NULL )
@@ -1578,12 +1580,41 @@ int *need_right_curly;
 			if ( p->ntype == nJunction )
 			{
 				/* we have empty alt */
-				if ( ((Junction *)p)->p1 == (Node *)q->end )
-				{
-					break;						/* don't do this one, quit */
-				}
-			}
+/* MR23
+   There is a conflict between giving good error information for non-exceptions
+   and making life easy for those using parser exception handling.  Consider:
+
+         r: { A } b;
+		 b: B;
+		 
+		   with input "C"
+
+   Before MR21 the error message would be "expecting B - found C".  After MR21
+   the error message would be "expcect A, B - found C".  This was good, but it
+   caused problems for those using parser exceptions because the reference to
+   B was generated inside the {...} where B really wasn't part of the block.
+
+   In MR23 this has been changed for the case where exceptions are in use to
+   not generate the extra check in the tail of the {A} block.
+*/
+
+
+/* MR23 */	if (isEmptyAlt( ((Junction *)p)->p1, (Node *)q->end)) {
+/* MR23 */      *lastAltEmpty = 1;
+/* MR23 */		if (FoundException) {
+/* MR23 */			/* code to restore state if a prev alt didn't follow guess */
+/* MR23 */			if ( a_guess_in_block && jtype != aPlusBlk) {
+/* MR23 */				gen("if ( !zzrv ) zzGUESS_DONE; /* MR28 */\n");
+/* MR23 */			}
+/* MR23 */			break;
+/* MR23 */		};
+/* MR28 */      if (jtype == aPlusBlk) {
+/* MR28 */          break;
+/* MR28 */      }
+/* MR23 */	}
 		}
+	} /* end of for loop on alt */
+
 /* MR10 */        if (alt->p2 == NULL &&
 /* MR10 */               ( q->jtype == aSubBlk || q->jtype == RuleBlk) ) {
 /* MR10 */          if (first_item_is_guess_block(alt)) {
@@ -1595,9 +1626,10 @@ int *need_right_curly;
 		if ( alt != q ) gen("else ")
 		else
 		{
-			if ( DemandLookahead )
+			if ( DemandLookahead ) {
 				if ( !GenCC ) {gen1("LOOK(%d);\n", *max_k);}
 				else gen1("look(%d);\n", *max_k);
+			}
 		}
 
 		if ( alt!=q )
@@ -1669,28 +1701,20 @@ Junction *q;
     return first_item_is_guess_block( (Junction *) alt->p1) != NULL;
 }
 
-/* return NULL if 1st item of alt is NOT (...)? block; else return ptr to aSubBlk node
- * of (...)?;  This function ignores actions and predicates.
- */
+/* MR30 See description of first_item_is_guess_block for background */
+
 Junction *
 #ifdef __USE_PROTOS
-first_item_is_guess_block( Junction *q )
+first_item_is_guess_block_extra(Junction *q )
 #else
-first_item_is_guess_block( q )
+first_item_is_guess_block_extra(q)
 Junction *q;
 #endif
 {
-    /* MR14  Couldnt' find aSubBlock which was a guess block when it lay
-             behind aLoopBlk.  The aLoopBlk only appear in conjunction with
-             aLoopBegin, but the routine didn't know that.  I think.
-
-       MR14a Added extra parentheses to clarify precedence
-    */
-
 	while ( q!=NULL &&
             (  ( q->ntype==nAction ) ||
                ( q->ntype==nJunction &&
-                    (q->jtype==Generic || q->jtype == aLoopBlk)
+                    (q->jtype==Generic || q->jtype == aLoopBlk) 
                )
             )
           )
@@ -1703,6 +1727,86 @@ Junction *q;
 	if ( q->ntype!=nJunction ) return NULL;
 	if ( q->jtype!=aSubBlk ) return NULL;
 	if ( !q->guess ) return NULL;
+
+	return q;
+}
+
+/* return NULL if 1st item of alt is NOT (...)? block; else return ptr to aSubBlk node
+ * of (...)?;  This function ignores actions and predicates.
+ */
+
+Junction *
+#ifdef __USE_PROTOS
+first_item_is_guess_block( Junction *q )
+#else
+first_item_is_guess_block( q )
+Junction *q;
+#endif
+{
+	Junction * qOriginal = q;	/* DEBUG */
+
+    /* MR14  Couldn't find aSubBlock which was a guess block when it lay
+             behind aLoopBlk.  The aLoopBlk only appear in conjunction with
+             aLoopBegin, but the routine didn't know that.  I think.
+
+       MR14a Added extra parentheses to clarify precedence
+
+	   MR30  This appears to have been a mistake.  The First set was then
+	         computed incorrectly for:
+
+					r : ( (A)? B
+					    | C
+						)*
+			 
+			 The routine analysis_point was seeing the guess block when
+			 it was still analyzing the loopBegin block.  As a consequence,
+			 when it looked for the analysis_point it was processing the B, but
+			 skipping over the C alternative altogether because it thought
+			 it was looking at a guess block, not realizing there was a loop
+			 block in front of the loopBegin.
+
+             loopBegin  loopBlk  subBlk/guess  A  G  EB  G  B EB EB  EB  ER
+			    |          |          |                     ^   ^
+				|		   |                                |   |
+                |          +-> G  C G ----------------------+   |
+                |                                               |
+				+--- G G G -------------------------------------+
+    
+			 Reported by Arpad Beszedes (beszedes@inf.u-szeged.hu).
+
+		MR30  This is still more complicated.  This fix caused ambiguity messages
+		to be reported for "( (A B)? )* A B" but not for "( (A B)? )+".  Why is
+		there a difference when these are outwardly identical ?  It is because the
+		start of a (...)* block is represented by two nodes: a loopBegin block
+		followed by a loopBlock whereas the start of a (...)+ block is
+		represented as a single node: a plusBlock.  So if first_item_is_guess_block
+		is called when the current node is a loopBegin it starts with the
+		loop block rather than the the sub block which follows the loop block.
+		However, we can't just skip past the loop block because some routines
+		depend on the old implementation.  So, we provide a new implementation
+		which does skip the loopBlock.  However, which should be called when ?
+		I'm not sure, but my guess is that first_item_is_guess_block_extra (the
+		new one) should only be called for the ambiguity routines.
+
+    */
+
+	while ( q!=NULL &&
+            (  ( q->ntype==nAction ) ||
+               ( q->ntype==nJunction &&
+                    (q->jtype==Generic /*** || q->jtype == aLoopBlk ***/ ) /*** MR30 Undo MR14 change ***/
+               )
+            )
+          )
+	{
+		if ( q->ntype==nJunction ) q = (Junction *)q->p1;
+		else q = (Junction *) ((ActionNode *)q)->next;
+	}
+
+	if ( q==NULL ) return NULL;
+	if ( q->ntype!=nJunction ) return NULL;
+	if ( q->jtype!=aSubBlk ) return NULL;
+	if ( !q->guess ) return NULL;
+
 	return q;
 }
 
@@ -1824,7 +1928,7 @@ ActionNode *p;
 {
 	require(p!=NULL,			"genAction: invalid node and/or rule");
 	require(p->ntype==nAction,	"genAction: not action");
-	
+
 	if ( !p->done )  /* MR10 */ /* MR11 */
 	{
 		if ( p->is_predicate)
@@ -1848,21 +1952,24 @@ ActionNode *p;
 				dumpPredAction(p,p->action, output, 0, p->file, p->line, 0);
 				_gen(")");
 			}
-			if ( p->pred_fail != NULL )
-			{
-				_gen(")\n");
-				tabs++;
-/* MR1				                                                        */
-/* MR1  10-Apr-97 MR1  Put {...} envelope around failed semantic predicates */
-/* MR1				                                                        */
-				gen1("{%s};\n", p->pred_fail);	                     /* MR1 */
-				tabs--;
-			}
-/* MR1						                                                */
-/* MR1  10-Apr-97 MR1	Properly stringize failed semantic predicates 	    */
-/* MR1				                                                        */
-			else _gen1(") {zzfailed_pred(\"%s\");}\n",               /* MR1 */
-					stringize(p->action));	                     /* MR1 */
+
+/* MR23 Change failed predicate macro to have three arguments:
+
+        macro arg 1: The stringized predicate itself
+        macro arg 2: 0 => no user-defined error action
+                     1 => user-defined error action
+        macro arg 3: The user-defined error action
+
+   This gives the user more control of the error action.
+*/
+			tabs++;
+			gen3(") {zzfailed_pred(\"%s\",%s, { %s } );}\n",         /* MR23 */
+					stringize(p->action),	                         /* MR23 */
+                    (p->pred_fail == NULL ?                          /* MR23/MR27 */
+                       	"0 /* report */" : "1 /* user action */"),   /* MR23/MR27 */
+                    (p->pred_fail == NULL ?                          /* MR23 */
+                        "0; /* no user action */" : p->pred_fail));  /* MR23 */
+			tabs--;
 		}
 		else    /* not a predicate */
 		{
@@ -1874,7 +1981,7 @@ ActionNode *p;
 				  gen("zzNON_GUESS_MODE {\n");
                 };
               };
-			  dumpAction(p->action, output, tabs, p->file, p->line, 1);
+			  dumpActionPlus(p, p->action, output, tabs, p->file, p->line, 1); /* MR21 */
 			  if ( FoundGuessBlk ) gen("}\n");
             };
 		}
@@ -1976,7 +2083,7 @@ pointer after
 		}
 		if ( p->assign!=NULL && q->ret!=NULL )                       /* MR8 */
 		{
-			if ( !HasComma(p->assign) ) {_gen1("%s = ",p->assign);}
+			if ( !hasMultipleOperands(p->assign) ) {_gen1("%s = ",p->assign);} /* MR23 */
 			else _gen1("{ struct _rv%d _trv; _trv = ", r->rulenum);
 		}
 		if ( FoundException ) {
@@ -2046,7 +2153,7 @@ pointer after
 	{
 		if ( p->assign!=NULL && q->ret!=NULL )                       /* MR8 */
 		{
-			if ( !HasComma(p->assign) ) {_gen1("%s = ",p->assign);}
+			if ( !hasMultipleOperands(p->assign) ) {_gen1("%s = ",p->assign);} /* MR23 */
 			else _gen1("{ struct _rv%d _trv; _trv = ", r->rulenum);
 		}
 		if ( FoundException ) {
@@ -2077,10 +2184,10 @@ pointer after
 	}
 
 	if ( p->assign!=NULL && q->ret!=NULL) {                          /* MR8 */
-		if ( HasComma(p->assign) )
+		if ( hasMultipleOperands(p->assign) )                        /* MR23 */
 		{
 			_gen("\n");
-			dumpRetValAssign(p->assign, q->ret);
+			dumpRetValAssign(p->assign, q->ret, p);                  /* MR30 */
 			_gen("}");
 		}
 	}
@@ -2147,45 +2254,98 @@ TokNode *p;
 	char *handler_id = "";
 	ActionNode *a;
 	char *set_name;
+	char *set_nameErrSet;
+	int complement;
+	int ast_label_in_action = 0;	/* MR27 */
+	int pushedCmodeAST = 0;			/* MR27 */
+
 	require(p!=NULL,			"genToken: invalid node and/or rule");
 	require(p->ntype==nToken,	"genToken: not token");
-	
 	if ( p->altstart!=NULL && p->altstart->exception_label!=NULL )
 		handler_id = p->altstart->exception_label;
 
 	r = (RuleEntry *) hash_get(Rname, p->rname);
 	if ( r == NULL ) {warnNoFL("Rule hash table is screwed up beyond belief"); return;}
 
+/*
+ * MR27 Has the element label been referenced as an AST (with the # operator) ?
+ *      If so, then we'll want to build the AST even though the user has used
+ *      the ! operator.
+ */
+/* MR27 */	if (GenAST && p->el_label != NULL) {
+/* MR27 */		ast_label_in_action = list_search_cstring(r->ast_labels_in_actions,
+/* MR27 */		                                          p->el_label);
+/* MR27 */	}
+	
     OutLineInfo(output,p->line,FileStr[p->file]);
 
 	if ( !set_nil(p->tset) )	/* implies '.', ~Tok, or tokenclass */
 	{
 		unsigned e;
+		unsigned eErrSet = 0;
 		set b;
+		set bErrSet;					/* MR23 */
 		b = set_dup(p->tset);
-		if ( p->tclass!=NULL )			/* token class? */
-		{
-			static char buf[MaxRuleName+1];
-			if ( p->tclass->dumped )
+		bErrSet = set_dup(p->tset);	    /* MR23 */
+		complement = p->complement; /* MR23 */
+		if ( p->tclass!=NULL  && complement == 0 /* MR23 */) { /* token class not complemented*/
+			static char buf[MaxRuleName+20];	    /* MR23 */
+			static char bufErrSet[MaxRuleName+20];	/* MR23 */
+			if ( p->tclass->dumped ) {
 				e = p->tclass->setnum;
+				eErrSet = p->tclass->setnumErrSet;
+			}
 			else {
 				e = DefErrSet(&b, 0, TokenString(p->token));
+				eErrSet = DefErrSetWithSuffix(0, &bErrSet, 1, TokenString(p->token), "_errset");
 				p->tclass->dumped = 1;	/* indicate set has been created */
 				p->tclass->setnum = e;
+				p->tclass->setnumErrSet = eErrSet;					/* MR23 */
 			}
 			sprintf(buf, "%s_set", TokenString(p->token));
+			sprintf(bufErrSet, "%s_errset", TokenString(p->token));	/* MR23 */
 			set_name = buf;
-		}
-		else {					/* wild card to ~ operator */
-			static char buf[sizeof("zzerr")+10];
-			int n = DefErrSet( &b, 0, NULL );
-			if ( GenCC ) sprintf(buf, "err%d", n);
-			else sprintf(buf, "zzerr%d", n);
-			set_name = buf;
+			set_nameErrSet = bufErrSet;								/* MR23 */
 		}
 
-		if ( !FoundException )
-			{gen1("zzsetmatch(%s);", set_name);}
+		/* MR23 - Forgot about the case of ~TOKCLASS. */
+
+		else if ( p->tclass!=NULL  && complement != 0 /* MR23 */)
+		{
+			static char buf[MaxRuleName+20];	    /* MR23 */
+			static char bufErrSet[MaxRuleName+20];	/* MR23 */
+			if ( p->tclass->dumpedComplement ) {
+				e = p->tclass->setnumComplement;
+				eErrSet = p->tclass->setnumErrSetComplement;
+			}
+			else {
+				e = DefErrSetWithSuffix(0, &b, 0, TokenString(p->token), "_setbar");
+				eErrSet = DefErrSetWithSuffix(0, &bErrSet, 1, TokenString(p->token), "_errsetbar");
+				p->tclass->dumpedComplement = 1;	/* indicate set has been created */
+				p->tclass->setnumComplement = e;
+				p->tclass->setnumErrSetComplement = eErrSet;					/* MR23 */
+			}
+			sprintf(buf, "%s_setbar", TokenString(p->token));
+			sprintf(bufErrSet, "%s_errsetbar", TokenString(p->token));	/* MR23 */
+			set_name = buf;
+			set_nameErrSet = bufErrSet;								/* MR23 */
+		}
+		else {					/* wild card */
+			static char buf[sizeof("zzerr")+10];
+			static char bufErrSet[sizeof("zzerr")+10];
+			int n = DefErrSet( &b, 0, NULL );
+			int nErrSet = DefErrSetWithSuffix(0, &bErrSet, 1, NULL, "_set");
+			if ( GenCC ) sprintf(buf, "err%d", n);
+			else sprintf(buf, "zzerr%d", n);
+			if ( GenCC ) sprintf(bufErrSet, "err%d", nErrSet);
+			else sprintf(bufErrSet, "zzerr%d", nErrSet);
+			set_name = buf;
+			set_nameErrSet = bufErrSet;
+		}
+
+		if ( !FoundException ) {
+/* MR23 */		gen2("zzsetmatch(%s, %s);", set_name, set_nameErrSet);
+		}
 		else if ( p->ex_group==NULL ) {
             if ( p->use_def_MT_handler )
                 gen3("zzsetmatch_wdfltsig(%s,(ANTLRTokenType)%d,%s);",
@@ -2211,6 +2371,7 @@ TokNode *p;
 			gen("}\n");
 		}
 		set_free(b);
+		set_free(bErrSet);
 	}
 	else if ( TokenString(p->token)!=NULL )
 	{
@@ -2268,7 +2429,7 @@ TokNode *p;
 /* MR10 */    } else {
 /* MR10 */		gen("if ( !guessing ) {\n"); tab();
 /* MR10 */		_gen2(" _t%d%d = (ANTLRTokenPtr)LT(1);\n", BlkLevel-1, p->elnum);
-/* MR10 */      _gen("}\n");
+/* MR10 */      gen("}\n");
 /* MR10 */    };
 /* MR10 */  } else {
 /* MR10 */	  _gen2(" _t%d%d = (ANTLRTokenPtr)LT(1);", BlkLevel-1, p->elnum);
@@ -2276,21 +2437,48 @@ TokNode *p;
 /* MR10 */
 		}
 
-		if ( LL_k>1 )
-			if ( !DemandLookahead ) _gen(" labase++;");
-		_gen("\n");
-		tab();
+/*
+ *  MR23 labase is never used in the C++ runtime library.
+ *       and this code is generated only in C++ mode
+ */
+
+/***		if ( LL_k>1 )                                    / * MR23 disabled */
+/***			if ( !DemandLookahead ) _gen(" labase++;");  / * MR23 disabled */
+/***		_gen("\n");                                      / * MR23 disabled */
+/***		tab();                                           / * MR23 disabled */
 	}
 	if ( GenAST )
 	{
-		if ( FoundGuessBlk && !(p->astnode == ASTexclude || r->noAST) )
+		if ( FoundGuessBlk &&
+				(ast_label_in_action || !(p->astnode == ASTexclude || r->noAST)) )
 		{
 			if ( GenCC ) {_gen("if ( !guessing ) {\n"); tab();}
 			else {_gen("zzNON_GUESS_MODE {\n"); tab();}
 		}
-		if ( !r->noAST )
+
+/* MR27 addition when labels referenced when operator ! used */
+
+		pushedCmodeAST = 0; /* MR27 */
+		if (ast_label_in_action && (p->astnode == ASTexclude || r->noAST)) {
+			_gen("\n");
+			if (GenCC) {
+/* MR13 */      if (NewAST) {
+/* MR13 */    	    gen4("_ast%d%d = newAST(_t%d%d); /* MR27 */\n", BlkLevel-1, p->elnum, BlkLevel-1, p->elnum);
+/* MR13 */      } else {
+/* MR13 */    	    gen4("_ast%d%d = new AST(_t%d%d); /* MR27 */\n", BlkLevel-1, p->elnum, BlkLevel-1, p->elnum);
+/* MR13 */      }
+			}
+			else {
+				pushedCmodeAST = 1;
+				gen("zzastPush(zzmk_ast(zzastnew(),zzaCur)); /* MR27 */");
+			}
+		}
+
+/* end MR27 addition for labels referenced when operator ! used */
+
+		if (!r->noAST )
 		{
-			if ( GenCC && !(p->astnode == ASTexclude || r->noAST) ) {
+			if (GenCC && !(p->astnode == ASTexclude) ) {
 				_gen("\n");
 /* MR13 */      if (NewAST) {
 /* MR13 */    	    gen4("_ast%d%d = newAST(_t%d%d);\n", BlkLevel-1, p->elnum, BlkLevel-1, p->elnum);
@@ -2299,7 +2487,7 @@ TokNode *p;
 /* MR13 */      }
 				tab();
 			}
-			if ( GenCC && !(p->astnode == ASTexclude || r->noAST) )
+			if ( GenCC && !(p->astnode == ASTexclude) )
 				{_gen2("_ast%d%d->", BlkLevel-1, p->elnum);}
 			else _gen(" ");
 			if ( p->astnode==ASTchild ) {
@@ -2310,14 +2498,17 @@ TokNode *p;
 				if ( !GenCC ) _gen("zz");
 				_gen("subroot(_root, &_sibling, &_tail);");
 			}
-			if ( GenCC && !(p->astnode == ASTexclude || r->noAST) ) {
+			if ( GenCC && !(p->astnode == ASTexclude) ) {
 				_gen("\n");
 				tab();
 			}
 		}
-		else if ( !GenCC ) _gen(" zzastDPush;");
-		if ( FoundGuessBlk && !(p->astnode == ASTexclude || r->noAST) )
-			{_gen("}\n"); tab();}
+		else if ( !GenCC ) {
+			if (! pushedCmodeAST) _gen(" zzastDPush;");
+		}
+		if ( FoundGuessBlk &&
+				(ast_label_in_action || !(p->astnode == ASTexclude || r->noAST)) )
+			{gen("}\n"); tab();}
 	}
 
 	/* Handle element labels now */
@@ -2368,7 +2559,8 @@ TokNode *p;
 /* MR10 */  };
 
 		/* Do AST ptr */
-		if ( GenAST && !(p->astnode == ASTexclude || r->noAST) )
+
+		if (GenAST && (ast_label_in_action || !(p->astnode == ASTexclude || r->noAST) )) /* MR27 */
 		{
 
 /* MR10 */      if ( FoundGuessBlk ) {
@@ -2398,41 +2590,69 @@ TokNode *p;
 		_gen("\n");
 		if ( a->is_predicate)
 		{
-		gen("if (!(");
+#if 0
+/* Disabled in MR30 ************************************************************
+   And moved into genAction
+   *****************************************************************************
+*/
+ 
+    	    gen("if (!(");
+
 			/* make sure that '#line n' is on front of line */  /* MR14 */
 			if ( GenLineInfo && p->file != -1 ) _gen("\n");     /* MR14 */
 			dumpPredAction(a,a->action, output, 0, a->file, a->line, 0);
-			if ( a->pred_fail != NULL )
-			{
-				_gen(")) {\n");
-/**************	if ( FoundGuessBlk ) gen("zzNON_GUESS_MODE {\n"); *****/
-				tabs++;
-/* MR1				                                                        */
-/* MR1  10-Apr-97 MR1  Put {...} envelope around failed semantic predicates */
-/* MR1				                                                        */
-				gen1("{%s};\n", a->pred_fail);
-				tabs--;
-				gen("}\n");
-/**************	if ( FoundGuessBlk ) gen("}\n"); *****/
-			}
-/* MR1					                                		    */
-/* MR1  10-Apr-97 MR1	Properly stringize failed semantic predicates 	    */
-/* MR1						                                                */
-			else
-            {
-                 _gen1(")) {zzfailed_pred(\"%s\");}\n",              /* MR1 */
-					stringize(a->action));	                     /* MR1 */
-            }
+
+/* MR23 Change failed predicate macro to have three arguments:
+
+        macro arg 1: The stringized predicate itself
+        macro arg 2: 0 => no user-defined error action
+                     1 => user-defined error action
+        macro arg 3: The user-defined error action
+
+   This gives the user more control of the error action.
+*/
+			_gen(")) \n");
+			tabs++;
+			gen3(" {zzfailed_pred(\"%s\",%s,{ %s } );}\n",           /* MR23 */
+					stringize(a->action),	                         /* MR23 */
+                    (a->pred_fail == NULL ?                          /* MR23/MR27 */
+                       	"0 /* report */" : "1 /* user action */"),   /* MR23/MR27 */
+                    (a->pred_fail == NULL ?                          /* MR23 */
+                        "0; /* no user action */" : a->pred_fail));  /* MR23 */
+			tabs--;
+/* Disabled in MR30 ************************************************************
+   And moved into genAction
+   *****************************************************************************
+*/
+#endif
 		}
 		else    /* MR9 a regular action - not a predicate action */
 		{
-			if ( FoundGuessBlk )
-				if ( GenCC ) {gen("if ( !guessing ) {\n");}
-				else gen("zzNON_GUESS_MODE {\n");
-			dumpAction(a->action, output, tabs, a->file, a->line, 1);
-			if ( FoundGuessBlk ) gen("}\n");
-		}
-		a->done = 1;
+
+/* MR23: Search an action which is not a predicate for LT(i),
+         LA(i), or LATEXT(i) in order to warn novice users that
+         it refers to the previous matched token, not the next
+         one.  This is different than the case for semantic
+         predicates.
+*/
+                                 
+/* MR23 */    if (GenCC) {
+/* MR23 */	    if (strstr(a->action, "LT(") != NULL) LTinTokenAction = 1;
+/* MR23 */    }
+/* MR23 */    else {
+/* MR23 */      if (strstr(a->action, "LA(") != NULL) LTinTokenAction = 1;            
+/* MR23 */      if (strstr(a->action, "LATEXT(") != NULL) LTinTokenAction = 1;
+/* MR23 */    }
+
+			if ( FoundGuessBlk ) {
+   				if ( GenCC ) {gen("if ( !guessing ) {\n");}
+   				else gen("zzNON_GUESS_MODE {\n");
+			}
+   			dumpActionPlus(a, a->action, output, tabs, a->file, a->line, 1); /* MR21 */
+       		if ( FoundGuessBlk ) gen("}\n");
+			a->done = 1; /* MR30 */
+ 		}
+/***    a->done = 1;  MR30 Moved up into then branch for true actions, but not predicates ***/
 		if ( !DemandLookahead ) {
 			if ( GenCC ) {
 				if ( FoundException && p->use_def_MT_handler ) gen("if (!_signal)");
@@ -2450,7 +2670,12 @@ TokNode *p;
             }
 		}
 		else gen("\n");
-		TRANS( a->next );
+		if (a->done) {			/* MR30 */
+			TRANS( a->next );   /* MR30 */
+		}						/* MR30 */
+		else {					/* MR30 */
+			TRANS( p->next );	/* MR30 */
+		}						/* MR30 */
 	}
 	else
 	{
@@ -2473,6 +2698,22 @@ TokNode *p;
 	}
 }
 
+/*  MR21
+ *
+ *  There was a bug in the code generation for {...} which causes it
+ *  to omit the optional tokens from the error messages.  The easiest
+ *  way to fix this was to make the opt block look like a sub block:
+ *
+ *          { a | b | c }
+ *
+ *  becomes (internally):
+ *
+ *          ( a | b | c | )
+ *
+ *  The code for genOptBlk is now identical to genSubBlk except for
+ *  cosmetic changes.
+ */
+
 void
 #ifdef __USE_PROTOS
 genOptBlk( Junction *q )
@@ -2485,25 +2726,51 @@ Junction *q;
 	set f;
 	int need_right_curly;
 	set savetkref;
+	int lastAltEmpty;			/* MR23 */
 	savetkref = tokensRefdInBlock;
-	require(q!=NULL,				"genOptBlk: invalid node and/or rule");
 	require(q->ntype == nJunction,	"genOptBlk: not junction");
-	require(q->jtype == aOptBlk,	"genOptBlk: not optional block");
+	require(q->jtype == aOptBlk,	"genOptBlk: not opt block");
 
     OutLineInfo(output,q->line,FileStr[q->file]);
-
 	BLOCK_Preamble(q);
 	BlkLevel++;
-	f = genBlk(q, aOptBlk, &max_k, &need_right_curly);
-	set_free(f);
-	freeBlkFsets(q);
-	BlkLevel--;
-    if ( first_item_is_guess_block((Junction *)q->p1)!=NULL )
-	{
-		gen("else if ( !zzrv ) zzGUESS_DONE;\n");
+    BlockPreambleOption(q,q->pFirstSetSymbol); /* MR21 */
+	f = genBlk(q, aOptBlk, &max_k, &need_right_curly, &lastAltEmpty /* MR23 */);
+/* MR23
+   Bypass error clause generation when exceptions are used in {...} block 
+   See multi-line note in genBlk near call to isEmptyAlt.
+*/
+	if (! FoundException) {
+	    if ( q->p2 != NULL ) {tab(); makeErrorClause(q,f,max_k,0 /* use plus block bypass ? */ );}
+	}
+	else {
+		gen("/* MR23 skip error clause for {...} when exceptions in use */\n");
 	}
 	{ int i; for (i=1; i<=need_right_curly; i++) {tabs--; gen("}\n");} }
+	freeBlkFsets(q);
+	--BlkLevel;
 	BLOCK_Tail();
+
+	if ( q->guess )
+	{
+		gen("zzGUESS_DONE\n");
+	}
+
+	/* must duplicate if (alpha)?; one guesses (validates), the
+	 * second pass matches */
+	if ( q->guess && analysis_point(q)==q )
+	{
+        OutLineInfo(output,q->line,FileStr[q->file]);
+		BLOCK_Preamble(q);
+		BlkLevel++;
+		f = genBlk(q, aSubBlk, &max_k, &need_right_curly, &lastAltEmpty /* MR23 */);
+		if ( q->p2 != NULL ) {tab(); makeErrorClause(q,f,max_k,0 /* use plus block bypass ? */ );}
+		{ int i; for (i=1; i<=need_right_curly; i++) {tabs--; gen("}\n");} }
+		freeBlkFsets(q);
+		--BlkLevel;
+		BLOCK_Tail();
+	}
+
 	tokensRefdInBlock = savetkref;
 	if (q->end->p1 != NULL) TRANS(q->end->p1);
 }
@@ -2531,6 +2798,7 @@ int max_k;
 	set         savetkref;
     Junction    *guessBlock;    /* MR10 */
     int         singleAlt;      /* MR10 */
+	int			lastAltEmpty;	/* MR23 */
 
 	savetkref = tokensRefdInBlock;
 	require(q->ntype == nJunction,	"genLoopBlk: not junction");
@@ -2546,9 +2814,10 @@ int max_k;
 
 	if (singleAlt && !guessBlock)	    /* MR10 */ /* only one alternative? */
 	{
-		if ( DemandLookahead )
+		if ( DemandLookahead ) {
 			if ( !GenCC ) {gen1("LOOK(%d);\n", max_k);}
 			else gen1("look(%d);\n", max_k);
+		}
 		gen("while ( ");
 		if ( begin!=NULL ) genExpr(begin);
 		else genExpr(q);
@@ -2574,9 +2843,10 @@ int max_k;
 		tabs++;
 		TRANS(q->p1);
 		if ( !GenCC ) gen1("zzLOOP(zztasp%d);\n", BlkLevel-1);
-		if ( DemandLookahead )
+		if ( DemandLookahead ) {
 			if ( !GenCC ) {gen1("LOOK(%d);\n", max_k);}
 			else gen1("look(%d);\n", max_k);
+		}
 		--tabs;
 		gen("}\n");
 		freeBlkFsets(q);
@@ -2625,7 +2895,7 @@ int max_k;
 
 	/* generate code for terminating loop (this is optional branch) */
 
-	f = genBlk(q, aLoopBlk, &max_k, &need_right_curly);
+	f = genBlk(q, aLoopBlk, &max_k, &need_right_curly, &lastAltEmpty /* MR23 */);
 	set_free(f);
 	freeBlkFsets(q);
 
@@ -2713,6 +2983,7 @@ Junction *q;
 
 	BLOCK_Preamble(q);
 	BlkLevel++;
+    BlockPreambleOption(q,q->pFirstSetSymbol);       /* MR21 */
 	f = First(q, 1, aLoopBegin, &max_k);
 	/* If not simple LL(1), must specify to start at LoopBegin, not LoopBlk */
 	if ( LL_k>1 && !set_nil(q->fset[2]) )
@@ -2725,6 +2996,21 @@ Junction *q;
 	BLOCK_Tail();
 	set_free(f);
 	tokensRefdInBlock = savetkref;
+/* MR21 */	if (MR_BlkErr) {
+/* MR21 */		set f, fArray[2];
+/* MR21 */		f = ComputeErrorSet(q,1,0 /* use plus block bypass ? */ );
+/* MR21 */      fArray[0]= empty;
+/* MR21 */		fArray[1]= set_dup(f);
+/* MR21 */      gen("if (");
+/* MR21 */      genExprSets(fArray,1);  /* note: destroys set arguments */
+/* MR21 */      _gen(") { /* MR21 option -mrblksynerr */\n");
+/* MR21 */      tabs++;
+/* MR21 */      tab();
+/* MR21 */      _gen("/* nothing */ }\n");
+/* MR21 */      tab();
+/* MR21 */      makeErrorClause(q,f,1,0 /* use plus block bypass ? */ );  /* frees set */
+/* MR21 */      tabs--;
+/* MR21 */	};
 	if (q->end->p1 != NULL) TRANS(q->end->p1);
 }
 
@@ -2762,6 +3048,7 @@ Junction *q;
 	int         max_k;
 	set         f;
 	int         need_right_curly;
+	int			lastAltEmpty;	/* MR23 */
 	set         savetkref;
     Junction    *guessBlock;    /* MR10 */
     int         singleAlt;      /* MR10 */
@@ -2778,6 +3065,8 @@ Junction *q;
 	BLOCK_Preamble(q);
 	BlkLevel++;
 
+    BlockPreambleOption((Junction *)q, q->pFirstSetSymbol);       /* MR21 */
+    
     /* first_item_is_guess_block  doesn't care what kind of node it is */
 
     guessBlock=first_item_is_guess_block( (Junction *)q->p1);   /* MR10 */
@@ -2820,9 +3109,10 @@ Junction *q;
 		TRANS(q->p1);
 		if ( !GenCC ) gen1("zzLOOP(zztasp%d);\n", BlkLevel-1);
 		f = First(q, 1, aPlusBlk, &max_k);
-		if ( DemandLookahead )
+		if ( DemandLookahead ) {
 			if ( !GenCC ) {gen1("LOOK(%d);\n", max_k);}
 			else gen1("look(%d);\n", max_k);
+		}
 		--tabs;
 		gen("} while ( ");
 		if ( q->parm!=NULL && q->predparm ) _gen1("(%s) && ", q->parm);
@@ -2842,6 +3132,21 @@ Junction *q;
 		freeBlkFsets(q);
 		set_free(f);
 		tokensRefdInBlock = savetkref;
+/* MR21 */	if (MR_BlkErr) {
+/* MR21 */		set f, fArray[2];
+/* MR21 */		f = ComputeErrorSet(q,1,1 /* use plus block bypass ? */ );
+/* MR21 */      fArray[0]= empty;
+/* MR21 */		fArray[1]= set_dup(f);
+/* MR21 */      gen("if (");
+/* MR21 */      genExprSets(fArray,1);  /* note: destroys set arguments */
+/* MR21 */      _gen(") { /* MR21 option -mrblksynerr */\n");
+/* MR21 */      tabs++;
+/* MR21 */      tab();
+/* MR21 */      _gen("/* nothing */ }\n");
+/* MR21 */      tab();
+/* MR21 */      makeErrorClause(q,f,1,1 /* use plus block bypass ? */ );  /* frees set */
+/* MR21 */      tabs--;
+/* MR21 */	};
 		if (q->end->p1 != NULL) TRANS(q->end->p1);
 /* MR10 */  if (MRhoisting) {
 /* MR10 */    predicate_free(a);
@@ -2850,7 +3155,7 @@ Junction *q;
 	}
 	gen("do {\n");
 	tabs++;
-	f = genBlk(q, aPlusBlk, &max_k, &need_right_curly);
+	f = genBlk(q, aPlusBlk, &max_k, &need_right_curly, &lastAltEmpty /* MR23 */);
 /* MR6              									        */
 /* MR6	Sinan Karasu	(sinan@tardis.ds.boeing.com)			*/
 /* MR6    Failed to turn off guess mode when leaving block		*/
@@ -2868,16 +3173,31 @@ Junction *q;
 /* MR10 */   gen("if ( zzcnt > 1 ) break;\n");
 /* MR10 */ };
 
-	tab();
-	makeErrorClause(q,f,max_k);
+/* MR21 */	if (MR_BlkErr && 1 >= max_k) {
+/* MR21 */		set f;
+/* MR21 */		f = ComputeErrorSet(q,1,0 /* use plus block bypass ? */ );
+/* MR21 */      tabs++;
+/* MR21 */      tab();
+/* MR21 */      makeErrorClause(q,f,1,0 /* use plus block bypass ? */ );  /* frees set */
+/* MR21 */      tabs--;
+/* MR21 */	}
+/* MR21 */  else {
+				tab();
+                makeErrorClause(q,f,max_k,1 /* use plus block bypass ? */);
+										    /* MR21 I think this generates the wrong set ? */
+                                            /* MR21 because it includes the plus block bypass ? */
+										    /* MR21 but I'm afraid to change it without additional checking */
+            }
+
 	{ int i; for (i=1; i<=need_right_curly; i++) {tabs--; gen("}\n");} }
 	freeBlkFsets(q);
 	gen("zzcnt++;");
 	if ( !GenCC ) _gen1(" zzLOOP(zztasp%d);", BlkLevel-1);
 	_gen("\n");
-	if ( DemandLookahead )
+	if ( DemandLookahead ) {
 		if ( !GenCC ) {gen1("LOOK(%d);\n", max_k);}
 		else gen1("look(%d);\n", max_k);
+	}
 	--tabs;
 	if ( q->parm!=NULL && q->predparm ) {gen1("} while (%s);\n", q->parm);}
 	else gen("} while ( 1 );\n");
@@ -2885,6 +3205,21 @@ Junction *q;
 	BLOCK_Tail();
 	q->visited = FALSE;
 	tokensRefdInBlock = savetkref;
+/* MR21 */	if (MR_BlkErr) {
+/* MR21 */		set f, fArray[2];
+/* MR21 */		f = ComputeErrorSet(q,1,1 /* use plus block bypass ? */ );
+/* MR21 */      fArray[0]= empty;
+/* MR21 */		fArray[1]= set_dup(f);
+/* MR21 */      gen("if (");
+/* MR21 */      genExprSets(fArray,1);  /* note: destroys set arguments */
+/* MR21 */      _gen(") { /* MR21 option -mrblksynerr */\n");
+/* MR21 */      tabs++;
+/* MR21 */      tab();
+/* MR21 */      _gen("/* nothing */ }\n");
+/* MR21 */      tab();
+/* MR21 */      makeErrorClause(q,f,1,1 /* use plus block bypass ? */ );  /* frees set */
+/* MR21 */      tabs--;
+/* MR21 */	};
 	if (q->end->p1 != NULL) TRANS(q->end->p1);
 }
 
@@ -2919,6 +3254,7 @@ Junction *q;
  *		...code for Gn...
  *	}
  */
+
 void
 #ifdef __USE_PROTOS
 genSubBlk( Junction *q )
@@ -2930,6 +3266,7 @@ Junction *q;
 	int max_k;
 	set f;
 	int need_right_curly;
+	int lastAltEmpty;		/* MR23 */
 	set savetkref;
 	savetkref = tokensRefdInBlock;
 	require(q->ntype == nJunction,	"genSubBlk: not junction");
@@ -2938,8 +3275,21 @@ Junction *q;
     OutLineInfo(output,q->line,FileStr[q->file]);
 	BLOCK_Preamble(q);
 	BlkLevel++;
-	f = genBlk(q, aSubBlk, &max_k, &need_right_curly);
-	if ( q->p2 != NULL ) {tab(); makeErrorClause(q,f,max_k);}
+    BlockPreambleOption(q,q->pFirstSetSymbol);       /* MR21 */
+	f = genBlk(q, aSubBlk, &max_k, &need_right_curly, &lastAltEmpty /* MR23 */);
+
+/* MR23
+   Bypass error clause generation when exceptions are used in a sub block
+   in which the last alternative is epsilon.  Example: "(A | B | )". 
+   See multi-line note in genBlk near call to isEmptyAlt.
+*/
+	if (FoundException && lastAltEmpty) {
+		gen("/* MR23 skip error clause for (...| epsilon) when exceptions in use */\n");
+	}
+	else {
+		if ( q->p2 != NULL ) {tab(); makeErrorClause(q,f,max_k,0 /* use plus block bypass ? */ );}
+	}
+    
 	{ int i; for (i=1; i<=need_right_curly; i++) {tabs--; gen("}\n");} }
 	freeBlkFsets(q);
 	--BlkLevel;
@@ -2957,8 +3307,8 @@ Junction *q;
         OutLineInfo(output,q->line,FileStr[q->file]);
 		BLOCK_Preamble(q);
 		BlkLevel++;
-		f = genBlk(q, aSubBlk, &max_k, &need_right_curly);
-		if ( q->p2 != NULL ) {tab(); makeErrorClause(q,f,max_k);}
+		f = genBlk(q, aSubBlk, &max_k, &need_right_curly, &lastAltEmpty /* MR23 */);
+		if ( q->p2 != NULL ) {tab(); makeErrorClause(q,f,max_k,0 /* use plus block bypass ? */);}
 		{ int i; for (i=1; i<=need_right_curly; i++) {tabs--; gen("}\n");} }
 		freeBlkFsets(q);
 		--BlkLevel;
@@ -2995,6 +3345,7 @@ Junction *q;
 #endif
 {
 
+	const char * returnValueInitializer;
 
 do {    /* MR10     Change recursion into iteration         */
 
@@ -3002,6 +3353,7 @@ do {    /* MR10     Change recursion into iteration         */
 	set follow, rk, f;
 	ActionNode *a;
 	RuleEntry *r;
+	int lastAltEmpty;		/* MR23 */
 	static int file = -1;
 	int need_right_curly;
 	require(q->ntype == nJunction,	"genRule: not junction");
@@ -3050,29 +3402,48 @@ do {    /* MR10     Change recursion into iteration         */
 
 	DumpFuncHeader(q,r);
 	tabs++;
+
+	/* MR23 
+	   
+	   If there is a single return value then it can be initialized in 
+	   the declaration using assignment syntax.  If there are multiple
+	   return values then antlr creates a struct and initialization takes
+	   place element by element for each element of the struct.  For
+       multiple elements the initialization is by assignment so we have
+       to wait until all declarations are done before emitting that code -
+       because of restrictions in C which don't exist in C++.
+
+       In the past (before MR23) the only kind of initialization was
+	   the PURIFY macro which was just a memset() of 0.  Now we allow
+	   the user to specify an initial value.  PURIFY is still used in C
+	   mode because C does not have constructors.  However, PURIFY is
+	   not used in C++ mode because it might overwrite information created
+	   by elements which have their own ctor.
+       
+	*/
+
 	if ( q->ret!=NULL )
 	{
-		/* Declare the return value - and PURIFY it -ATG 6/5/95 */
-
-/* MR7      Moved PURIFY() to after all local variables have been declared */
-/* MR7      so that the generated code is valid C as well as C++           */
-/* MR7        Jan Mikkelsen 10-June-1997                                   */
-
-		if ( HasComma(q->ret) )
+		if ( hasMultipleOperands(q->ret) )                         /* MR23 */
 		{
+
+            /* Emit initialization code later. */
+
 			gen1("struct _rv%d _retv;\n",r->rulenum);
 		}
 		else
 		{
+            /* Emit initialization code now. */
+
 			tab();
 			DumpType(q->ret, output);
-
-/* MR3  17-May-97  Undo change since _retv is of unpredictable type        */
-/* MR3		   If an object it may not be possible to assign 0 or NULL     */
-/* MR3		   Reported by Cortland Starrett (cort@shay.ecn.purdue.edu     */
-/* MR1  10-Apr-97  Get rid of annoying Possibly ref'd before use msgs      */
-
-			gen(" _retv;\n");           		/* MR1 MR3         */
+            returnValueInitializer = getInitializer(q->ret);
+            if (returnValueInitializer == NULL) {                  /* MR23 */
+      			gen(" _retv;\n");                     		    /* MR1 MR3 */
+            }                                                      /* MR23 */
+            else {                                                 /* MR23 */
+                gen1(" _retv = %s;\n", returnValueInitializer);    /* MR23 */
+            }                                                      /* MR23 */
 		}
 	}
 
@@ -3098,27 +3469,51 @@ do {    /* MR10     Change recursion into iteration         */
 
 /* MR10 */  /* move zzTRACEIN to before init action */
 
-/* MR10 */	if ( TraceGen )
+/* MR10 */	if ( TraceGen ) {
 /* MR10 */		if ( GenCC ) {gen1("zzTRACEIN(\"%s\");\n", q->rname);}
 /* MR10 */		else gen1("zzTRACEIN((ANTLRChar *)\"%s\");\n", q->rname);
+/* MR10 */	}
 
 /* MR7      Moved PURIFY() to after all local variables have been declared */
 /* MR7      so that the generated code is valid C as well as C++           */
 /* MR7        Jan Mikkelsen 10-June-1997                                   */
 
+
+     /*
+       MR23    Do the PURIFY macro only for C mode.
+               C++ users should use constructors or initialization expressions.
+     */
+
 	if ( q->ret != NULL )                                            /* MR7 */
 	{                                                                /* MR7 */
-		if ( HasComma(q->ret) )                                      /* MR7 */
-		{                                                            /* MR7 */
-			gen1("PURIFY(_retv,sizeof(struct _rv%d))\n",r->rulenum); /* MR7 */
+		if (hasMultipleOperands(q->ret)) {                           /* MR23 */
+			if (PURIFY == TRUE) {
+                gen1("PCCTS_PURIFY(_retv,sizeof(struct _rv%d))\n",r->rulenum); /* MR23 */
+            }
+        }                                                            /* MR7 */
+		else {                                                       /* MR7 */
+
+			/* MR23
+			   If there were only one return value operand and
+			   it had an initializer then it would have been
+			   initiailized in the declaration.
+			*/
+
+			returnValueInitializer = getInitializer(q->ret);         /* MR23 */
+			if (returnValueInitializer == NULL) {                    /* MR23 */
+    			if (PURIFY == TRUE) {
+        			gen("PCCTS_PURIFY(_retv,sizeof(");               /* MR23 */
+	    			DumpType(q->ret, output);                        /* MR7 */
+					gen("))\n");                                     /* MR7 */
+				}
+			}                                                        /* MR23 */
 		}                                                            /* MR7 */
-		else                                                         /* MR7 */
-		{                                                            /* MR7 */
-			gen("PURIFY(_retv,sizeof(");                             /* MR7 */
-			DumpType(q->ret, output);                                /* MR7 */
-			gen("))\n");                                             /* MR7 */
-		}                                                            /* MR7 */
-	}                                                                /* MR7 */
+
+        if (hasMultipleOperands(q->ret)) {                           /* MR23 */
+          DumpInitializers(output, r, q->ret);                       /* MR23 */
+        }
+
+	}
 	if ( !GenCC ) gen("zzMake0;\n");
 	if ( FoundException ) gen("*_retsignal = NoSignal;\n");
 
@@ -3136,16 +3531,17 @@ do {    /* MR10     Change recursion into iteration         */
 		a = findImmedAction( q->p1 );	/* only one alternative in rule */
 	if ( a!=NULL && !a->is_predicate)
 	{
-		if (!a->noHoist) dumpAction(a->action, output, tabs, a->file, a->line, 1);
-		a->done = 1;	/* ignore action. We have already handled it */
+ /* MR21 */ if (!a->noHoist) dumpActionPlus(a, a->action, output, tabs, a->file, a->line, 1);
+  		    a->done = 1;	/* ignore action. We have already handled it */
 	}
 
 	BlkLevel++;
 	q->visited = TRUE;				/* mark RULE as visited for FIRST/FOLLOW */
-	f = genBlk((Junction *)q->p1, RuleBlk, &max_k, &need_right_curly);
+    BlockPreambleOption((Junction *)q->p1, NULL);   /* MR21 */
+	f = genBlk((Junction *)q->p1, RuleBlk, &max_k, &need_right_curly, &lastAltEmpty /* MR23 */);
 	if ( q->p1 != NULL )
 		if ( ((Junction *)q->p1)->p2 != NULL )
-			{tab(); makeErrorClause((Junction *)q->p1,f,max_k);}
+			{tab(); makeErrorClause((Junction *)q->p1,f,max_k,0 /* use plus block bypass ? */);}
 	{ int i; for (i=1; i<=need_right_curly; i++) {tabs--; gen("}\n");} }
 	freeBlkFsets((Junction *)q->p1);
 	q->visited = FALSE;
@@ -3189,9 +3585,10 @@ do {    /* MR10     Change recursion into iteration         */
   {                                          /* MR20 G. Hobbelt */
 	_gen("fail:\n");
 	if ( !GenCC ) gen("zzEXIT(zztasp1);\n");
-	if ( FoundGuessBlk )
+	if ( FoundGuessBlk ) {
 	   	if ( !GenCC ) {gen("if ( zzguessing ) zzGUESS_FAIL;\n");}
 		else gen("if ( guessing ) zzGUESS_FAIL;\n");
+	}
 	if ( q->erraction!=NULL )
 		dumpAction(q->erraction, output, tabs, q->file, q->line, 1);
 	if ( GenCC )
@@ -3294,6 +3691,9 @@ do {    /* MR10     Change recursion into iteration         */
 
 }
 
+
+/* This is for the function definition, not the declaration. */
+
 static void
 #ifdef __USE_PROTOS
 DumpFuncHeader( Junction *q, RuleEntry *r )
@@ -3308,11 +3708,12 @@ RuleEntry *r;
 /*								                                            */
 	int	needComma;					                                 /* MR1 */
 
+
 	/* A N S I */
 	_gen("\n");
 	if ( q->ret!=NULL )
 	{
-		if ( HasComma(q->ret) )
+		if ( hasMultipleOperands(q->ret) )                            /* MR23 */
 		{
 			if (GenCC) gen2("%s::_rv%d\n", CurrentClassName, r->rulenum)
 			else gen1("struct _rv%d\n",r->rulenum);
@@ -3333,7 +3734,15 @@ RuleEntry *r;
 	if ( !GenCC ) _gen("#ifdef __USE_PROTOS\n");		     /* MR1 */
 	if ( !GenCC ) gen2("%s%s(", RulePrefix, q->rname)
 	else gen3("%s::%s%s(", CurrentClassName, RulePrefix,q->rname);
-	DumpANSIFunctionArgDef(output,q);
+
+    	/* If we generate C++ method names, we must hide default arguments */
+        /* which can appear in the parameter declaration list.             */
+        /* NOTICE: this is done only here, for the method definition, but  */
+        /*         not for the method declaration inside the class         */
+        /*         definition. This is exactly the behaviour defined in    */
+        /*         C++ standard for default paramters.                     */
+
+	DumpANSIFunctionArgDef(output,q, 0 /* emit initializers ? */);
 	_gen("\n");
 
 	if ( GenCC ) {
@@ -3368,11 +3777,12 @@ RuleEntry *r;
 
 void
 #ifdef __USE_PROTOS
-DumpANSIFunctionArgDef(FILE *f, Junction *q)
+DumpANSIFunctionArgDef(FILE *f, Junction *q, int bInitializer)
 #else
-DumpANSIFunctionArgDef(f,q)
+DumpANSIFunctionArgDef(f,q,bInitializer)
 FILE *f;
 Junction *q;
+int bInitializer;
 #endif
 {
 	if ( GenAST )
@@ -3385,10 +3795,18 @@ Junction *q;
 	{
 		if ( GenAST ) fprintf(f,",");
 		fprintf(f,"int *_retsignal");
-		if ( q->pdecl!=NULL ) fprintf(f,",");
+		if ( q->pdecl!=NULL ) {
+            fprintf(f,",");
+        }
 	}
-	if ( q->pdecl!=NULL ) {fprintf(f,"%s", q->pdecl);}
-	else if ( !GenAST && !FoundException ) fprintf(f,"void");
+	if ( q->pdecl!=NULL ) {
+        DumpFormals(f, q->pdecl, bInitializer);     /* MR23 */
+    }
+	else {
+        if ( !GenAST && !FoundException ) {
+            fprintf(f,"void");
+        }
+    }
 	fprintf(f,")");
 }
 
@@ -3440,7 +3858,7 @@ int file;
 	_gen("/*\n");
 	_gen(" * A n t l r  T r a n s l a t i o n  H e a d e r\n");
 	_gen(" *\n");
-	_gen(" * Terence Parr, Will Cohen, and Hank Dietz: 1989-1999\n");
+	_gen(" * Terence Parr, Will Cohen, and Hank Dietz: 1989-2001\n");
 	_gen(" * Purdue University Electrical Engineering\n");
 	_gen(" * With AHPCRC, University of Minnesota\n");
 	_gen1(" * ANTLR Version %s\n", Version);
@@ -3497,10 +3915,7 @@ int file;
     if (TraceGen) {
       _gen("#ifndef zzTRACE_RULES\n");  /* MR20 */
       _gen("#define zzTRACE_RULES\n");  /* MR20 */
-      // zzTRACE_RULES removed from #endif by TL because it causes
-      // a warning under GCC 3.0.2
-      // _gen("#endif  zzTRACE_RULES\n");  /* MR20 */
-      _gen("#endif\n");  /* MR20 */
+      _gen("#endif\n");                 /* MR22 */
     };
 	if ( !GenCC ) {_gen("#include \"antlr.h\"\n");}
 	else {
@@ -3522,9 +3937,13 @@ int file;
 /* MR10  Ofer Ben-Ami (gremlin@cs.huji.ac.il)           */
 /* MR10    Finally, a definition of the Purify macro    */
 
-	_gen("#ifndef PURIFY\n");
-    _gen("#define PURIFY(r,s) memset((char *) &(r),'\\0',(s));\n");
-    _gen("#endif\n");
+    if (PURIFY == TRUE) {                                                   /* MR23 */
+        _gen("\n/* MR23 In order to remove calls to PURIFY use the antlr"); /* MR23 */
+        _gen(" -nopurify option */\n\n");                                   /* MR23 */
+    	_gen("#ifndef PCCTS_PURIFY\n");
+        _gen("#define PCCTS_PURIFY(r,s) memset((char *) &(r),'\\0',(s));\n");
+        _gen("#endif\n\n");
+    }                                                                       /* MR23 */
 }
 
 void
@@ -3627,7 +4046,7 @@ char * gate;                                    /* MR10 */
 	  fprintf(f," * Standard PCCTS include file with -fh %s -- P C C T S  I n c l u d e\n", stdpccts);
     }
 	fprintf(f," *\n");
-	fprintf(f," * Terence Parr, Will Cohen, and Hank Dietz: 1989-1999\n");
+	fprintf(f," * Terence Parr, Will Cohen, and Hank Dietz: 1989-2001\n");
 	fprintf(f," * Purdue University Electrical Engineering\n");
 	fprintf(f," * With AHPCRC, University of Minnesota\n");
 	fprintf(f," * ANTLR Version %s\n", Version);
@@ -3663,10 +4082,7 @@ char * gate;                                    /* MR10 */
         if (TraceGen) {
           fprintf(f,"#ifndef zzTRACE_RULES\n");  /* MR20 */
           fprintf(f,"#define zzTRACE_RULES\n");  /* MR20 */
-          // zzTRACE_RULES removed from #endif by TL because it causes
-          // a warning under GCC 3.0.2
-          // fprintf(f,"#endif  zzTRACE_RULES\n");  /* MR20 */
-          fprintf(f,"#endif\n");  /* MR20 */
+          fprintf(f,"#endif\n");                 /* MR22 */
         };
 
 		fprintf(f,"#include \"%s\"\n", APARSER_H);
@@ -3691,10 +4107,7 @@ char * gate;                                    /* MR10 */
     if (TraceGen) {
       fprintf(f,"#ifndef zzTRACE_RULES\n");  /* MR20 */
       fprintf(f,"#define zzTRACE_RULES\n");  /* MR20 */
-      // zzTRACE_RULES removed from #endif by TL because it causes
-      // a warning under GCC 3.0.2
-      // fprintf(f,"#endif  zzTRACE_RULES\n");  /* MR20 */
-      fprintf(f,"#endif\n");  /* MR20 */
+      fprintf(f,"#endif\n");                 /* MR22 */
     };
 	if ( OutputLL_k > 1 ) fprintf(f,"#define LL_K %d\n", OutputLL_k);
 	if ( GenAST ) fprintf(f,"#define GENAST\n");
@@ -3716,10 +4129,7 @@ char * gate;                                    /* MR10 */
     if (TraceGen) {
       fprintf(f,"#ifndef zzTRACE_RULES\n");  /* MR20 */
       fprintf(f,"#define zzTRACE_RULES\n");  /* MR20 */
-      // zzTRACE_RULES removed from #endif by TL because it causes
-      // a warning under GCC 3.0.2
-      // fprintf(f,"#endif  zzTRACE_RULES\n");  /* MR20 */
-      fprintf(f,"#endif\n");  /* MR20 */
+      fprintf(f,"#endif\n");                 /* MR22 */
     };
 	fprintf(f,"#include \"antlr.h\"\n");
 	if ( GenAST ) fprintf(f,"#include \"ast.h\"\n");
@@ -3873,38 +4283,50 @@ Node *q;
 
 static void
 #ifdef __USE_PROTOS
-dumpRetValAssign( char *retval, char *ret_def )
+dumpRetValAssign( char *retval, char *ret_def, RuleRefNode * ruleRef /* MR30 */)
 #else
-dumpRetValAssign( retval, ret_def )
+dumpRetValAssign( retval, ret_def, ruleRef /* MR30 */)
 char *retval;
 char *ret_def;
+RuleRefNode *ruleRefNode;
 #endif
 {
 	char *q = ret_def;
 	
 	tab();
-	while ( *retval != '\0' )
+	while ( *retval != '\0' && *q != '\0')
 	{
 		while ( isspace((*retval)) ) retval++;
 		while ( *retval!=',' && *retval!='\0' ) fputc(*retval++, output);
 		fprintf(output, " = _trv.");
 		
 		DumpNextNameInDef(&q, output);
+		while ( isspace(*q) ) q++;
 		fputc(';', output); fputc(' ', output);
 		if ( *retval == ',' ) retval++;
+	}
+	if (*retval == '\0' && *q != '\0') {
+/* MR30 */    errFL("Fewer output values than output formals for rule reference",
+/* MR30 */                 FileStr[ruleRef->file],ruleRef->line);
+	}
+	if (*retval != '\0' && *q == '\0') {
+/* MR30 */    errFL("More output actuals than output formals for rule reference",
+/* MR30 */                 FileStr[ruleRef->file],ruleRef->line);
 	}
 }
 
 /* This function computes the set of tokens that can possibly be seen k
  * tokens in the future from point j
  */
+
 static set
 #ifdef __USE_PROTOS
-ComputeErrorSet( Junction *j, int k )
+ComputeErrorSet( Junction *j, int k, int usePlusBlockBypass)
 #else
-ComputeErrorSet( j, k )
+ComputeErrorSet( j, k, usePlusBlockBypass )
 Junction *j;
 int k;
+int usePlusBlockBypass;
 #endif
 {
 	Junction *alt1;
@@ -3914,6 +4336,7 @@ int k;
 	f = rk = empty;
 	for (alt1=j; alt1!=NULL; alt1 = (Junction *)alt1->p2)
 	{
+        if (alt1->ignore && ! usePlusBlockBypass) continue;     /* MR21 - Ignore aPlusBlk forward p2 */
 		REACH(alt1->p1, k, &rk, a);
 		require(set_nil(rk), "ComputeErrorSet: rk != nil");
 		set_free(rk);
@@ -3950,12 +4373,13 @@ TokNode *p;
 
 static void
 #ifdef __USE_PROTOS
-makeErrorClause( Junction *q, set f, int max_k )
+makeErrorClause( Junction *q, set f, int max_k, int usePlusBlockBypass )
 #else
-makeErrorClause( q, f, max_k )
+makeErrorClause( q, f, max_k, usePlusBlockBypass )
 Junction *q;
 set f;
 int max_k;
+int usePlusBlockBypass;
 #endif
 {
     char *  handler_id="";                                           /* MR7 */
@@ -4011,7 +4435,7 @@ int max_k;
 /* MR14 */  if (ruleEntry->dontComputeErrorSet) {
 /* MR14 */    f=empty;
             } else {
-      	      f = ComputeErrorSet(q, i);
+      	      f = ComputeErrorSet(q, i, usePlusBlockBypass /* use plus block bypass ? */ );
             }
 
       if ( GenCC ) {_gen1(",err%d", DefErrSet( &f, 1, NULL ));}
@@ -4111,4 +4535,263 @@ static void OutLineInfo(file,line,fileName)
       }
       prevFileName=fileName;
     };
+}
+
+#if 0
+
+/* MR21 */
+
+#ifdef __USE_PROTOS
+void OutFirstSetSymbol(Junction *q, char * pSymbol)
+#else
+void OutFirstSetSymbol(q, pSymbol)
+    Junction* q;
+	char * pSymbol
+#endif
+{
+
+	set f;
+    if (pSymbol == NULL) return;
+	gen1("/** #FirstSetSymbol(%s) **/\n",pSymbol);
+    f = ComputeErrorSet(q, 1, 0 /* use plus block bypass ? */);
+    DefErrSetWithSuffix (0 /* nil ok */, &f,0 /* no substitute */, pSymbol, "");
+    set_free(f);
+}
+#endif
+
+/* MR21 */
+
+#ifdef __USE_PROTOS
+void BlockPreambleOption(Junction *q, char * pSymbol)
+#else
+void BlockPreambleOption(q, pSymbol)
+    Junction* q;
+	char * pSymbol;
+#endif
+{
+	set f = empty;
+    if (pSymbol != NULL) {
+        f = ComputeErrorSet(q, 1, 0 /* use plus block bypass ? */);
+    	gen1("/** #FirstSetSymbol(%s) **/\n",pSymbol);
+        DefErrSetWithSuffix (0 /* nil ok */, &f,0 /* no substitute */, pSymbol, "");
+    }
+    set_free(f);
+}
+
+/* MR21 */
+
+void
+#ifdef __USE_PROTOS
+dumpActionPlus(ActionNode *a, char *s, FILE *output, int tabs, int file, int line,
+int final_newline )
+#else
+dumpActionPlus(a, s, output, tabs, file, line, final_newline )
+ActionNode *a;
+char *s;
+FILE *output;
+int tabs;
+int file;
+int line;
+int final_newline;
+#endif
+{
+    dumpAction(s,output,tabs,file,line,final_newline);
+}
+
+
+#if 0
+** #ifdef __USE_PROTOS
+** void MR_ErrorSets(Junction *q, int max_k, int usePlusBlockBypass)
+** #else
+** void MR_ErrorSets(q, max_k, usePlusBlockBypass)
+** Junction *q;
+** int max_k;
+** int usePlusBlockBypass;
+** #endif
+** {
+**     int k;
+**     set setResult;
+** 	Junction* alt1;
+** 	Junction* p;
+** 	set rk;
+** 
+**     require (max_k <= CLL_k, "k > CLL_k");
+** 
+** 
+**     for (k = 1; k <= CLL_k; k++) {set_clr(q->fset[k]); }
+** 
+**     for (k = 1; k <= max_k; k++) {
+**         for (alt1=q; alt1 != NULL; alt1 = (Junction *)alt1->p2)
+**     	{
+**             if (alt1->ignore && ! usePlusBlockBypass) continue;
+**         	p = analysis_point((Junction *)alt1->p1);
+**     		REACH(p, k, &rk, setResult);
+**     		require(set_nil(rk), "rk != nil");
+**             set_orin(&q->fset[k], setResult);
+**     	}
+**     }
+** }
+#endif
+
+
+#ifdef __USE_PROTOS
+void DumpInitializers(FILE* output, RuleEntry *r, char * pReturn)
+#else
+void DumpInitializers(output, r, pReturn)
+FILE* output;
+RuleEntry *r;
+char * pReturn;
+#endif
+{
+	char *p = pReturn;
+	char *pDataType;
+	char *pSymbol;
+	char *pEqualSign;
+	char *pValue;
+	char *pSeparator;
+	int nest = 0;
+    char *q;
+
+	require(pReturn!=NULL, "DumpInitializer: invalid string"); 
+
+    while (*p != 0) {
+    	p = endFormal(p,
+    			      &pDataType,
+    				  &pSymbol,
+    				  &pEqualSign,
+    				  &pValue,
+    				  &pSeparator,
+    				  &nest);
+        if (nest != 0) return;
+        if (pValue != NULL) {
+			tab();
+            q = strBetween(pSymbol, pEqualSign, pSeparator);
+            fprintf(output, "_retv.%s", q);
+            q = strBetween(pValue, NULL, pSeparator);
+            fprintf(output, " = %s;\n", q);
+        }
+    }
+}
+
+#ifdef __USE_PROTOS
+void DumpFormals(FILE* output, char * pReturn, int bInitializer)
+#else
+void DumpFormals(output, pReturn, bInitializer)
+FILE* output;
+char * pReturn;
+int bInitializer;
+#endif
+{
+	char *p = pReturn;
+	char *pDataType;
+	char *pSymbol;
+	char *pEqualSign;
+	char *pValue;
+	char *pSeparator;
+	int nest = 0;
+    char *q;
+    int count = 0;
+
+	require(pReturn!=NULL, "DumpFormals: invalid string"); 
+
+    while (*p != 0) {
+    	p = endFormal(p,
+    			      &pDataType,
+    				  &pSymbol,
+    				  &pEqualSign,
+    				  &pValue,
+    				  &pSeparator,
+    				  &nest);
+        if (nest != 0) return;
+        if (count > 0) fprintf(output,",");
+        if (pDataType != NULL && pSymbol != NULL) {
+            q = strBetween(pDataType, pSymbol, pSeparator);
+            fprintf(output, "%s", q);
+            q = strBetween(pSymbol, pEqualSign, pSeparator);
+            fprintf(output," %s",q);
+            if (pValue != NULL) {
+                q = strBetween(pValue, NULL, pSeparator);
+                if (bInitializer != 0) {
+                    fprintf(output, " = %s", q);
+                }
+            }
+        }
+        count++;
+    }
+}
+
+/* MR23 Check for empty alt in a more intelligent way.
+        Previously, an empty alt for genBlk had to point directly
+		to the endBlock.  This did not work once I changed {...}
+		blocks to look like (...|...| epsilon) since there were
+		intervening generics.  This fixes the problem for this
+		particular case.  Things like actions or empty blocks of
+		various kinds will still cause problems, but I wasnt't
+		prepared to handle pathological cases like (A|()*). It
+		does handle (A | ()), which is a recommended idiom for
+		epsilon.
+
+        Actually, this isn't quite correct since it doesn't handle
+		the case of the ignore bit in the plus block bypass, but
+		I'm too tired to figure out the correct fix, and will just
+		work around it.
+*/
+
+#ifdef __USE_PROTOS
+int isEmptyAlt(Node * alt, Node * endBlock)
+#else
+int isEmptyAlt(alt, endBlock)
+Node * alt;
+Node * endBlock;
+#endif
+{
+	Node * n = alt;
+	Junction * j;
+	while (n != endBlock) {
+		switch (n->ntype) {
+
+			case nRuleRef:
+				return 0;
+
+			case nToken:
+				return 0;
+
+			case nAction:
+				return 0;
+
+			case nJunction:
+				goto JUNCTION;
+
+			default:
+				fatal_internal("Invalid node type");
+				return 0;
+		}
+JUNCTION:
+		j = (Junction *) n;
+
+		switch (j->jtype) {
+			case Generic:
+				{
+					n = j->p1;
+					goto NEXT;
+				}
+
+			case aSubBlk:
+				{
+					n = j->p1;	/* MR26 */
+					goto NEXT;	/* MR26 */
+				}
+
+			case EndBlk:
+					return 0;
+
+			case EndRule:
+					return 1;
+
+			default:
+					return 0;
+		}
+NEXT: continue;
+	}
+	return 1;
 }

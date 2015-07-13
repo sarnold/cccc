@@ -29,7 +29,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2000
  */
 
 #ifndef ERR_H
@@ -758,14 +758,16 @@ int
 #ifdef __USE_PROTOS
 _zzsetmatch(SetWordType *e, char **zzBadText, char **zzMissText,
 			int *zzMissTok, int *zzBadTok,
-			SetWordType **zzMissSet)
+			SetWordType **zzMissSet,
+			SetWordType *zzTokclassErrset /* MR23 */)
 #else
-_zzsetmatch(e, zzBadText, zzMissText, zzMissTok, zzBadTok, zzMissSet)
+_zzsetmatch(e, zzBadText, zzMissText, zzMissTok, zzBadTok, zzMissSet, zzTokclassErrset /* MR23 */)
 SetWordType *e;
 char **zzBadText;
 char **zzMissText;
 int *zzMissTok, *zzBadTok;
 SetWordType **zzMissSet;
+SetWordType *zzTokclassErrset;
 #endif
 {
 #ifdef DEMAND_LOOK
@@ -778,7 +780,7 @@ SetWordType **zzMissSet;
 	if ( !zzset_el((unsigned)LA(1), e) ) {
 		*zzBadText = LATEXT(1); *zzMissText=NULL;
 		*zzMissTok= 0; *zzBadTok=LA(1);
-		*zzMissSet=e;
+		*zzMissSet=zzTokclassErrset; /* MR23 */
 		return 0;
 	}
 	zzMakeAttr           /* MR14 Ger Hobbelt (hobbelt@axa.nl) */

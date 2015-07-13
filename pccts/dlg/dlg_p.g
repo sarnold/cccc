@@ -220,8 +220,11 @@ rule_list	: rule <<$$.l=$1.l; $$.r=$1.r;>>
 			>>
 		;
 
-rule		: reg_expr ACTION
-			<<$$.l=$1.l; $$.r=$1.r; ($1.r)->accept=action_no;>>
+rule	: reg_expr ACTION
+/* MR23 */		<< if ($1.r != NULL) {
+					$$.l=$1.l; $$.r=$1.r; ($1.r)->accept=action_no;
+				   }
+				>>
 		| ACTION
 			<<$$.l = NULL; $$.r = NULL;
 			  error("no expression for action  ", zzline);
@@ -234,7 +237,7 @@ reg_expr	: and_expr <<$$.l=$1.l; $$.r=$1.r;>>
 				   t1 = new_nfa_node(); t2 = new_nfa_node();
 				   (t1)->trans[0]=$$.l;
 				   (t1)->trans[1]=$2.l;
-				   ($$.r)->trans[1]=t2;
+/* MR23 */		   if ($$.r != NULL) ($$.r)->trans[1]=t2;
                    if ($2.r) {
     				   ($2.r)->trans[1]=t2;     /* MR20 */
                    }
@@ -244,23 +247,32 @@ reg_expr	: and_expr <<$$.l=$1.l; $$.r=$1.r;>>
 			)*
 		;
 
-and_expr	: repeat_expr <<$$.l=$1.l; $$.r=$1.r;>>
-			(repeat_expr <<($$.r)->trans[1]=$1.l; $$.r=$1.r;>>)*
+and_expr	: repeat_expr
+					<<
+						$$.l=$1.l; $$.r=$1.r;
+				    >>
+			(repeat_expr 
+/* MR23 */				<< if ($$.r != NULL) {
+							($$.r)->trans[1]=$1.l;
+							$$.r=$1.r;
+						   }
+						>>
+			)*
 		;
 
 repeat_expr	: expr <<$$.l=$1.l; $$.r=$1.r;>>
 			{ ZERO_MORE
 			<<{	nfa_node *t1,*t2;
-				($$.r)->trans[0] = $$.l;
+/* MR23 */		if ($$.r != NULL) ($$.r)->trans[0] = $$.l;
 				t1 = new_nfa_node(); t2 = new_nfa_node();
 				t1->trans[0]=$$.l;
 				t1->trans[1]=t2;
-				($$.r)->trans[1]=t2;
+/* MR23 */		if ($$.r != NULL) ($$.r)->trans[1]=t2;
 				$$.l=t1;$$.r=t2;
 			  }
 			>>
 			| ONE_MORE
-			<<($$.r)->trans[0] = $$.l;>>
+/* MR23 */		<<if ($$.r != NULL) ($$.r)->trans[0] = $$.l;>>
 			}
 		| ZERO_MORE
 			<< error("no expression for *", zzline);>>
@@ -268,44 +280,56 @@ repeat_expr	: expr <<$$.l=$1.l; $$.r=$1.r;>>
 			<< error("no expression for +", zzline);>>
 		;
 
-expr		: << $$.l = new_nfa_node(); $$.r = new_nfa_node(); >>
+expr	: << $$.l = new_nfa_node();
+			 $$.r = new_nfa_node();
+		  >>
 		  L_BRACK atom_list R_BRACK
 			<<
-				($$.l)->trans[0] = $$.r;
-				($$.l)->label = set_dup($2.label);
-				set_orin(&used_chars,($$.l)->label);
+/* MR23 */		if ($$.l != NULL) {
+					($$.l)->trans[0] = $$.r;
+					($$.l)->label = set_dup($2.label);
+					set_orin(&used_chars,($$.l)->label);
+				}
 			>>
 		| NOT L_BRACK atom_list R_BRACK
 			<<
-				($$.l)->trans[0] = $$.r;
-				($$.l)->label = set_dif(normal_chars,$3.label);
-				set_orin(&used_chars,($$.l)->label);
+/* MR23 */		if ($$.l != NULL) {
+					($$.l)->trans[0] = $$.r;
+					($$.l)->label = set_dif(normal_chars,$3.label);
+					set_orin(&used_chars,($$.l)->label);
+				}
 			>>
 		| L_PAR reg_expr R_PAR
 			<<
-				($$.l)->trans[0] = $2.l;
-                if ($2.r) {
-    				($2.r)->trans[1] = $$.r;    /* MR20 */
-                }
+/* MR23 */		if ($$.l != NULL) {				
+					($$.l)->trans[0] = $2.l;
+					if ($2.r) {
+    					($2.r)->trans[1] = $$.r;    /* MR20 */
+					}
+				}
 			>>
 		| L_BRACE reg_expr R_BRACE
 			<<
-				($$.l)->trans[0] = $2.l;
-				($$.l)->trans[1] = $$.r;
-                if ($2.r) {
-    				($2.r)->trans[1] = $$.r;    /* MR20 */
-                }
+/* MR23 */		if ($$.l != NULL) {
+					($$.l)->trans[0] = $2.l;
+					($$.l)->trans[1] = $$.r;
+			        if ($2.r) {
+    					($2.r)->trans[1] = $$.r;    /* MR20 */
+					}
+				}
 			>>
 		| atom
 			<<
-				($$.l)->trans[0] = $$.r;
-				($$.l)->label = set_dup($1.label);
-				set_orin(&used_chars,($$.l)->label);
+/* MR23 */		if ($$.l != NULL) {
+					($$.l)->trans[0] = $$.r;
+					($$.l)->label = set_dup($1.label);
+					set_orin(&used_chars,($$.l)->label);
+				}
 			>>
 		;
 
 atom_list	: << set_free($$.label); >>
-			(near_atom <<set_orin(&($$.label),$1.label);>>)*
+				(near_atom <<set_orin(&($$.label),$1.label);>>)*
 		;
 
 near_atom	: << register int i;
@@ -331,6 +355,10 @@ near_atom	: << register int i;
 						toupper(i_prime) : i_prime)-MIN_CHAR;
 				   }
 				   /* check to see if range okay */
+					{
+					    int debugLetter1 = $$.letter;
+						int debugLetter2 = $2.letter;
+					}
 				   if ($$.letter > $2.letter 
                                        && $2.letter != 0xff){       /* MR16 */
 					  error("invalid range  ", zzline);

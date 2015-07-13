@@ -7,9 +7,10 @@ SRC=genmk.c
 OBJ=genmk.o
 # Define PC if you use a PC OS (changes directory symbol and object file extension)
 # see pccts/h/pcctscfg.h
-#CFLAGS=-I../../h -DPC
-CFLAGS=-I../../h
 CC=cc
+COPT=-O
+#CFLAGS=-I../../h -DPC
+CFLAGS=$(COPT) -I../../h
 BAG=../../bin/bag
 
 genmk: $(OBJ) $(SRC) ../../h/pcctscfg.h

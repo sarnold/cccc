@@ -25,7 +25,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2001
  */
 
                            /* V a r i a b l e s */
@@ -77,6 +77,7 @@ extern int  CurRuleDebug;                       /* MR13 */
 extern Junction *CurRuleBlk;
 extern RuleEntry *CurRuleNode;
 extern ListNode *CurElementLabels;
+extern ListNode *CurAstLabelsInActions;         /* MR27 */
 extern ListNode *ContextGuardPredicateList;     /* MR13 */
 extern ListNode *CurActionLabels;
 extern int numericActionLabel;        /* MR10 << ... $1 ... >> or << ... $1 ... >>?   */
@@ -164,6 +165,8 @@ extern int GenStdPccts;
 extern char *stdpccts;
 extern int ParseWithPredicates;
 extern int ConstrainSearch;
+extern int PURIFY;													/* MR23 */
+
 extern set MR_CompromisedRules;                                     /* MR14 */
 extern int MR_AmbSourceSearch;                                      /* MR11 */
 extern int MR_SuppressSearch;                                       /* MR13 */
@@ -180,7 +183,9 @@ extern int MR_skipped_e3_report;                                    /* MR11 */
 extern int MR_matched_AmbAidRule;                                   /* MR11 */
 extern int MR_Inhibit_Tokens_h_Gen;                                 /* MR13 */
 extern int NewAST;                                                  /* MR13 */
+extern int tmakeInParser;                                           /* MR23 */
 extern int AlphaBetaTrace;                                          /* MR14 */
+extern int MR_BlkErr;                                               /* MR21 */
 extern int MR_AlphaBetaWarning;                                     /* MR14 */
 extern int MR_AlphaBetaMessageCount;                                /* MR14 */
 extern int MR_MaintainBackTrace;                                    /* MR14 */
@@ -231,12 +236,14 @@ extern int TnodesPeak;                                              /* MR10 */
 extern int TnodesReportThreshold;                                   /* MR11 */
 extern int TnodesAllocated;                                         /* MR10 */
 extern char *ClassDeclStuff;                                        /* MR10 */
+extern char *BaseClassName;                                         /* MR22 */
 extern ListNode *class_before_actions, *class_after_actions;
 extern char *UserTokenDefsFile;
 extern int UserDefdTokens;
 extern ListNode *MetaTokenNodes;
 extern char *OutputDirectory;
 extern int DontCopyTokens;
+extern int LTinTokenAction;                                         /* MR23 */
 extern set AST_nodes_refd_in_actions;
 extern ListNode *CurExGroups;
 extern int CurBlockID;
@@ -260,8 +267,21 @@ extern int tokenActionActive;	                                     /* MR1 */
 extern char *PRED_OR_LIST;                                          /* MR10 */
 extern char *PRED_AND_LIST;                                         /* MR10 */
 
+#ifdef __VMS
+#define STRICMP strcasecmp /* MR21 */
+#else
+#define STRICMP stricmp /* MR21 */
+#endif
+
+/* MR26 */
+#ifdef PCCTS_USE_STDARG
+extern Tree *tmake(Tree *root, ...);
+#else
+extern Tree *tmake();
+#endif
+
 #ifdef __USE_PROTOS
-extern int stricmp(const char*, const char*);
+extern int STRICMP(const char*, const char*);
 extern void istackreset(void);
 extern int istacksize(void);
 extern void pushint(int);
@@ -280,9 +300,10 @@ extern void SubstErrorClass( set * );
 extern int DefErrSet( set *, int, char * );
 extern int DefErrSetForC( set *, int, char * );
 extern int DefErrSetForCC( set *, int, char * );
-extern int DefErrSet1(int, set *, int, char * );
-extern int DefErrSetForC1(int, set *, int, char * );
-extern int DefErrSetForCC1(int, set *, int, char * );
+extern int DefErrSet1(int, set *, int, char *);                         /* MR21 */
+extern int DefErrSetForC1(int, set *, int, char *, const char* );       /* MR21 */
+extern int DefErrSetForCC1(int, set *, int, char *, const char* );      /* MR21 */
+extern int DefErrSetWithSuffix(int, set *, int, char *, const char *);  /* MR21 */
 extern void GenErrHdr( void );
 extern void dumpExpr( FILE *, char * );
 extern void addParm( Node *, char * );
@@ -292,11 +313,12 @@ extern Graph buildWildCard( char * );
 extern Graph buildRuleRef( char * );
 extern Graph Or( Graph, Graph );
 extern Graph Cat( Graph, Graph );
-extern Graph makeOpt( Graph, int );
-extern Graph makeBlk( Graph, int );
-extern Graph makeLoop( Graph, int );
-extern Graph makePlus( Graph, int );
+extern Graph makeOpt( Graph, int, char *);
+extern Graph makeBlk( Graph, int, char *);
+extern Graph makeLoop( Graph, int, char *);
+extern Graph makePlus( Graph, int, char *);
 extern Graph emptyAlt( void );
+extern Graph emptyAlt3( void );
 extern TokNode * newTokNode( void );
 extern RuleRefNode * newRNode( void );
 extern Junction * newJunction( void );
@@ -345,6 +367,7 @@ extern void genEndRule( Junction * );
 extern void genHdr( int );
 extern void genHdr1( int );
 extern void dumpAction( char *, FILE *, int, int, int, int );
+extern void dumpActionPlus(ActionNode*, char *, FILE *, int, int, int, int );   /* MR21 */
 extern Entry ** newHashTable( void );
 extern Entry * hash_add( Entry **, char *, Entry * );
 extern Entry * hash_get( Entry **, char * );
@@ -358,7 +381,7 @@ extern int DumpNextNameInDef( char **, FILE * );
 extern void DumpOldStyleParms( char *, FILE * );
 extern void DumpType( char *, FILE * );
 extern int strmember( char *, char * );
-extern int HasComma( char * );
+/* extern int HasComma( char * ); MR23 Replaced by hasMultipleOperands() */
 extern void DumpRetValStruct( FILE *, char *, int );
 extern char * StripQuotes( char * );
 extern int main( int, char *[] );
@@ -387,6 +410,7 @@ extern Entry * newEntry( char *, int );
 extern void list_add( ListNode **, void * );
 extern void list_free( ListNode **, int freeData );     /* MR10 */
 extern void list_apply( ListNode *, void (*)(void *) );
+extern int list_search_cstring (ListNode *, char *);    /* MR27 */
 extern char * Fkey( char *, int, int );
 extern void FoPush( char *, int );
 extern void FoPop( int );
@@ -401,7 +425,7 @@ extern void addFoLink( Node *, char *, Junction * );
 extern void GenCrossRef( Junction * );
 extern void defErr( char *, long, long, long, long, long, long );
 extern void genStdPCCTSIncludeFile(FILE *,char *);                  /* MR10 */
-extern char * baseName(char *);                                     /* MR10 */
+extern char * pcctsBaseName(char *);                                /* MR32 */
 extern Predicate *find_predicates(Node *);                          /* MR10 */
 extern Predicate *MR_find_predicates_and_supp(Node *);              /* MR13 */
 extern int predicateLookaheadDepth(ActionNode *);                   /* MR10 */
@@ -410,6 +434,7 @@ extern Predicate * predicate_dup(Predicate *);                      /* MR10 */
 extern Predicate * predicate_dup_without_context(Predicate *);      /* MR11 */
 extern void GenRulePrototypes(FILE *, Junction *);
 extern Junction *first_item_is_guess_block(Junction *);
+extern Junction *first_item_is_guess_block_extra(Junction * q);		/* MR30 */
 extern Junction *analysis_point(Junction *);
 extern Tree *make_tree_from_sets(set *, set *);
 extern Tree *tdup_chain(Tree *);
@@ -431,6 +456,7 @@ extern void GenParser_h_Hdr(void);
 extern void GenRuleMemberDeclarationsForCC(FILE *, Junction *);
 extern int addForcedTname( char *, int );
 extern char *OutMetaName(char *);
+extern void OutFirstSetSymbol(Junction *q, char *);                 /* MR21 */
 extern void warnNoFL(char *err);
 extern void warnFL(char *err,char *f,int l);
 extern void warn(char *err);
@@ -439,15 +465,16 @@ extern void errNoFL(char *err);
 extern void errFL(char *err,char *f,int l);
 extern void err(char *err);
 extern void errNoCR( char *err );
-extern Tree *tmake(Tree *root, ...);
 extern void genPredTree( Predicate *p, Node *j, int ,int);
 extern UserAction *newUserAction(char *);
 extern char *gate_symbol(char *name);
 extern char *makeAltID(int blockid, int altnum);
 extern void DumpRemainingTokSets(void);
-extern void DumpANSIFunctionArgDef(FILE *f, Junction *q);
-extern Predicate *computePredicateFromContextGuard(Graph,int *msgDone);     /* MR10 */
-extern void recomputeContextGuard(Predicate *);                     /* MR13 */
+extern void DumpANSIFunctionArgDef(FILE *f, Junction *q, int bInit);  /* MR23 */
+extern void DumpFormals(FILE *, char *, int bInit);                   /* MR23 */
+extern char* hideDefaultArgs(const char* pdecl);                      /* MR22 VHS */
+extern Predicate *computePredFromContextGuard(Graph,int *msgDone);    /* MR21 */
+extern void recomputeContextGuard(Predicate *);                       /* MR13 */
 extern Predicate *new_pred(void);
 extern void chkGTFlag(void);
 extern void leAdd(LabelEntry *);                                     /* MR7 */
@@ -518,8 +545,24 @@ extern void MR_backTraceDumpItem(FILE *,int skip,Node *n);           /* MR13 */
 extern void MR_backTraceDumpItemReset(void);                         /* MR13 */
 extern Junction * MR_junctionWithoutP2(Junction *);                  /* MR13 */
 extern void MR_setConstrainPointer(set *);							 /* MR18 */
+extern void BlockPreambleOption(Junction *q, char * pSymbol);        /* MR23 */
+extern char* getInitializer(char *);                                 /* MR23 */
+extern char *endFormal(char *pStart,                                 /* MR23 */
+					   char **ppDataType,                            /* MR23 */
+					   char **ppSymbol,                              /* MR23 */
+					   char **ppEqualSign,                           /* MR23 */
+					   char **ppValue,                               /* MR23 */
+					   char **ppSeparator,                           /* MR23 */
+					   int *pNext);                                  /* MR23 */
+extern char *strBetween(char *pStart,                                /* MR23 */
+						char *pNext,                                 /* MR23 */
+						char *pStop);                                /* MR23 */
+extern int hasMultipleOperands(char *);                              /* MR23 */
+extern void DumpInitializers(FILE*, RuleEntry*, char*);              /* MR23 */
+extern int isTermEntryTokClass(TermEntry *);						 /* MR23 */
+extern int isEmptyAlt(Node *, Node *);                               /* MR23 */
 #else
-extern int stricmp();
+extern int STRICMP();
 extern void istackreset();
 extern int istacksize();
 extern void pushint();
@@ -541,6 +584,7 @@ extern int DefErrSetForCC();
 extern int DefErrSet1();
 extern int DefErrSetForC1();
 extern int DefErrSetForCC1();
+extern int DefErrSetWithSuffix();                                   /* MR21 */
 extern void GenErrHdr();
 extern void dumpExpr();
 extern void addParm();
@@ -555,6 +599,7 @@ extern Graph makeBlk();
 extern Graph makeLoop();
 extern Graph makePlus();
 extern Graph emptyAlt();
+extern Graph emptyAlt3();
 extern TokNode * newTokNode();
 extern RuleRefNode * newRNode();
 extern Junction * newJunction();
@@ -603,6 +648,7 @@ extern void genEndRule();
 extern void genHdr();
 extern void genHdr1();
 extern void dumpAction();
+extern void dumpActionPlus();                           /* MR21 */
 extern Entry ** newHashTable();
 extern Entry * hash_add();
 extern Entry * hash_get();
@@ -616,7 +662,7 @@ extern int DumpNextNameInDef();
 extern void DumpOldStyleParms();
 extern void DumpType();
 extern int strmember();
-extern int HasComma();
+/* extern int HasComma(); MR23 Replaced by hasMultipleOperands() */
 extern void DumpRetValStruct();
 extern char * StripQuotes();
 extern int main();
@@ -645,6 +691,7 @@ extern Entry * newEntry();
 extern void list_add();
 extern void list_free();                /* MR10 */
 extern void list_apply();
+extern int list_search_cstring ();      /* MR27 */
 extern char * Fkey();
 extern void FoPush();
 extern void FoPop();
@@ -659,7 +706,7 @@ extern void addFoLink();
 extern void GenCrossRef();
 extern void defErr();
 extern void genStdPCCTSIncludeFile();
-extern char * baseName();                                     /* MR10 */
+extern char * pcctsBaseName();                                /* MR32 */
 extern Predicate *find_predicates();
 extern Predicate *MR_find_predicates_and_supp();              /* MR13 */
 extern int predicateLookaheadDepth();                         /* MR10 */
@@ -668,6 +715,7 @@ extern Predicate * predicate_dup();                           /* MR10 */
 extern Predicate * predicate_dup_without_context();           /* MR11 */
 extern void GenRulePrototypes();
 extern Junction *first_item_is_guess_block();
+extern Junction *first_item_is_guess_block_extra();			  /* MR30 */
 extern Junction *analysis_point();
 extern Tree *make_tree_from_sets();
 extern Tree *tdup_chain();
@@ -689,6 +737,7 @@ extern void GenParser_h_Hdr();
 extern void GenRuleMemberDeclarationsForCC();
 extern int addForcedTname();
 extern char *OutMetaName();
+extern void OutFirstSetSymbol();                            /* MR21 */
 extern void warnNoFL();
 extern void warnFL();
 extern void warn();
@@ -697,14 +746,15 @@ extern void errNoFL();
 extern void errFL();
 extern void err();
 extern void errNoCR();
-extern Tree *tmake();
 extern void genPredTree();
 extern UserAction *newUserAction();
 extern char *gate_symbol();
 extern char *makeAltID();
 extern void DumpRemainingTokSets();
 extern void DumpANSIFunctionArgDef();
-extern Predicate *computePredicateFromContextGuard();
+extern void DumpFormals();                                           /* MR23 */
+extern char* hideDefaultArgs();                                      /* MR22 VHS */
+extern Predicate *computePredFromContextGuard();
 extern void recomputeContextGuard();                                 /* MR13 */
 extern Predicate *new_pred();
 extern void chkGTFlag();
@@ -767,14 +817,23 @@ extern Junction * MR_nameToRuleBlk();                               /* MR10 */
 extern void MR_clearPredEntry();                                    /* MR11 */
 extern void MR_orphanRules();                                       /* MR12 */
 extern void MR_merge_contexts();                                    /* MR12 */
-extern int ci_strequ();                                              /* MR12 */
+extern int ci_strequ();                                             /* MR12 */
 extern void MR_guardPred_plainSet();                                /* MR12c */
 extern void MR_suppressSearchReport();                              /* MR12c */
 extern Predicate * MR_suppressK();                                  /* MR13 */
 extern void MR_backTraceDumpItem();                                 /* MR13 */
 extern void MR_backTraceDumpItemReset();                            /* MR13 */
 extern Junction * MR_junctionWithoutP2();                           /* MR13 */
-extern void MR_setConstrainPointer();							 /* MR18 */
+extern void MR_setConstrainPointer();					  		    /* MR18 */
+extern void BlockPreambleOption();                                  /* MR23 */
+extern char* getInitializer();                                      /* MR23 */
+extern int hasMultipleOperands();                                   /* MR23 */
+extern char *endFormal();                                           /* MR23 */
+extern char *strBetween();                                          /* MR23 */
+extern void DumpInitializers();                                     /* MR23 */
+extern int isTermEntryTokClass();							 	    /* MR23 */
+extern int isEmptyAlt();
+
 #endif
 
 #ifdef __USE_PROTOS
@@ -787,3 +846,7 @@ extern set attribsRefdFromAction;
 extern int inAlt;
 extern int UsedOldStyleAttrib;
 extern int UsedNewStyleLabel;
+
+#define MAX_BLK_LEVEL 100                       /* MR23 */
+extern int     CurBlockID_array[MAX_BLK_LEVEL]; /* MR23 */
+extern int     CurAltNum_array[MAX_BLK_LEVEL];  /* MR23 */

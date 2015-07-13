@@ -23,8 +23,8 @@ CFG=pcctslib - Win32 Debug
 
 # Begin Project
 # PROP AllowPerConfigDependencies 0
-# PROP Scc_ProjName ""
-# PROP Scc_LocalPath ""
+# PROP Scc_ProjName "pcctslib60"
+# PROP Scc_LocalPath ".."
 CPP=cl.exe
 RSC=rc.exe
 
@@ -41,7 +41,7 @@ RSC=rc.exe
 # PROP Intermediate_Dir "Release"
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /YX /FD /c
-# ADD CPP /nologo /W3 /GX /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /FD /c
+# ADD CPP /nologo /MD /W4 /WX /GX /O2 /I "$(PCCTS)\sorcerer\h" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
@@ -70,7 +70,7 @@ PostBuild_Cmds=mkdir ..\lib	copy pccts_release.lib ..\lib\pccts_release.lib
 # PROP Intermediate_Dir "Debug"
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /GX /Z7 /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /FD /c
-# ADD CPP /nologo /W3 /GX /Z7 /Od /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /FD /c
+# ADD CPP /nologo /MDd /W4 /WX /GX /ZI /Od /I "$(PCCTS)\sorcerer\h" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /FR /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE RSC /l 0x409
 # ADD RSC /l 0x409
@@ -92,6 +92,9 @@ PostBuild_Cmds=mkdir ..\lib	copy pccts_debug.lib ..\lib\pccts_debug.lib
 
 # Name "pcctslib - Win32 Release"
 # Name "pcctslib - Win32 Debug"
+# Begin Group "Source Files"
+
+# PROP Default_Filter ""
 # Begin Source File
 
 SOURCE=.\AParser.cpp
@@ -120,5 +123,71 @@ SOURCE=.\PCCTSAST.cpp
 
 SOURCE=.\SList.cpp
 # End Source File
+# Begin Source File
+
+SOURCE=..\sorcerer\lib\STreeParser.cpp
+# ADD CPP /I "$(PCCTS)\h"
+# End Source File
+# End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\AParser.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\ASTBase.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\AToken.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\ATokenBuffer.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\ATokenStream.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\ATokPtr.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\BufFileInput.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DLexerBase.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\PBlackBox.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\PCCTSAST.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\sorcerer\h\SASTBase.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\sorcerer\h\SCommonAST.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SList.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\sorcerer\h\STreeParser.h
+# End Source File
+# End Group
 # End Target
 # End Project

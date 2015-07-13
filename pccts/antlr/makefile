@@ -165,11 +165,12 @@ PCCTS_H=../h
 #   UNIX  (default)
 #
 CC=cc
+COPT=-O
 ANTLR=../bin/antlr
 DLG=../bin/dlg
 OBJ_EXT=o
 OUT_OBJ = -o
-CFLAGS= -O -I. -I$(SET) -I$(PCCTS_H) -DUSER_ZZSYN $(COTHER)
+CFLAGS= $(COPT) -I. -I$(SET) -I$(PCCTS_H) -DUSER_ZZSYN $(COTHER) -DZZLEXBUFSIZE=32000
 #
 # SGI Users, use this CFLAGS
 #

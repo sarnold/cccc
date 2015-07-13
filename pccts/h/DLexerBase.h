@@ -24,7 +24,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2000
  */
 
 #ifndef DLGX_H
@@ -192,6 +192,7 @@ public:
 	virtual ANTLRParser *getParser();				// MR1
 	virtual int debugLexer(int value);				// MR1
     int     lexErrCount;                            // MR12
+	virtual int printMessage(FILE* pFile, const char* pFormat, ...); // MR23
 };
 
 #endif

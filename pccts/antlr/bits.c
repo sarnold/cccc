@@ -24,7 +24,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2001
  */
 
 #include <stdio.h>
@@ -121,7 +121,7 @@ DumpSetWdForC( )
 	int i,c=1;
 
 	if ( setwd==NULL ) return;
-	if ( !GenCC ) fprintf(DefFile, "extern SetWordType setwd%d[];\n", wordnum);
+	fprintf(DefFile, "extern SetWordType setwd%d[];\n", wordnum);
 	fprintf(ErrFile,
 			"SetWordType setwd%d[%d] = {", wordnum, TokenNum-1);
 	for (i=0; i<TokenNum-1; i++)
@@ -243,6 +243,7 @@ char *eclass;
 {
 	TermEntry *q;
 	ECnode *p;
+	TCnode *tcnode;
 	ListNode *e;
 	unsigned int t;
 	unsigned deg=0;
@@ -254,6 +255,8 @@ char *eclass;
 	p->eset = empty;
 	for (e = (p->elist)->next; e!=NULL; e=e->next)
 	{
+		q = NULL;								/* MR23 */
+
 		if ( islower( *((char *)e->elem) ) )	/* is it a rule ref? (alias FIRST request) */
 		{
 			a = Efirst((char *)e->elem, p);
@@ -292,8 +295,15 @@ char *eclass;
 		}
 		if ( t!=0 )
 		{
-			set_orel(t, &p->eset);
-			deg++;
+			if (isTermEntryTokClass(q))  {			/* MR23 */
+			    tcnode = q->tclass;					/* MR23 */
+				set_orin(&p->eset, tcnode->tset);	/* MR23 */
+				deg = set_deg(p->eset);				/* MR23 */
+			}										/* MR23 */
+			else {
+				set_orel(t, &p->eset);
+				deg++;
+			}
 		}
 		else warnNoFL(eMsg2("undefined token '%s' referenced in errclass '%s'; ignored",
 							(char *)e->elem, TokenString(p->tok)));
@@ -502,8 +512,8 @@ int subst;			/* should be substitute error classes? */
 char *name;
 #endif
 {
-	if ( GenCC ) return DefErrSetForCC1(nilOK, f, subst, name );
-	else return DefErrSetForC1(nilOK, f, subst, name );
+	if ( GenCC ) return DefErrSetForCC1(nilOK, f, subst, name, "_set");
+	else return DefErrSetForC1(nilOK, f, subst, name, "_set");
 }
 
 int
@@ -519,35 +529,53 @@ char *name;
     return DefErrSet1(0,f,subst,name);
 }
 
+int
+#ifdef __USE_PROTOS
+DefErrSetWithSuffix(int nilOK, set *f, int subst, char *name, const char* suffix)
+#else
+DefErrSetWithSuffix(nilOK, f, subst, name, suffix )
+int nilOK;
+set *f;
+int subst;			/* should be substitute error classes? */
+char *name;
+char *suffix;
+#endif
+{
+	if ( GenCC ) return DefErrSetForCC1(nilOK, f, subst, name, suffix );
+	else return DefErrSetForC1(nilOK, f, subst, name, suffix);
+}
+
 /* Define a new error set.  WARNING...set-implementation dependent.
  */
 int
 #ifdef __USE_PROTOS
-DefErrSetForC1(int nilOK, set *f, int subst, char *name )
+DefErrSetForC1(int nilOK, set *f, int subst, char * name, const char * suffix)
 #else
-DefErrSetForC1(nilOK, f, subst, name )
+DefErrSetForC1(nilOK, f, subst, name, suffix)
 int nilOK;          /* MR13 */
 set *f;
 int subst;			/* should be substitute error classes? */
 char *name;
+const char *suffix;
 #endif
 {
 	unsigned *p, *endp;
 	int e=1;
 
-    if (!nilOK)	require(!set_nil(*f), "DefErrSet: nil set to dump?");
+    if (!nilOK)	require(!set_nil(*f), "DefErrSetForC1: nil set to dump?");
 
 	if ( subst ) SubstErrorClass(f);
 	p = f->setword;
 	endp = &(f->setword[f->n]);
 	esetnum++;
 	if ( name!=NULL )
-		fprintf(DefFile, "extern SetWordType %s_set[];\n", name);
+		fprintf(DefFile, "extern SetWordType %s%s[];\n", name, suffix);
 	else
 		fprintf(DefFile, "extern SetWordType zzerr%d[];\n", esetnum);
 	if ( name!=NULL ) {
-		fprintf(ErrFile, "SetWordType %s_set[%d] = {",
+		fprintf(ErrFile, "SetWordType %s%s[%d] = {",
 				name,
+                suffix,
 				NumWords(TokenNum-1)*sizeof(unsigned));
 	}
 	else {
@@ -583,27 +611,29 @@ int subst;			/* should be substitute error classes? */
 char *name;
 #endif
 {
-  return DefErrSetForC1(0,f,subst,name);
+  return DefErrSetForC1(0,f,subst,name, "_set");
 }
 
 /* Define a new error set.  WARNING...set-implementation dependent;
  * Only used when -CC on.
  */
+
 int
 #ifdef __USE_PROTOS
-DefErrSetForCC1(int nilOK, set *f, int subst, char *name )
+DefErrSetForCC1(int nilOK, set *f, int subst, char *name, const char *suffix )
 #else
-DefErrSetForCC1(nilOK, f, subst, name )
+DefErrSetForCC1(nilOK, f, subst, name, suffix )
 int nilOK;          /* MR13 */
 set *f;
 int subst;			/* should be substitute error classes? */
 char *name;
+const char *suffix;
 #endif
 {
 	unsigned *p, *endp;
 	int e=1;
 
-    if (!nilOK)	require(!set_nil(*f), "DefErrSet: nil set to dump?");
+    if (!nilOK)	require(!set_nil(*f), "DefErrSetForCC1: nil set to dump?");
 
 	if ( subst ) SubstErrorClass(f);
 	p = f->setword;
@@ -611,11 +641,12 @@ char *name;
 	esetnum++;
 
 	if ( name!=NULL ) {
-		fprintf(Parser_h, "\tstatic SetWordType %s_set[%d];\n", name,
+		fprintf(Parser_h, "\tstatic SetWordType %s%s[%d];\n", name, suffix,
 				NumWords(TokenNum-1)*sizeof(unsigned));
-		fprintf(Parser_c, "SetWordType %s::%s_set[%d] = {",
+		fprintf(Parser_c, "SetWordType %s::%s%s[%d] = {",
 				CurrentClassName,
 				name,
+				suffix,
 				NumWords(TokenNum-1)*sizeof(unsigned));
 	}
 	else {
@@ -654,7 +685,7 @@ int subst;			/* should be substitute error classes? */
 char *name;
 #endif
 {
-  return DefErrSetForCC1(0,f,subst,name);
+  return DefErrSetForCC1(0,f,subst,name, "_set");
 }
 
 void
@@ -666,6 +697,12 @@ GenParser_c_Hdr()
 {
 	int i,j;
     TermEntry   *te;
+    char * hasAkaName = NULL;									/* MR23 */
+
+	hasAkaName = (char *) malloc(TokenNum+1);					/* MR23 */
+	require(hasAkaName!=NULL, "Cannot alloc hasAkaName\n");		/* MR23 */
+	for (i = 0; i < TokenNum; i++) hasAkaName[i]='0';			/* MR23 */
+	hasAkaName[TokenNum] = 0;                                   /* MR23 */
 
 	fprintf(Parser_c, "/*\n");
 	fprintf(Parser_c, " * %s: P a r s e r  S u p p o r t\n", CurrentClassName);
@@ -674,7 +711,7 @@ GenParser_c_Hdr()
 	for (i=0; i<NumFiles; i++) fprintf(Parser_c, " %s", FileStr[i]);
 	fprintf(Parser_c, "\n");
 	fprintf(Parser_c, " *\n");
-	fprintf(Parser_c, " * Terence Parr, Russell Quong, Will Cohen, and Hank Dietz: 1989-1999\n");
+	fprintf(Parser_c, " * Terence Parr, Russell Quong, Will Cohen, and Hank Dietz: 1989-2001\n");
 	fprintf(Parser_c, " * Parr Research Corporation\n");
 	fprintf(Parser_c, " * with Purdue University Electrical Engineering\n");
 	fprintf(Parser_c, " * with AHPCRC, University of Minnesota\n");
@@ -718,6 +755,7 @@ GenParser_c_Hdr()
             if (te == NULL || te->akaString == NULL) {                          /* MR11 */
   	   	      fprintf(Parser_c, ",\n\t/* %02d */\t\"%s\"", i, TokenString(i));
             } else {
+			  hasAkaName[i] = '1';											    /* MR23 */
   	   	      fprintf(Parser_c, ",\n\t/* %02d */\t\"%s\"", i, te->akaString);   /* MR11 */
             }
         }
@@ -749,8 +787,9 @@ GenParser_c_Hdr()
 
 	/* Build constructors */
 	fprintf(Parser_c, "\n%s::", CurrentClassName);
-	fprintf(Parser_c,	"%s(ANTLRTokenBuffer *input) : ANTLRParser(input,%d,%d,%d,%d)\n",
+	fprintf(Parser_c,	"%s(ANTLRTokenBuffer *input) : %s(input,%d,%d,%d,%d)\n",
 						CurrentClassName,
+						(BaseClassName == NULL ? "ANTLRParser" : BaseClassName),
 						OutputLL_k,
 						FoundGuessBlk,
 						DemandLookahead,
@@ -763,6 +802,7 @@ GenParser_c_Hdr()
       fprintf(Parser_c, "\ttraceOptionValueDefault=0;\t\t// MR10 turn trace OFF\n");
     };
 	fprintf(Parser_c, "}\n\n");
+	free ( (void *) hasAkaName);
 }
 
 void
@@ -781,7 +821,7 @@ GenParser_h_Hdr()
 	for (i=0; i<NumFiles; i++) fprintf(Parser_h, " %s", FileStr[i]);
 	fprintf(Parser_h, "\n");
 	fprintf(Parser_h, " *\n");
-	fprintf(Parser_h, " * Terence Parr, Russell Quong, Will Cohen, and Hank Dietz: 1989-1999\n");
+	fprintf(Parser_h, " * Terence Parr, Russell Quong, Will Cohen, and Hank Dietz: 1989-2001\n");
 	fprintf(Parser_h, " * Parr Research Corporation\n");
 	fprintf(Parser_h, " * with Purdue University Electrical Engineering\n");
 	fprintf(Parser_h, " * with AHPCRC, University of Minnesota\n");
@@ -801,10 +841,7 @@ GenParser_h_Hdr()
     if (TraceGen) {
       fprintf(Parser_h,"#ifndef zzTRACE_RULES\n");  /* MR20 */
       fprintf(Parser_h,"#define zzTRACE_RULES\n");  /* MR20 */
-      // zzTRACE_RULES removed from end of #endif directory by TL,
-      // because GCC 3.0.2 generates a warning for this.
-      //fprintf(Parser_h,"#endif  zzTRACE_RULES\n");  /* MR20 */
-      fprintf(Parser_h,"#endif\n");  /* MR20 */
+      fprintf(Parser_h,"#endif\n");                 /* MR22 */
     };
 	fprintf(Parser_h, "#include \"%s\"\n\n", APARSER_H);
 
@@ -817,9 +854,10 @@ GenParser_h_Hdr()
 /* MR10 */    };
 
 	fprintf(Parser_h, "public:\n");					          /* MR1 */
-	fprintf(Parser_h, "\tstatic  const ANTLRChar *tokenName(int tk);\n"); /* MR1 */
+	fprintf(Parser_h, "\tstatic  const ANTLRChar *tokenName(int tk);\n");/* MR1 */
+    fprintf(Parser_h, "\tenum { SET_SIZE = %i };\n",TokenNum-1);         /* MR21 */
 	fprintf(Parser_h, "protected:\n");
-	fprintf(Parser_h, "\tstatic  const ANTLRChar *_token_tbl[];\n"); /* MR20 */
+	fprintf(Parser_h, "\tstatic const ANTLRChar *_token_tbl[];\n");     /* MR20 */
 	fprintf(Parser_h, "private:\n");
 }
 
@@ -841,7 +879,7 @@ GenErrHdr( )
 	for (i=0; i<NumFiles; i++) fprintf(ErrFile, " %s", FileStr[i]);
 	fprintf(ErrFile, "\n");
 	fprintf(ErrFile, " *\n");
-	fprintf(ErrFile, " * Terence Parr, Russell Quong, Will Cohen, and Hank Dietz: 1989-1999\n");
+	fprintf(ErrFile, " * Terence Parr, Russell Quong, Will Cohen, and Hank Dietz: 1989-2001\n");
 	fprintf(ErrFile, " * Parr Research Corporation\n");
 	fprintf(ErrFile, " * with Purdue University Electrical Engineering\n");
 	fprintf(ErrFile, " * With AHPCRC, University of Minnesota\n");
@@ -867,10 +905,7 @@ GenErrHdr( )
     if (TraceGen) {
       fprintf(ErrFile,"#ifndef zzTRACE_RULES\n");  /* MR20 */
       fprintf(ErrFile,"#define zzTRACE_RULES\n");  /* MR20 */
-      // zzTRACE_RULES removed from end of #endif directory by TL,
-      // because GCC 3.0.2 generates a warning for this.
-      //fprintf(Parser_h,"#endif  zzTRACE_RULES\n");  /* MR20 */
-      fprintf(Parser_h,"#endif\n");  /* MR20 */
+      fprintf(ErrFile,"#endif\n");                 /* MR22 */
     };
 
 	if ( OutputLL_k > 1 ) fprintf(ErrFile, "#define LL_K %d\n", OutputLL_k);
@@ -961,4 +996,30 @@ char *e;
 		else if ( *e=='\\' ) {putc('\\', f); putc('\\', f); e++;}
 		else {putc(*e, f); e++;}
 	}
+}
+
+int
+#ifdef __USE_PROTOS
+isTermEntryTokClass(TermEntry *te)
+#else
+isTermEntryTokClass(te)
+TermEntry *te;
+#endif
+{
+	ListNode *t;
+	TCnode *p;
+	TermEntry *q;
+	char *tokstr;
+
+	if (tclasses == NULL) return 0;
+
+	for (t = tclasses->next; t!=NULL; t=t->next)
+	{
+		p = (TCnode *) t->elem;
+		tokstr = TokenString(p->tok);
+		lexmode(p->lexclass);	/* switch to lexclass where tokclass is defined */
+        q = (TermEntry *) hash_get(Tname, tokstr);
+		if (q == te) return 1;
+	}
+	return 0;
 }

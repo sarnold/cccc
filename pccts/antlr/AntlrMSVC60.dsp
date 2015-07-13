@@ -23,8 +23,8 @@ CFG=ANTLR - Win32 Debug
 
 # Begin Project
 # PROP AllowPerConfigDependencies 0
-# PROP Scc_ProjName ""
-# PROP Scc_LocalPath ""
+# PROP Scc_ProjName "AntlrMSVC60"
+# PROP Scc_LocalPath ".."
 CPP=cl.exe
 RSC=rc.exe
 
@@ -109,8 +109,8 @@ InputPath=.\antlr.g
 InputName=antlr
 
 BuildCmds= \
-	../bin/antlr -gh $(InputName).g \
-	../bin/dlg -C2 parser.dlg scan.c \
+	..\bin\antlr -gh $(InputName).g \
+	..\bin\dlg -C2 parser.dlg scan.c \
 	
 
 "antlr.c" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -175,6 +175,10 @@ SOURCE=.\build.c
 # End Source File
 # Begin Source File
 
+SOURCE=.\dumpnode.c
+# End Source File
+# Begin Source File
+
 SOURCE=.\egman.c
 # End Source File
 # Begin Source File
@@ -208,11 +212,19 @@ SOURCE=.\gen.c
 # End Source File
 # Begin Source File
 
+SOURCE=.\generic.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\globals.c
 # End Source File
 # Begin Source File
 
 SOURCE=.\hash.c
+# End Source File
+# Begin Source File
+
+SOURCE=.\hash.h
 # End Source File
 # Begin Source File
 
@@ -236,11 +248,19 @@ SOURCE=.\pred.c
 # End Source File
 # Begin Source File
 
+SOURCE=.\proto.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\scan.c
 # End Source File
 # Begin Source File
 
 SOURCE=..\support\set\set.c
+# End Source File
+# Begin Source File
+
+SOURCE=.\syn.h
 # End Source File
 # End Target
 # End Project

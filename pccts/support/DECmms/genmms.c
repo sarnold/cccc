@@ -11,6 +11,7 @@
  */
 
 #include <stdio.h>
+#include <string.h>
 #include <ssdef.h>
 #include "pcctscfg.h" /* be sensitive to what ANTLR/DLG call the files */
 
@@ -66,8 +67,22 @@ typedef struct _Opt {
 
 #ifdef __STDC__
 static void ProcessArgs(int, char **, Opt *);
+void fatal(char*);
+void warn(char*);
+static void pClass(char*, char*);
+void pclasses(char**, int, char*);
+void help();
+void mk(char*, char**, int, int, char**);
+void pfiles(char**, int n, char*);
 #else
 static void ProcessArgs();
+void fatal();
+void warn();
+void pClass();
+void pclasses();
+void help();
+void mk();
+void pfiles();
 #endif
 
 static void
@@ -136,7 +151,7 @@ static void
 #ifdef __STDC__
 pClass( char *s, char *t )
 #else
-pClass( s, t )
+void pClass( s, t )
 char *s;
 char *t;
 #endif
@@ -244,7 +259,7 @@ char **argv;
 	DONE;
 }
 
-help()
+void help()
 {
 	Opt *p = options;
 	static char buf[1000+1];
@@ -260,7 +275,7 @@ help()
 	}
 }
 
-mk(project, files, n, argc, argv)
+void mk(project, files, n, argc, argv)
 char *project;
 char **files;
 int n;
@@ -621,7 +636,7 @@ char **argv;
     printf("\n");
 }
 
-pfiles(files, n, suffix)
+void pfiles(files, n, suffix)
 char **files;
 int n;
 char *suffix;
@@ -655,7 +670,7 @@ char *suffix;
     }
 }
 
-pclasses(classes, n, suffix)
+void pclasses(classes, n, suffix)
 char **classes;
 int n;
 char *suffix;
@@ -714,15 +729,13 @@ Opt *options;
 	}
 }
 
-fatal( err_)
-char *err_;
+void fatal(char *err_)
 {
     fprintf(stderr, "genmk: %s\n", err_);
     exit(1);
 }
 
-warn( err_)
-char *err_;
+void warn(char *err_)
 {
     fprintf(stderr, "genmk: %s\n", err_);
 }

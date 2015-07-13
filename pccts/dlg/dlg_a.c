@@ -3,13 +3,13 @@
  *
  * Generated from: dlg_p.g
  *
- * Terence Parr, Will Cohen, and Hank Dietz: 1989-1999
+ * Terence Parr, Will Cohen, and Hank Dietz: 1989-2001
  * Purdue University Electrical Engineering
  * With AHPCRC, University of Minnesota
- * ANTLR Version 1.33MR20
+ * ANTLR Version 1.33MR33
  */
 
-#define ANTLR_VERSION	13320
+#define ANTLR_VERSION	13333
 #include "pcctscfg.h"
 #include "pccts_stdio.h"
 
@@ -36,9 +36,9 @@ zzerraction()
  *
  * Generated from: parser.dlg
  *
- * 1989-1998 by  Will Cohen, Terence Parr, and Hank Dietz
+ * 1989-2001 by  Will Cohen, Terence Parr, and Hank Dietz
  * Purdue University Electrical Engineering
- * DLG Version 1.33MR20
+ * DLG Version 1.33MR33
  */
 
 #include "mode.h"
@@ -63,35 +63,35 @@ int	firstLexMember=1;					             /* MR1 */
 #ifdef __USE_PROTOS
 void  xxputc(int c) {						/* MR1 */
 #else
-	void xxputc(c)							/* MR1 */
-	int	c;							/* MR1 */
-	{								/* MR1 */
+  void xxputc(c)							/* MR1 */
+  int	c;							/* MR1 */
+  {								/* MR1 */
 #endif
-		if (parserClass) {						/* MR1 */
-			*pClassName++=c;						/* MR1 */
-			*pClassName=0;						/* MR1 */
-		} else if (lexMember || lexPrefix) {				/* MR1 */
-			if (class_stream != NULL) fputc(c,class_stream);		/* MR1 */
-		} else {							/* MR1 */
-			fputc(c,OUT);						/* MR1 */
-		};								/* MR1 */
-	}  								/* MR1 */
-	
+    if (parserClass) {						/* MR1 */
+      *pClassName++=c;						/* MR1 */
+      *pClassName=0;						/* MR1 */
+    } else if (lexMember || lexPrefix) {				/* MR1 */
+      if (class_stream != NULL) fputc(c,class_stream);		/* MR1 */
+    } else {							/* MR1 */
+      fputc(c,OUT);						/* MR1 */
+    };								/* MR1 */
+  }  								/* MR1 */
+  
 #ifdef __USE_PROTOS
-	void xxprintf(char *format,char *string) {			/* MR1 */
+  void xxprintf(char *format,char *string) {			/* MR1 */
 #else
-		void xxprintf(format,string) 					/* MR1 */
-		char *format;							/* MR1 */
-		char *string;							/* MR1 */
-		{								/* MR1 */
+    void xxprintf(format,string) 					/* MR1 */
+    char *format;							/* MR1 */
+    char *string;							/* MR1 */
+    {								/* MR1 */
 #endif
-			if (lexMember || lexPrefix || parserClass) {			/* MR1 */
-				if (class_stream != NULL)					/* MR1 */
-				fprintf(class_stream,format,string);			/* MR1 */
-			} else {							/* MR1 */
-				fprintf(OUT,format,string);					/* MR1 */
-			};								/* MR1 */
-		}  								/* MR1 */
+      if (lexMember || lexPrefix || parserClass) {			/* MR1 */
+        if (class_stream != NULL)					/* MR1 */
+        fprintf(class_stream,format,string);			/* MR1 */
+      } else {							/* MR1 */
+        fprintf(OUT,format,string);					/* MR1 */
+      };								/* MR1 */
+    }  								/* MR1 */
 
 static void act1()
 { 
@@ -102,14 +102,14 @@ static void act1()
 static void act2()
 { 
 		NLA = 2;
-		zzskip();   
+    zzskip();   
 	}
 
 
 static void act3()
 { 
 		NLA = 3;
-		zzline++; zzskip(); DAWDLE;   
+    zzline++; zzskip(); DAWDLE;   
 	}
 
 
@@ -128,52 +128,52 @@ static void act5()
 static void act6()
 { 
 		NLA = NAME_PER_PER;
-		p_mode_def(&zzlextext[2],lex_mode_counter++);   
+    p_mode_def(&zzlextext[2],lex_mode_counter++);   
 	}
 
 
 static void act7()
 { 
 		NLA = LEXMEMBER;
-		lexMember=1;					/* MR1 */
-		if (firstLexMember != 0) {			/* MR1 */
-			firstLexMember=0;				/* MR1 */
-			p_class_def1();				/* MR1 */
-		};						/* MR1 */
-		zzmode(ACT);					/* MR1 */
+    lexMember=1;					/* MR1 */
+    if (firstLexMember != 0) {			/* MR1 */
+      firstLexMember=0;				/* MR1 */
+      p_class_def1();				/* MR1 */
+    };						/* MR1 */
+    zzmode(ACT);					/* MR1 */
 	}
 
 
 static void act8()
 { 
 		NLA = LEXACTION;
-		lexAction=1;zzmode(ACT);  
+    lexAction=1;zzmode(ACT);  
 	}
 
 
 static void act9()
 { 
 		NLA = PARSERCLASS;
-		parserClass=1;				/* MR1 */
-		zzmode(ACT);					/* MR1 */
+    parserClass=1;				/* MR1 */
+    zzmode(ACT);					/* MR1 */
 	}
 
 
 static void act10()
 { 
 		NLA = LEXPREFIX;
-		lexPrefix=1;zzmode(ACT);  
+    lexPrefix=1;zzmode(ACT);  
 	}
 
 
 static void act11()
 { 
 		NLA = ACTION;
-		if (func_action)
-		fprintf(OUT,"\n%s %sact%d()\n{ ",
-		gen_cpp?"ANTLRTokenType":"static void",
-		gen_cpp?ClassName("::"):"", ++action_no);
-		zzmode(ACT); zzskip();
+    if (func_action)
+    fprintf(OUT,"\n%s %sact%d()\n{ ",
+    gen_cpp?"ANTLRTokenType":"static void",
+    gen_cpp?ClassName("::"):"", ++action_no);
+    zzmode(ACT); zzskip();
 	}
 
 
@@ -252,63 +252,63 @@ static void act23()
 static void act24()
 { 
 		NLA = OCTAL_VALUE;
-		{int t; sscanf(&zzlextext[1],"%o",&t); zzlextext[0] = t;}  
+    {int t; sscanf(&zzlextext[1],"%o",&t); zzlextext[0] = t;}  
 	}
 
 
 static void act25()
 { 
 		NLA = HEX_VALUE;
-		{int t; sscanf(&zzlextext[3],"%x",&t); zzlextext[0] = t;}  
+    {int t; sscanf(&zzlextext[3],"%x",&t); zzlextext[0] = t;}  
 	}
 
 
 static void act26()
 { 
 		NLA = DEC_VALUE;
-		{int t; sscanf(&zzlextext[1],"%d",&t); zzlextext[0] = t;}  
+    {int t; sscanf(&zzlextext[1],"%d",&t); zzlextext[0] = t;}  
 	}
 
 
 static void act27()
 { 
 		NLA = TAB;
-		zzlextext[0] = '\t';  
+    zzlextext[0] = '\t';  
 	}
 
 
 static void act28()
 { 
 		NLA = NL;
-		zzlextext[0] = '\n';  
+    zzlextext[0] = '\n';  
 	}
 
 
 static void act29()
 { 
 		NLA = CR;
-		zzlextext[0] = '\r';  
+    zzlextext[0] = '\r';  
 	}
 
 
 static void act30()
 { 
 		NLA = BS;
-		zzlextext[0] = '\b';  
+    zzlextext[0] = '\b';  
 	}
 
 
 static void act31()
 { 
 		NLA = CONTINUATION;
-		zzline++; zzskip();  
+    zzline++; zzskip();  
 	}
 
 
 static void act32()
 { 
 		NLA = LIT;
-		zzlextext[0] = zzlextext[1];  
+    zzlextext[0] = zzlextext[1];  
 	}
 
 
@@ -350,75 +350,75 @@ static unsigned char shift0[257] = {
 static void act34()
 { 
 		NLA = 1;
-		error("unterminated action", zzline); zzmode(START);   
+    error("unterminated action", zzline); zzmode(START);   
 	}
 
 
 static void act35()
 { 
 		NLA = ACTION;
-		if (func_action) fprintf(OUT,"}\n\n");
-		zzmode(START);
-		/* MR1									    */
-		/* MR1  11-Apr-97	Provide mechanism for inserting code into DLG class */
-		/* MR1				via <<%%lexmember ...>>			    */
-		/* MR1			This is a consequence of not saving actions         */
-		/* MR1									    */
-		/* MR1 */	   parserClass=0;		
-		/* MR1 */	   lexPrefix=0;
-		/* MR1 */	   lexAction=0;
-		/* MR1 */	   lexMember=0;
+    if (func_action) fprintf(OUT,"}\n\n");
+    zzmode(START);
+    /* MR1									    */
+    /* MR1  11-Apr-97	Provide mechanism for inserting code into DLG class */
+    /* MR1				via <<%%lexmember ...>>			    */
+    /* MR1			This is a consequence of not saving actions         */
+    /* MR1									    */
+    /* MR1 */	   parserClass=0;		
+    /* MR1 */	   lexPrefix=0;
+    /* MR1 */	   lexAction=0;
+    /* MR1 */	   lexMember=0;
 	}
 
 
 static void act36()
 { 
 		NLA = 34;
-		xxputc(zzlextext[0]); zzskip();   
+    xxputc(zzlextext[0]); zzskip();   
 	}
 
 
 static void act37()
 { 
 		NLA = 35;
-		xxputc('>'); zzskip();   
+    xxputc('>'); zzskip();   
 	}
 
 
 static void act38()
 { 
 		NLA = 36;
-		xxputc('\\'); zzskip();   
+    xxputc('\\'); zzskip();   
 	}
 
 
 static void act39()
 { 
 		NLA = 37;
-		xxputc(zzlextext[0]); ++zzline; zzskip();   
+    xxputc(zzlextext[0]); ++zzline; zzskip();   
 	}
 
 
 static void act40()
 { 
 		NLA = 38;
-		zzmode(ACTION_COMMENTS);			/* MR1 */
-		xxprintf("%s", &(zzlextext[0])); zzskip();	/* MR1 */
+    zzmode(ACTION_COMMENTS);			/* MR1 */
+    xxprintf("%s", &(zzlextext[0])); zzskip();	/* MR1 */
 	}
 
 
 static void act41()
 { 
 		NLA = 39;
-		zzmode(ACTION_CPP_COMMENTS);			/* MR1 */
-		xxprintf("%s", &(zzlextext[0])); zzskip();	/* MR1 */
+    zzmode(ACTION_CPP_COMMENTS);			/* MR1 */
+    xxprintf("%s", &(zzlextext[0])); zzskip();	/* MR1 */
 	}
 
 
 static void act42()
 { 
 		NLA = 40;
-		xxputc(zzlextext[0]); zzskip();   
+    xxputc(zzlextext[0]); zzskip();   
 	}
 
 static unsigned char shift1[257] = {
@@ -460,22 +460,22 @@ static void act43()
 static void act44()
 { 
 		NLA = 41;
-		zzmode(ACT);					/* MR1 */
-		xxprintf("%s", &(zzlextext[0])); zzskip();	/* MR1 */
+    zzmode(ACT);					/* MR1 */
+    xxprintf("%s", &(zzlextext[0])); zzskip();	/* MR1 */
 	}
 
 
 static void act45()
 { 
 		NLA = 42;
-		zzline++; xxputc(zzlextext[0]); zzskip();  
+    zzline++; xxputc(zzlextext[0]); zzskip();  
 	}
 
 
 static void act46()
 { 
 		NLA = 43;
-		xxputc(zzlextext[0]); zzskip();  
+    xxputc(zzlextext[0]); zzskip();  
 	}
 
 static unsigned char shift2[257] = {
@@ -517,15 +517,15 @@ static void act47()
 static void act48()
 { 
 		NLA = 44;
-		zzmode(ACT); zzline++;			/* MR1 */
-		xxprintf("%s", &(zzlextext[0])); zzskip();	/* MR1 */
+    zzmode(ACT); zzline++;			/* MR1 */
+    xxprintf("%s", &(zzlextext[0])); zzskip();	/* MR1 */
 	}
 
 
 static void act49()
 { 
 		NLA = 45;
-		xxputc(zzlextext[0]); zzskip();  
+    xxputc(zzlextext[0]); zzskip();  
 	}
 
 static unsigned char shift3[257] = {

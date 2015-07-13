@@ -25,8 +25,11 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2001
  */
+
+/* To set a breakpoint just before exit look for "cleanUp".    */
+/* To set a breakpoint for fatal error look for "fatal_intern" */
 
 #include <stdio.h>
 
@@ -292,6 +295,7 @@ static void pPrtA(void)	{ PrintOut = TRUE; PrintAnnotate = TRUE; pCGen(); pLGen(
 static void pAst(void)	{ GenAST = TRUE; }
 static void pANSI(void)	{ GenANSI = TRUE; }
 static void pCr(void)	{ GenCR = TRUE; }
+static void pNOPURIFY(void)	{ PURIFY = FALSE; }
 /*static void pCt(void)	{ warnNoFL("-ct option is now the default"); }*/
 static void pLI(void)	{ GenLineInfo = TRUE; GenLineInfoMS = FALSE; } /* MR14 */
 static void pLIms(void)	{ GenLineInfo = TRUE; GenLineInfoMS = TRUE; }  /* MR14 */
@@ -320,7 +324,9 @@ static void pGHdr(void)	{ GenStdPccts = 1; }
 static void pFHdr(char *s, char *t) { stdpccts = t; pGHdr(); }
 static void pW1(void) { WarningLevel = 1; }
 static void pNewAST(void) { NewAST = 1; }                           /* MR13 */
+static void ptmakeInParser(void) { tmakeInParser = 1; }             /* MR23 */
 static void pAlpha(void) { AlphaBetaTrace = 1; }                    /* MR14 */
+static void pMR_BlkErr(void) { MR_BlkErr = 1; }                     /* MR21 */
 static void pStdout(void) {UseStdout = 1; }		                    /* MR6 */
 static void pW2(void) { WarningLevel = 2; }
 static void pCC(void) { GenCC = TRUE; }
@@ -335,6 +341,8 @@ static void pPrtA()	{ PrintOut = TRUE; PrintAnnotate = TRUE; pCGen(); pLGen(); }
 static void pAst()		{ GenAST = TRUE; }
 static void pANSI()	{ GenANSI = TRUE; }
 static void pCr()		{ GenCR = TRUE; }
+static void pNOPURIFY()	{ PURIFY = FALSE; }
+
 /*static void pCt()		{ warnNoFL("-ct option is now the default"); }*/
 static void pLI()	    { GenLineInfo = TRUE; GenLineInfoMS = FALSE; }  /* MR14 */
 static void pLIms()	    { GenLineInfo = TRUE; GenLineInfoMS = TRUE; }   /* MR14 */
@@ -363,7 +371,9 @@ static void pGHdr()	{ GenStdPccts = 1; }
 static void pFHdr(s,t) char *s, *t; { stdpccts = t; pGHdr(); }
 static void pW1() { WarningLevel = 1; }
 static void pNewAST() { NewAST = 1; }                                /* MR13 */
+static void ptmakeInParser() { tmakeInParser = 1; }                  /* MR23 */
 static void pAlpha() { AlphaBetaTrace = 1; }                         /* MR14 */
+static void pMR_BlkErr() { MR_BlkErr = 1; }                          /* MR21 */
 static void pStdout() {UseStdout = 1; }	                             /* MR6 */
 static void pW2() { WarningLevel = 2; }
 static void pCC() { GenCC = TRUE; }
@@ -443,6 +453,7 @@ char *t;
         fprintf(stderr,"  No longer considered experimental\n");
         fprintf(stderr,"  Can't consider suppression for predicates with lookahead depth > 1\n");
         fprintf(stderr,"  Implies -prc on but does *not* imply -mrhoistk for k>1 predicates\n");
+        fprintf(stderr,"  This is a reminder, not a warning or error.\n");
     };
 }
 
@@ -537,9 +548,15 @@ Opt options[] = {
                         "Report when tnode usage exceeds value during ambiguity resolution"},            /* MR11 */
 	{ "-newAST", 0, (void (*)(...)) pNewAST,
                  "In C++ mode use \"newAST(...)\" rather than \"new AST(...)\""},                        /* MR13 */
+	{ "-tmake", 0, (void (*)(...)) ptmakeInParser,
+                 "In C++ mode use parser's tmake method rather than \"ASTBase::tmake(...)\""},			 /* MR23 */
     { "-alpha",0,(void (*)(...)) pAlpha,
                  "Provide additional information for \"(alpha)? beta\" error messages"},                 /* MR14 */
-	{ "*",   0, (void (*)(...)) pFile, 	"" },	/* anything else is a file */
+    { "-mrblkerr",0,(void (*)(...)) pMR_BlkErr,                                        /* MR21 */
+                 "EXPERIMENTAL change to (...)* and (...)+ syntax error sets"},        /* MR21 */
+	{ "-nopurify",0,(void (*)(...)) pNOPURIFY,
+		"Don't use the notorious PURIFY macro (replaced by MR23 initial value syntax) to zero return arguments of rules"},   /* MR23 */
+    { "*",   0, (void (*)(...)) pFile, 	"" },	/* anything else is a file */
 #else
     { "-CC", 0, pCC,	"Generate C++ output (default=FALSE)"},
     { "-cr", 0, pCr,	"Generate cross reference (default=FALSE)"},
@@ -593,8 +610,14 @@ Opt options[] = {
                         "Report when tnode usage exceeds value during ambiguity resolution"},   /* MR11 */
 	{ "-newAST", 0, pNewAST,
                  "In C++ mode use \"newAST(...)\" rather than \"new AST(...)\""},         /* MR13 */
+	{ "-tmake", 0, ptmakeInParser,
+                 "In C++ mode use parser's tmake method rather than \"ASTBase::tmake(...)\""},   /* MR23 */
     { "-alpha",0, pAlpha,
                  "Provide additional information for \"(alpha)? beta\" error messages"},  /* MR14 */
+    { "-mrblkerr",0,pMR_BlkErr,                                                           /* MR21 */
+                 "EXPERIMENTAL change to (...)* and (...)+ syntax error sets"},           /* MR21 */
+	{ "-nopurify",0,pNOPURIFY,
+		"Don't use the notorious PURIFY macro (replaced by MR23 initial value syntax) to zero return arguments of rules"},   /* MR23 */
 	{ "-",   0, pStdin,	"Read grammar from stdin" },
 	{ "*",   0, pFile, 	"" },	/* anything else is a file */
 #endif
@@ -654,7 +677,7 @@ char *argv[];
 #ifdef SPECIAL_INITS
     special_inits();                                                 /* MR1 */
 #endif
-	fprintf(stderr, "Antlr parser generator   Version %s   1989-1999\n", Version);
+	fprintf(stderr, "Antlr parser generator   Version %s   1989-2001\n", Version);
 	if ( argc == 1 ) { help(); zzDIE; }
 	ProcessArgs(argc-1, &(argv[1]), options);
 
@@ -686,6 +709,13 @@ char *argv[];
 		int n;
 		for(n=1; n<CLL_k; n<<=1) {;}
 		OutputLL_k = n;
+	};
+
+	if (MR_BlkErr) {
+		warnNoFL("The -mrblkerr option is EXPERIMENTAL");
+        if (LL_k > 1) {
+    		warnNoFL("The -mrblkerr option is designed only for k=1 ck=1 grammars");
+        }
 	};
 
     if ( ! ambAidDepthSpecified) {
@@ -760,7 +790,7 @@ char *argv[];
             if (strcmp(stdpccts,"stdpccts.h") == 0) {                /* MR10 */
  	  	      genStdPCCTSIncludeFile(f,NULL);                        /* MR10 */
             } else {                                                 /* MR10 */
- 	  	      genStdPCCTSIncludeFile(f,baseName(stdpccts));          /* MR10 */
+ 	  	      genStdPCCTSIncludeFile(f,pcctsBaseName(stdpccts));     /* MR32 */
             };
 			fclose(f);
 		}
@@ -836,9 +866,6 @@ char *argv[];
 			}
 			DumpRemainingTokSets();
 			fprintf(Parser_h, "};\n");
-			// The next line modified by TL, because GCC 3.0.2 reports
-			// a warning if a comment appears after #endif
-			// fprintf(Parser_h, "\n#endif /* %s_h */\n", CurrentClassName);
 			fprintf(Parser_h, "\n#endif /* %s_h */\n", CurrentClassName);
 			fclose( Parser_h );
 			fclose( Parser_c );
@@ -846,6 +873,12 @@ char *argv[];
 	}
 
     MR_orphanRules(stderr);
+    if (LTinTokenAction && WarningLevel >= 2) {
+		if (GenCC) {
+			warnNoFL("At least one <<action>> following a token match contains a reference to LT(...)\n      this will reference the immediately preceding token,\n      not the one which follows as is the case with semantic predicates.");
+		}
+			warnNoFL("At least one <<action>> following a token match contains a reference to LA(...) or LATEXT(...)\n      this will reference the immediately preceding token,\n      not the one which follows as is the case with semantic predicates.");
+	}
 
 	if ( PrintOut )
 	{
@@ -922,11 +955,11 @@ char *argv[];
     }
 	cleanUp();
 	exit(PCCTS_EXIT_SUCCESS);
-    return 0;           /* MR11 make compilers happy */
+    return 0;           /* MR11 make compilers happy */ 
 }
 
-static void
-#ifdef __USE_PROTOS
+static void 
+#ifdef __USE_PROTOS 
 init( void )
 #else
 init( )
@@ -1480,11 +1513,11 @@ char *n;
     char *p;
 
 	/* If OutputDirectory is same as TopDirectory (platform default) then leave n alone. */
-    if (strcmp(OutputDirectory, TopDirectory) == 0)
+    if (strcmp(OutputDirectory, TopDirectory) == 0)		/* TopDirectory is "." on Unix. */
 		return n;
 
 	/* p will point to filename without path information */
-	if ((p = strrchr(n, *dir_sym)) != NULL)
+	if ((p = strrchr(n, *dir_sym)) != NULL)				/* Directory symbol is "/" on Unix. */
 		p++;
 	else
 		p = n;
@@ -1493,20 +1526,18 @@ char *n;
 	strcpy(newname, OutputDirectory);
 
 	/* if new output directory does not have trailing dir_sym, add it! */
-	if (newname[strlen(newname)-1] != *dir_sym)
+	if (newname[strlen(newname)-1] != *dir_sym) {
 		strcat(newname, dir_sym);
-
-	/* contatenate FILE NAME ONLY to new output directory */
+	}
 	strcat(newname, p);
-
 	return newname;
 }
 
 char *
 #ifdef __USE_PROTOS
-baseName(char *n)
+pcctsBaseName(char *n) /* MR32 */
 #else
-baseName(n)
+pcctsBaseName(n)
 char *n;
 #endif
 {
@@ -1544,7 +1575,7 @@ char *class_c_file;
 
 #ifdef PCCTS_CASE_INSENSITIVE_FILE_NAME
 		/* assume that file names are case insensitive */
-		if ( stricmp(outname(FileStr[i]), class_c_file)==0 )
+		if ( STRICMP(outname(FileStr[i]), class_c_file)==0 )
 #else
 		if ( strcmp(outname(FileStr[i]), class_c_file)==0 )
 #endif

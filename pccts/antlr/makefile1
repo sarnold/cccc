@@ -46,11 +46,12 @@ OBJ_EXT=o
 OUT_OBJ = -o
 ANSI=-ansi
 AOTHER=
-CFLAGS= -O0 -g -I. -I$(SET) -I$(PCCTS_H) -DUSER_ZZSYN $(COTHER) $(ANSI)
+CFLAGS= -O0 -g -I. -I$(SET) -I$(PCCTS_H) -DUSER_ZZSYN $(COTHER) $(ANSI) -DZZLEXBUFSIZE=32000
 #
 # SGI Users, use this CFLAGS
 #
 #CFLAGS= -O -I. -I$(SET) -I$(PCCTS_H) -DUSER_ZZSYN -woff 3262
+
 OBJ=antlr.o scan.o err.o bits.o build.o fset2.o fset.o gen.o \
         globals.o hash.o lex.o main.o misc.o set.o pred.o egman.o mrhoist.o fcache.o $(OBJOTHER)
 

@@ -27,7 +27,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2001
  */
 
 #include <stdio.h>
@@ -1063,7 +1063,7 @@ int jtype;
          * LL(1)/syn/sem predicates. (10/24/93)
          */
 
-		if ( first_item_is_guess_block((Junction *)alt1->p1)!=NULL )
+		if ( first_item_is_guess_block_extra((Junction *)alt1->p1)!=NULL )
 		{
 			if ( WarningLevel==1 )
 			{
@@ -1189,7 +1189,14 @@ int jtype;
 	   because the 'ensure...()' func references it. TJP Nov 1993.
 	   */
 
-	if ( first_item_is_guess_block((Junction *)alt1->p1)!=NULL )
+	/* THM MR30:  Instead of using first_item_is_guss_block we use
+	   first_item_is_guess_block_extra which will look inside a
+	   loop block for a guess block.  In other words ( (...)? )*.
+	   It there is an ambiguity in this circumstance then we suppress
+	   the normal methods of resolving ambiguities.
+	*/
+
+	if ( first_item_is_guess_block_extra((Junction *)alt1->p1)!=NULL )
 	{
 		if ( ParseWithPredicates )
 		{
@@ -1479,7 +1486,15 @@ int *max_k;
 	fCurBlk = rk = empty;
 	for (alt1=j; alt1!=NULL; alt1 = (Junction *)alt1->p2 )
 	{
-		Junction *p = analysis_point((Junction *)alt1->p1);
+		Junction * p = NULL;
+		Junction * p1junction = NULL;
+		p = analysis_point((Junction *)alt1->p1);
+		p1junction = (Junction *) (alt1->p1);
+#if 0
+		if (p != p1junction) {
+			fprintf(stdout,"Analysis point for #%d is #%d", p1junction->seq, p->seq); /* debug */
+		}
+#endif
 		REACH(p, k, &rk, alt1->fset[k]);
 		require(set_nil(rk), "rk != nil");
 		set_free(rk);

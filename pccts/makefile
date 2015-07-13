@@ -1,5 +1,5 @@
 #
-# Main makefile for PCCTS 1.33MR20	/* MRXXX */
+# Main makefile for PCCTS 1.33MR33	/* MRXXX */
 #
 # Terence Parr
 # Parr Research Corporation
@@ -13,46 +13,61 @@ BINDIR=bin
 # target.
 MANDIR=$(HOME)/man
 MANEXT=1
-MANFILES=pccts.1 dlg/dlg.1 antlr/antlr.1
+MANFILES=dlg/dlg.1 antlr/antlr.1
 
 #CC=cc
-
-.SILENT:
+#CC=gcc
+#COPT=-O2
 
 pccts:
-	echo " "
-	echo "             Welcome to PCCTS 1.33MR20a installation"
-	echo " "
-	echo "             (Version 1.33 Maintenance Release #20a)"
-	echo " "
-	echo "                  Released 10 August 1999"
-	echo " "
-	echo "                        Featuring"
-	echo "         ANTLR     -- ANother Tool for Language Recognition"
-	echo "         DLG       -- DFA-based Lexical Analyzer Generator"
-	echo "         SORCERER  -- Source-to-source translator (tree walker)" 
-	echo " "
-	echo "                  http://www.antlr.org"	
-	echo " "
-	echo "             Trouble reports to tmoog@polhode.com"
-	echo "             Additional PCCTS 1.33 information at"
-	echo "                  http://www.polhode.com"
-	echo
+	@echo " "
+	@echo "             Welcome to PCCTS 1.33MR33 installation"
+	@echo " "
+	@echo "             (Version 1.33 Maintenance Release #33)" # mrxxx
+	@echo " "
+	@echo "                  Released 19 April 2002"
+	@echo " "
+	@echo "                        Featuring"
+	@echo "         ANTLR     -- ANother Tool for Language Recognition"
+	@echo "         DLG       -- DFA-based Lexical Analyzer Generator"
+	@echo "         SORCERER  -- Source-to-source translator (tree walker)" 
+	@echo " "
+	@echo "                  http://www.antlr.org"	
+	@echo " "
+	@echo "             Trouble reports to tmoog@polhode.com"
+	@echo "             Additional PCCTS 1.33 information at"
+	@echo "                  http://www.polhode.com"
+	@echo
+	@echo
+	@echo "To substitute gcc for CC to invoke compiler: make CC=gcc"
+	@echo "If there are problems with cr and lf try: unzip -a ..."
+	@echo
 #
-	if [ ! -d $(BINDIR) ] ; then mkdir $(BINDIR) ; fi
-	echo Making executables...
-	(cd antlr; make -s)
-	echo antlr executable now in $(BINDIR)
-	(cd dlg; make -s)
-	echo dlg executable now in $(BINDIR)
-	echo
-	echo "       PCCTS 1.33MR20 installation complete"
+	@if [ ! -d $(BINDIR) ] ; then mkdir $(BINDIR) ; fi
+	@echo Making executables...
+	(cd ./antlr; $(MAKE) CC="$(CC)" COPT="$(COPT)")
+	@echo antlr executable now in $(BINDIR)
+	(cd ./dlg; $(MAKE) CC="$(CC)" COPT="$(COPT)")
+	@echo dlg executable now in $(BINDIR)
+	(cd ./sorcerer; $(MAKE) CC="$(CC)" COPT="$(COPT)")
+	@echo sorcerer executable now in $(BINDIR)
+	(cd ./support/genmk; $(MAKE) CC="$(CC)" COPT="$(COPT)"; mv genmk ../../$(BINDIR))
+	@echo genmk executable now in $(BINDIR)
+	@echo
+	@echo "       PCCTS 1.33MR33 installation complete"  # MRXXX
 
 clean:
-	(cd antlr; make -s clean)
-	(cd dlg; make -s clean)
+	(cd ./antlr; $(MAKE) -s clean)
+	(cd ./dlg; $(MAKE) -s clean)
+	(cd ./sorcerer; $(MAKE) -s clean)
+	(cd ./sorcerer/lib; $(MAKE) -s clean)
+	(cd ./support/genmk; $(MAKE) -s clean)
 
 
 manpages:
-	if [ ! -d $(MANDIR) ] ; then mkdir $(MANDIR) ; fi
+	# mkdir -p $(MANDIR)/man$(MANEXT)
+	if [ ! -d $(MANDIR) ] ; then \
+	  mkdir $(MANDIR) ; fi
+	if [ ! -d $(MANDIR)/man$(MANEXT) ] ; then \
+	  mkdir $(MANDIR)/man$(MANEXT); fi
 	cp -p $(MANFILES) $(MANDIR)/man$(MANEXT)

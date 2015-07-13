@@ -25,7 +25,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2001
  */
 
 #include <stdio.h>
@@ -37,8 +37,8 @@
 #include "hash.h"
 #include "generic.h"
 
-char Version[] = "1.33MR20" ;	/* PCCTS version number */	                   /* MRXXX */
-char VersionDef[] = "13320";  /* same (except int equiv for preproc symbol) */ /* MRXXX */
+char Version[] = "1.33MR33" ;	/* PCCTS version number */	                   /* MRXXX */
+char VersionDef[] = "13333";    /* same (except int equiv for preproc symbol) */ /* MRXXX */
 
 char LexStartSymbol[] = "START";/* Name of starting lexical class/automaton */
 char *RemapFileName = "remap.h";
@@ -292,6 +292,7 @@ char	*CurParmDef=NULL;	/* Pointer to current parameter definition */
 Junction *CurRuleBlk=NULL;	/* Pointer to current block node for enclosing block */
 ListNode *CurExGroups=NULL;	/* Current list of exception groups for rule/alts */
 ListNode *CurElementLabels=NULL;
+ListNode *CurAstLabelsInActions=NULL; /* MR27 */
 
 /* MR10  used by <<>>? to set "label_used_in_semantic_pred"  */
 /* MR10  this will force LT(i) assignment even in guess mode */
@@ -395,6 +396,7 @@ char	Parser_h_Name[MaxFileName+1] = "";
 char	Parser_c_Name[MaxFileName+1] = "";
 char    MRinfoFile_Name[MaxFileName+1] = "";                /* MR10 */
 char    *ClassDeclStuff=NULL;                               /* MR10 */
+char    *BaseClassName=NULL;                                /* MR22 */
 /* list of actions inside the #class {...} defs */
 ListNode *class_before_actions=NULL;
 ListNode *class_after_actions=NULL;
@@ -417,7 +419,9 @@ int     MR_usingPredNames=0;        /* MR11 */
 int     MR_BadExprSets=0;           /* MR13 */
 int     MR_Inhibit_Tokens_h_Gen=0;  /* MR13 */
 int     NewAST=0;                   /* MR13 */
+int		tmakeInParser=0;            /* MR23 */
 int     AlphaBetaTrace=0;           /* MR14 */
+int		MR_BlkErr=0;				/* MR21 */
 int     MR_AlphaBetaMessageCount=0; /* MR14 */
 int     MR_AlphaBetaWarning=0;      /* MR14 */
 int     MR_ErrorSetComputationActive=0;     /* MR14 */
@@ -451,7 +455,7 @@ int		GenStdPccts = 0;	/* don't gen stdpccts.h? */
 int		ParseWithPredicates = 1;
 int		WarningLevel = 1;
 int		UseStdout = 0;					/* MR6 */
-int		TabWidth = 0;					/* MR6 */
+int		TabWidth = 2;					/* MR6 */ /* MR27 */
 int		HoistPredicateContext = 0;
 int     MRhoisting = 0;                 /* MR9 */
 int     MRhoistingk = 0;                /* MR13 */
@@ -468,3 +472,13 @@ PointerStack MR_RuleBlkWithHaltStack={0,0,NULL};      /* MR10 */
    may need them in the future.
  */
 int		DontCopyTokens = 1;	/* in C++, don't copy ANTLRToken passed to ANTLR */
+
+/* Remember if LT(i), LA(i), or LATEXT(i) used in an action which is not
+   a predicate.  If so, give a warning for novice users.
+*/
+
+int     LTinTokenAction = 0; /* MR23 */
+int     PURIFY = 1;          /* MR23 */
+
+int     CurBlockID_array[MAX_BLK_LEVEL]; /* MR23 */
+int     CurAltNum_array[MAX_BLK_LEVEL]; /* MR23 */

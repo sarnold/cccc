@@ -25,7 +25,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2001
  */
 
 #include <stdio.h>
@@ -62,7 +62,7 @@ genLexDescr( )
 	{int i; for (i=0; i<NumFiles; i++) fprintf(dlgFile, " %s", FileStr[i]);}
 	fprintf(dlgFile, "\n");
 	fprintf(dlgFile, " *\n");
-	fprintf(dlgFile, " * Terence Parr, Will Cohen, and Hank Dietz: 1989-1999\n");
+	fprintf(dlgFile, " * Terence Parr, Will Cohen, and Hank Dietz: 1989-2001\n");
 	fprintf(dlgFile, " * Purdue University Electrical Engineering\n");
 	fprintf(dlgFile, " * With AHPCRC, University of Minnesota\n");
 	fprintf(dlgFile, " * ANTLR Version %s\n", Version);
@@ -96,10 +96,7 @@ genLexDescr( )
         if (TraceGen) {
           fprintf(dlgFile,"#ifndef zzTRACE_RULES\n");  /* MR20 */
           fprintf(dlgFile,"#define zzTRACE_RULES\n");  /* MR20 */
-          // zzTRACE_RULES removed from end of #endif directive by TL
-          // because it causes a warning under GCC 3.0.2.
-          // fprintf(dlgFile,"#endif  zzTRACE_RULES\n");  /* MR20 */
-          fprintf(dlgFile,"#endif\n");  /* MR20 */
+          fprintf(dlgFile,"#endif\n");  /* MR22 */
         };
 		fprintf(dlgFile, "#include \"antlr.h\"\n");
 		if ( GenAST ) {
@@ -273,7 +270,7 @@ genDefFile( )
 	for (i=0; i<NumFiles; i++) fprintf(DefFile, " %s", FileStr[i]);
 	fprintf(DefFile, "\n");
 	fprintf(DefFile, " *\n");
-	fprintf(DefFile, " * Terence Parr, Will Cohen, and Hank Dietz: 1989-1999\n");
+	fprintf(DefFile, " * Terence Parr, Will Cohen, and Hank Dietz: 1989-2001\n");
 	fprintf(DefFile, " * Purdue University Electrical Engineering\n");
 	fprintf(DefFile, " * ANTLR Version %s\n", Version);
 	fprintf(DefFile, " */\n");
@@ -371,7 +368,7 @@ GenRemapFile( )
 		for (i=0; i<NumFiles; i++) fprintf(f, " %s", FileStr[i]);
 		fprintf(f, "\n");
 		fprintf(f, " *\n");
-		fprintf(f, " * Terence Parr, Will Cohen, and Hank Dietz: 1989-1999\n");
+		fprintf(f, " * Terence Parr, Will Cohen, and Hank Dietz: 1989-2001\n");
 		fprintf(f, " * Purdue University Electrical Engineering\n");
 		fprintf(f, " * ANTLR Version %s\n", Version);
 		fprintf(f, " */\n");
@@ -470,6 +467,8 @@ FILE *f;
 
 /* Find all return types/parameters that require structs and def
  * all rules with ret types.
+ *
+ * This is for the declaration, not the definition.
  */
 void
 #ifdef __USE_PROTOS
@@ -487,12 +486,12 @@ Junction *p;
 	{
 		if ( p->ret != NULL )
 		{
-			if ( HasComma(p->ret) )
+/* MR23 */	if ( hasMultipleOperands(p->ret) )
 			{
 				DumpRetValStruct(f, p->ret, i);
 			}
 			fprintf(f, "\n#ifdef __USE_PROTOS\n");
-			if ( HasComma(p->ret) )
+/* MR23 */	if ( hasMultipleOperands(p->ret) ) 
 			{
 				fprintf(f, "extern struct _rv%d", i);
 			}
@@ -502,21 +501,10 @@ Junction *p;
 				DumpType(p->ret, f);
 			}
 			fprintf(f, " %s%s(", RulePrefix, p->rname);
-			DumpANSIFunctionArgDef(f,p);
+			DumpANSIFunctionArgDef(f,p,1 /* emit initializers ? */);
 			fprintf(f, ";\n");
-#ifdef OLD
-			if ( p->pdecl != NULL || GenAST )
-			{
-				if ( GenAST ) {
-					fprintf(f, "AST **%s",(p->pdecl!=NULL)?",":"");
-				}
-				if ( p->pdecl!=NULL ) fprintf(f, "%s", p->pdecl);
-			}
-			else fprintf(f, "void");
-			fprintf(f, ");\n");
-#endif
 			fprintf(f, "#else\n");
-			if ( HasComma(p->ret) )
+/* MR23 */	if ( hasMultipleOperands(p->ret) )
 			{
 				fprintf(f, "extern struct _rv%d", i);
 			}
@@ -532,7 +520,7 @@ Junction *p;
 		{
 			fprintf(f, "\n#ifdef __USE_PROTOS\n");
 			fprintf(f, "void %s%s(", RulePrefix, p->rname);
-			DumpANSIFunctionArgDef(f,p);
+			DumpANSIFunctionArgDef(f,p, 1 /* emit initializers ? */ );
 			fprintf(f, ";\n");
 #ifdef OLD
 			if ( p->pdecl != NULL || GenAST )
@@ -582,7 +570,7 @@ Junction *q;
 	{
 		if ( p->ret != NULL )
 		{
-			if ( HasComma(p->ret) )
+/* MR23 */	if ( hasMultipleOperands(p->ret) )
 			{
 				DumpRetValStruct(f, p->ret, i);
 			}
@@ -604,7 +592,7 @@ Junction *q;
 	{
 		if ( p->ret != NULL )
 		{
-			if ( HasComma(p->ret) )
+/* MR23 */	if ( hasMultipleOperands(p->ret) )
 			{
 				fprintf(f, "\tstruct _rv%d", i);
 			}
@@ -614,7 +602,7 @@ Junction *q;
 				DumpType(p->ret, f);
 			}
 			fprintf(f, " %s%s(",RulePrefix,p->rname);
-			DumpANSIFunctionArgDef(f,p);
+			DumpANSIFunctionArgDef(f,p, 1 /* emit initializers ? */ );
 			fprintf(f, ";\n");
 #ifdef OLD
 			if ( p->pdecl != NULL || GenAST )
@@ -628,7 +616,7 @@ Junction *q;
 		else
 		{
 			fprintf(f, "\tvoid %s%s(",RulePrefix,p->rname);
-			DumpANSIFunctionArgDef(f,p);
+			DumpANSIFunctionArgDef(f,p, 1 /* emit initializers ? */);
 			fprintf(f, ";\n");
 #ifdef OLD
 			if ( p->pdecl != NULL || GenAST )
@@ -653,12 +641,13 @@ Junction *q;
  */
 
 /* MR5 	Jan Mikkelsen 26-May-97 - added initalComma parameter              */
+
 void
 #ifdef __USE_PROTOS
-DumpListOfParmNames( char *pdecl, FILE *output, int initialComma )  /* MR5 */
+DumpListOfParmNames(char *pdecl, FILE *output, int initialComma)    /* MR5 */
 #else
-DumpListOfParmNames( pdecl, output, initialComma )		    /* MR5 */
-char *pdecl;	             		 			  	    /* MR5 */
+DumpListOfParmNames(pdecl, output, initialComma)		            /* MR5 */
+char *pdecl;	             		 			  	                /* MR5 */
 FILE *output;							                            /* MR5 */
 int initialComma;			                                        /* MR5 */
 #endif
@@ -678,6 +667,9 @@ int initialComma;			                                        /* MR5 */
 /* given a list of parameters or return values, dump the next
  * name to output.  Return 1 if last one just printed, 0 if more to go.
  */
+
+/* MR23 Total rewrite */
+
 int
 #ifdef __USE_PROTOS
 DumpNextNameInDef( char **q, FILE *output )
@@ -687,20 +679,37 @@ char **q;
 FILE *output;
 #endif
 {
-	char *p = *q;		/* where did we leave off? */
-	int done=0;
+	char *p;
+	char *t;
+	char *pDataType;
+	char *pSymbol;
+	char *pEqualSign;
+	char *pValue;
+	char *pSeparator;
+	int nest = 0;
 
-	while ( *p!='\0' && *p!=',' ) p++;		/* find end of decl */
-	if ( *p == '\0' ) done = 1;
-	while ( !isalnum(*p) && *p!='_' ) --p;	/* scan back until valid var character */
-	while ( isalnum(*p) || *p=='_' ) --p;	/* scan back until beginning of variable */
-	p++;						/* move to start of variable */
-	while ( isalnum(*p) || *p=='_'  ) {putc(*p, output); p++;}
-	while ( *p!='\0' && *p!=',' ) p++;		/* find end of decl */
-	p++;				/* move past this parameter */
+	p = endFormal(*q,
+			      &pDataType,
+				  &pSymbol,
+				  &pEqualSign,
+				  &pValue,
+				  &pSeparator,
+				  &nest);
 
-	*q = p;				/* record where we left off */
-	return done;
+    /* MR26 Handle rule arguments such as: IIR_Bool (IIR_Decl::*contstraint)()
+       For this we need to strip off anything which follows the symbol.
+     */
+
+/* MR26 */  t = pSymbol;
+/* MR26 */	if (t != NULL) {
+/* MR26 */		for (t = pSymbol; *t != 0; t++) {
+/* MR26 */			if (! (isalpha(*t) || isdigit(*t) || *t == '_' || *t == '$')) break;
+/* MR26 */		}
+/* MR26 */	}
+/* MR26 */	fprintf(output,strBetween(pSymbol, t, pSeparator));
+
+    *q = p;
+    return (*pSeparator  == 0);
 }
 
 /* Given a list of ANSI-style parameter declarations, dump K&R-style
@@ -734,6 +743,8 @@ FILE *output;
 }
 
 /* Take in a type definition (type + symbol) and print out type only */
+/* MR23 Total rewrite */
+
 void
 #ifdef __USE_PROTOS
 DumpType( char *s, FILE *f )
@@ -743,30 +754,24 @@ char *s;
 FILE *f;
 #endif
 {
-	char *p, *end;
-	require(s!=NULL, "DumpType: invalid type string");
+	char *p;
+	char *pDataType;
+	char *pSymbol;
+	char *pEqualSign;
+	char *pValue;
+	char *pSeparator;
+	int nest = 0;
 
-	p = &s[strlen(s)-1];		/* start at end of string and work back */
+	require(s!=NULL, "DumpType: invalid type string"); 
 
-/* MR11 */
-
-	/* scan back until valid variable character */
-	while ( !isalnum(*p) && *p!='_' ) --p;
-	/* scan back until beginning of variable */
-	while ( isalnum(*p) || *p=='_' ) --p;
-	if ( p<=s )
-	{
-		warnNoFL(eMsg1("invalid parameter/return value: '%s'",s));
-		return;
-	}
-	end = p;					/* here is where we stop printing alnum */
-	p = s;
-	while ( p!=end ) {putc(*p, f); p++;} /* dump until just before variable */
-	while ( *p!='\0' )					 /* dump rest w/o variable */
-	{
-		if ( !isalnum(*p) && *p!='_' ) putc(*p, f);
-		p++;
-	}
+	p = endFormal(s,
+			      &pDataType,
+				  &pSymbol,
+				  &pEqualSign,
+				  &pValue,
+				  &pSeparator,
+				  &nest);
+	fprintf(f,strBetween(pDataType, pSymbol, pSeparator));
 }
 
 /* check to see if string e is a word in string s */
@@ -798,6 +803,10 @@ char *e;
     return 0;
 }
 
+#if 0
+
+/* MR23 Replaced by hasMultipleOperands() */
+
 int
 #ifdef __USE_PROTOS
 HasComma( char *s )
@@ -810,6 +819,10 @@ char *s;
 		if ( *s++ == ',' ) return 1;
 	return 0;
 }
+#endif
+
+
+/* MR23 Total rewrite */
 
 void
 #ifdef __USE_PROTOS
@@ -821,15 +834,30 @@ char *ret;
 int i;
 #endif
 {
+	char *p = ret;
+	char *pDataType;
+	char *pSymbol;
+	char *pEqualSign;
+	char *pValue;
+	char *pSeparator;
+    int nest = 0;
+
 	fprintf(f, "\nstruct _rv%d {\n", i);
-	while ( *ret != '\0' )
-	{
-		 while ( *ret==' ' || *ret=='\t' ) ret++; /* ignore white */
-		 putc('\t', f);
-		 while ( *ret!=',' && *ret!='\0' ) {putc(*ret,f); ret++;}
-		 if ( *ret == ',' ) {putc(';', f); putc('\n', f); ret++;}
-	}
-	fprintf(f, ";\n};\n");
+	while (*p != 0 && nest == 0) {
+		p = endFormal(p,
+			          &pDataType,
+					  &pSymbol,
+					  &pEqualSign,
+					  &pValue,
+					  &pSeparator,
+					  &nest);
+		fprintf(f,"\t");
+		fprintf(f,strBetween(pDataType, pSymbol, pSeparator));
+		fprintf(f," ");
+		fprintf(f,strBetween(pSymbol, pEqualSign, pSeparator));
+		fprintf(f,";\n");
+    }
+	fprintf(f,"};\n");
 }
 
 /* given "s" yield s -- DESTRUCTIVE (we modify s if starts with " else return s) */
@@ -848,4 +876,3 @@ char *s;
 	}
 	return( s );
 }
-

@@ -27,7 +27,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2001
  */
 
 #include "set.h"
@@ -222,7 +222,7 @@ typedef struct _anode {
 			unsigned char frmwarned;/* have we dumped a warning for pred yet? */
 			unsigned char ctxwarned;/* have we dumped a warning for pred yet? */
             unsigned char predTooLong;     /* MR10 have we dumped warning for pred yet */
-            unsigned char noHoist;       /* MR12 literally "noHoist" */
+            unsigned char noHoist;         /* MR12 literally "noHoist" */
             Predicate         *ampersandPred;     /* MR10   (g)? && <<p>>? expr   */
 #ifdef __cplusplus
             Junction          *guardNodes;        /* MR11 */
@@ -373,6 +373,7 @@ typedef struct _junct {
 			struct _ListNode *el_labels;  /* list of element labels for rule */
             ExceptionGroup   *outerEG;                               /* MR7 */
             int              curAltNum;                              /* MR7 */
+            char* pFirstSetSymbol;   /* #pragma FirstSetSymbol(Foo)     MR21 */
 #ifdef __cplusplus
             Junction         *pendingLink;                           /* MR7 */
 #else

@@ -3,6 +3,63 @@
     Known Problems In PCCTS - Last revised 14 November 1998
     =======================================================
 
+#17. The dlg fix for handling characters up to 255 is incorrect.
+
+    See item #207.
+
+    Reported by Frank Hartmann.
+        
+#16. A note about "&&" predicates (Mike Dimmick)
+
+    Mike Dimmick has pointed out a potential pitfall in the use of the
+    "&&" style predicate.  Consider:
+    
+         r0: (g)? => <<P>>?  r1
+             | ...
+             ;
+         r1: A | B;
+         
+    If the context guard g is not a subset of the lookahead context for r1
+    (in other words g is neither A nor B) then the code may execute r1 
+    even when the lookahead context is not satisfied.  This is an error
+    by the person coding the grammer, and the error should be reported to
+    the user, but it isn't. expect.  Some examples I've run seem to
+    indicate that such an error actually results in the rule becoming
+    unreachable.
+    
+    When g is properly coded the code is correct, the problem is when g
+    is not properly coded.
+    
+    A second problem reported by Mike Dimmick is that the test for a
+    failed validation predicate is equivalent to a test on the predicate
+    along.  In other words, if the "&&" has not been hoisted then it may
+    falsely report a validation error.
+
+#15. (Changed in MR23) Warning for LT(i), LATEXT(i) in token match actions
+
+    An bug (or at least an oddity) is that a reference to LT(1), LA(1),
+    or LATEXT(1) in an action which immediately follows a token match
+    in a rule refers to the token matched, not the token which is in
+    the lookahead buffer.  Consider:
+
+        r : abc <<action alpha>> D <<action beta>> E;
+
+    In this case LT(1) in action alpha will refer to the next token in
+    the lookahead buffer ("D"), but LT(1) in action beta will refer to
+    the token matched by D - the preceding token.
+
+    A warning has been added which warns users about this when an action
+    following a token match contains a reference to LT(1), LA(1), or LATEXT(1).
+
+    This behavior should be changed, but it appears in too many programs
+    now.  Another problem, perhaps more significant, is that the obvious
+    fix (moving the consume() call to before the action) could change the 
+    order in which input is requested and output appears in existing programs.
+
+    This problem was reported, along with a fix by Benjamin Mandel
+    (beny@sd.co.il).  However, I felt that changing the behavior was too
+    dangerous for existing code.
+
 #14. Parsing bug in dlg
 
     THM: I have been unable to reproduce this problem.

@@ -16,7 +16,7 @@ $ define support_set "[-.support.set]"
 $!
 $ delete/nolog *.obj;*  !Get rid of existing .OBJ files.
 $!
-$ options = "/INCLUDE=(pccts_h,support_set)/define=(__STDC__,USER_ZZSYN)"
+$ options = "/INCLUDE=(pccts_h,support_set)/define=(USER_ZZSYN)"
 $ CC 'options' dlg_a
 $ CC 'options' dlg_p
 $ CC 'options' err

@@ -115,9 +115,10 @@ PCCTS_H=../h
 #   UNIX
 #
 CC=cc
+COPT=-O
 ANTLR=../bin/antlr
 DLG=../bin/dlg
-CFLAGS= -O -I. -I$(SET) -I$(PCCTS_H) -DUSER_ZZSYN
+CFLAGS= $(COPT) -I. -I$(SET) -I$(PCCTS_H) -DUSER_ZZSYN -DZZLEXBUFSIZE=32000
 OBJ_EXT=o
 OUT_OBJ = -o
 OBJ = dlg_p.o dlg_a.o main.o err.o set.o support.o output.o \

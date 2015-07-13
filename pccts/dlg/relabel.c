@@ -27,7 +27,7 @@
  * DLG 1.33
  * Will Cohen
  * With mods by Terence Parr; AHPCRC, University of Minnesota
- * 1989-1999
+ * 1989-2001
  */
 
 #include <stdio.h>

@@ -25,7 +25,7 @@
  * Terence Parr
  * Parr Research Corporation
  * with Purdue University and AHPCRC, University of Minnesota
- * 1989-1998
+ * 1989-2001
  */
 
 #include <stdio.h>
@@ -106,16 +106,18 @@ ActionNode *a;
 		}
 	}
 
-	if ( max_k==0 )
-	{
-		if ( !a->frmwarned )
+	if (max_k==0) {
+		max_k = 1;	   /* MR33 Badly designed if didn't set max_k when CLL_k = 1 */
+		if (CLL_k > 1) /* MR27 Don't warn if max(k,ck) == 1 */
 		{
-			a->frmwarned = 1;
-			warnFL(eMsg1("predicate: %s missing, bad, or with i=0; assuming i=1",
-						 GenCC?"LT(i)":"LATEXT(i)"),
-				   FileStr[a->file], a->line);
+			if ( !a->frmwarned )
+			{
+				a->frmwarned = 1;
+				warnFL(eMsg1("predicate: %s missing, bad, or with i=0; assuming i=1",
+							 GenCC?"LT(i)":"LATEXT(i)"),
+					   FileStr[a->file], a->line);
+			}
 		}
-		max_k = 1;
 	}
 
 /* MR10 */    if ( max_k > CLL_k) {
@@ -397,6 +399,11 @@ Node *alt;
 					pred->expr = p->action;
 					if ( HoistPredicateContext && pred->k > 1 )
 					{
+						/* MR30 No need to use first_item_is_guess_block_extra
+						   since we know this is an action, not a (...)* or
+						   (...)+ block.
+						*/
+
 						if ( first_item_is_guess_block((Junction *)p->next) )
 						{
                             warnFL("cannot compute context of predicate in front of (..)? block",
@@ -426,6 +433,9 @@ Node *alt;
 					else if ( HoistPredicateContext && pred->k == 1 )
 					{
 						pred->scontext[1] = empty;
+						/* MR30 No need to use first_item_is_guess_block_extra
+						   since we know this is an action.
+						*/
 						if ( first_item_is_guess_block((Junction *)p->next) )
 						{
                         warnFL("cannot compute context of predicate in front of (..)? block",
