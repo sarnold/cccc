@@ -8,17 +8,15 @@
 
 .PHONY : pccts cccc test install
 
-all : pccts cccc test install
+all : pccts cccc
 
 pccts :
-	cd pccts ; make
+	cd pccts && +$(MAKE) pccts
 
-cccc : 
-	cd cccc ; make -f posixgcc.mak
+cccc :
+	cd cccc && +$(MAKE) -f posixgcc.mak cccc
 
+.NOTPARALLEL:	test
 test :
-	cd test ; make -f posix.mak
-
-install : 
-	cd install ; su root -c "make -f install.mak" 
+	cd test && $(MAKE) -f posix.mak test
 

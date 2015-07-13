@@ -19,7 +19,9 @@ MANFILES=dlg/dlg.1 antlr/antlr.1
 #CC=gcc
 #COPT=-O2
 
-pccts:
+.PHONY : pccts dlg antlr sorcerer genmk
+
+pccts:	antlr dlg
 	@echo " "
 	@echo "             Welcome to PCCTS 1.33MR33 installation"
 	@echo " "
@@ -42,16 +44,24 @@ pccts:
 	@echo "To substitute gcc for CC to invoke compiler: make CC=gcc"
 	@echo "If there are problems with cr and lf try: unzip -a ..."
 	@echo
-#
 	@if [ ! -d $(BINDIR) ] ; then mkdir $(BINDIR) ; fi
 	@echo Making executables...
-	(cd ./antlr; $(MAKE) CC="$(CC)" COPT="$(COPT)")
+
+antlr:
+	cd antlr && $(MAKE) CC="$(CC)" COPT="$(COPT)" antlr
 	@echo antlr executable now in $(BINDIR)
-	(cd ./dlg; $(MAKE) CC="$(CC)" COPT="$(COPT)")
+
+dlg:
+	cd dlg && $(MAKE) CC="$(CC)" COPT="$(COPT)" dlg
 	@echo dlg executable now in $(BINDIR)
-	(cd ./sorcerer; $(MAKE) CC="$(CC)" COPT="$(COPT)")
+
+sorcerer:
+	cd sorcerer && $(MAKE)sorcerer CCC="$(CC)" COPT="$(COPT)"
 	@echo sorcerer executable now in $(BINDIR)
-	(cd ./support/genmk; $(MAKE) CC="$(CC)" COPT="$(COPT)"; mv genmk ../../$(BINDIR))
+
+genmk:
+	cd /support/genmk && $(MAKE) CC="$(CC)" COPT="$(COPT)"
+	mv genmk ../../$(BINDIR)
 	@echo genmk executable now in $(BINDIR)
 	@echo
 	@echo "       PCCTS 1.33MR33 installation complete"  # MRXXX
