@@ -23,7 +23,7 @@ MANFILES=dlg/dlg.1 antlr/antlr.1
 #
 # 13 July 2015 - SLA
 # Updated to split out make targets (for cccc) and enable jobserver.
-# 
+#
 
 .PHONY : pccts dlg antlr sorcerer genmk pre welcome fini
 
