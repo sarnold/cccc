@@ -1,12 +1,12 @@
-README.TXT for CCCC version 3.1.1
-=================================
+README for CCCC version 3.1.4
+=============================
 
-This is a new version of the program CCCC (C and C++ Code Counter).  This 
-program exists to analyze and report measurements on source code in C, C++
-and Java.  The languages Ada83 and Ada95, which were supported in previous
-versions are presently not supported.
-The Internet site for CCCC development is: http://cccc.sourceforge.net 
-(hosting kindly donated by sourceforge.net to whom I am grateful).
+This is a minor maintenance update of the last version of the program CCCC
+(C and C++ Code Counter).  This software performs analysis and reports metrics
+on source code written in C, C++ and Java.  The languages Ada83 and Ada95, 
+which were supported in previous versions are presently not supported 
+(stay tuned for updates).  The original source is still on sourceforge;
+new site for CCCC development is: https://github.com/sarnold/cccc
 
 CCCC is a command line tool, originally implemented for Linux and other 
 POSIX-style platforms, but also buildable on the Win32 platform.  
@@ -20,6 +20,7 @@ which is required to compile and install CCCC on either a POSIX or Win32
 platform.  Whereas previous distributions contained only a single directory,
 containing the source code of CCCC, this distribution is divided into a 
 number of subdirectories, with the following contents:
+
 * A full distribution of the Purdue Compiler Construction Toolset (PCCTS) by
   Terence Parr and others, now maintained by Tom Moog of Polhode Inc. 
   PCCTS is required to compile CCCC: in the past the distribution has relied
@@ -29,16 +30,16 @@ number of subdirectories, with the following contents:
   efficient, accurate and useful than previous versions, although it is very
   similar in spirit and interface.
 * The source of an accessory program called CcccDevStudioAddIn.dll which 
-  provides integration between the command line CCCC program and the 
+  provides integration between the command line CCCC program and the
   Microsoft Visual Studio IDE (version 5.0 or 6.0).
 * A directory of minimal test cases for the command line CCCC tool.
 * Miscellaneous batch files, makefiles and Microsoft Visual Studio workspace 
-  and project files to support building, testing and installing the software 
+  and project files to support building, testing and installing the software
   under POSIX and Win32.
 
-The pccts directory contains software for which I am not the original 
+The pccts directory contains software for which I am not the original
 author.  The software has been placed in the public domain, with
-the expectation that appropriate credit will be given for use.  
+the expectation that appropriate credit will be given for use.
 
 Since version 3.pre63, the recommended way of building the software is by
 using the BAT and SH scripts in the top directory of the distribution as
@@ -46,28 +47,27 @@ appropriate for your platform.  On Win32, the script build_w32vc.bat
 builds the software with Microsoft Visual C++ version 5 or 6 (locations
 within the script may need to be modified according to which you have
 and whether it is installed at the default position in the filesystem).
-On Linux and similar platforms the shell script build_posixgcc.sh should work. 
+On Linux and similar platforms the shell script build_posixgcc.sh should work.
 
-As of the current release, version 3.1.1, the reference build tool for the
+As of the last upstream release (ver 3.1.4) the reference build tool for the
 Win32 platform is the freely distributed Microsoft Visual C++ Toolkit 2003.
 As this toolkit does not contain a 'make' style program the script 
 build_w32vct2003.bat has been written which automates all parts of the build.
 
 If you wish to try the Visual Studio integration, there are some additional
-steps to perform.  Within Visual Studio, select menu option 
-"Tools/Customize", then click on the "Macros and AddIns" tab.  Within this 
-control, click on the "Browse" button, change the file type from "*.dsm" 
-to "*.dll", browse to the directory C:\Program Files\CCCC, and select the
-CcccDevStudioAddIn.dll file before pressing "OK".  This should cause 
-Visual Studio to load the add-in, and a tool bar should appear with 
-four different icons containing the text "C4" and six white icons.  The
-fourth of the "C4" icons has a device like a steering wheel on it and is 
-used to configure the add-in.  Press this icon and a dialog box should appear
-containing 8 strings, of which the first should read 
-"C:\Program Files\CCCC\CCCC.EXE" and the next should contain some path to 
-Internet Explorer (IEXPLORE.EXE).  Verify that the path to IE is valid 
-(or substitute a path to Netscape, Mozilla, Opera or any other HTML browser 
-according to your tastes).  
+steps to perform.  Within Visual Studio, select menu option "Tools/Customize",
+then click on the "Macros and AddIns" tab.  Within this control, click on the
+"Browse" button, change the file type from "*.dsm" to "*.dll", browse to the
+directory C:\Program Files\CCCC, and select the CcccDevStudioAddIn.dll file
+before pressing "OK".  This should cause Visual Studio to load the add-in, 
+and a tool bar should appear with four different icons containing the text
+"C4" and six white icons.  The fourth of the "C4" icons has a device like
+a steering wheel on it and is used to configure the add-in.  Press this 
+icon and a dialog box should appear containing 8 strings, of which the
+first should read "C:\Program Files\CCCC\CCCC.EXE" and the next should 
+contain some path to Internet Explorer (IEXPLORE.EXE).  Verify that the 
+path to IE is valid (or substitute a path to Netscape, Mozilla, Opera or 
+any other HTML browser according to your tastes).
 
 The add-in can now be used to run CCCC on either the current file (the "C4" 
 icon with a "f" subscript), all files in the current active project ("C4"
@@ -105,7 +105,18 @@ Russell (extensions), available from http://www.jrsoftware.org.
 Previous versions of CCCC have been released like PCCTS into the public
 domain with no restrictions, other than the pious hope that should anyone
 base a derivative work on it I will be given due credit.  The current version 
-is released under the GNU Public License.
+is released under the GNU Public License (including the bundled PCCTS source)..
+
+The upcoming release will be a maintenance release to clean up the build and
+makefile config (enabling parallel make) and fix a build error with recent gcc.
+The pccts build target "mini" builds only the tools required to build cccc,
+while the make target "pccts" builds the complete toolset.
+
+The above updates by Stephen L Arnold.
+
+
+From the original author
+========================
 
 CCCC was originally developed as a proof-of-concept tool for some ideas 
 relating to software metrics which I was investigating as an academic 
