@@ -19,9 +19,14 @@ MANFILES=dlg/dlg.1 antlr/antlr.1
 #CC=gcc
 #COPT=-O2
 
-.PHONY : pccts dlg antlr sorcerer genmk welcome
+#
+# 13 July 2015 - SLA
+# Updated to split out make targets (for cccc) and enable jobserver.
+# 
 
-pccts:	welcome antlr dlg
+.PHONY : pccts dlg antlr sorcerer genmk welcome fini
+
+pccts:	welcome antlr dlg sorcerer genmk fini
 
 welcome:
 	@echo " "
@@ -50,21 +55,23 @@ welcome:
 	@echo Making executables...
 
 antlr:
-	cd antlr && $(MAKE) CC="$(CC)" COPT="$(COPT)" antlr
+	cd antlr && $(MAKE) CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
 	@echo antlr executable now in $(BINDIR)
 
 dlg:
-	cd dlg && $(MAKE) CC="$(CC)" COPT="$(COPT)" dlg
+	cd dlg && $(MAKE) CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
 	@echo dlg executable now in $(BINDIR)
 
 sorcerer:
-	cd sorcerer && $(MAKE)sorcerer CCC="$(CC)" COPT="$(COPT)"
+	cd sorcerer && $(MAKE) CCC="$(CC)" COPT="$(COPT)" || exit $$?
 	@echo sorcerer executable now in $(BINDIR)
 
 genmk:
-	cd /support/genmk && $(MAKE) CC="$(CC)" COPT="$(COPT)"
-	mv genmk ../../$(BINDIR)
+	cd support/genmk && $(MAKE) CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
+	cd support/genmk && mv genmk ../../$(BINDIR) || exit $$?
 	@echo genmk executable now in $(BINDIR)
+
+fini:
 	@echo
 	@echo "       PCCTS 1.33MR33 installation complete"  # MRXXX
 
