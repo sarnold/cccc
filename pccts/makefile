@@ -57,21 +57,12 @@ welcome	:	pre
 	@echo
 	@echo Making executables...
 
-<<<<<<< HEAD
 antlr	:	pre
 	$(MAKE) -C antlr $@ || exit $$?
 	@echo antlr executable now in $(BINDIR)
 
 dlg	:	pre
 	$(MAKE) -C dlg $@ || exit $$?
-=======
-antlr:
-	cd antlr && $(MAKE) CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
-	@echo antlr executable now in $(BINDIR)
-
-dlg:
-	cd dlg && $(MAKE) CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
->>>>>>> 9c7e924 (more makefile cleanup, fixed extra pccts targets (not required for cccc build dep))
 	@echo dlg executable now in $(BINDIR)
 
 genmk:
@@ -83,14 +74,6 @@ sorcerer:
 	cd sorcerer && $(MAKE) CCC="$(CC)" COPT="$(COPT)" || exit $$?
 	@echo sorcerer executable now in $(BINDIR)
 
-<<<<<<< HEAD
-=======
-genmk:
-	cd support/genmk && $(MAKE) CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
-	cd support/genmk && mv genmk ../../$(BINDIR) || exit $$?
-	@echo genmk executable now in $(BINDIR)
-
->>>>>>> 9c7e924 (more makefile cleanup, fixed extra pccts targets (not required for cccc build dep))
 fini:
 	@echo
 	@echo "       PCCTS 1.33MR33 installation complete"  # MRXXX
