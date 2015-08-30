@@ -24,11 +24,14 @@ MANFILES=dlg/dlg.1 antlr/antlr.1
 # Updated to split out make targets (for cccc) and enable jobserver.
 # 
 
-.PHONY : pccts dlg antlr sorcerer genmk welcome fini
+.PHONY : pccts dlg antlr sorcerer genmk pre welcome fini
 
-pccts:	welcome antlr dlg sorcerer genmk fini
+pccts:	pre welcome antlr dlg sorcerer genmk fini
 
-welcome:
+pre:
+	@if [ ! -d $(BINDIR) ] ; then mkdir -p $(BINDIR) ; fi
+
+welcome	:	pre
 	@echo " "
 	@echo "             Welcome to PCCTS 1.33MR33 installation"
 	@echo " "
@@ -51,14 +54,13 @@ welcome:
 	@echo "To substitute gcc for CC to invoke compiler: make CC=gcc"
 	@echo "If there are problems with cr and lf try: unzip -a ..."
 	@echo
-	@if [ ! -d $(BINDIR) ] ; then mkdir $(BINDIR) ; fi
 	@echo Making executables...
 
-antlr:
+antlr	:	pre
 	cd antlr && $(MAKE) CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
 	@echo antlr executable now in $(BINDIR)
 
-dlg:
+dlg	:	pre
 	cd dlg && $(MAKE) CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
 	@echo dlg executable now in $(BINDIR)
 
