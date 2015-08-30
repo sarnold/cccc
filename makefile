@@ -39,7 +39,7 @@ cccc :	mini
 
 .NOTPARALLEL:	test
 test :
-	cd test && $(MAKE) -Orecurse -f posix.mak test$@ || exit $$?
+	cd test && $(MAKE) -Orecurse -f posix.mak $@ || exit $$?
 
 metrics :	cccc
 	rm -rf metrics/*
