@@ -1,0 +1,7 @@
+*.o
+
+cccc/cccc
+
+doxygen/*
+metrics/*
+pccts/bin/*

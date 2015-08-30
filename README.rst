@@ -112,11 +112,17 @@ makefile config (enabling parallel make) and fix a build error with recent gcc.
 The pccts build target "mini" builds only the tools required to build cccc,
 while the make target "pccts" builds the complete toolset.
 
+SLA: Among other things, I'm grateful that Tim chose such a cool thesis, and 
+also produced some useful open source code that rarely seem to exist outside
+of (expensive) commercial engineering tools.  It has a simple CLI and other
+support like Jenkins plugins.  Use it to find out your own complexity metrics.
+You might be surprised...
+
 The above updates by Stephen L Arnold.
 
 
-From the original author
-========================
+Notes from the original author
+==============================
 
 CCCC was originally developed as a proof-of-concept tool for some ideas 
 relating to software metrics which I was investigating as an academic 
