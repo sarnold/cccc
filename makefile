@@ -26,7 +26,7 @@ GENSRC	= cccc/CLexer.cpp \
 
 .PHONY : all mini pccts cccc test
 
-all : pccts cccc test
+all : mini cccc test
 
 mini :
 	cd pccts && $(MAKE) -Orecurse antlr dlg || exit $$?

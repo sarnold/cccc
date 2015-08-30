@@ -64,10 +64,6 @@ dlg	:	pre
 	cd dlg && $(MAKE) CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
 	@echo dlg executable now in $(BINDIR)
 
-sorcerer:
-	cd sorcerer && $(MAKE) CCC="$(CC)" COPT="$(COPT)" || exit $$?
-	@echo sorcerer executable now in $(BINDIR)
-
 genmk:
 	cd support/genmk && $(MAKE) CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
 	cd support/genmk && mv genmk ../../$(BINDIR) || exit $$?
