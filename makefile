@@ -24,9 +24,9 @@ GENSRC	= cccc/CLexer.cpp \
           cccc/java.cpp \
           cccc/parser.dlg
 
-.PHONY : pccts cccc test mini docs metrics all
+.PHONY : pccts cccc test mini all
 
-all : pccts cccc docs metrics
+all : cccc docs metrics
 
 mini :
 	cd pccts && $(MAKE) -Orecurse antlr dlg || exit $$?
@@ -34,14 +34,14 @@ mini :
 pccts :
 	cd pccts && $(MAKE) -Orecurse $@ || exit $$?
 
-cccc :
+cccc :	mini
 	cd cccc && $(MAKE) -Orecurse -f posixgcc.mak $@ || exit $$?
 
 .NOTPARALLEL:	test
 test :
 	cd test && $(MAKE) -f posix.mak test
 
-metrics :
+metrics :	cccc
 	rm -rf metrics/*
 	mkdir -p metrics
 	$(CCCC) $(CCCOPTS) --outdir=./metrics/ $(CCCCSRC)
@@ -54,4 +54,7 @@ doxygen/html :	Doxyfile.html_cfg cccc/*.cc cccc/*.h
 docs :	Doxyfile.html_cfg doxygen/html
 
 clean	:
-	rm -rf cccc/*.o cccc/cccc $(GENSRC)
+	rm -rf cccc/*.o cccc/cccc $(GENSRC) pccts/bin/*
+
+reallyclean	:	clean
+	rm -rf metrics/* doxygen/html
