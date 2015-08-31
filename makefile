@@ -41,20 +41,29 @@ cccc :	mini
 test :
 	cd test && $(MAKE) -Orecurse -f posix.mak || exit $$?
 
-metrics :	cccc
-	rm -rf metrics/*
-	mkdir -p metrics
-	$(CCCC) $(CCCOPTS) --outdir=./metrics/ $(CCCCSRC)
+DOCS	= doxygen
+METRICS	= ccccout
 
-doxygen/html :	Doxyfile.html_cfg cccc/*.cc cccc/*.h
-	rm -rf doxygen/html
-	mkdir -p doxygen
+$(METRICS)/.keep_dir :
+	mkdir -p $(dir $@)
+	touch $@
+
+metrics : $(METRICS)/.keep_dir
+	rm -rf $(METRICS)/*.html
+	$(CCCC) $(CCCOPTS) --outdir=$(METRICS)/ $(CCCCSRC)
+	@echo "Metrics output now in $(METRICS)/cccc.html"
+
+$(DOCS)/.keep_dir :
+	mkdir -p $(dir $@)
+	touch $@
+
+docs :	Doxyfile.html_cfg cccc/*.cc cccc/*.h $(DOCS)/.keep_dir
+	rm -rf $(DOCS)/html
 	$(DOX) Doxyfile.html_cfg
-
-docs :	Doxyfile.html_cfg doxygen/html
+	@echo "API docs now in $(DOCS)/html"
 
 clean	:
 	rm -rf cccc/*.o cccc/cccc $(GENSRC) pccts/bin/*
 
 reallyclean :
-	rm -rf metrics/* doxygen/html
+	rm -rf ccccout/* doxygen/html

@@ -3,5 +3,21 @@
 cccc/cccc
 
 doxygen/*
-metrics/*
+ccccout/*
 pccts/bin/*
+
+# generated source files
+cccc/CLexer.cpp
+cccc/CLexer.h
+cccc/CParser.cpp
+cccc/CParser.h
+cccc/Ctokens.h
+cccc/JLexer.cpp
+cccc/JLexer.h
+cccc/JParser.cpp
+cccc/JParser.h
+cccc/Jtokens.h
+cccc/cccc.cpp
+cccc/java.cpp
+cccc/parser.dlg
+
