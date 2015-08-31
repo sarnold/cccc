@@ -5,8 +5,9 @@ This is a minor maintenance update of the last version of the program CCCC
 (C and C++ Code Counter).  This software performs analysis and reports metrics
 on source code written in C, C++ and Java.  The languages Ada83 and Ada95, 
 which were supported in previous versions are presently not supported 
-(stay tuned for updates).  The original source is still on sourceforge;
-new site for CCCC development is: https://github.com/sarnold/cccc
+(stay tuned for updates).  The original source is still on sourceforge; the
+new site for CCCC development is: https://github.com/sarnold/cccc and
+for current documentation see: http://sarnold.github.io/cccc/
 
 CCCC is a command line tool, originally implemented for Linux and other 
 POSIX-style platforms, but also buildable on the Win32 platform.  
