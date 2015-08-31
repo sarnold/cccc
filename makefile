@@ -57,7 +57,7 @@ $(DOCS)/.keep_dir :
 	mkdir -p $(dir $@)
 	touch $@
 
-docs :	Doxyfile.html_cfg cccc/*.cc cccc/*.h $(DOCS)/.keep_dir
+docs :	Doxyfile.html_cfg $(CCCCSRC) $(DOCS)/.keep_dir
 	rm -rf $(DOCS)/html
 	$(DOX) Doxyfile.html_cfg
 	@echo "API docs now in $(DOCS)/html"
