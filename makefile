@@ -9,7 +9,7 @@
 DOX	= doxygen
 CCCC	= ./cccc/cccc
 CCCOPTS	= --lang=c++
-CCCCSRC = ./cccc/*
+CCCCSRC = ./cccc/*.cc ./cccc/*.h
 GENSRC	= cccc/CLexer.cpp \
           cccc/CLexer.h \
           cccc/CParser.cpp \
