@@ -146,7 +146,7 @@ confirm that they were using the tool. Feedback on the value or otherwise
 of CCCC will always be welcome.
 
 
-Tim Littlefair (tim_littlefair@hotmail.com)
+Tim Littlefair (tim_littlefair _At_ hotmail.com)
 updated January 2005
 --------------
 
