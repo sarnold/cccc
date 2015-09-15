@@ -2206,7 +2206,7 @@ void MR_backTraceReport()
       if (p->ntype != nToken) continue;
       tn=(TokNode *)p;
       if (depth != 0) fprintf(stdout," ");
-      fprintf(stdout,TerminalString(tn->token));
+      fprintf(stdout,"%s",TerminalString(tn->token));
       depth++;
       if (! MR_AmbAidMultiple) {
         if (set_nil(tn->tset)) {

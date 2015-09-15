@@ -546,12 +546,12 @@ char *name;
 	else
 		fprintf(DefFile, "extern SetWordType zzerr%d[];\n", esetnum);
 	if ( name!=NULL ) {
-		fprintf(ErrFile, "SetWordType %s_set[%d] = {",
+		fprintf(ErrFile, "SetWordType %s_set[%lu] = {",
 				name,
 				NumWords(TokenNum-1)*sizeof(unsigned));
 	}
 	else {
-		fprintf(ErrFile, "SetWordType zzerr%d[%d] = {",
+		fprintf(ErrFile, "SetWordType zzerr%d[%lu] = {",
 				esetnum,
 				NumWords(TokenNum-1)*sizeof(unsigned));
 	}
@@ -611,19 +611,19 @@ char *name;
 	esetnum++;
 
 	if ( name!=NULL ) {
-		fprintf(Parser_h, "\tstatic SetWordType %s_set[%d];\n", name,
+		fprintf(Parser_h, "\tstatic SetWordType %s_set[%lu];\n", name,
 				NumWords(TokenNum-1)*sizeof(unsigned));
-		fprintf(Parser_c, "SetWordType %s::%s_set[%d] = {",
+		fprintf(Parser_c, "SetWordType %s::%s_set[%lu] = {",
 				CurrentClassName,
 				name,
 				NumWords(TokenNum-1)*sizeof(unsigned));
 	}
 	else {
-		fprintf(Parser_c, "SetWordType %s::err%d[%d] = {",
+		fprintf(Parser_c, "SetWordType %s::err%d[%lu] = {",
 				CurrentClassName,
 				esetnum,
 				NumWords(TokenNum-1)*sizeof(unsigned));
-		fprintf(Parser_h, "\tstatic SetWordType err%d[%d];\n", esetnum,
+		fprintf(Parser_h, "\tstatic SetWordType err%d[%lu];\n", esetnum,
 				NumWords(TokenNum-1)*sizeof(unsigned));
 	}
 
@@ -749,7 +749,7 @@ GenParser_c_Hdr()
 
 	/* Build constructors */
 	fprintf(Parser_c, "\n%s::", CurrentClassName);
-	fprintf(Parser_c,	"%s(ANTLRTokenBuffer *input) : ANTLRParser(input,%d,%d,%d,%d)\n",
+	fprintf(Parser_c,	"%s(ANTLRTokenBuffer *input) : ANTLRParser(input,%d,%d,%d,%lu)\n",
 						CurrentClassName,
 						OutputLL_k,
 						FoundGuessBlk,
@@ -877,7 +877,7 @@ GenErrHdr( )
 #ifdef DUM
 	if ( LexGen ) fprintf(ErrFile, "#define zzEOF_TOKEN %d\n", (TokenInd!=NULL?TokenInd[EofToken]:EofToken));
 #endif
-	fprintf(ErrFile, "#define zzSET_SIZE %d\n", NumWords(TokenNum-1)*sizeof(unsigned));
+	fprintf(ErrFile, "#define zzSET_SIZE %lu\n", NumWords(TokenNum-1)*sizeof(unsigned));
 	if ( DemandLookahead ) fprintf(ErrFile, "#define DEMAND_LOOK\n");
 	fprintf(ErrFile, "#include \"antlr.h\"\n");
 	if ( GenAST ) fprintf(ErrFile, "#include \"ast.h\"\n");
