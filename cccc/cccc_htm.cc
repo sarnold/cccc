@@ -92,7 +92,7 @@ void CCCC_Html_Stream::GenerateReports(CCCC_Project* prj,
     {
       main_html_stream.Procedural_Detail();
     }
-  
+
   if(report_mask & rtOODESIGN)
     {
       main_html_stream.OO_Design();
@@ -102,7 +102,7 @@ void CCCC_Html_Stream::GenerateReports(CCCC_Project* prj,
     {
       main_html_stream.Structural_Summary();
     }
-    
+
   if(report_mask & rtSTRUCT2)
     {
       main_html_stream.Structural_Detail();
@@ -139,8 +139,8 @@ void CCCC_Html_Stream::GenerateReports(CCCC_Project* prj,
         << "<P>User support for CCCC can be obtained by "
         << "<A HREF=mailto:cccc-users@lists.sourceforge.net>"
         << "mailing the list cccc-users@lists.sourceforge.net</A>."
-	<< "<P>Please also visit the CCCC development website at "
-	<< "<A HREF=http://cccc.sourceforge.net>http://cccc.sourceforge.net</A>."
+	<< "<P>Please also visit the new CCCC development website at "
+	<< "<A HREF=http://sarnold.github.io/cccc/>http://sarnold.github.io/cccc/</A>."
 	<< endl;
     }
 }
