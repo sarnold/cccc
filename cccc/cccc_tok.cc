@@ -158,7 +158,7 @@ void ANTLRToken::CountToken()
   DbgMsg(COUNTER,cerr,*this);
 }
 
-char *ANTLRToken::getTokenTypeName() { return ""; }
+const char *ANTLRToken::getTokenTypeName() { return ""; }
 
 /*
 ** structured output method for token objects

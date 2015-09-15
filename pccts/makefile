@@ -16,7 +16,11 @@ MANEXT=1
 MANFILES=dlg/dlg.1 antlr/antlr.1
 
 #CC=cc
-#CC=gcc
+CPP ?= cpp
+CC ?= gcc
+AR ?= ar
+
+# Set COPT if your build setup does not pass it in CFLAGS
 #COPT=-O2
 
 #

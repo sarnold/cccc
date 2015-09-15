@@ -476,7 +476,7 @@ void CCCC_Html_Stream::OO_Design() {
       i++;
       if( mod_ptr->is_trivial() == FALSE)
 	{
-	  char *metric_tags[5]={"WMC1","WMCv","DIT","NOC","CBO"};
+	  const char *metric_tags[5]={"WMC1","WMCv","DIT","NOC","CBO"};
 	  fstr << "<TR>" << endl;
 
 	  string href=mod_ptr->key()+".html#summary";
@@ -1025,8 +1025,8 @@ CCCC_Html_Stream& operator <<(CCCC_Html_Stream& os, const string& stg)
 
 CCCC_Html_Stream& operator <<(CCCC_Html_Stream& os, const CCCC_Metric& mtc) 
 {
-  char *emphasis_prefix[]={"","<EM>","<STRONG>"};
-  char *emphasis_suffix[]={"","</EM>","</STRONG>"};
+  const char *emphasis_prefix[]={"","<EM>","<STRONG>"};
+  const char *emphasis_suffix[]={"","</EM>","</STRONG>"};
 
   // by writing to the underlying ostream object, we avoid the escape
   // functionality

@@ -35,7 +35,7 @@ CCCC_Project::CCCC_Project(const string& name)
   // we prime the database with knowledge of the builtin base types
   // we also add a record for the anonymous class which we will treat
   // as the parent of all non-member functions
-  char *builtin_type_info[]=
+  const char *builtin_type_info[]=
   {
     "void@builtin@<nofile>@0@builtin definition@d?????@@0@d@",
     "int@builtin@<nofile>@0@builtin definition@d?????@@0@d@",
@@ -45,7 +45,7 @@ CCCC_Project::CCCC_Project(const string& name)
     "double@builtin@<nofile>@0@builtin definition@d?????@@0@d@",
     NULL
   };
-  for(char **ptr=builtin_type_info; *ptr!=NULL; ptr++)
+  for(const char **ptr=builtin_type_info; *ptr!=NULL; ptr++)
     {
       CCCC_Item type_info(*ptr);
       add_module(type_info);

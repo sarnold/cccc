@@ -92,7 +92,7 @@ static unsigned min=1;
 #define CHK(a)					\
 	if ( a.setword != NULL )	\
 	  if ( !valid(a.setword) )	\
-		{fprintf(stderr, "%s(%d): invalid set\n",__FILE__,__LINE__); exit(-1);}
+		{fprintf(stderr, "%s(%u): invalid set\n",__FILE__,__LINE__); exit(-1);}
 #else
 #define CHK(a)
 #endif
@@ -553,7 +553,7 @@ register char *s;
 	static set a;
 	register unsigned *p, *endp;
 
-	set_new(a, strlen(s));
+	set_new(a, ((unsigned)strlen(s)));
 	p = a.setword;
 	endp = &(a.setword[a.n]);
 	do {

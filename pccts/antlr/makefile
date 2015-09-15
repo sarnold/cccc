@@ -164,21 +164,23 @@ PCCTS_H=../h
 #
 #   UNIX  (default)
 #
-CC=cc
+CC ?= gcc
 ANTLR=../bin/antlr
 DLG=../bin/dlg
 OBJ_EXT=o
 OUT_OBJ = -o
-CFLAGS= -O -I. -I$(SET) -I$(PCCTS_H) -DUSER_ZZSYN $(COTHER)
+CPPFLAGS += -I. -I$(SET) -I$(PCCTS_H) -DUSER_ZZSYN
+
 #
 # SGI Users, use this CFLAGS
 #
 #CFLAGS= -O -I. -I$(SET) -I$(PCCTS_H) -DUSER_ZZSYN -woff 3262
+
 OBJ=antlr.o scan.o err.o bits.o build.o fset2.o fset.o gen.o  \
         globals.o hash.o lex.o main.o misc.o set.o pred.o egman.o mrhoist.o fcache.o
 
 antlr : $(OBJ) $(SRC)
-		$(CC) $(CFLAGS) -o antlr $(OBJ)
+		$(CC) $(CFLAGS) $(CPPFLAGS) $(COTHER) -o antlr $(OBJ)
 		mv antlr ../bin/.
 
 # what files does PCCTS generate (both ANTLR and DLG)
@@ -202,7 +204,7 @@ scan.o : scan.c mode.h tokens.h
 #	$(DLG) -C2 parser.dlg scan.c
 
 set.o : $(SET)/set.c
-	$(CC) $(CFLAGS) -c -o set.o $(SET)/set.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(COTHER) -c -o set.o $(SET)/set.c
 
 
 #
