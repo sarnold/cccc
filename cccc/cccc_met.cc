@@ -26,6 +26,8 @@ using std::ostringstream;
 
 #include "cccc_opt.h"
 
+extern const char *internal_treatments[];
+
 Metric_Treatment::Metric_Treatment(CCCC_Item& treatment_line)
 {
   lower_threshold=0;
@@ -168,7 +170,7 @@ string CCCC_Metric::value_string() const
   return retval;
 }
 
-char *internal_treatments[] =
+const char *internal_treatments[] =
 {
   "LOCf@30@100@0@6@0@Lines of code/function@",
   "LOCm@500@2000@0@6@0@Lines of code/module @",

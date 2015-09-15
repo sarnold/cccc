@@ -36,9 +36,9 @@ static metric_treatment_map_t treatment_map;
 static dialect_keyword_map_t dialect_keyword_map;
 
 // these are declared extern so that it can be defined later in the file
-extern char *default_fileext_options[];
-extern char *default_treatment_options[];
-extern char *default_dialect_options[];
+extern const char *default_fileext_options[];
+extern const char *default_treatment_options[];
+extern const char *default_dialect_options[];
 
 static void add_file_extension(CCCC_Item& fileext_line)
 {
@@ -183,7 +183,7 @@ void CCCC_Options::Load_Options()
 {  
 	int i=0;
 	
-	char **option_ptr;
+	const char **option_ptr;
 	
 	option_ptr=default_fileext_options;
 	while( (*option_ptr)!=NULL)
@@ -274,7 +274,7 @@ string CCCC_Options::dialectKeywordPolicy(const string& lang, const string& kw)
 }
 
 
-char *default_fileext_options[]=
+const char *default_fileext_options[]=
 {
 	// file extensions
 	".c@c.ansi@",
@@ -322,7 +322,7 @@ char *default_fileext_options[]=
 		NULL
 };
 
-char *default_treatment_options[] = 
+const char *default_treatment_options[] = 
 {
 	// metric treatments
 	// all metric values are displayed using the class CCCC_Metric, which may be
@@ -388,7 +388,7 @@ char *default_treatment_options[] =
 	 NULL
 };
 
-char *default_dialect_options[] = 
+const char *default_dialect_options[] = 
 {
 	// This configuration item allows the description of 
 	// dialects in which C/C++ identifiers get treated

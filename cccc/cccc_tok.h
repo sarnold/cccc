@@ -80,7 +80,7 @@ class ANTLRToken : public ANTLRCommonToken {
 
   int getNestingLevel() { return CurrentNesting; }
   void CountToken();
-  char *getTokenTypeName();
+  const char *getTokenTypeName();
 };
 
 #define MY_TOK(t) ((ANTLRToken*)(t))
