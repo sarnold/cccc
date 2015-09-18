@@ -1,5 +1,11 @@
 # Top level makefile for CCCC
 
+AR ?= ar
+CPP ?= cpp -E
+CC ?= gcc
+CCC ?= g++
+LD ?= g++
+
 # This distribution is a compilation of code, some of which comes from
 # different sources, some of which builds different (e.g. Win32 DLL) kinds
 # of targets.
@@ -43,12 +49,13 @@ test :
 
 DOCS	= doxygen
 METRICS	= ccccout
+TESTOBJ = test/*.xml test/*.html test/*.db
 
 $(METRICS)/.keep_dir :
 	mkdir -p $(dir $@)
 	touch $@
 
-metrics : $(METRICS)/.keep_dir
+metrics : $(METRICS)/.keep_dir cccc
 	rm -rf $(METRICS)/*.html
 	$(CCCC) $(CCCOPTS) --outdir=$(METRICS)/ $(CCCCSRC)
 	@echo "Metrics output now in $(METRICS)/cccc.html"
@@ -65,5 +72,9 @@ docs :	Doxyfile.html_cfg $(CCCCSRC) $(DOCS)/.keep_dir
 clean	:
 	rm -rf cccc/*.o cccc/cccc $(GENSRC) pccts/bin/*
 
-reallyclean :
-	rm -rf ccccout/* doxygen/html
+reallyclean : clean
+	rm -rf ccccout/* doxygen/html test/.cccc $(TESTOBJ)
+	make -C pccts clean
+
+clobber	: reallyclean
+	make -C pccts scrub

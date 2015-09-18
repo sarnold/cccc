@@ -115,11 +115,11 @@ PCCTS_H=../h
 #   UNIX
 #
 CC ?= gcc
-ANTLR=../bin/antlr
-DLG=../bin/dlg
+ANTLR = ../bin/antlr
+DLG = ../bin/dlg
 CPPFLAGS += -I. -I$(SET) -I$(PCCTS_H) -DUSER_ZZSYN
-OBJ_EXT=o
-OUT_OBJ = -o
+OBJ_EXT = o
+OUT_OBJ = -o 
 OBJ = dlg_p.o dlg_a.o main.o err.o set.o support.o output.o \
         relabel.o automata.o
 
@@ -151,6 +151,15 @@ set.$(OBJ_EXT) : $(SET)/set.c
 lint:
 	lint *.c
 
+#
+# ****** These next targets are common to UNIX and PC world ********
+#
+
 #clean up all the intermediate files
 clean:
 	rm -f *.$(OBJ_EXT) core
+
+#remove everything in clean plus the PCCTS files generated
+scrub:
+	rm -f $(PCCTS_GEN) *.$(OBJ_EXT) core
+

@@ -5,7 +5,7 @@
 # Parr Research Corporation
 #
 # verbosity versus silence...
-PSss=
+#PSss=
 #
 # this can be set to /user/local/bin etc...
 BINDIR=bin
@@ -16,9 +16,6 @@ MANEXT=1
 MANFILES=dlg/dlg.1 antlr/antlr.1
 
 #CC=cc
-CPP ?= cpp
-CC ?= gcc
-AR ?= ar
 
 # Set COPT if your build setup does not pass it in CFLAGS
 #COPT=-O2
@@ -61,15 +58,15 @@ welcome	:	pre
 	@echo Making executables...
 
 antlr	:	pre
-	cd antlr && $(MAKE) CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
+	$(MAKE) -C antlr $@ || exit $$?
 	@echo antlr executable now in $(BINDIR)
 
 dlg	:	pre
-	cd dlg && $(MAKE) CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
+	$(MAKE) -C dlg $@ || exit $$?
 	@echo dlg executable now in $(BINDIR)
 
 genmk:
-	cd support/genmk && $(MAKE) CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
+	$(MAKE) -C support/genmk CC="$(CC)" COPT="$(COPT)" $@ || exit $$?
 	cd support/genmk && mv genmk ../../$(BINDIR) || exit $$?
 	@echo genmk executable now in $(BINDIR)
 
@@ -80,10 +77,11 @@ fini:
 clean:
 	(cd ./antlr; $(MAKE) -s clean)
 	(cd ./dlg; $(MAKE) -s clean)
-	(cd ./sorcerer; $(MAKE) -s clean)
-	(cd ./sorcerer/lib; $(MAKE) -s clean)
 	(cd ./support/genmk; $(MAKE) -s clean)
 
+scrub:
+	(cd ./antlr; $(MAKE) -s scrub)
+	(cd ./dlg; $(MAKE) -s scrub)
 
 manpages:
 	# mkdir -p $(MANDIR)/man$(MANEXT)

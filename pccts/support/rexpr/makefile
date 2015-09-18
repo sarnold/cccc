@@ -1,10 +1,11 @@
 BAG=../../bin/bag
 SRC=test.c rexpr.c
 OBJ=test.o rexpr.o
-CFLAGS = -g
+CFLAGS_DEBUG = -g
+CC ?= gcc
 
 test: $(OBJ) $(SRC)
-	cc -g -o texpr $(OBJ)
+	$(CC) $(CFLAGS) $(CFLAGS_DEBUG) -o texpr $(OBJ)
 
 shar:
 	shar makefile test.c rexpr.c rexpr.h > rexpr.shar

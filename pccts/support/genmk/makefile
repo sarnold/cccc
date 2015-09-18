@@ -7,13 +7,14 @@ SRC=genmk.c
 OBJ=genmk.o
 # Define PC if you use a PC OS (changes directory symbol and object file extension)
 # see pccts/h/pcctscfg.h
-#CFLAGS=-I../../h -DPC
-CFLAGS=-I../../h
-CC=cc
+# CFLAGS=-I../../h -DPC
+
+IFLAGS = -I../../h
+CC ?= cc
 BAG=../../bin/bag
 
 genmk: $(OBJ) $(SRC) ../../h/pcctscfg.h
-	$(CC) -o genmk $(OBJ)
+	$(CC) $(CFLAGS) $(IFLAGS) -o genmk $(OBJ)
 
 clean:
 	rm -rf core *.o

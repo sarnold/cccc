@@ -21,10 +21,10 @@
 ##
 ## PATHSEP=<the character(s) used as path separators on the platform>
 ## CCC=<the command to run the C++ compiler>
-## CFLAGS=<general compiler flags>
+## CCC_OPTS=<general compiler flags>
 ## C_OFLAG=<the flag used to indicate the output file of a compiler run>
 ## LD=<the command to run the linker>
-## LDFLAGS=<general linker flags>
+## LD_OPTS=<general linker flags>
 ## LD_OFLAG=<the flag used to indicate the output file of a linker run>
 ## OBJEXT=<the extension of an object file>
 ## CCCC_EXE=<the name of the final executable>
@@ -134,7 +134,7 @@ all: $(CCCC_EXE)
 
 
 $(CCCC_EXE): $(USR_G) $(ANLTR_SPAWN) $(DLG_SPAWN) $(USR_H) $(USR_C) $(ALL_OBJ)
-	$(LD) $(ALL_OBJ) $(LD_EXTRA_LIBS) $(LDFLAGS) $(LD_OFLAG)$(CCCC_EXE)
+	$(CCC) $(ALL_OBJ) $(LD_OPTS)  $(LD_EXTRA_LIBS) $(LD_OFLAG)$(CCCC_EXE)
 
 .SUFFIXES: .cc .$(OBJEXT) .cpp .cxx .g .g_info
 
@@ -147,17 +147,17 @@ $(CCCC_EXE): $(USR_G) $(ANLTR_SPAWN) $(DLG_SPAWN) $(USR_H) $(USR_C) $(ALL_OBJ)
 	$(ANTLR) $(AFLAGS) -gc -gx -cr $< > $*.xrf
 
 ccccmain.$(OBJEXT) : ccccmain.cc 
-	$(CCC) $(CFLAGS) $(LANG_DEFINES) ccccmain.cc
+	$(CCC) $(CCC_OPTS) $(LANG_DEFINES) ccccmain.cc
 
 
 .cc.$(OBJEXT):
-	$(CCC) $(CFLAGS) $< $(C_OFLAG)$*.$(OBJEXT)
+	$(CCC) $(CCC_OPTS) $< $(C_OFLAG)$*.$(OBJEXT)
 
 .cpp.$(OBJEXT):
-	$(CCC) $(CFLAGS) $< $(C_OFLAG)$*.$(OBJEXT)
+	$(CCC) $(CCC_OPTS) $< $(C_OFLAG)$*.$(OBJEXT)
 
 .cxx.$(OBJEXT):
-	$(CCC) -c $(CFLAGS) $< $(C_OFLAG)$*.$(OBJEXT)
+	$(CCC) -c $(CCC_OPTS) $< $(C_OFLAG)$*.$(OBJEXT)
 
 # Different compilers handle the source file being in a 
 # different directory in different ways.  The easiest way
@@ -165,13 +165,13 @@ ccccmain.$(OBJEXT) : ccccmain.cc
 # PCCTS support files which give rise to linkable object
 # files.
 AParser.$(OBJEXT): $(PCCTS_H)$(PATHSEP)AParser.cpp
-	$(CCC) $(CFLAGS) $(PCCTS_H)$(PATHSEP)AParser.cpp $(C_OFLAG)$*.$(OBJEXT)
+	$(CCC) $(CCC_OPTS) $(PCCTS_H)$(PATHSEP)AParser.cpp $(C_OFLAG)$*.$(OBJEXT)
 
 DLexerBase.$(OBJEXT): $(PCCTS_H)$(PATHSEP)DLexerBase.cpp
-	$(CCC) $(CFLAGS) $(PCCTS_H)$(PATHSEP)DLexerBase.cpp $(C_OFLAG)$*.$(OBJEXT)
+	$(CCC) $(CCC_OPTS) $(PCCTS_H)$(PATHSEP)DLexerBase.cpp $(C_OFLAG)$*.$(OBJEXT)
 
 ATokenBuffer.$(OBJEXT): $(PCCTS_H)$(PATHSEP)ATokenBuffer.cpp
-	$(CCC) $(CFLAGS) $(PCCTS_H)$(PATHSEP)ATokenBuffer.cpp $(C_OFLAG)$*.$(OBJEXT)
+	$(CCC) $(CCC_OPTS) $(PCCTS_H)$(PATHSEP)ATokenBuffer.cpp $(C_OFLAG)$*.$(OBJEXT)
 
 
 
