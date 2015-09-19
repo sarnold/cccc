@@ -1,0 +1,1708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module JParser-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="219" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="34" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="6.441" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="97" level="0" />
+<weighted_methods_per_class_visibility value="26" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="9" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="./cccc/JParser.h" line="37" />
+<lines_of_code value="82" level="1" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="24" level="0" />
+<lines_of_code_per_line_of_comment value="3.417" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>JParser(ANTLRTokenBuffer *)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="175" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>aCase(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="257" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>additiveExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="277" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>andExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="272" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>argList(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="284" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>arrayInitializer(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="211" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>assignmentExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="266" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>breakStatement(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="246" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>builtInType(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="186" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>builtInTypeSpec(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="184" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>builtInTypeSpec2(string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="190" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>caseSList(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="258" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>cases(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="255" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>casesGroup(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="254" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>classBlock(const string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="197" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>classDefinition(string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="194" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>classTypeSpec(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="183" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>classTypeSpec2(string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="189" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>compilationUnit(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="176" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>compoundStatement(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="240" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>conditionalExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="267" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>constant(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="286" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>continueStatement(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="247" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ctorDefinition(const string &amp;,Visibility)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="213" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ctorHead(string &amp;,const string &amp;,Visibility)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="214" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>declaration(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="180" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>declaratorBrackets(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="209" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>doWhileStatement(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="245" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>emptyStatement(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="252" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>equalityExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="273" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>exclusiveOrExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="271" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>expression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="264" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>expressionList(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="265" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>field(const string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="201" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>forCond(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="260" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>forInit(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="259" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>forIter(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="261" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>forStatement(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="243" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handler(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="263" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>identifier(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="187" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>identifier2(string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="191" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>identifierStar(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="192" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ifStatement(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="242" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>implementsClause(const string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="199" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>importDefinition(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="178" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>inclusiveOrExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="270" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>init(const string &amp;,const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/JParser.h" line="93" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>initializer(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="212" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>interfaceDefinition(const string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="196" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>interfaceExtends(const string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="198" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>logicalAndExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="269" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>logicalOrExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="268" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>methodDefinition(const string &amp;,const string &amp;,bool,Visibility,int)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="204" />
+</extent>
+<lines_of_code value="2" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>modifier(Visibility &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="193" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>modifiers(Visibility &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="181" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>moreSuperclassNames(const string &amp;,const string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="200" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>multiplicativeExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="278" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>newArrayDeclarator(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="285" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>newExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="283" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>optElseClause(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="253" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>optMoreCases(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="256" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>packageDefinition(string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="177" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>parameterDeclaration(string &amp;,const string &amp;,const Visibility &amp;,bool)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="225" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="7" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>parameterDeclarationList(string &amp;,const string &amp;,const Visibility &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="217" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>parameterDeclaratorBrackets(string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="238" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>parameterModifier(string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="239" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>postfixExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="281" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>primaryExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="282" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>relationalExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="275" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>relationalPredicate(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="274" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>returnStatement(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="248" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>returnTypeBrackersOnEndOfMethodHead(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="216" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>shiftExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="276" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>statement(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="241" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>superClassClause(const string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="195" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>switchStatement(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="249" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>syn(_ANTLRTokenPtr,ANTLRChar *,SetWordType *,ANTLRTokenType,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/JParser.h" line="50" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>syncStatement(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="251" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>throwStatement(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="250" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>throwsClause(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="215" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>tokenName(int)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="39" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>tracein(const char *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/JParser.h" line="48" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>traceout(const char *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/JParser.h" line="49" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>tryBlock(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="262" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>type(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="185" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>typeCombine(const string &amp;,const string &amp;,const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/JParser.h" line="57" />
+</extent>
+<lines_of_code value="18" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>typeDefinition(string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="179" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>typeSpec(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="182" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>typeSpec2(string &amp;,bool &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="188" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>typedDeclaration(const string &amp;,const string &amp;,bool,Visibility,int)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="202" />
+</extent>
+<lines_of_code value="2" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>unaryExpression(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="279" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>unaryExpressionNotPlusMinus(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="280" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>varInitializer(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="210" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>variableDeclarator(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="208" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>variableDefinitions(const string &amp;,const string &amp;,bool,Visibility,int)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="206" />
+</extent>
+<lines_of_code value="2" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>whileStatement(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="244" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>zzdflthandlers(int,int *)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JParser.h" line="172" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>JParser</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>ANTLRChar</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="./cccc/JParser.h" line="41" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="51" />
+</extent>
+<name>ANTLRParser</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="./cccc/JParser.h" line="37" />
+</extent>
+<name>ANTLRTokenBuffer</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="175" />
+</extent>
+<name>ParseStore</name>
+<visible>false</visible>
+<concrete>false</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="./cccc/JParser.h" line="45" />
+</extent>
+<name>ParseUtility</name>
+<visible>false</visible>
+<concrete>false</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="./cccc/JParser.h" line="46" />
+</extent>
+<name>SetWordType</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="51" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="104" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="105" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="106" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="107" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="108" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="109" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="110" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="111" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="112" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="113" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="114" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="115" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="116" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="117" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="118" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="119" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="120" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="121" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="122" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="123" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="124" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="125" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="126" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="127" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="128" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="129" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="130" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="131" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="132" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="133" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="134" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="135" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="136" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="137" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="138" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="139" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="140" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="141" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="142" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="143" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="144" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="145" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="146" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="147" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="148" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="149" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="150" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="151" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="152" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="153" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="154" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="155" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="156" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="157" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="158" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="159" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="160" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="161" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="162" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="163" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="164" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="165" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="166" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="167" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="168" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="169" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="170" />
+</extent>
+<name>_ANTLRTokenPtr</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/JParser.h" line="51" />
+</extent>
+<name>bool</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="89" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="188" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/JParser.h" line="203" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/JParser.h" line="204" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/JParser.h" line="206" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/JParser.h" line="236" />
+</extent>
+<name>string</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="57" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="57" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="57" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="80" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="88" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="93" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="93" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="177" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="179" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="188" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="189" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="190" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="191" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="194" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="195" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="196" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="197" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="198" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="199" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="200" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="200" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="201" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="202" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="202" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="204" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="204" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="206" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="206" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="213" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="214" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="214" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="219" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="221" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="227" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="229" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="238" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="239" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

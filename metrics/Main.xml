@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module Main-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="464" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="66" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="94" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="4.936" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.702" level="0" />
+<weighted_methods_per_class_unity value="15" level="0" />
+<weighted_methods_per_class_visibility value="14" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="3" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="71" />
+<lines_of_code value="17" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="9" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>AddFileArgument(const string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="99" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="271" />
+</extent>
+<lines_of_code value="38" level="1" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="19" level="0" />
+<lines_of_code_per_line_of_comment value="2.000" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>DescribeOutput()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="114" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="642" />
+</extent>
+<lines_of_code value="23" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="11.500" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>DumpDatabase()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="110" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="464" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>GenerateHtml()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="112" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="481" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>GenerateXml()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="113" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="489" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>HandleArgs(int,char **)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="104" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="129" />
+</extent>
+<lines_of_code value="115" level="2" />
+<McCabes_cyclomatic_complexity value="22" level="1" />
+<lines_of_comment value="19" level="0" />
+<lines_of_code_per_line_of_comment value="6.053" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="1.158" level="0" />
+</member_function>
+<member_function>
+<name>HandleDebugOption(const string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="105" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="497" />
+</extent>
+<lines_of_code value="26" level="0" />
+<McCabes_cyclomatic_complexity value="7" level="0" />
+<lines_of_comment value="7" level="0" />
+<lines_of_code_per_line_of_comment value="3.714" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="1.000" level="0" />
+</member_function>
+<member_function>
+<name>HandleReportOption(const string &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="106" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="534" />
+</extent>
+<lines_of_code value="48" level="1" />
+<McCabes_cyclomatic_complexity value="14" level="1" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="9.600" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="2.800" level="0" />
+</member_function>
+<member_function>
+<name>LoadDatabase()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="111" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="470" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>Main()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="103" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="122" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ParseFiles()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="109" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="336" />
+</extent>
+<lines_of_code value="84" level="1" />
+<McCabes_cyclomatic_complexity value="10" level="0" />
+<lines_of_comment value="24" level="0" />
+<lines_of_code_per_line_of_comment value="3.500" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.417" level="0" />
+</member_function>
+<member_function>
+<name>PrintCredits(ostream &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="107" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="602" />
+</extent>
+<lines_of_code value="35" level="1" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="7.000" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>PrintUsage(ostream &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="108" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="671" />
+</extent>
+<lines_of_code value="36" level="1" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="9.000" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>filesParsed()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="115" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="707" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>main(int,char **)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/ccccmain.cc" line="117" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>Main</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>list</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="95" />
+</extent>
+<name>ostream</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="107" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="108" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="602" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="671" />
+</extent>
+<name>string</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="79" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="80" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="81" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="82" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="83" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="84" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="85" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="86" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="99" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="105" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="106" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="271" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="497" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="534" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

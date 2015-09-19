@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module ParseStore-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="232" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="19" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="67" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="3.463" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.284" level="0" />
+<weighted_methods_per_class_unity value="19" level="0" />
+<weighted_methods_per_class_visibility value="17" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="8" level="0" />
+<IF4 value="144" level="1" />
+<IF4_per_member_function value="********" level="2" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.h" line="209" />
+<lines_of_code value="13" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="11" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>IncrementCount(LexicalCount)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.h" line="215" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ParseStore(const ParseStore &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="286" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ParseStore(const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="234" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="212" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>currentInstance()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.h" line="269" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>endOfLine(int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="587" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="216" />
+</extent>
+<lines_of_code value="17" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>filename()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="281" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="259" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>flags()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.h" line="261" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>get_flag(PSFlag)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="261" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="255" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>get_visibility()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="276" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="258" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>insert_extent(CCCC_Item &amp;,int,int,const string &amp;,const string &amp;,UseType,bool)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="287" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="247" />
+</extent>
+<lines_of_code value="49" level="1" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="10" level="0" />
+<lines_of_code_per_line_of_comment value="4.900" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator =(const ParseStore &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="287" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>record_file_balance_extent(string)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="243" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>record_function_extent(int,int,const string &amp;,const string &amp;,const string &amp;,const string &amp;,const string &amp;,Visibility,UseType)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="368" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="226" />
+</extent>
+<lines_of_code value="36" level="1" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="7.200" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>record_module_extent(int,int,const string &amp;,const string &amp;,const string &amp;,UseType)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="349" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="221" />
+</extent>
+<lines_of_code value="21" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="5.250" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>record_other_extent(int,int,const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="452" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="241" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>record_userel_extent(int,int,const string &amp;,const string &amp;,const string &amp;,const string &amp;,Visibility,UseType)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="405" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="234" />
+</extent>
+<lines_of_code value="38" level="1" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="12" level="0" />
+<lines_of_code_per_line_of_comment value="3.167" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>set_flag(PSFlag,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="265" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="256" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>set_flag(Visibility)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="269" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="257" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>~ParseStore()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="249" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="213" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>ParseStore</name>
+<client_module>
+<name>CParser</name>
+<visible>false</visible>
+<concrete>false</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="./cccc/CParser.h" line="51" />
+</extent>
+<name>JParser</name>
+<visible>false</visible>
+<concrete>false</concrete>
+<extent>
+<description>has by reference</description>
+<source_reference file="./cccc/JParser.h" line="45" />
+</extent>
+</client_module>
+<supplier_module>
+<name>CCCC_Item</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="288" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="247" />
+</extent>
+<name>CharArray</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_utl.h" line="282" />
+</extent>
+<name>LexicalCountArray</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_utl.h" line="276" />
+</extent>
+<name>LineLexicalCountMatrix</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_utl.h" line="279" />
+</extent>
+<name>bool</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_utl.cc" line="290" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_utl.h" line="249" />
+</extent>
+<name>string</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="234" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="289" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="289" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="350" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="351" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="352" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="369" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="370" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="371" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="372" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="373" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="406" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="407" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="408" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="409" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="453" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="212" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="222" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="223" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="224" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="227" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="228" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="229" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="230" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="231" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="235" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="236" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="237" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="238" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="242" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_utl.h" line="243" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="248" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="248" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_utl.h" line="273" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

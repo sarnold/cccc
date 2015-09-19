@@ -1,0 +1,10 @@
+<map id="ParseStore::record_module_extent" name="ParseStore::record_module_extent">
+<area shape="rect" id="node2" href="$db/d6a/classCCCC__Item.html#a87231c9aa43ece932511d1143b64367e" title="CCCC_Item::Insert" alt="" coords="469,5,607,32"/>
+<area shape="rect" id="node3" href="$d3/d5e/classParseStore.html#ab07edec82aea81e439fa34d2f557b36f" title="ParseStore::insert\l_extent" alt="" coords="225,53,359,94"/>
+<area shape="rect" id="node4" href="$d3/d5e/classParseStore.html#a058a15dda767cb8cf60dc578ec8ffb38" title="ParseStore::flags" alt="" coords="227,119,357,145"/>
+<area shape="rect" id="node5" href="$d4/d6e/classCCCC__Project.html#a7a8c419dc807c57a9618da29d08d59ae" title="CCCC_Project::add_module" alt="" coords="193,169,391,196"/>
+<area shape="rect" id="node6" href="$db/d6a/classCCCC__Item.html#aa8e1c13780b4a9191d00b85641cdde1d" title="CCCC_Item::Extract" alt="" coords="685,115,832,141"/>
+<area shape="rect" id="node7" href="$df/d99/classCCCC__Extent.html#abaf126bf784cc83e12eb98434674c4df" title="CCCC_Extent::GetFromItem" alt="" coords="439,140,637,167"/>
+<area shape="rect" id="node8" href="$d8/dcf/classCCCC__Table.html#a8e08fe4f6edb07f1fbf2813c66bb3606" title="CCCC_Table::find_or\l_insert" alt="" coords="461,191,615,233"/>
+<area shape="rect" id="node9" href="$d8/d19/cccc__db_8cc.html#aebb1189ff251d7961146af7ce6b31f3e" title="Resolve_Fields" alt="" coords="479,257,597,284"/>
+</map>

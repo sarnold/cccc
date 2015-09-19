@@ -1,0 +1,9 @@
+<map id="CCCC_UseRelationship::FromFile" name="CCCC_UseRelationship::FromFile">
+<area shape="rect" id="node2" href="$db/d6a/classCCCC__Item.html#a032272ebee4fc350bcac563774493725" title="CCCC_Item::FromFile" alt="" coords="247,5,405,32"/>
+<area shape="rect" id="node3" href="$db/d6a/classCCCC__Item.html#aa8e1c13780b4a9191d00b85641cdde1d" title="CCCC_Item::Extract" alt="" coords="479,140,625,167"/>
+<area shape="rect" id="node4" href="$d8/dcf/classCCCC__Table.html#a8e08fe4f6edb07f1fbf2813c66bb3606" title="CCCC_Table::find_or\l_insert" alt="" coords="249,107,403,149"/>
+<area shape="rect" id="node5" href="$d8/d19/cccc__db_8cc.html#a927bd440a1aaf7c7b9a1e83354aace57" title="PeekAtNextLinePrefix" alt="" coords="247,173,405,200"/>
+<area shape="rect" id="node6" href="$df/d99/classCCCC__Extent.html#abaf126bf784cc83e12eb98434674c4df" title="CCCC_Extent::GetFromItem" alt="" coords="227,224,425,251"/>
+<area shape="rect" id="node7" href="$d6/d85/classCCCC__Record.html#a81bf0541981287180a41e3d801e7a084" title="CCCC_Record::key" alt="" coords="254,275,398,301"/>
+<area shape="rect" id="node8" href="$d6/d85/classCCCC__Record.html#a03c15972bea5df4e34930fa4c34e34bd" title="CCCC_Record::name" alt="" coords="473,275,631,301"/>
+</map>

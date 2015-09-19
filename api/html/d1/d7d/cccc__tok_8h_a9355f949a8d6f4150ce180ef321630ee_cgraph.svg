@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d5/da6/classANTLRToken.html#a5a2fb9cca7c49ef300ab41920fb32345" target="_top" xlink:title="ANTLRToken::getTokenTypeName">
+<g id="a_node2"><a xlink:href="../../d5/da6/classANTLRToken.html#a1614bdc952633952e8b5f3f6283f9bd7" target="_top" xlink:title="ANTLRToken::getTokenTypeName">
 <polygon fill="white" stroke="black" points="105,-38.5 105,-57.5 287,-57.5 287,-38.5 105,-38.5"/>
 <text text-anchor="middle" x="196" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">ANTLRToken::getTokenTypeName</text>
 </a>

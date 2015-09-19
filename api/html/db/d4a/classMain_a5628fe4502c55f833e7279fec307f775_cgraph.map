@@ -1,0 +1,15 @@
+<map id="Main::HandleArgs" name="Main::HandleArgs">
+<area shape="rect" id="node2" href="$db/d4a/classMain.html#a95f10823dcf768a027a2c856fd6974a1" title="Main::AddFileArgument" alt="" coords="198,5,365,32"/>
+<area shape="rect" id="node3" href="$db/d4a/classMain.html#a22ae8a510707f18617cdd6bbb9233849" title="Main::PrintUsage" alt="" coords="459,81,589,108"/>
+<area shape="rect" id="node4" href="$db/d4a/classMain.html#ac291abc87469adcdbecb2a26e10651b3" title="Main::HandleReportOption" alt="" coords="187,107,376,133"/>
+<area shape="rect" id="node5" href="$db/d4a/classMain.html#a7bd82c65138e28bc4479a1601557e583" title="Main::HandleDebugOption" alt="" coords="188,157,375,184"/>
+<area shape="rect" id="node6" href="$d4/d7f/classCCCC__Options.html#aabf76e7a9edb17ce2eb3ef45359230b7" title="CCCC_Options::Load\l_Options" alt="" coords="203,209,360,250"/>
+<area shape="rect" id="node12" href="$d4/d7f/classCCCC__Options.html#a27c73dee154b41fe008291e9df449b48" title="CCCC_Options::Save\l_Options" alt="" coords="203,274,360,315"/>
+<area shape="rect" id="node7" href="$d4/d7f/classCCCC__Options.html#ace084425ddde7d4c19657d7e13677ffc" title="CCCC_Options::Add_Option" alt="" coords="424,216,624,243"/>
+<area shape="rect" id="node8" href="$db/d6a/classCCCC__Item.html#aa8e1c13780b4a9191d00b85641cdde1d" title="CCCC_Item::Extract" alt="" coords="876,191,1023,217"/>
+<area shape="rect" id="node9" href="$d5/d39/cccc__opt_8cc.html#adaf4ab659cf8a851521a34e7b0b44bf5" title="add_file_extension" alt="" coords="679,191,821,217"/>
+<area shape="rect" id="node10" href="$d5/d39/cccc__opt_8cc.html#afe053a52743dabb8c5e585bc2e8761d1" title="add_treatment" alt="" coords="693,241,807,268"/>
+<area shape="rect" id="node11" href="$d5/d39/cccc__opt_8cc.html#a1e1d75f7f5aad4c636db40a37b60c382" title="add_dialect_keyword" alt="" coords="672,292,828,319"/>
+<area shape="rect" id="node13" href="$db/d6a/classCCCC__Item.html#a87231c9aa43ece932511d1143b64367e" title="CCCC_Item::Insert" alt="" coords="455,273,593,300"/>
+<area shape="rect" id="node14" href="$db/d6a/classCCCC__Item.html#a5a3ccfe13d6c77b27cf93182f8cafb58" title="CCCC_Item::ToFile" alt="" coords="453,324,595,351"/>
+</map>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module ANTLRToken-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="80" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="66" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="1.212" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.076" level="0" />
+<weighted_methods_per_class_unity value="12" level="0" />
+<weighted_methods_per_class_visibility value="12" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="3" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="./cccc/cccc_tok.h" line="49" />
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="11" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>ANTLRToken()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_tok.cc" line="69" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_tok.h" line="69" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="32" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ANTLRToken(ANTLRToken &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_tok.cc" line="87" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_tok.h" line="68" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ANTLRToken(ANTLRTokenType,ANTLRChar *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_tok.cc" line="77" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_tok.h" line="67" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>CountToken()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_tok.cc" line="153" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_tok.h" line="82" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="9" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>DecrementNesting()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_tok.h" line="79" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>IncrementNesting()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_tok.h" line="78" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getNestingLevel()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_tok.h" line="81" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getTokenTypeName()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_tok.cc" line="161" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_tok.h" line="83" />
+</extent>
+<lines_of_code value="2" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>makeToken(ANTLRTokenType,ANTLRChar *,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_tok.cc" line="103" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_tok.h" line="74" />
+</extent>
+<lines_of_code value="23" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="8" level="0" />
+<lines_of_code_per_line_of_comment value="2.875" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(ostream &amp;,ANTLRToken &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_tok.h" line="62" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator =(ANTLRToken &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_tok.cc" line="137" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_tok.h" line="70" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>~ANTLRToken()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_tok.cc" line="128" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_tok.h" line="72" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>ANTLRToken</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>ANTLRChar</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_tok.cc" line="77" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_tok.cc" line="104" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_tok.h" line="67" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_tok.h" line="75" />
+</extent>
+<name>ANTLRCommonToken</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="./cccc/cccc_tok.h" line="49" />
+</extent>
+<name>ostream</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_tok.h" line="62" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

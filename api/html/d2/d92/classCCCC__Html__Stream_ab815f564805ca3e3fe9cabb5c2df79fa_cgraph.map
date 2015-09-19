@@ -1,0 +1,13 @@
+<map id="CCCC_Html_Stream::Put_Structural_Details_Cell" name="CCCC_Html_Stream::Put_Structural_Details_Cell">
+<area shape="rect" id="node2" href="$d6/d9f/classCCCC__Module.html#adea7213358d5e1f9119c70cbbb99f287" title="CCCC_Module::name" alt="" coords="241,5,398,32"/>
+<area shape="rect" id="node3" href="$d2/d65/classCCCC__UseRelationship.html#a432d79f0f123f7d0790adfdb7c5ed299" title="CCCC_UseRelationship\l::name" alt="" coords="233,57,406,98"/>
+<area shape="rect" id="node4" href="$d2/d65/classCCCC__UseRelationship.html#a936066b692baa5c53aa35ad646b2041c" title="CCCC_UseRelationship\l::is_visible" alt="" coords="233,122,406,163"/>
+<area shape="rect" id="node5" href="$d2/d65/classCCCC__UseRelationship.html#a5e08e1d7d70708daef7ac7ef73391b0b" title="CCCC_UseRelationship\l::is_concrete" alt="" coords="233,187,406,229"/>
+<area shape="rect" id="node6" href="$d2/d92/classCCCC__Html__Stream.html#a4cdc271c6f74c77b19dec08a3c8500db" title="CCCC_Html_Stream::Put\l_Extent_List" alt="" coords="231,253,408,294"/>
+<area shape="rect" id="node7" href="$d8/dcf/classCCCC__Table.html#a0d099c7bc984323270cc8c63d5ff8379" title="CCCC_Table::first_item" alt="" coords="461,180,629,207"/>
+<area shape="rect" id="node8" href="$df/d99/classCCCC__Extent.html#aafc68f063b7e7635471d1d0f7d5bca70" title="CCCC_Extent::name" alt="" coords="681,235,832,261"/>
+<area shape="rect" id="node9" href="$d2/d92/classCCCC__Html__Stream.html#abc882e68712ce2c2f95ce84821d1c516" title="CCCC_Html_Stream::Put\l_Extent_URL" alt="" coords="456,282,633,323"/>
+<area shape="rect" id="node12" href="$d8/dcf/classCCCC__Table.html#a080274070f7d48b68bd8d3291818d76f" title="CCCC_Table::next_item" alt="" coords="459,348,631,375"/>
+<area shape="rect" id="node10" href="$d6/d85/classCCCC__Record.html#a81bf0541981287180a41e3d801e7a084" title="CCCC_Record::key" alt="" coords="685,289,829,316"/>
+<area shape="rect" id="node11" href="$d6/d85/classCCCC__Record.html#a03c15972bea5df4e34930fa4c34e34bd" title="CCCC_Record::name" alt="" coords="880,289,1037,316"/>
+</map>

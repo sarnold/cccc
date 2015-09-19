@@ -1,0 +1,16 @@
+<map id="CCCC_Xml_Stream::Structural_Summary" name="CCCC_Xml_Stream::Structural_Summary">
+<area shape="rect" id="node2" href="$d8/dcf/classCCCC__Table.html#a0d099c7bc984323270cc8c63d5ff8379" title="CCCC_Table::first_item" alt="" coords="725,9,893,36"/>
+<area shape="rect" id="node3" href="$d6/d9f/classCCCC__Module.html#a2e35b964b59e60393b2af32dd537f505" title="CCCC_Module::is_trivial" alt="" coords="499,354,672,381"/>
+<area shape="rect" id="node4" href="$db/d8c/classCCCC__Xml__Stream.html#a5857c6d4a204a15b65a411301e2caf57" title="CCCC_Xml_Stream::Put\l_Label_Node" alt="" coords="270,86,442,127"/>
+<area shape="rect" id="node8" href="$d8/dcf/classCCCC__Table.html#a080274070f7d48b68bd8d3291818d76f" title="CCCC_Table::next_item" alt="" coords="723,177,895,204"/>
+<area shape="rect" id="node9" href="$d6/d9f/classCCCC__Module.html#adea7213358d5e1f9119c70cbbb99f287" title="CCCC_Module::name" alt="" coords="277,316,435,342"/>
+<area shape="rect" id="node10" href="$d6/d9f/classCCCC__Module.html#ad1f26ab257c41657302b5c7b0253b034" title="CCCC_Module::get_count" alt="" coords="264,214,448,241"/>
+<area shape="rect" id="node14" href="$db/d8c/classCCCC__Xml__Stream.html#a618ba6784d7300949e73cf61693d4388" title="CCCC_Xml_Stream::Put\l_Metric_Node" alt="" coords="270,392,442,434"/>
+<area shape="rect" id="node5" href="$db/d8c/classCCCC__Xml__Stream.html#a8d4f164a7fe732e7627a5fc81ffd8ef9" title="CCCC_Xml_Stream::Put\l_Extent_List" alt="" coords="499,86,671,127"/>
+<area shape="rect" id="node6" href="$df/d99/classCCCC__Extent.html#aafc68f063b7e7635471d1d0f7d5bca70" title="CCCC_Extent::name" alt="" coords="943,89,1093,116"/>
+<area shape="rect" id="node7" href="$db/d8c/classCCCC__Xml__Stream.html#a4dbcc8c8a21c10b8b3b942137aead5e0" title="CCCC_Xml_Stream::Put\l_Extent_URL" alt="" coords="723,111,895,152"/>
+<area shape="rect" id="node11" href="$d6/d85/classCCCC__Record.html#a81bf0541981287180a41e3d801e7a084" title="CCCC_Record::key" alt="" coords="513,253,657,280"/>
+<area shape="rect" id="node13" href="$df/d99/classCCCC__Extent.html#aa6094d7370a45e8e7237fd25289e99bb" title="CCCC_Extent::get_count" alt="" coords="496,304,675,330"/>
+<area shape="rect" id="node12" href="$d6/d85/classCCCC__Record.html#a03c15972bea5df4e34930fa4c34e34bd" title="CCCC_Record::name" alt="" coords="730,253,887,280"/>
+<area shape="rect" id="node15" href="$dd/d72/classCCCC__Metric.html#a4388127897cc2c1de762a9689b913c0d" title="CCCC_Metric::emphasis\l_level" alt="" coords="498,406,673,447"/>
+</map>

@@ -1,15 +1,9 @@
 var searchData=
 [
-  ['field',['Field',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a3a76ec534ab01b7769ba5df8ae980116',1,'Jtokens.h']]],
-  ['final',['FINAL',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33afb43b8264ea4d3dd9957ba1b3fd3f3d5',1,'Jtokens.h']]],
-  ['finally',['FINALLY',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a50d9bc65315ee5d842dd3ba7d67540e4',1,'Jtokens.h']]],
-  ['fnum',['FNUM',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33adc5a5734c0a1281fe8d2e53e30407e2f',1,'Ctokens.h']]],
-  ['for',['FOR',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33aa809654855caa62449850d9122fd77a8',1,'FOR():&#160;Ctokens.h'],['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33aa809654855caa62449850d9122fd77a8',1,'FOR():&#160;Jtokens.h']]],
-  ['forcond',['ForCond',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33aef892d810e817d79c395a14882cce91b',1,'Jtokens.h']]],
-  ['forinit',['ForInit',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a97b890becf37335859c01efb45152710',1,'Jtokens.h']]],
-  ['foriter',['ForIter',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33ad191613cf3e13bddff8cff890b2722f3',1,'Jtokens.h']]],
-  ['forstatement',['ForStatement',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a1fde692f9d3e5a7c38629539bf4bd4fa',1,'Jtokens.h']]],
-  ['fptr_5ftype_5falias',['Fptr_type_alias',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33ad8305939ef0f1ae80d0b3b5eef201871',1,'Ctokens.h']]],
-  ['fptr_5ftypedef_5fdefinition',['Fptr_typedef_definition',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a7b90de546afc40be8df15406b494a7bd',1,'Ctokens.h']]],
-  ['friend',['FRIEND',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33aa205dd02252c745d53469e6d9dabea4b',1,'Ctokens.h']]]
+  ['lada',['lADA',['../d7/d8f/cccc__utl_8h.html#a315ca917ad583797f709ea477dd28705a593aa0e0c03e47c4890175e1ecf96190',1,'cccc_utl.h']]],
+  ['lansic',['lANSIC',['../d7/d8f/cccc__utl_8h.html#a315ca917ad583797f709ea477dd28705a2fba12373975fd160ac6316b950e28db',1,'cccc_utl.h']]],
+  ['lauto',['lAUTO',['../d7/d8f/cccc__utl_8h.html#a315ca917ad583797f709ea477dd28705ab8e083ee492cb2aae9d3953ed3a63a4e',1,'cccc_utl.h']]],
+  ['lcplusplus',['lCPLUSPLUS',['../d7/d8f/cccc__utl_8h.html#a315ca917ad583797f709ea477dd28705a06ffc2649e9c1cb73594c46326275d89',1,'cccc_utl.h']]],
+  ['lexer',['LEXER',['../d0/d84/cccc_8h.html#a83538f74b19d2e9f22e2630c77d54a10ae95e3cf1b3e33b46aae2554a1be88c2e',1,'cccc.h']]],
+  ['ljava',['lJAVA',['../d7/d8f/cccc__utl_8h.html#a315ca917ad583797f709ea477dd28705a21c14c2b473a66e7bb261b22290f68b9',1,'cccc_utl.h']]]
 ];

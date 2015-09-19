@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module anonymous-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="339" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="54" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="56" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="6.054" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.964" level="0" />
+<weighted_methods_per_class_unity value="37" level="0" />
+<weighted_methods_per_class_visibility value="1" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="0" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>DisposeOfImportRecord(CCCC_Extent *,int)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_db.cc" line="127" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>DisposeOfImportRecord(CCCC_Member *,int)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_db.cc" line="119" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>DisposeOfImportRecord(CCCC_Module *,int)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_db.cc" line="115" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>DisposeOfImportRecord(CCCC_UseRelationship *,int)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_db.cc" line="123" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>DisposeOfImportRecord(T *,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_db.cc" line="66" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_db.h" line="73" />
+</extent>
+<lines_of_code value="18" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="8" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>PeekAtNextLinePrefix(ifstream &amp;,string)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_db.cc" line="51" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_db.h" line="57" />
+</extent>
+<lines_of_code value="14" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="9" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>Resolve_Fields(string &amp;,string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_db.cc" line="105" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_db.h" line="75" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="11" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>add_dialect_keyword(CCCC_Item &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_opt.cc" line="75" />
+</extent>
+<lines_of_code value="14" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>add_file_extension(CCCC_Item &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_opt.cc" line="43" />
+</extent>
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>add_treatment(CCCC_Item &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_opt.cc" line="56" />
+</extent>
+<lines_of_code value="17" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>extract_enum(istream &amp;,int &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="62" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>insert_enum(ostream &amp;,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="57" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>ltrim(string)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_xml.cc" line="136" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>main()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_htm.cc" line="1515" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_xml.cc" line="852" />
+</extent>
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>main(int,char **)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/ccccmain.cc" line="712" />
+</extent>
+<lines_of_code value="24" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="8.000" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(CCCC_Html_Stream &amp;,const CCCC_Extent &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_htm.h" line="111" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(CCCC_Html_Stream &amp;,const CCCC_Metric &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_htm.cc" line="1026" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_htm.h" line="110" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(CCCC_Html_Stream &amp;,const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_htm.cc" line="997" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_htm.h" line="109" />
+</extent>
+<lines_of_code value="19" level="0" />
+<McCabes_cyclomatic_complexity value="9" level="0" />
+<lines_of_comment value="11" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="0.818" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(CCCC_Xml_Stream &amp;,const CCCC_Extent &amp;)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_xml.h" line="98" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(CCCC_Xml_Stream &amp;,const CCCC_Metric &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_xml.cc" line="635" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_xml.h" line="97" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(CCCC_Xml_Stream &amp;,const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_xml.cc" line="615" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_xml.h" line="96" />
+</extent>
+<lines_of_code value="16" level="0" />
+<McCabes_cyclomatic_complexity value="6" level="0" />
+<lines_of_comment value="5" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="1.200" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(ostream &amp;,ANTLRToken &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_tok.cc" line="166" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_tok.h" line="87" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="3" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(ostream &amp;,AugmentedBool)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="69" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="62" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(ostream &amp;,UseType)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="89" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &lt;&lt;(ostream &amp;,Visibility)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="79" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="56" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &gt;&gt;(istream &amp;,AugmentedBool &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="74" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="63" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &gt;&gt;(istream &amp;,UseType &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="94" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator &gt;&gt;(istream &amp;,Visibility &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="84" />
+</extent>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_utl.h" line="57" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator delete(void *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_new.cc" line="64" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator delete[](void *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_new.cc" line="75" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator new(size_t)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_new.cc" line="46" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>operator new[](size_t)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_new.cc" line="55" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>pad_string(int,string,string)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_htm.cc" line="1463" />
+</extent>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_xml.cc" line="836" />
+</extent>
+<lines_of_code value="22" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>rectrace(const char *,const char *,int,ANTLRAbstractToken *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="481" />
+</extent>
+<lines_of_code value="19" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setup_anchor_data()</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_htm.cc" line="1365" />
+</extent>
+<lines_of_code value="15" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>str(...)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/cccc_new.cc" line="43" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>toktrace(ANTLRAbstractToken *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/cccc_utl.cc" line="460" />
+</extent>
+<lines_of_code value="17" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>anonymous</name>
+<client_module>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

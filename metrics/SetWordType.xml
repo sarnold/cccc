@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module SetWordType-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="********" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="3" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>SetWordType</name>
+<client_module>
+<name>CParser</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="57" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="103" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="104" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="105" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="106" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="107" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="108" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="109" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="110" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="111" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="112" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="113" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="114" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="115" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="116" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="117" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="118" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="119" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="120" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="121" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="122" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="123" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="124" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="125" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="126" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="127" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="128" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="129" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="130" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="131" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="132" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="133" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="134" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="135" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="136" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="137" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="138" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="139" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="140" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="141" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="142" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="143" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="144" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="145" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="146" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="147" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="148" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="149" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="150" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="151" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="152" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="153" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="154" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="155" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="156" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="157" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="158" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="159" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="160" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="161" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="162" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="163" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="164" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="165" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="166" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="167" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="168" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="169" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="170" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="171" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="172" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="173" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="174" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="175" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="176" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="177" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="178" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="179" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="180" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="181" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="182" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="183" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="184" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="185" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="186" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="187" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="188" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="189" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="190" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="191" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="192" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="193" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="194" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="195" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="196" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="197" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="198" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="199" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="200" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="201" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="202" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="203" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="204" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="205" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="206" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="207" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="208" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="209" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="210" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="211" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="212" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="213" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="214" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="215" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="216" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="217" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="218" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="219" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="220" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="329" />
+</extent>
+<name>JParser</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="51" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="104" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="105" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="106" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="107" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="108" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="109" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="110" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="111" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="112" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="113" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="114" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="115" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="116" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="117" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="118" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="119" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="120" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="121" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="122" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="123" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="124" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="125" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="126" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="127" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="128" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="129" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="130" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="131" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="132" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="133" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="134" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="135" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="136" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="137" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="138" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="139" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="140" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="141" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="142" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="143" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="144" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="145" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="146" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="147" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="148" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="149" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="150" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="151" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="152" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="153" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="154" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="155" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="156" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="157" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="158" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="159" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="160" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="161" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="162" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="163" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="164" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="165" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="166" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="167" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="168" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="169" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="170" />
+</extent>
+<name>ParseUtility</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="116" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="550" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="149" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="159" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

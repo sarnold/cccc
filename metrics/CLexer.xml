@@ -1,0 +1,3872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module CLexer-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="644" level="1" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="12" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="53.667" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="168" level="0" />
+<weighted_methods_per_class_visibility value="168" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="5" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="./cccc/CLexer.h" line="16" />
+<lines_of_code value="471" level="2" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="12" level="0" />
+<lines_of_code_per_line_of_comment value="39.250" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>CLexer(DLGInputStream *,unsigned)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/CLexer.h" line="30" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act1()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="40" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act10()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="49" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act100()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="139" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act101()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="140" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act102()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="141" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act103()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="142" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act104()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="143" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act105()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="144" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act106()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="145" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act107()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="146" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act108()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="147" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act109()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="148" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act11()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="50" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act110()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="149" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act111()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="150" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act112()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="151" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act113()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="152" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act114()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="153" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act115()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="154" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act116()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="155" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act117()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="156" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act118()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="157" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act119()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="158" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act12()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="51" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act120()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="159" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act121()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="160" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act122()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="161" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act123()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="162" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act124()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="163" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act125()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="164" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act126()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="165" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act127()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="166" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act128()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="167" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act129()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="168" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act13()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="52" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act130()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="169" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act131()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="170" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act132()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="171" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act133()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="172" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act134()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="173" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act135()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="174" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act136()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="175" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act137()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="176" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act138()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="177" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act139()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="178" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act14()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="53" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act140()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="179" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act141()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="180" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act142()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="181" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act143()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="182" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act144()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="183" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act145()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="184" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act146()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="185" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act147()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="186" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act148()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="187" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act149()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="188" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act15()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="54" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act150()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="189" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act151()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="190" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act152()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="191" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act153()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="192" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act154()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="193" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act155()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="194" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act156()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="195" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act157()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="196" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act158()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="197" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act159()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="198" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act16()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="55" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act160()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="199" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act161()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="200" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act162()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="201" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act163()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="202" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act164()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="203" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act17()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="56" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act18()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="57" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act19()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="58" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act2()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="41" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act20()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="59" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act21()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="60" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act22()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="61" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act23()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="62" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act24()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="63" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act25()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="64" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act26()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="65" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act27()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="66" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act28()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="67" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act29()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="68" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act3()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="42" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act30()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="69" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act31()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="70" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act32()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="71" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act33()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="72" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act34()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="73" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act35()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="74" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act36()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="75" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act37()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="76" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act38()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="77" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act39()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="78" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act4()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="43" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act40()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="79" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act41()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="80" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act42()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="81" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act43()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="82" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act44()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="83" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act45()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="84" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act46()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="85" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act47()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="86" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act48()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="87" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act49()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="88" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act5()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="44" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act50()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="89" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act51()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="90" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act52()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="91" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act53()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="92" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act54()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="93" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act55()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="94" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act56()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="95" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act57()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="96" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act58()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="97" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act59()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="98" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act6()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="45" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act60()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="99" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act61()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="100" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act62()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="101" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act63()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="102" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act64()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="103" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act65()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="104" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act66()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="105" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act67()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="106" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act68()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="107" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act69()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="108" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act7()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="46" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act70()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="109" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act71()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="110" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act72()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="111" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act73()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="112" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act74()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="113" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act75()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="114" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act76()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="115" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act77()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="116" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act78()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="117" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act79()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="118" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act8()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="47" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act80()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="119" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act81()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="120" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act82()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="121" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act83()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="122" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act84()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="123" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act85()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="124" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act86()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="125" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act87()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="126" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act88()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="127" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act89()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="128" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act9()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="48" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act90()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="129" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act91()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="130" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act92()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="131" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act93()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="132" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act94()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="133" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act95()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="134" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act96()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="135" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act97()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="136" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act98()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="137" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act99()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="138" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>advance(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="38" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>mode(int)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="36" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>nextTokenType(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/CLexer.h" line="37" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>CLexer</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>DLGChar</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="650" />
+</extent>
+<name>DLGInputStream</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CLexer.h" line="30" />
+</extent>
+<name>DLGLexerBase</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="./cccc/CLexer.h" line="16" />
+</extent>
+<name>DfaState</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="204" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="205" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="206" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="207" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="208" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="209" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="210" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="211" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="212" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="213" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="214" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="215" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="216" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="217" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="218" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="219" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="220" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="221" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="222" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="223" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="224" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="225" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="226" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="227" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="228" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="229" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="230" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="231" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="232" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="233" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="234" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="235" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="236" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="237" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="238" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="239" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="240" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="241" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="242" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="243" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="244" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="245" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="246" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="247" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="248" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="249" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="250" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="251" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="252" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="253" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="254" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="255" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="256" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="257" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="258" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="259" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="260" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="261" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="262" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="263" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="264" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="265" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="266" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="267" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="268" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="269" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="270" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="271" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="272" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="273" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="274" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="275" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="276" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="277" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="278" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="279" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="280" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="281" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="282" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="283" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="284" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="285" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="286" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="287" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="288" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="289" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="290" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="291" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="292" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="293" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="294" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="295" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="296" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="297" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="298" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="299" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="300" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="301" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="302" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="303" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="304" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="305" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="306" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="307" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="308" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="309" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="310" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="311" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="312" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="313" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="314" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="315" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="316" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="317" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="318" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="319" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="320" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="321" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="322" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="323" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="324" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="325" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="326" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="327" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="328" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="329" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="330" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="331" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="332" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="333" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="334" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="335" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="336" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="337" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="338" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="339" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="340" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="341" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="342" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="343" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="344" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="345" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="346" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="347" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="348" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="349" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="350" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="351" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="352" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="353" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="354" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="355" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="356" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="357" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="358" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="359" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="360" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="361" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="362" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="363" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="364" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="365" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="366" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="367" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="368" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="369" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="370" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="371" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="372" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="373" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="374" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="375" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="376" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="377" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="378" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="379" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="380" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="381" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="382" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="383" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="384" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="385" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="386" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="387" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="388" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="389" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="390" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="391" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="392" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="393" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="394" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="395" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="396" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="397" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="398" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="399" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="400" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="401" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="402" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="403" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="404" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="405" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="406" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="407" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="408" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="409" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="410" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="411" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="412" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="413" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="414" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="415" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="416" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="417" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="418" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="419" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="420" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="421" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="422" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="423" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="424" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="425" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="426" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="427" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="428" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="429" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="430" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="431" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="432" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="433" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="434" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="435" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="436" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="437" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="438" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="439" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="440" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="441" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="442" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="443" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="444" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="445" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="446" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="447" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="448" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="449" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="450" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="451" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="452" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="453" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="454" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="455" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="456" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="457" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="458" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="459" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="460" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="461" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="462" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="463" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="464" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="465" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="466" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="467" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="468" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="469" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="470" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="471" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="472" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="473" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="474" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="475" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="476" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="477" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="478" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="479" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="480" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="481" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="482" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="483" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="484" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="485" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="486" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="487" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="488" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="489" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="490" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="491" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="492" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="493" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="494" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="495" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="496" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="497" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="498" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="499" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="500" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="501" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="502" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="503" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="504" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="505" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="506" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="507" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="508" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="509" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="510" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="511" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="512" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="513" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="514" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="515" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="516" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="517" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="518" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="519" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="520" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="521" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="522" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="523" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="524" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="525" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="526" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="527" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="528" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="529" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="530" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="531" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="532" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="533" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="534" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="535" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="536" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="537" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="538" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="539" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="540" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="541" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="542" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="543" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="544" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="545" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="546" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="547" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="548" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="549" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="550" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="551" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="552" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="553" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="554" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="555" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="556" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="557" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="558" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="559" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="560" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="561" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="562" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="563" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="564" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="565" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="566" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="567" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="568" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="569" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="570" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="571" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="572" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="573" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="574" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="575" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="576" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="577" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="578" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="579" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="580" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="581" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="582" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="583" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="584" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="585" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="586" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="587" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="588" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="589" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="590" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="591" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="592" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="593" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="594" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="595" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="596" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="597" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="598" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="599" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="600" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="601" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="602" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="603" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="604" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="605" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="606" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="607" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="608" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="609" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="610" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="611" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="612" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="613" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="614" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="615" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="616" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="617" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="618" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="619" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="620" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="621" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="622" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="623" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="624" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="625" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="626" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="627" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="628" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="629" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="630" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="631" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="632" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="633" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="634" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="635" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="636" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="637" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="638" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="639" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="640" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="641" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="642" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="643" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="644" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="645" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="./cccc/CLexer.h" line="646" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="647" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="649" />
+</extent>
+<name>unsigned</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/CLexer.h" line="31" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

@@ -1,0 +1,12 @@
+<map id="CCCC_Xml_Stream::Put_Structural_Details_Node" name="CCCC_Xml_Stream::Put_Structural_Details_Node">
+<area shape="rect" id="node2" href="$d6/d9f/classCCCC__Module.html#adea7213358d5e1f9119c70cbbb99f287" title="CCCC_Module::name" alt="" coords="244,5,401,32"/>
+<area shape="rect" id="node3" href="$db/d8c/classCCCC__Xml__Stream.html#a5857c6d4a204a15b65a411301e2caf57" title="CCCC_Xml_Stream::Put\l_Label_Node" alt="" coords="237,57,409,98"/>
+<area shape="rect" id="node4" href="$db/d8c/classCCCC__Xml__Stream.html#a8d4f164a7fe732e7627a5fc81ffd8ef9" title="CCCC_Xml_Stream::Put\l_Extent_List" alt="" coords="457,86,629,127"/>
+<area shape="rect" id="node9" href="$d2/d65/classCCCC__UseRelationship.html#a432d79f0f123f7d0790adfdb7c5ed299" title="CCCC_UseRelationship\l::name" alt="" coords="236,174,409,215"/>
+<area shape="rect" id="node10" href="$d2/d65/classCCCC__UseRelationship.html#a936066b692baa5c53aa35ad646b2041c" title="CCCC_UseRelationship\l::is_visible" alt="" coords="236,239,409,281"/>
+<area shape="rect" id="node11" href="$d2/d65/classCCCC__UseRelationship.html#a5e08e1d7d70708daef7ac7ef73391b0b" title="CCCC_UseRelationship\l::is_concrete" alt="" coords="236,305,409,346"/>
+<area shape="rect" id="node5" href="$d8/dcf/classCCCC__Table.html#a0d099c7bc984323270cc8c63d5ff8379" title="CCCC_Table::first_item" alt="" coords="679,13,847,40"/>
+<area shape="rect" id="node6" href="$df/d99/classCCCC__Extent.html#aafc68f063b7e7635471d1d0f7d5bca70" title="CCCC_Extent::name" alt="" coords="897,93,1048,120"/>
+<area shape="rect" id="node7" href="$db/d8c/classCCCC__Xml__Stream.html#a4dbcc8c8a21c10b8b3b942137aead5e0" title="CCCC_Xml_Stream::Put\l_Extent_URL" alt="" coords="677,115,849,157"/>
+<area shape="rect" id="node8" href="$d8/dcf/classCCCC__Table.html#a080274070f7d48b68bd8d3291818d76f" title="CCCC_Table::next_item" alt="" coords="677,181,849,208"/>
+</map>

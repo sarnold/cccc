@@ -1,28 +1,4 @@
 var searchData=
 [
-  ['balanced',['Balanced',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33adaad19d4739e211248073690cda2d0a3',1,'Ctokens.h']]],
-  ['balanced_5flist',['Balanced_list',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a6e3efd9eef21ec063b5c34dcdc99b65f',1,'Ctokens.h']]],
-  ['band',['BAND',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33aaeb8b7fcd13eaf49974b5ed6dac131ed',1,'Jtokens.h']]],
-  ['band_5fassign',['BAND_ASSIGN',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a85075014d25ffcea0df6f3c998ef9afd',1,'Jtokens.h']]],
-  ['bfalse',['BFALSE',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33ada31a98e40d2192b571acd251a175519',1,'BFALSE():&#160;Ctokens.h'],['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33ada31a98e40d2192b571acd251a175519',1,'BFALSE():&#160;Jtokens.h']]],
-  ['bitand',['BITAND',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a6f680e7ac1502f67e50455fdb63574d8',1,'Ctokens.h']]],
-  ['bitor',['BITOR',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a07747da2826d843f8a24926aa789abd7',1,'Ctokens.h']]],
-  ['block',['Block',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33aa00f801460e81f86eab56d86fe627551',1,'Ctokens.h']]],
-  ['bnot',['BNOT',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a3b7cbe2507fd41df9d2784644e5ed358',1,'Jtokens.h']]],
-  ['bor',['BOR',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33acc9c9b77f3b91e71abfa752a1efd7735',1,'Jtokens.h']]],
-  ['bor_5fassign',['BOR_ASSIGN',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a69a87c650096ccc903f3be1c5137b2ad',1,'Jtokens.h']]],
-  ['brace_5fblock',['Brace_block',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a8a6e0a60d8895a3cae907be02f7d7af7',1,'Ctokens.h']]],
-  ['brack_5fblock',['Brack_block',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a15b72356cbe7766eb92556a813224c42',1,'Ctokens.h']]],
-  ['brack_5flist',['Brack_list',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a6b1062fb4715c85a69db8fc923d86d56',1,'Ctokens.h']]],
-  ['break',['BREAK',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a9524d094809858b9e4f778763913568a',1,'BREAK():&#160;Ctokens.h'],['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a9524d094809858b9e4f778763913568a',1,'BREAK():&#160;Jtokens.h']]],
-  ['breakstatement',['BreakStatement',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33abd2128854fb3a3246a397391af287bf6',1,'Jtokens.h']]],
-  ['bsr',['BSR',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33aafc0ac47b8289a8daeb31b37a0166ed6',1,'Jtokens.h']]],
-  ['bsr_5fassign',['BSR_ASSIGN',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a8492d2cb11423d710684565a72fb7bf8',1,'Jtokens.h']]],
-  ['btrue',['BTRUE',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33aff80d1befd29b21c15868f68b87970e2',1,'BTRUE():&#160;Ctokens.h'],['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33aff80d1befd29b21c15868f68b87970e2',1,'BTRUE():&#160;Jtokens.h']]],
-  ['builtin_5ftype',['Builtin_type',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a561143522bfc003f160b90c0d7106c0a',1,'Ctokens.h']]],
-  ['builtintype',['BuiltInType',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a433e659ee70706518477ff90a5a2191a',1,'Jtokens.h']]],
-  ['builtintypespec',['BuiltInTypeSpec',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a060e8508d60dc0a575c70567f19c77c8',1,'Jtokens.h']]],
-  ['builtintypespec2',['BuiltInTypeSpec2',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a90faf83aa6a722d588822047ae983058',1,'Jtokens.h']]],
-  ['bxor',['BXOR',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a709699c6ad2f222fdf66f8b6bfb4fe54',1,'Jtokens.h']]],
-  ['bxor_5fassign',['BXOR_ASSIGN',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a28d4d3b0cfa7a0f6572d9523dc061264',1,'Jtokens.h']]]
+  ['counter',['COUNTER',['../d0/d84/cccc_8h.html#a83538f74b19d2e9f22e2630c77d54a10a7b5e9804203d4b1300aad76e5f9a3302',1,'cccc.h']]]
 ];

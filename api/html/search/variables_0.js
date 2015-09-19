@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_5ftoken_5ftbl',['_token_tbl',['../d0/df6/classCParser.html#a0a32a9b357d654218187534f3a737e62',1,'CParser::_token_tbl()'],['../d6/d6b/classJParser.html#aa855e289255aea05ca393455f10a3a8f',1,'JParser::_token_tbl()']]]
+  ['active_5fproject',['active_project',['../d6/d85/classCCCC__Record.html#aff58b39d6271d18adc3eebadc91f27f7',1,'CCCC_Record']]],
+  ['app',['app',['../d6/d93/ccccmain_8cc.html#a739c4f3160eadb5a74b2a417db82bd46',1,'ccccmain.cc']]]
 ];

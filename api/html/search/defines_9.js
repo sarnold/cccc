@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['release_5fstrstream',['RELEASE_STRSTREAM',['../d0/d84/cccc_8h.html#a582d37c690708639320ce50d55ba56d2',1,'cccc.h']]],
-  ['rs',['RS',['../dc/d0b/cccc__utl_8cc.html#af8903d8eea3868940c60af887473b152',1,'cccc_utl.cc']]]
+  ['use_5fsystem_5fnew',['USE_SYSTEM_NEW',['../d9/d46/cccc__new_8cc.html#a8da2a47a65c8449f85ca3760146ffcd0',1,'cccc_new.cc']]]
 ];

@@ -1,0 +1,1124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module string-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="********" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="18" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>string</name>
+<client_module>
+<name>CCCC_Extent</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_ext.h" line="38" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_ext.h" line="39" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_ext.h" line="40" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_ext.h" line="41" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_ext.h" line="42" />
+</extent>
+<name>CCCC_Html_Stream</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_htm.cc" line="57" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_htm.cc" line="58" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="277" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="278" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="818" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="818" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="819" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="829" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="852" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="853" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="853" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="906" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="913" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="1205" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="1206" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="1207" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_htm.cc" line="1343" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_htm.cc" line="1343" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_htm.h" line="46" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="51" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="52" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="74" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="74" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="76" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="76" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="77" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="79" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="80" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="81" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="81" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="84" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="85" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="94" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="95" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="96" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_htm.h" line="100" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_htm.h" line="100" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_htm.h" line="103" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_htm.h" line="103" />
+</extent>
+<name>CCCC_Item</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_itm.cc" line="10" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_itm.cc" line="17" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_itm.cc" line="31" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_itm.cc" line="47" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_itm.h" line="19" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_itm.h" line="23" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_itm.h" line="24" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_itm.h" line="27" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_itm.h" line="29" />
+</extent>
+<name>CCCC_Member</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_mem.h" line="38" />
+</extent>
+<name>CCCC_Module</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_mod.h" line="48" />
+</extent>
+<name>CCCC_Options</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_opt.cc" line="118" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_opt.cc" line="164" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_opt.cc" line="220" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_opt.cc" line="253" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_opt.cc" line="264" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_opt.cc" line="264" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_opt.h" line="44" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_opt.h" line="50" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_opt.h" line="56" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_opt.h" line="59" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_opt.h" line="64" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_opt.h" line="64" />
+</extent>
+<name>CCCC_Project</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_prj.cc" line="33" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_prj.h" line="77" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_prj.h" line="99" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_prj.h" line="100" />
+</extent>
+<name>CCCC_Record</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_rec.cc" line="31" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_rec.h" line="46" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_rec.h" line="47" />
+</extent>
+<name>CCCC_Table</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_tbl.cc" line="66" />
+</extent>
+<name>CCCC_UseRelationship</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_use.h" line="37" />
+</extent>
+<name>CCCC_Xml_Stream</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_xml.cc" line="149" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_xml.cc" line="150" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_xml.cc" line="207" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_xml.cc" line="207" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.cc" line="507" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.cc" line="507" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.cc" line="508" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.cc" line="508" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.cc" line="530" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.cc" line="531" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.cc" line="537" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.cc" line="538" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.cc" line="544" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_xml.h" line="43" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="48" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="49" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="71" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="71" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="72" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="72" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="74" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="75" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="75" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="76" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="76" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_xml.h" line="87" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_xml.h" line="87" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_xml.h" line="90" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_xml.h" line="90" />
+</extent>
+<name>CParser</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="63" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="63" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="63" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CParser.h" line="88" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="92" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="92" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="227" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="229" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="235" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="236" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="245" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="246" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="247" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="248" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="252" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="253" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="255" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="255" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="255" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="256" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="256" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="256" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="257" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="258" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="259" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="260" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="261" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="262" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="263" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="265" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="265" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="266" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="267" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="268" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="269" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="270" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="272" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="272" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="273" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="273" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="274" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="274" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="275" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="275" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="276" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="276" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="289" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="290" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="290" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="291" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="292" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="294" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="295" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="304" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="304" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="305" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="305" />
+</extent>
+<name>JParser</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="57" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="57" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="57" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="80" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="88" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="93" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="93" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="177" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="179" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="188" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="189" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="190" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="191" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="194" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="195" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="196" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="197" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="198" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="199" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="200" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="200" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="201" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="202" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="202" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="204" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="204" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="206" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="206" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="213" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="214" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="214" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="219" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="221" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="227" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="229" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="238" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="239" />
+</extent>
+<name>Main</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="79" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="80" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="81" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="82" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="83" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="84" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="85" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/ccccmain.cc" line="86" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="99" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="105" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="106" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="271" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="497" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/ccccmain.cc" line="534" />
+</extent>
+<name>Metric_Treatment</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_met.h" line="45" />
+</extent>
+<name>ParseStore</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="234" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="289" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="289" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="350" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="351" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="352" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="369" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="370" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="371" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="372" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="373" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="406" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="407" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="408" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="409" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="453" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="212" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="222" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="223" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="224" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="227" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="228" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="229" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="230" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="231" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="235" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="236" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="237" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="238" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="242" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_utl.h" line="243" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="248" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="248" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_utl.h" line="273" />
+</extent>
+<name>ParseUtility</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="207" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.cc" line="207" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="165" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/cccc_utl.h" line="165" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_utl.h" line="177" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_utl.h" line="179" />
+</extent>
+<name>Source_Anchor</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="123" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="127" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="111" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="115" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

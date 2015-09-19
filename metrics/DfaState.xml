@@ -1,0 +1,3220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module DfaState-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="********" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="2" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>DfaState</name>
+<client_module>
+<name>CLexer</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="204" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="205" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="206" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="207" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="208" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="209" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="210" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="211" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="212" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="213" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="214" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="215" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="216" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="217" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="218" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="219" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="220" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="221" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="222" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="223" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="224" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="225" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="226" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="227" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="228" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="229" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="230" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="231" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="232" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="233" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="234" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="235" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="236" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="237" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="238" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="239" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="240" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="241" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="242" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="243" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="244" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="245" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="246" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="247" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="248" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="249" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="250" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="251" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="252" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="253" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="254" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="255" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="256" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="257" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="258" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="259" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="260" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="261" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="262" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="263" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="264" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="265" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="266" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="267" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="268" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="269" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="270" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="271" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="272" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="273" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="274" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="275" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="276" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="277" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="278" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="279" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="280" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="281" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="282" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="283" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="284" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="285" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="286" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="287" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="288" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="289" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="290" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="291" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="292" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="293" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="294" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="295" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="296" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="297" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="298" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="299" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="300" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="301" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="302" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="303" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="304" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="305" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="306" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="307" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="308" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="309" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="310" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="311" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="312" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="313" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="314" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="315" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="316" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="317" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="318" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="319" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="320" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="321" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="322" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="323" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="324" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="325" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="326" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="327" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="328" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="329" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="330" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="331" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="332" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="333" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="334" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="335" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="336" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="337" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="338" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="339" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="340" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="341" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="342" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="343" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="344" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="345" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="346" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="347" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="348" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="349" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="350" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="351" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="352" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="353" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="354" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="355" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="356" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="357" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="358" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="359" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="360" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="361" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="362" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="363" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="364" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="365" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="366" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="367" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="368" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="369" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="370" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="371" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="372" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="373" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="374" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="375" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="376" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="377" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="378" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="379" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="380" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="381" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="382" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="383" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="384" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="385" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="386" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="387" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="388" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="389" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="390" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="391" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="392" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="393" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="394" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="395" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="396" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="397" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="398" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="399" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="400" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="401" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="402" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="403" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="404" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="405" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="406" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="407" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="408" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="409" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="410" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="411" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="412" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="413" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="414" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="415" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="416" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="417" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="418" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="419" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="420" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="421" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="422" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="423" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="424" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="425" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="426" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="427" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="428" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="429" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="430" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="431" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="432" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="433" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="434" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="435" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="436" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="437" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="438" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="439" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="440" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="441" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="442" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="443" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="444" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="445" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="446" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="447" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="448" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="449" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="450" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="451" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="452" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="453" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="454" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="455" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="456" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="457" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="458" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="459" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="460" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="461" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="462" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="463" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="464" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="465" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="466" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="467" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="468" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="469" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="470" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="471" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="472" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="473" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="474" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="475" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="476" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="477" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="478" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="479" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="480" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="481" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="482" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="483" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="484" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="485" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="486" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="487" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="488" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="489" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="490" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="491" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="492" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="493" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="494" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="495" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="496" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="497" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="498" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="499" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="500" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="501" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="502" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="503" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="504" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="505" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="506" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="507" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="508" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="509" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="510" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="511" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="512" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="513" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="514" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="515" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="516" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="517" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="518" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="519" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="520" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="521" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="522" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="523" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="524" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="525" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="526" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="527" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="528" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="529" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="530" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="531" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="532" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="533" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="534" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="535" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="536" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="537" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="538" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="539" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="540" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="541" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="542" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="543" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="544" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="545" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="546" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="547" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="548" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="549" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="550" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="551" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="552" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="553" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="554" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="555" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="556" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="557" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="558" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="559" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="560" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="561" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="562" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="563" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="564" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="565" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="566" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="567" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="568" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="569" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="570" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="571" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="572" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="573" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="574" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="575" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="576" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="577" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="578" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="579" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="580" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="581" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="582" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="583" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="584" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="585" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="586" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="587" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="588" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="589" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="590" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="591" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="592" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="593" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="594" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="595" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="596" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="597" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="598" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="599" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="600" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="601" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="602" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="603" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="604" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="605" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="606" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="607" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="608" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="609" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="610" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="611" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="612" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="613" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="614" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="615" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="616" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="617" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="618" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="619" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="620" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="621" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="622" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="623" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="624" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="625" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="626" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="627" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="628" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="629" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="630" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="631" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="632" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="633" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="634" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="635" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="636" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="637" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="638" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="639" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="640" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="641" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="642" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="643" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="644" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="645" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="./cccc/CLexer.h" line="646" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="647" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/CLexer.h" line="649" />
+</extent>
+<name>JLexer</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="172" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="173" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="174" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="175" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="176" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="177" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="178" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="179" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="180" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="181" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="182" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="183" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="184" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="185" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="186" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="187" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="188" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="189" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="190" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="191" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="192" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="193" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="194" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="195" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="196" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="197" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="198" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="199" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="200" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="201" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="202" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="203" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="204" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="205" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="206" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="207" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="208" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="209" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="210" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="211" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="212" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="213" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="214" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="215" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="216" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="217" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="218" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="219" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="220" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="221" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="222" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="223" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="224" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="225" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="226" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="227" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="228" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="229" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="230" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="231" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="232" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="233" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="234" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="235" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="236" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="237" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="238" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="239" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="240" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="241" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="242" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="243" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="244" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="245" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="246" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="247" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="248" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="249" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="250" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="251" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="252" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="253" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="254" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="255" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="256" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="257" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="258" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="259" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="260" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="261" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="262" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="263" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="264" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="265" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="266" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="267" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="268" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="269" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="270" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="271" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="272" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="273" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="274" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="275" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="276" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="277" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="278" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="279" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="280" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="281" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="282" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="283" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="284" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="285" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="286" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="287" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="288" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="289" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="290" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="291" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="292" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="293" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="294" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="295" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="296" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="297" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="298" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="299" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="300" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="301" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="302" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="303" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="304" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="305" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="306" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="307" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="308" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="309" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="310" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="311" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="312" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="313" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="314" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="315" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="316" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="317" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="318" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="319" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="320" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="321" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="322" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="323" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="324" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="325" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="326" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="327" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="328" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="329" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="330" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="331" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="332" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="333" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="334" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="335" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="336" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="337" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="338" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="339" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="340" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="341" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="342" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="343" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="344" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="345" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="346" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="347" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="348" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="349" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="350" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="351" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="352" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="353" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="354" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="355" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="356" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="357" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="358" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="359" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="360" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="361" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="362" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="363" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="364" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="365" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="366" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="367" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="368" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="369" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="370" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="371" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="372" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="373" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="374" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="375" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="376" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="377" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="378" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="379" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="380" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="381" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="382" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="383" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="384" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="385" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="386" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="387" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="388" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="389" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="390" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="391" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="392" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="393" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="394" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="395" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="396" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="397" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="398" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="399" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="400" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="401" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="402" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="403" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="404" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="405" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="406" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="407" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="408" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="409" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="410" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="411" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="412" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="413" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="414" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="415" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="416" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="417" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="418" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="419" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="420" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="421" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="422" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="423" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="424" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="425" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="426" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="427" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="428" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="429" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="430" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="431" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="432" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="433" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="434" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="435" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="436" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="437" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="438" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="439" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="440" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="441" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="442" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="443" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="444" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="445" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="446" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="447" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="448" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="449" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="450" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="451" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="452" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="453" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="454" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="455" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="456" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="457" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="458" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="459" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="460" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="461" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="462" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="463" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="464" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="465" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="466" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="467" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="468" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="469" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="470" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="471" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="472" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="473" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="474" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="475" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="476" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="477" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="478" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="479" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="480" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="481" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="482" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="483" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="484" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="485" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="486" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="487" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="488" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="489" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="490" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="491" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="492" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="493" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="494" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="495" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="496" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="497" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="498" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="499" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="500" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="501" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="502" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="503" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="504" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="505" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="506" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="507" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="508" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="509" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="510" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="511" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="512" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="513" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="514" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="515" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="516" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="517" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="./cccc/JLexer.h" line="518" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="519" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="521" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

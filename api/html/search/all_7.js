@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['ge',['GE',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a558711b4a2a25070b970d85f5926d5ce',1,'Jtokens.h']]],
   ['generalfromfilestatuses',['GeneralFromFileStatuses',['../d7/d44/cccc__db_8h.html#a5dbd322a66db6d0a49b1e1fceffa02b0',1,'cccc_db.h']]],
   ['generate_5freport',['generate_report',['../dc/d1e/classCCCC__Member.html#a7e9ae6daf33908709a9de530e475496c',1,'CCCC_Member::generate_report()'],['../d2/d65/classCCCC__UseRelationship.html#a091af70ba4abf8001c1a4bbb3809fd0f',1,'CCCC_UseRelationship::generate_report()']]],
   ['generatehtml',['GenerateHtml',['../db/d4a/classMain.html#a41e7f9ccdd5f0029949137c8c5ac8ece',1,'Main']]],
@@ -19,11 +18,7 @@ var searchData=
   ['getfromitem',['GetFromItem',['../df/d99/classCCCC__Extent.html#abaf126bf784cc83e12eb98434674c4df',1,'CCCC_Extent']]],
   ['getmetrictreatment',['getMetricTreatment',['../d4/d7f/classCCCC__Options.html#ad73ef4bd8ec0668027acdfaaae6bacfc',1,'CCCC_Options']]],
   ['getnestinglevel',['getNestingLevel',['../d5/da6/classANTLRToken.html#a438b80df2095fd766fcb320832a0aab0',1,'ANTLRToken']]],
-  ['gettokentypename',['getTokenTypeName',['../d5/da6/classANTLRToken.html#a5a2fb9cca7c49ef300ab41920fb32345',1,'ANTLRToken']]],
+  ['gettokentypename',['getTokenTypeName',['../d5/da6/classANTLRToken.html#a1614bdc952633952e8b5f3f6283f9bd7',1,'ANTLRToken']]],
   ['global_5flanguage',['global_language',['../d7/d8f/cccc__utl_8h.html#a6471af240b027274b144a7fbbd759dad',1,'cccc_utl.h']]],
-  ['good',['good',['../db/d6a/classCCCC__Item.html#aad4e0b0f8a45669a31b52f578f62a8a5',1,'CCCC_Item']]],
-  ['goto',['GOTO',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33adf1256e4198172eedfbf12c770d11589',1,'Ctokens.h']]],
-  ['greaterequal',['GREATEREQUAL',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a306b74e8af588fd242b4177069af1f19',1,'Ctokens.h']]],
-  ['greaterthan',['GREATERTHAN',['../d0/dd4/Ctokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a484f1aeccc501366d064c353cf4b3c05',1,'Ctokens.h']]],
-  ['gt',['GT',['../da/d59/Jtokens_8h.html#abbfbfe6f51670eee12c646d156d50e33a12f5476fa04803e6cc72f2198730d892',1,'Jtokens.h']]]
+  ['good',['good',['../db/d6a/classCCCC__Item.html#aad4e0b0f8a45669a31b52f578f62a8a5',1,'CCCC_Item']]]
 ];

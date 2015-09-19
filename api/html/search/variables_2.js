@@ -1,9 +1,23 @@
 var searchData=
 [
-  ['b_5fclass_5fno',['b_class_no',['../dd/d32/classCLexer.html#a6c90668fa0d0089c4df848a690525262',1,'CLexer::b_class_no()'],['../d2/d2e/classJLexer.html#ac4ccaa621401457fcc2450cf497274ca',1,'JLexer::b_class_no()']]],
-  ['bcodeline',['bCodeLine',['../d5/da6/classANTLRToken.html#a7faba14d44356545c84ba925ae5e9cd0',1,'ANTLRToken']]],
-  ['bitwise_5fop_5fset',['BITWISE_OP_set',['../d0/df6/classCParser.html#a4d21f9caafed927e3ccb3393dccca84c',1,'CParser']]],
-  ['bool_5ffalse',['BOOL_FALSE',['../db/d75/cccc__xml_8cc.html#abdaca472ce5d7e1ffcecea9e21dc60aa',1,'cccc_xml.cc']]],
-  ['bool_5ftrue',['BOOL_TRUE',['../db/d75/cccc__xml_8cc.html#a104d8b4328cd7aaa6498b0394ce0c57f',1,'cccc_xml.cc']]],
-  ['buffer',['buffer',['../db/d6a/classCCCC__Item.html#acaefc89edb7bfe9d0d4e71612a0421be',1,'CCCC_Item']]]
+  ['cbo_5fnode_5fname',['CBO_NODE_NAME',['../db/d75/cccc__xml_8cc.html#a21f63f7abf5536de8ee060b3020f834e',1,'cccc_xml.cc']]],
+  ['client',['client',['../d2/d65/classCCCC__UseRelationship.html#a4f7da3d42532ea6164c476bc50dd3e6f',1,'CCCC_UseRelationship']]],
+  ['client_5fmap',['client_map',['../d6/d9f/classCCCC__Module.html#ae8bf0c14c325209bbd1501e091dde6f0',1,'CCCC_Module']]],
+  ['clients_5fnode_5fname',['CLIENTS_NODE_NAME',['../db/d75/cccc__xml_8cc.html#a2d10ccbdd00481a72eca36da42b77992',1,'cccc_xml.cc']]],
+  ['climod_5fnode_5fname',['CLIMOD_NODE_NAME',['../db/d75/cccc__xml_8cc.html#ad9ecd893a143465618f8fb52ca18a841',1,'cccc_xml.cc']]],
+  ['code',['code',['../da/d98/classMetric__Treatment.html#a09ecd4b840573b9fedca9792c8c67ba7',1,'Metric_Treatment']]],
+  ['com_5fnode_5fname',['COM_NODE_NAME',['../db/d75/cccc__xml_8cc.html#addcbccc37da61811b6c7280544bbf4ea',1,'cccc_xml.cc']]],
+  ['compermem_5fnode_5fname',['COMPERMEM_NODE_NAME',['../db/d75/cccc__xml_8cc.html#a0b83ac08e5c2b1fcf7a5b67d13e89a09',1,'cccc_xml.cc']]],
+  ['compermod_5fnode_5fname',['COMPERMOD_NODE_NAME',['../db/d75/cccc__xml_8cc.html#ad6365998a4e112385a7c6c85818c02de',1,'cccc_xml.cc']]],
+  ['concrete',['concrete',['../d2/d65/classCCCC__UseRelationship.html#ac780397d6d2db597ec518c16b6962f84',1,'CCCC_UseRelationship']]],
+  ['concrete_5fattr',['CONCRETE_ATTR',['../db/d75/cccc__xml_8cc.html#ac8dd37dcc74c4227b83b4d662c7bdef9',1,'cccc_xml.cc']]],
+  ['count_5fbuffer',['count_buffer',['../df/d99/classCCCC__Extent.html#a881194e5cf5902448fcf4f275967edf1',1,'CCCC_Extent']]],
+  ['current_5ffilename',['current_filename',['../d6/d93/ccccmain_8cc.html#acb8499f83516ce955b6ef6eea480bcee',1,'ccccmain.cc']]],
+  ['current_5floading_5fextent',['current_loading_extent',['../d8/d19/cccc__db_8cc.html#ad6940c936e01529c9a7f31eb1df2f2a8',1,'current_loading_extent():&#160;cccc_db.cc'],['../d7/d44/cccc__db_8h.html#ad6940c936e01529c9a7f31eb1df2f2a8',1,'current_loading_extent():&#160;cccc_db.cc']]],
+  ['current_5floading_5fmodule',['current_loading_module',['../d8/d19/cccc__db_8cc.html#a74dee04a64dd2cbc4995ac55b76937cc',1,'current_loading_module():&#160;cccc_db.cc'],['../d7/d44/cccc__db_8h.html#a74dee04a64dd2cbc4995ac55b76937cc',1,'current_loading_module():&#160;cccc_db.cc']]],
+  ['current_5floading_5fproject',['current_loading_project',['../d8/d19/cccc__db_8cc.html#a4fdda677e9b6808c97dfa1c16ddddc93',1,'current_loading_project():&#160;cccc_db.cc'],['../d7/d44/cccc__db_8h.html#a4fdda677e9b6808c97dfa1c16ddddc93',1,'current_loading_project():&#160;cccc_db.cc']]],
+  ['current_5floading_5fuserel',['current_loading_userel',['../d8/d19/cccc__db_8cc.html#ad749418f935791a1c87ccfbbfb3a659f',1,'current_loading_userel():&#160;cccc_db.cc'],['../d7/d44/cccc__db_8h.html#ad749418f935791a1c87ccfbbfb3a659f',1,'current_loading_userel():&#160;cccc_db.cc']]],
+  ['current_5frule',['current_rule',['../d6/d93/ccccmain_8cc.html#adbba7c6c668da467ae8f769fc5e37956',1,'ccccmain.cc']]],
+  ['currentlexertoken',['currentLexerToken',['../df/d5e/cccc__tok_8cc.html#a3fe8b830e01676c2cc98c4b31ab74e26',1,'currentLexerToken():&#160;cccc_tok.cc'],['../d1/d7d/cccc__tok_8h.html#a3fe8b830e01676c2cc98c4b31ab74e26',1,'currentLexerToken():&#160;cccc_tok.cc']]],
+  ['currentnesting',['CurrentNesting',['../d5/da6/classANTLRToken.html#ac8dcf9bbd19719dba9141eead880305c',1,'ANTLRToken']]]
 ];

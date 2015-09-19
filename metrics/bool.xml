@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module bool-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="0" />
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="********" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="0" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="6" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>bool</name>
+<client_module>
+<name>CCCC_Html_Stream</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="154" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="962" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.cc" line="980" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="55" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="87" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_htm.h" line="88" />
+</extent>
+<name>CCCC_Item</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/cccc_itm.h" line="20" />
+</extent>
+<name>CCCC_Xml_Stream</name>
+<visible>false</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.cc" line="580" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.cc" line="592" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="78" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_xml.h" line="79" />
+</extent>
+<name>CParser</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="236" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/CParser.h" line="254" />
+</extent>
+<name>JParser</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JParser.h" line="89" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JParser.h" line="188" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/JParser.h" line="203" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/JParser.h" line="204" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/JParser.h" line="206" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/JParser.h" line="236" />
+</extent>
+<name>ParseStore</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_utl.cc" line="290" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/cccc_utl.h" line="249" />
+</extent>
+</client_module>
+<supplier_module>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

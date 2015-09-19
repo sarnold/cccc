@@ -1,0 +1,3128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module JLexer-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="514" level="1" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="12" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="42.833" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<weighted_methods_per_class_unity value="138" level="0" />
+<weighted_methods_per_class_visibility value="138" level="0" />
+<depth_of_inheritance_tree value="1" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="5" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+<description>definition</description>
+<source_reference file="./cccc/JLexer.h" line="16" />
+<lines_of_code value="371" level="2" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="12" level="0" />
+<lines_of_code_per_line_of_comment value="30.917" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>JLexer(DLGInputStream *,unsigned)</name>
+<extent>
+<description>definition</description>
+<source_reference file="./cccc/JLexer.h" line="28" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act1()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="38" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act10()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="47" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act100()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="137" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act101()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="138" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act102()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="139" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act103()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="140" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act104()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="141" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act105()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="142" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act106()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="143" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act107()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="144" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act108()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="145" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act109()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="146" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act11()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="48" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act110()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="147" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act111()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="148" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act112()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="149" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act113()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="150" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act114()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="151" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act115()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="152" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act116()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="153" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act117()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="154" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act118()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="155" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act119()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="156" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act12()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="49" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act120()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="157" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act121()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="158" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act122()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="159" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act123()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="160" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act124()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="161" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act125()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="162" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act126()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="163" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act127()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="164" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act128()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="165" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act129()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="166" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act13()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="50" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act130()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="167" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act131()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="168" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act132()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="169" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act133()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="170" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act134()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="171" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act14()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="51" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act15()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="52" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act16()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="53" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act17()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="54" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act18()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="55" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act19()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="56" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act2()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="39" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act20()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="57" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act21()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="58" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act22()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="59" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act23()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="60" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act24()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="61" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act25()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="62" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act26()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="63" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act27()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="64" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act28()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="65" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act29()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="66" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act3()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="40" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act30()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="67" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act31()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="68" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act32()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="69" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act33()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="70" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act34()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="71" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act35()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="72" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act36()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="73" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act37()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="74" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act38()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="75" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act39()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="76" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act4()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="41" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act40()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="77" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act41()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="78" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act42()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="79" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act43()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="80" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act44()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="81" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act45()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="82" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act46()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="83" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act47()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="84" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act48()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="85" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act49()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="86" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act5()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="42" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act50()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="87" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act51()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="88" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act52()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="89" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act53()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="90" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act54()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="91" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act55()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="92" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act56()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="93" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act57()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="94" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act58()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="95" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act59()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="96" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act6()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="43" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act60()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="97" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act61()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="98" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act62()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="99" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act63()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="100" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act64()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="101" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act65()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="102" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act66()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="103" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act67()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="104" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act68()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="105" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act69()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="106" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act7()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="44" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act70()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="107" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act71()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="108" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act72()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="109" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act73()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="110" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act74()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="111" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act75()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="112" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act76()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="113" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act77()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="114" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act78()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="115" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act79()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="116" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act8()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="45" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act80()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="117" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act81()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="118" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act82()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="119" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act83()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="120" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act84()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="121" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act85()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="122" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act86()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="123" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act87()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="124" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act88()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="125" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act89()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="126" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act9()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="46" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act90()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="127" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act91()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="128" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act92()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="129" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act93()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="130" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act94()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="131" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act95()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="132" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act96()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="133" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act97()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="134" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act98()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="135" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>act99()</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="136" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>advance(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="36" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>mode(int)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="34" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>nextTokenType(void)</name>
+<extent>
+<description>declaration</description>
+<source_reference file="./cccc/JLexer.h" line="35" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>JLexer</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>DLGChar</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="522" />
+</extent>
+<name>DLGInputStream</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="./cccc/JLexer.h" line="28" />
+</extent>
+<name>DLGLexerBase</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>inheritance</description>
+<source_reference file="./cccc/JLexer.h" line="16" />
+</extent>
+<name>DfaState</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="172" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="173" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="174" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="175" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="176" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="177" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="178" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="179" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="180" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="181" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="182" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="183" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="184" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="185" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="186" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="187" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="188" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="189" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="190" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="191" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="192" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="193" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="194" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="195" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="196" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="197" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="198" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="199" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="200" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="201" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="202" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="203" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="204" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="205" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="206" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="207" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="208" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="209" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="210" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="211" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="212" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="213" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="214" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="215" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="216" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="217" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="218" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="219" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="220" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="221" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="222" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="223" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="224" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="225" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="226" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="227" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="228" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="229" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="230" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="231" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="232" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="233" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="234" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="235" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="236" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="237" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="238" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="239" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="240" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="241" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="242" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="243" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="244" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="245" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="246" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="247" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="248" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="249" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="250" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="251" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="252" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="253" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="254" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="255" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="256" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="257" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="258" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="259" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="260" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="261" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="262" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="263" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="264" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="265" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="266" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="267" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="268" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="269" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="270" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="271" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="272" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="273" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="274" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="275" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="276" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="277" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="278" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="279" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="280" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="281" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="282" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="283" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="284" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="285" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="286" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="287" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="288" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="289" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="290" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="291" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="292" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="293" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="294" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="295" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="296" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="297" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="298" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="299" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="300" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="301" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="302" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="303" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="304" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="305" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="306" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="307" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="308" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="309" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="310" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="311" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="312" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="313" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="314" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="315" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="316" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="317" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="318" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="319" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="320" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="321" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="322" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="323" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="324" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="325" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="326" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="327" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="328" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="329" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="330" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="331" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="332" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="333" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="334" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="335" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="336" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="337" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="338" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="339" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="340" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="341" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="342" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="343" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="344" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="345" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="346" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="347" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="348" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="349" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="350" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="351" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="352" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="353" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="354" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="355" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="356" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="357" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="358" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="359" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="360" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="361" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="362" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="363" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="364" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="365" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="366" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="367" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="368" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="369" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="370" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="371" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="372" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="373" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="374" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="375" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="376" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="377" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="378" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="379" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="380" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="381" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="382" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="383" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="384" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="385" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="386" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="387" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="388" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="389" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="390" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="391" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="392" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="393" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="394" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="395" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="396" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="397" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="398" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="399" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="400" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="401" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="402" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="403" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="404" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="405" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="406" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="407" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="408" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="409" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="410" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="411" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="412" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="413" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="414" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="415" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="416" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="417" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="418" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="419" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="420" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="421" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="422" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="423" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="424" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="425" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="426" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="427" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="428" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="429" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="430" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="431" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="432" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="433" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="434" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="435" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="436" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="437" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="438" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="439" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="440" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="441" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="442" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="443" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="444" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="445" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="446" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="447" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="448" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="449" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="450" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="451" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="452" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="453" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="454" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="455" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="456" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="457" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="458" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="459" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="460" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="461" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="462" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="463" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="464" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="465" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="466" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="467" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="468" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="469" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="470" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="471" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="472" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="473" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="474" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="475" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="476" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="477" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="478" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="479" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="480" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="481" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="482" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="483" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="484" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="485" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="486" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="487" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="488" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="489" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="490" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="491" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="492" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="493" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="494" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="495" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="496" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="497" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="498" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="499" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="500" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="501" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="502" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="503" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="504" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="505" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="506" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="507" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="508" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="509" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="510" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="511" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="512" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="513" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="514" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="515" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="516" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="517" />
+</extent>
+<extent>
+<description>has by reference</description>
+<source_reference file="./cccc/JLexer.h" line="518" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="519" />
+</extent>
+<extent>
+<description>has by value</description>
+<source_reference file="./cccc/JLexer.h" line="521" />
+</extent>
+<name>unsigned</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="./cccc/JLexer.h" line="29" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>
