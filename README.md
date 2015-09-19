@@ -1,7 +1,10 @@
 README for CCCC version 3.1.4
 =============================
 
-This is a minor maintenance update of the last version of the program CCCC
+[![Latest Stable Version](https://github.com/sarnold/cccc/releases/tag/V3_1_4)](http://sourceforge.net/projects/cccc/)
+[![License](https://github.com/sarnold/cccc/blob/master/cccc/COPYING)](http://sourceforge.net/p/cccc/code/HEAD/tree/tags/V3_1_4/ccccdist/cccc/COPYING)
+
+This is a minor maintenance update of the last (upstream) release of the program CCCC
 (C and C++ Code Counter).  This software performs analysis and reports metrics
 on source code written in C, C++ and Java.  The languages Ada83 and Ada95, 
 which were supported in previous versions are presently not supported 
@@ -22,21 +25,21 @@ platform.  Whereas previous distributions contained only a single directory,
 containing the source code of CCCC, this distribution is divided into a 
 number of subdirectories, with the following contents:
 
-* A full distribution of the Purdue Compiler Construction Toolset (PCCTS) by
-  Terence Parr and others, now maintained by Tom Moog of Polhode Inc. 
-  PCCTS is required to compile CCCC: in the past the distribution has relied
-  on the existence of a PCCTS package on the compilation platform, while this
-  distribution chooses to include it as part of CCCC's own package.
-* The source of a new version of CCCC, which I hope will turn out to be more
-  efficient, accurate and useful than previous versions, although it is very
-  similar in spirit and interface.
-* The source of an accessory program called CcccDevStudioAddIn.dll which 
-  provides integration between the command line CCCC program and the
-  Microsoft Visual Studio IDE (version 5.0 or 6.0).
-* A directory of minimal test cases for the command line CCCC tool.
-* Miscellaneous batch files, makefiles and Microsoft Visual Studio workspace 
-  and project files to support building, testing and installing the software
-  under POSIX and Win32.
+ - A full distribution of the Purdue Compiler Construction Toolset (PCCTS) by
+   Terence Parr and others, now maintained by Tom Moog of Polhode Inc. 
+   PCCTS is required to compile CCCC: in the past the distribution has relied
+   on the existence of a PCCTS package on the compilation platform, while this
+   distribution chooses to include it as part of CCCC's own package.
+ - The source of a new version of CCCC, which I hope will turn out to be more
+   efficient, accurate and useful than previous versions, although it is very
+   similar in spirit and interface.
+ - The source of an accessory program called CcccDevStudioAddIn.dll which 
+   provides integration between the command line CCCC program and the
+   Microsoft Visual Studio IDE (version 5.0 or 6.0).
+ - A directory of minimal test cases for the command line CCCC tool.
+ - Miscellaneous batch files, makefiles and Microsoft Visual Studio workspace 
+   and project files to support building, testing and installing the software
+   under POSIX and Win32.
 
 The pccts directory contains software for which I am not the original
 author.  The software has been placed in the public domain, with
@@ -145,13 +148,11 @@ many people who have mailed me with constructive suggestions or merely to
 confirm that they were using the tool. Feedback on the value or otherwise 
 of CCCC will always be welcome.
 
-
-Tim Littlefair (tim_littlefair _At_ hotmail.com)
-updated January 2005
---------------
+Tim Littlefair (tim_littlefair _At_ hotmail.com) updated January 2005
 
 This and past distributions of CCCC and related tools should be
-available for the forseeable future from http://cccc.sourceforge.net
+available for the forseeable future from https://github.com/sarnold/cccc
+as well as the original home at http://cccc.sourceforge.net
 
 
 
