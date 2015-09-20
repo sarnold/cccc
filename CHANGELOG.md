@@ -1,8 +1,13 @@
 # Change Log
 
-## [Unreleased](https://github.com/sarnold/cccc/tree/HEAD)
+## [3.1.5_rc1](https://github.com/sarnold/cccc/tree/3.1.5_rc1) (2015-09-19)
+[Full 3.1.5_rc1 Changelog](https://github.com/sarnold/cccc/compare/V3_1_4...3.1.5_rc1)
 
-[Full Changelog](https://github.com/sarnold/cccc/compare/V3_1_4...HEAD)
+**Implemented enhancements:**
+
+- fix gcc/g++ warnings and makefiles:  done [\#1](https://github.com/sarnold/cccc/issues/1)
+
+**Fixed bugs:**
 
 - fix gcc/g++ warnings and makefiles:  done [\#1](https://github.com/sarnold/cccc/issues/1)
 
@@ -10,7 +15,7 @@
 
 ## [V3_1_4](https://github.com/sarnold/cccc/tree/V3_1_4) (2006-01-06)
 
-[Full Changelog](https://github.com/sarnold/cccc/compare/V3_1_3...V3_1_4)
+[Full 3.1.4 Changelog](https://github.com/sarnold/cccc/compare/V3_1_3...V3_1_4)
 
 - [create tag V3_1_4.](http://github.com/sarnold/cccc/commit/d30dcbbf260324a9fb46804393c37af99465fd50)
 - [Fixing version numbering.](http://github.com/sarnold/cccc/commit/6445fc63077002491f932b6f27702b876a50f042)
