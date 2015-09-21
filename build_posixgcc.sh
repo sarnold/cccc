@@ -4,18 +4,18 @@
 # This file builds and tests CCCC on a POSIX platform using the
 # GNU C++ compiler.
 
-cd pccts 
+cd pccts
 make clean
-make
+make -Orecurse antlr dlg
 cd ..
 
 cd cccc
 make -f posixgcc.mak clean
-make -f posixgcc.mak 
+make -f posixgcc.mak
 cd ..
 
 cd test
-make -f posix.mak 
+make -f posix.mak
 cd ..
 
 
