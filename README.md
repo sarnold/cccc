@@ -1,5 +1,5 @@
-README for CCCC version 3.1.4
-=============================
+README for CCCC version 3.1.5 RC-1
+==================================
 
 [![Latest Stable Version](https://github.com/sarnold/cccc/releases/tag/V3_1_4)](http://sourceforge.net/projects/cccc/)
 [![License](https://github.com/sarnold/cccc/blob/master/cccc/COPYING)](http://sourceforge.net/p/cccc/code/HEAD/tree/tags/V3_1_4/ccccdist/cccc/COPYING)
@@ -109,12 +109,13 @@ Russell (extensions), available from http://www.jrsoftware.org.
 Previous versions of CCCC have been released like PCCTS into the public
 domain with no restrictions, other than the pious hope that should anyone
 base a derivative work on it I will be given due credit.  The current version 
-is released under the GNU Public License (including the bundled PCCTS source)..
+is released under the GNU Public License (including the bundled PCCTS source).
 
-The upcoming release will be a maintenance release to clean up the build and
+The upcoming 3.1.5 release will be a maintenance release to clean up the build and
 makefile config (enabling parallel make) and fix a build error with recent gcc.
 The pccts build target "mini" builds only the tools required to build cccc,
-while the make target "pccts" builds the complete toolset.
+while the make target "pccts" builds the complete toolset, and "all" will build
+cccc and run the tests ("metrics" and "docs" targets should be obvious).
 
 SLA: Among other things, I'm grateful that Tim chose such a cool thesis, and 
 also produced some useful open source code that rarely seem to exist outside
