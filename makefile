@@ -35,15 +35,15 @@ GENSRC	= cccc/CLexer.cpp \
 all : mini cccc test
 
 mini :
-	cd pccts && $(MAKE) -Orecurse antlr dlg || exit $$?
+	cd pccts && $(MAKE) DEBUG=$(DEBUG) -Orecurse antlr dlg || exit $$?
 
 pccts :
-	cd pccts && $(MAKE) -Orecurse $@ || exit $$?
+	cd pccts && $(MAKE) DEBUG=$(DEBUG) -Orecurse $@ || exit $$?
 
 cccc :	mini
-	cd cccc && $(MAKE) -Orecurse -f posixgcc.mak $@ || exit $$?
+	cd cccc && $(MAKE) DEBUG=$(DEBUG) -Orecurse -f posixgcc.mak $@ || exit $$?
 
-.NOTPARALLEL:	test
+.NOTPARALLEL:	cccc test
 test :
 	cd test && $(MAKE) -Orecurse -f posix.mak || exit $$?
 
@@ -57,6 +57,7 @@ $(METRICS)/.keep_dir :
 
 metrics : $(METRICS)/.keep_dir cccc
 	rm -rf $(METRICS)/*.html
+	@echo "Input files are: $(CCCCSRC)"
 	$(CCCC) $(CCCOPTS) --outdir=$(METRICS)/ $(CCCCSRC)
 	@echo "Metrics output now in $(METRICS)/cccc.html"
 

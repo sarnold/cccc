@@ -18,17 +18,16 @@
 
 # support for debugging 
 ifeq "$(DEBUG)" "true"
-CFLAGS_DEBUG = -g
-LDFLAGS_DEBUG = -g
+DEBUG_FLAGS = -g
 endif
 
 PATHSEP=/
 
 CCC ?= g++
 INCLUDES = -I../pccts/h
-CCC_OPTS = -c $(CFLAGS) $(CFLAGS_DEBUG) $(INCLUDES) -std=gnu++11 -x c++
+CCC_OPTS = -c $(CFLAGS) $(DEBUG_FLAGS) $(INCLUDES) -std=c++98 -x c++
 C_OFLAG = -o 
-LD_OPTS = $(LDFLAGS) $(LDFLAGS_DEBUG)
+LD_OPTS = $(LDFLAGS) -Wl,$(DEBUG_FLAGS)
 LD_OFLAG = -o 
 OBJEXT = o
 CCCC_EXE = cccc
