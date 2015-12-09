@@ -35,13 +35,13 @@ GENSRC	= cccc/CLexer.cpp \
 all : mini cccc test
 
 mini :
-	cd pccts && $(MAKE) DEBUG=$(DEBUG) -Orecurse antlr dlg || exit $$?
+	$(MAKE) DEBUG=$(DEBUG) -C pccts -Orecurse antlr dlg || exit $$?
 
 pccts :
-	cd pccts && $(MAKE) DEBUG=$(DEBUG) -Orecurse $@ || exit $$?
+	$(MAKE) DEBUG=$(DEBUG) -C pccts -Orecurse $@ || exit $$?
 
 cccc :	mini
-	cd cccc && $(MAKE) DEBUG=$(DEBUG) -Orecurse -f posixgcc.mak $@ || exit $$?
+	$(MAKE) DEBUG=$(DEBUG) -C cccc -f posixgcc.mak $@ || exit $$?
 
 .NOTPARALLEL:	cccc test
 test :
