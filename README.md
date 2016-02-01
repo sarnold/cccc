@@ -1,8 +1,7 @@
 README for CCCC version 3.1.5 RC-1
 ==================================
 
-[![GitHub tag](https://img.shields.io/github/tag/strongloop/express.svg)](https://github.com/sarnold/cccc/releases/tag/V3_1_4)
-[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/sarnold/cccc/blob/master/cccc/COPYING)
+[![GitHub version](https://badge.fury.io/gh/boennemann%2Fbadges.svg)](https://github.com/sarnold/cccc)
 [![Build Status](https://travis-ci.org/sarnold/cccc.svg?branch=master)](https://travis-ci.org/sarnold/cccc)
 [![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg)](https://github.com/sarnold/cccc/issues)
 
