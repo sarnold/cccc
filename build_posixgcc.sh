@@ -6,7 +6,7 @@
 
 cd pccts
 make clean
-make -Orecurse antlr dlg
+make antlr dlg
 cd ..
 
 cd cccc

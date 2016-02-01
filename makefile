@@ -35,17 +35,17 @@ GENSRC	= cccc/CLexer.cpp \
 all : mini cccc test
 
 mini :
-	$(MAKE) DEBUG=$(DEBUG) -C pccts -Orecurse antlr dlg || exit $$?
+	$(MAKE) DEBUG=$(DEBUG) -C pccts antlr dlg || exit $$?
 
 pccts :
-	$(MAKE) DEBUG=$(DEBUG) -C pccts -Orecurse $@ || exit $$?
+	$(MAKE) DEBUG=$(DEBUG) -C pccts $@ || exit $$?
 
 cccc :	mini
 	$(MAKE) DEBUG=$(DEBUG) -C cccc -f posixgcc.mak $@ || exit $$?
 
 .NOTPARALLEL:	cccc test
 test :
-	cd test && $(MAKE) -Orecurse -f posix.mak || exit $$?
+	cd test && $(MAKE) -f posix.mak || exit $$?
 
 DOCS	= doxygen
 METRICS	= ccccout
