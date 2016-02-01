@@ -2,7 +2,7 @@ README for CCCC version 3.1.5 RC-1
 ==================================
 
 [![CCCC License](https://img.shields.io/badge/license-GPL2-green.svg?dummy)](https://github.com/sarnold/cccc/blob/master/cccc/COPYING)
-[![GitHub release](https://img.shields.io/github/release/sarnold/cccc.svg)](https://github.com/sarnold/cccc)
+[![GitHub version](https://badge.fury.io/gh/sarnold%2Fcccc.svg)](https://badge.fury.io/gh/sarnold%2Fcccc)
 [![Build Status](https://travis-ci.org/sarnold/cccc.svg?branch=master)](https://travis-ci.org/sarnold/cccc)
 [![GitHub issues](https://img.shields.io/github/issues/sarnold/cccc.svg?style=flat)](https://github.com/sarnold/cccc/issues)
 
