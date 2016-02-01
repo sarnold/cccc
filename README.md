@@ -1,8 +1,9 @@
 README for CCCC version 3.1.5 RC-1
 ==================================
 
-[![Latest Stable Version](https://github.com/sarnold/cccc/releases/tag/V3_1_4)](http://sourceforge.net/projects/cccc/)
-[![License](https://github.com/sarnold/cccc/blob/master/cccc/COPYING)](http://sourceforge.net/p/cccc/code/HEAD/tree/tags/V3_1_4/ccccdist/cccc/COPYING)
+[![Latest Stable Version](https://github.com/sarnold/cccc/releases/tag/V3_1_4)]
+[![License](https://github.com/sarnold/cccc/blob/master/cccc/COPYING)]
+[![Build status](https://travis-ci.org/sarnold/cccc.svg?branch=master)]
 
 This is a minor maintenance update of the last (upstream) release of the program CCCC
 (C and C++ Code Counter).  This software performs analysis and reports metrics
