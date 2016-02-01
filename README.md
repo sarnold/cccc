@@ -5,7 +5,7 @@ README for CCCC version 3.1.5 RC-2
 [![GitHub version](https://badge.fury.io/gh/sarnold%2Fcccc.svg)](https://badge.fury.io/gh/sarnold%2Fcccc)
 [![Build Status](https://travis-ci.org/sarnold/cccc.svg?branch=master)](https://travis-ci.org/sarnold/cccc)
 [![GitHub issues](https://img.shields.io/github/issues/sarnold/cccc.svg?style=flat)](https://github.com/sarnold/cccc/issues)
-[![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg)](https://github.com/sarnold/cccc/issues)
+[![GitHub issues](https://img.shields.io/github/issues/sarnold/shields.svg)](https://github.com/sarnold/cccc/issues)
 [![Github Issues](http://githubbadges.herokuapp.com/sarnold/cccc/issues.svg?style=flat-square)](https://github.com/sarnold/cccc/issues)
 
 This is a minor maintenance update of the last (upstream) release of the program CCCC
