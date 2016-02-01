@@ -4,30 +4,13 @@ README for CCCC version 3.1.5 RC-2
 [![CCCC License](https://img.shields.io/badge/license-GPL2-green.svg?dummy)](https://github.com/sarnold/cccc/blob/master/cccc/COPYING)
 [![GitHub version](https://badge.fury.io/gh/sarnold%2Fcccc.svg)](https://badge.fury.io/gh/sarnold%2Fcccc)
 [![Build Status](https://travis-ci.org/sarnold/cccc.svg?branch=master)](https://travis-ci.org/sarnold/cccc)
-[![GitHub issues](https://img.shields.io/github/issues/sarnold/cccc.svg?style=flat)](https://github.com/sarnold/cccc/issues)
-[![GitHub issues](https://img.shields.io/github/issues/sarnold/shields.svg)](https://github.com/sarnold/cccc/issues)
 [![Github Issues](http://githubbadges.herokuapp.com/sarnold/cccc/issues.svg?style=flat-square)](https://github.com/sarnold/cccc/issues)
 
-This is a minor maintenance update of the last (upstream) release of the program CCCC
-(C and C++ Code Counter).  This software performs analysis and reports metrics
-on source code written in C, C++ and Java.  The languages Ada83 and Ada95, 
-which were supported in previous versions are presently not supported 
-(stay tuned for updates).  The original source is still on sourceforge; the
-new site for CCCC development is: https://github.com/sarnold/cccc and
-for current documentation see: http://sarnold.github.io/cccc/
+This is a minor maintenance update of the last (upstream) release of the program CCCC (C and C++ Code Counter).  This software performs analysis and reports metrics on source code written in C, C++ and Java.  The languages Ada83 and Ada95, which were supported in previous versions are presently not supported (stay tuned for updates).  The original source is still on sourceforge; the new site for CCCC development is: https://github.com/sarnold/cccc and for current documentation see: http://sarnold.github.io/cccc/
 
-CCCC is a command line tool, originally implemented for Linux and other 
-POSIX-style platforms, but also buildable on the Win32 platform.  
-Files to be analyzed are listed (typically on the command line, although 
-support does exist for the list of files to be read from standard input.   
-The program analyzes the files and generates a one or more reports in HTML 
-or XML format on the content.  
+CCCC is a command line tool, originally implemented for Linux and other POSIX-style platforms, but also buildable on the Win32 platform.  Files to be analyzed are listed (typically on the command line, although support does exist for the list of files to be read from standard input.  The program analyzes the files and generates a one or more reports in HTML or XML format on the content.  
 
-This distribution is intended to be a single package containing everything
-which is required to compile and install CCCC on either a POSIX or Win32 
-platform.  Whereas previous distributions contained only a single directory,
-containing the source code of CCCC, this distribution is divided into a 
-number of subdirectories, with the following contents:
+This distribution is intended to be a single package containing everything which is required to compile and install CCCC on either a POSIX or Win32 platform.  Whereas previous distributions contained only a single directory, containing the source code of CCCC, this distribution is divided into a number of subdirectories, with the following contents:
 
  - A full distribution of the Purdue Compiler Construction Toolset (PCCTS) by
    Terence Parr and others, now maintained by Tom Moog of Polhode Inc. 
@@ -45,9 +28,7 @@ number of subdirectories, with the following contents:
    and project files to support building, testing and installing the software
    under POSIX and Win32.
 
-The pccts directory contains software for which I am not the original
-author.  The software has been placed in the public domain, with
-the expectation that appropriate credit will be given for use.
+The pccts directory contains software for which I am not the original author.  The software has been placed in the public domain, with the expectation that appropriate credit will be given for use.
 
 Since version 3.pre63, the recommended way of building the software is by
 using the BAT and SH scripts in the top directory of the distribution as
