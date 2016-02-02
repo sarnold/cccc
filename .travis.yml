@@ -11,4 +11,4 @@ script: make cccc && make docs && make test
 
 install: true
 
-sudo: required
+sudo: false
