@@ -2,8 +2,7 @@ addons:
   apt:
     packages:
     - doxygen
-    - gcc
-    - g++
+    - graphviz
 
 language: c
 
