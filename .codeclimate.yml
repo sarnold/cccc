@@ -1,0 +1,11 @@
+engines:
+  fixme:
+    enabled: true
+ratings:
+  paths: []
+exclude_paths:
+  test/
+  pccts/
+  vcaddin/
+  w32installer/
+  install/
