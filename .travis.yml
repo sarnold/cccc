@@ -2,8 +2,8 @@ addons:
   apt:
     packages:
     - doxygen
-    - gcc-4.8
-    - g++-4.8
+    - gcc
+    - g++
 
 language: c
 
