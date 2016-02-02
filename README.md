@@ -4,6 +4,7 @@ README for CCCC version 3.1.5 RC-2
 [![CCCC License](https://img.shields.io/badge/license-GPL2-green.svg?dummy)](https://github.com/sarnold/cccc/blob/master/cccc/COPYING)
 [![GitHub version](https://badge.fury.io/gh/sarnold%2Fcccc.svg)](https://badge.fury.io/gh/sarnold%2Fcccc)
 [![Build Status](https://travis-ci.org/sarnold/cccc.svg?branch=master)](https://travis-ci.org/sarnold/cccc)
+[![Code Climate](https://codeclimate.com/github/sarnold/cccc/badges/gpa.svg)](https://codeclimate.com/github/sarnold/cccc)
 [![Github Issues](http://githubbadges.herokuapp.com/sarnold/cccc/issues.svg?style=flat-square&dummy)](https://github.com/sarnold/cccc/issues)
 
 This is a maintenance update of the last (upstream) release of the program CCCC (C and C++ Code Counter).  This software performs analysis and reports metrics on source code written in C, C++ and Java.  The languages Ada83 and Ada95, which were supported in previous versions are presently not supported (stay tuned for updates).  The original source is still on sourceforge; the new site for CCCC development is: https://github.com/sarnold/cccc and for current documentation see: http://sarnold.github.io/cccc/
