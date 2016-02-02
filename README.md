@@ -36,13 +36,15 @@ This distribution is intended to be a single package containing everything which
 
 The pccts directory contains software for which I am not the original author.  The software has been placed in the public domain, with the expectation that appropriate credit will be given for use.
 
-Since version 3.pre63, the recommended way of building the software is by
-using the BAT and SH scripts in the top directory of the distribution as
-appropriate for your platform.  On Win32, the script build_w32vc.bat 
-builds the software with Microsoft Visual C++ version 5 or 6 (locations
-within the script may need to be modified according to which you have
-and whether it is installed at the default position in the filesystem).
-On Linux and similar platforms the shell script build_posixgcc.sh should work.
+Current versions should be installed via ebuild or built using the makefile,
+however, in earlier versions (3.pre-*) the recommended way of building the 
+software was by using the BAT and SH scripts in the top directory of the
+distribution as appropriate for your platform.  On Win32, the script
+build_w32vc.bat builds the software with Microsoft Visual C++ version
+5 or 6 (locations within the script may need to be modified according
+to which you have and whether it is installed at the default position
+in the filesystem).  On Linux and similar platforms the shell script
+build_posixgcc.sh should still work.
 
 As of the last upstream release (ver 3.1.4) the reference build tool for the
 Win32 platform is the freely distributed Microsoft Visual C++ Toolkit 2003.
