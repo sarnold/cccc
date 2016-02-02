@@ -11,3 +11,6 @@ script: make cccc && make docs && make test
 install: true
 
 sudo: false
+
+notifications:
+  irc: "chat.freenode.net#code-hell"
