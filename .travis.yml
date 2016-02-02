@@ -1,3 +1,3 @@
 language: c
 
-script: make cccc && make test
+script: make cccc && make docs && make test
