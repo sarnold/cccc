@@ -10,3 +10,5 @@ language: c
 script: make cccc && make docs && make test
 
 install: true
+
+sudo: required
