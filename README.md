@@ -1,5 +1,5 @@
-README for CCCC version 3.1.5 RC-2
-==================================
+README for CCCC version 3.1.5
+=============================
 
 [![CCCC License](https://img.shields.io/badge/license-GPL2-green.svg?dummy)](https://github.com/sarnold/cccc/blob/master/cccc/COPYING)
 [![GitHub version](https://badge.fury.io/gh/sarnold%2Fcccc.svg)](https://badge.fury.io/gh/sarnold%2Fcccc)
