@@ -299,6 +299,8 @@ insert_extent(CCCC_Item& os, int startLine, int endLine,
     {
       lexical_counts_for_this_extent[i]=0;
     }
+  // Patch for starting the McCabe MVG metric with at least 1.
+  lexical_counts_for_this_extent[tcMCCABES_VG] = 1;
 
   if(allocate_lexcounts==true)
     {
