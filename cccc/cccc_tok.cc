@@ -47,12 +47,17 @@ ANTLRToken currentLexerToken;
 ** It also makes a lexical count for the following tokens, each of which
 ** is expected to increase McCabe's cyclomatic complexity (Vg) for the 
 ** section of code by one unit:
-**  IF FOR WHILE SWITCH BREAK RETURN ? && ||
+**  IF FOR WHILE SWITCH BREAK ? && ||
 **
-** Note that && and || create additional paths through the code due to C/C++ 
-** short circuit evaluation of logical expressions.
+** Note that RETURN causes an extra token increment that doesn't match
+** the commonly understood behavior (adds 1 to the MVG value) so has been
+** removed on the experimental branch.
+** The possibility of MVG=0 so has also been removed.
 **
-** Also note the way SWITCH constructs are counted: the desired increment
+** Also note that && and || create additional paths through the code
+** due to C/C++ short circuit evaluation of logical expressions.
+**
+** And note the way SWITCH constructs are counted: the desired increment
 ** in Vg is equal to the number of cases provided for, including the 
 ** default case, whether or not an action is defined for it.  This is acheived
 ** by counting the SWITCH at the head of the construct as a surrogate for 
@@ -174,10 +179,3 @@ ostream& operator << (ostream& out, ANTLRToken& t) {
   out << endl;
   return out;
 }
-
-
-
-
-
-
-
