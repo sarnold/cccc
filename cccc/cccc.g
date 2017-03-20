@@ -202,7 +202,7 @@ inline void endOfLine(CLexer &lexer)
 #token PROTECTED "protected" << ; >>
 #token PUBLIC "public" << ; >>
 #token REGISTER "register" << ; >>
-#token RETURN "return" << IncrementCount(tcMCCABES_VG); >>
+#token RETURN "return" << ; >>
 #token KW_SHORT "short" << ; >>
 #token SIGNED "signed" << ; >>
 #token SIZEOF "sizeof" << ; >>
