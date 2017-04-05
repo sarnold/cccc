@@ -21,3 +21,8 @@ cccc/cccc.cpp
 cccc/java.cpp
 cccc/parser.dlg
 
+# generated test output
+test/.cccc/*
+test/*.html
+test/*.xml
+test/*.db

@@ -1221,7 +1221,6 @@ void CCCC_Html_Stream::Module_Summary(CCCC_Module *module_ptr)
 {
   // calculate the counts on which all displayed data will be based
   // int nof=module_ptr->member_table.records(); // Number of functions
-  int nof=0;
   int loc=module_ptr->get_count("LOC");  // lines of code
   int mvg=module_ptr->get_count("MVG");  // McCabes cyclomatic complexity
   int com=module_ptr->get_count("COM");  // lines of comment
@@ -1236,6 +1235,10 @@ void CCCC_Html_Stream::Module_Summary(CCCC_Module *module_ptr)
   int dit=module_ptr->get_count("DIT");   // depth of inheritance tree
   int noc=module_ptr->get_count("NOC");   // number of children
   int cbo=module_ptr->get_count("CBO");   // coupling between objects
+
+  // To calculate the per function metrics in the detailed report the
+  // number of functions is set to the weighted methods 
+  int nof=wmc1;
 
   fstr << "<TABLE BORDER WIDTH=100%>" << endl
        << "<TR>" << endl;
