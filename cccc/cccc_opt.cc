@@ -223,7 +223,7 @@ string CCCC_Options::getFileLanguage(const string& filename)
 	string extension;
 	file_extension_language_map_t::iterator iter;
 	
-	unsigned int extpos=filename.rfind(".");
+	size_t extpos=filename.rfind(".");
 	if(extpos!=string::npos)
     {
 		extension=filename.substr(extpos);
