@@ -1,30 +1,34 @@
+language: cpp
+os: linux
+dist: xenial
+
 matrix:
   include:
-    # works on Precise and Trusty
-    - os: linux
+    - env: MATRIX_EVAL="CC=gcc-9 && CXX=g++-9 && CCC=g++-9"
+      os: linux
+      dist: focal
       addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - g++-6
+            - g++-9
             - doxygen
             - graphviz
-      env:
-        - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6 && CCC=g++-6"
+      compiler: gcc
 
-    # works on Precise and Trusty
-    - os: linux
+    - env: MATRIX_EVAL="CC=gcc-10 && CXX=g++-10 && CCC=g++-10"
+      os: linux
+      dist: focal
       addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - g++-7
+            - g++-10
             - doxygen
             - graphviz
-      env:
-        - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7 && CCC=g++-7"
+      compiler: gcc
 
 before_install:
     - eval "${MATRIX_EVAL}"
