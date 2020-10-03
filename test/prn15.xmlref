@@ -82,24 +82,24 @@
 <structural_summary>
 <module>
 <name>Image</name>
-<fan_out_visible value="1" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="1" level="0" />
-<fan_in_visible value="0" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="0" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>Prn15</name>
 <fan_out_visible value="0" level="0" />
 <fan_out_concrete value="0" level="0" />
 <fan_out value="0" level="0" />
 <fan_in_visible value="1" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="1" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Prn15</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />

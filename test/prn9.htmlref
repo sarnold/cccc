@@ -201,15 +201,15 @@ The label cell for each row in this table provides a link to the relationships t
 <TR>
 <TD><A HREF="A.html#structdet">
 A</A>
-</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
 <TR>
 <TD><A HREF="B.html#structdet">
 B</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
 <TR>
 <TD><A HREF="C.html#structdet">
 C</A>
-</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
+</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD></TR>
 </TABLE>
 <H1><A NAME="structdet">Structural Metrics Detail</A></H1>
 <TABLE BORDER WIDTH=100%>
