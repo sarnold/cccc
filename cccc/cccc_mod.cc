@@ -125,7 +125,7 @@ int CCCC_Module::get_count(const char* count_tag)
 	}
       recursion_depth--;
     }
-  else if(strncmp(count_tag,"FI",2)==0)
+  else if(strncmp(count_tag,"FO",2)==0)
     {
       relationship_map_t::iterator iter;
       iter=supplier_map.begin();
@@ -135,7 +135,7 @@ int CCCC_Module::get_count(const char* count_tag)
 	  iter++;
 	}
     }
-  else if(strncmp(count_tag,"FO",2)==0)
+  else if(strncmp(count_tag,"FI",2)==0)
     {
       relationship_map_t::iterator iter;
       iter=client_map.begin();
