@@ -13,7 +13,6 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-9
-            - clang
             - doxygen
             - graphviz
       compiler: gcc
@@ -27,7 +26,6 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-10
-            - clang
             - doxygen
             - graphviz
       compiler: gcc
