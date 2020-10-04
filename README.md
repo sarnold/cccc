@@ -1,4 +1,4 @@
-README for CCCC version 3.1.5
+README for CCCC version 3.1.6
 =============================
 
 [![CCCC License](https://img.shields.io/badge/license-GPL2-green.svg?dummy)](https://github.com/sarnold/cccc/blob/master/cccc/COPYING)

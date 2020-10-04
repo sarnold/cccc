@@ -1,5 +1,16 @@
 # Change Log
 
+## [3.1.6](https://github.com/sarnold/cccc/tree/3.1.6) (2020-10-03)
+[Full Changelog](https://github.com/sarnold/cccc/compare/3.1.5...3.1.6)
+
+**Fixed bugs:**
+
+- Updated expected test ref output for PR #17. [Stephen Arnold]
+- Swapped counting of fan-in and fan-out fixes [\#17](https://github.com/sarnold/cccc/pull/17)
+- Initialized the number of functions per module with the wmc1 metric
+  instead of zero. Added the test ouput files to the ignore list.
+  [\#14](https://github.com/sarnold/cccc/pull/14)
+
 ## [3.1.5](https://github.com/sarnold/cccc/tree/3.1.5) (2016-02-10)
 [Full Changelog](https://github.com/sarnold/cccc/compare/V3_1_4...3.1.5)
 
