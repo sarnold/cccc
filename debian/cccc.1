@@ -1,0 +1,58 @@
+.TH CCCC 1
+.SH NAME
+cccc \- C and C++ Code Counter, a software metrics tool
+.SH SYNOPSIS
+.B cccc
+.RB [ options ]
+.I file1.c
+\&...
+.SH DESCRIPTION
+CCCC analyses and reports measurements of source code in C, C++, and Java.
+The metrics supported include lines of code, McCabe's Cyclomatic Complexity,
+and measures of module fan-out/fan-in.
+.PP
+CCCC processes the files listed on its command line.
+If the filenames include \(oq-\(cq, read a list of files from standard input.
+.PP
+This program is work in progress and is not well documented.
+Please be prepared to refer to the source code for the
+meaning of some options.
+.SH OPTIONS
+.TP
+.B \-\-help
+Generate this help message.
+.TP
+\fB\-\-outdir\fP=\fIdname\fP
+Directory for generated files (default=.cccc).
+.TP
+\fB\-\-html_outfile\fP=\fIfname\fP
+Name of primary HTML report generated (default=\fIoutdir\fP/cccc.html).
+.TP
+\fB\-\-db_infile\fP=\fIfname\fP
+Preload internal database from named file (default=no initial content).
+.TP
+\fB\-\-db_outfile\fP=\fIfname\fP
+Save internal database to named file (default=\fIoutdir\fP/cccc.db).
+.TP
+\fB\-\-opt_infile\fP=\fIfname\fP
+Load options from named file (default=use compiled-in option values,
+refer to cccc_opt.cc for option information).
+.TP
+\fB\-\-opt_outfile\fP=\fIfname\fP
+Save options to named file (default=\fIoutdir\fP/cccc.opt).
+.TP
+\fB\-\-lang\fP=\fIstring\fP
+Use language specified for files specified after this option.
+Languages supported are c, c++, ada, and java (default=use language/extension
+mapping controlled by options).
+.TP
+\fB\-\-report_mask\fP=\fIhex\fP
+Control report content (refer to ccccmain.cc for mask values).
+.TP
+\fB\-\-debug_mask\fP=\fIhex\fP
+Control debug output content (refer to ccccmain.cc for mask values).
+.SH AUTHOR
+CCCC was written by Tim Littlefair <tim_littlefair@hotmail.com>.
+.PP
+This manual page was written by Colin Watson <cjwatson@debian.org>
+for the Debian system (but may be used by others).
