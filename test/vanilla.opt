@@ -21,7 +21,7 @@ CCCC_FileExt@.c++@c++.ansi@
 CCCC_FileExt@.cc@c++.ansi@
 CCCC_FileExt@.cpp@c++.ansi@
 CCCC_FileExt@.cxx@c++.ansi@
-CCCC_FileExt@.h@c++.ansi@
+CCCC_FileExt@.h@c.ansi@
 CCCC_FileExt@.h++@c++.ansi@
 CCCC_FileExt@.hh@c++.ansi@
 CCCC_FileExt@.hpp@c++.ansi@

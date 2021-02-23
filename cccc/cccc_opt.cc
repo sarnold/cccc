@@ -278,48 +278,47 @@ const char *default_fileext_options[]=
 {
 	// file extensions
 	".c@c.ansi@",
-		
-		".h@c++.ansi@",
-		".cc@c++.ansi@",
-		".cpp@c++.ansi@",
-		".cxx@c++.ansi@",
-		".c++@c++.ansi@",
-		".C@c++.ansi@",
-		".CC@c++.ansi@",
-		".CPP@c++.ansi@",
-		".CXX@c++.ansi@",
-		".hh@c++.ansi@",
-		".hpp@c++.ansi@",
-		".hxx@c++.ansi@",
-		".h++@c++.ansi@",
-		".H@c++.ansi@",
-		".HH@c++.ansi@",
-		".HPP@c++.ansi@",
-		".HXX@c++.ansi@",
-		".H++@c++.ansi@",
-		
-		".j@java@",
-		".jav@java@",
-		".java@java@",
-		".J@java@",
-		".JAV@java@",
-		".JAVA@java@",
-		
-		".ada@ada.95@",
-		".ads@ada.95@",
-		".adb@ada.95@",
-		
-		".ADA@ada.95@",
-		".ADS@ada.95@",
-		".ADB@ada.95@",
-		
-		// The language associated with the empty file extension would be used as a default
-		// if defined.
-		// This is presently disabled so that we don't process files in 
-		// MSVC projects like .rc, .odl which are not in C++.
-		// "@c++.ansi@",
-		
-		NULL
+	".h@c.ansi@",
+
+	".cc@c++.ansi@",
+	".cpp@c++.ansi@",
+	".cxx@c++.ansi@",
+	".c++@c++.ansi@",
+	".C@c++.ansi@",
+	".CC@c++.ansi@",
+	".CPP@c++.ansi@",
+	".CXX@c++.ansi@",
+	".hh@c++.ansi@",
+	".hpp@c++.ansi@",
+	".hxx@c++.ansi@",
+	".h++@c++.ansi@",
+	".H@c++.ansi@",
+	".HH@c++.ansi@",
+	".HPP@c++.ansi@",
+	".HXX@c++.ansi@",
+	".H++@c++.ansi@",
+
+	".j@java@",
+	".jav@java@",
+	".java@java@",
+	".J@java@",
+	".JAV@java@",
+	".JAVA@java@",
+
+	".ada@ada.95@",
+	".ads@ada.95@",
+	".adb@ada.95@",
+	".ADA@ada.95@",
+	".ADS@ada.95@",
+	".ADB@ada.95@",
+
+	// The language associated with the empty file extension would be used as a default
+	// if defined.
+	// This is presently disabled so that we don't process files in 
+	// MSVC projects like .rc, .odl which are not in C++.
+	// "@c++.ansi@",
+
+	NULL
 };
 
 const char *default_treatment_options[] = 
