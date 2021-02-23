@@ -9,7 +9,7 @@ rem within this script.
 
 REM use github windows ci env vars
 set CL_EXE="cl.exe"
-set CL_ARGS=-nologo -c -I "%INCLUDE%" -EHsc
+set CL_ARGS=-nologo -c -D_CRT_SECURE_NO_WARNINGS -I "%INCLUDE%" -EHsc
 set LINK_EXE="link.exe"
 set LINK_ARGS=-libpath:"%LIBPATH%" -subsystem:console
 
