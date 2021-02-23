@@ -1,0 +1,3 @@
+version=3
+opts=uversionmangle=s/pre/~pre/,dversionmangle=s/^\d+:// \
+  https://sf.net/cccc/cccc-(.+)\.tar\.gz

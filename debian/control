@@ -1,0 +1,18 @@
+Source: cccc
+Section: devel
+Priority: optional
+Maintainer: Colin Watson <cjwatson@debian.org>
+Standards-Version: 4.2.1
+Build-Depends: dpkg-dev (>= 1.16.1~), debhelper-compat (= 9), pccts
+Homepage: https://github.com/sarnold/cccc
+Vcs-Git: https://salsa.debian.org/debian/cccc.git
+Vcs-Browser: https://salsa.debian.org/debian/cccc
+Rules-Requires-Root: no
+
+Package: cccc
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: C and C++ Code Counter, a software metrics tool
+ CCCC analyses and reports measurements of source code in C, C++, and Java.
+ The metrics supported include lines of code, McCabe's Cyclomatic
+ Complexity, and measures of module fan-out/fan-in.

@@ -1,0 +1,43 @@
+#! /usr/bin/make -f
+%:
+	dh $@
+
+DEB_BUILD_GNU_TYPE := $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+DEB_HOST_GNU_TYPE  := $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+
+ifeq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
+	CROSS :=
+else
+	CROSS := CCC=$(DEB_HOST_GNU_TYPE)-g++ LD=$(DEB_HOST_GNU_TYPE)-g++
+endif
+
+# We have to duplicate a little from the upstream build system.  See
+# cccc/posixgcc.mak.
+export DEB_BUILD_MAINT_OPTIONS := hardening=+all
+export DEB_CPPFLAGS_MAINT_APPEND := -D_FILE_OFFSET_BITS=64
+export DEB_CFLAGS_MAINT_APPEND := -Wno-deprecated -Wall
+include /usr/share/dpkg/buildflags.mk
+CFLAGS := $(CPPFLAGS) $(CFLAGS)
+CFLAGS += -c -I/usr/include/pccts -x c++
+buildflags := CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)"
+
+override_dh_auto_build:
+	$(MAKE) -C cccc -f posixgcc.mak $(buildflags) \
+		PCCTS_H=/usr/include/pccts PCCTS_BIN=/usr/bin $(CROSS)
+
+override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	$(MAKE) -C test -f posix.mak
+endif
+
+override_dh_auto_clean:
+	$(MAKE) -C cccc -f posixgcc.mak clean
+	-rm cccc/CLexer.h cccc/CParser.h cccc/Ctokens.h cccc/JLexer.h \
+		cccc/JParser.h cccc/Jtokens.h cccc/parser.dlg
+	-rm -rf test/.cccc
+
+override_dh_auto_install:
+	# The default 'make install' uses su!
+
+override_dh_installdocs:
+	dh_installdocs 'cccc/CCCC User Guide.html'

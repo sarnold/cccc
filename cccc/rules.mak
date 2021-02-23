@@ -89,7 +89,7 @@ USR_H = cccc.h cccc_tok.h cccc_met.h cccc_utl.h \
 		cccc_opt.h
 
 ## documentation 
-USR_DOC =       readme.txt cccc_ug.htm
+USR_DOC =       README.md cccc_ug.htm
 
 ## all source files
 USR_SOURCE =    makefile cccc.mak cccc.dsw \
