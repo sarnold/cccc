@@ -30,3 +30,17 @@ jobs:
       run: make cccc
     - name: run test
       run: make test
+
+  windows:
+    runs-on: windows-2016
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Enable Developer Command Prompt
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: Build
+      run: |
+        .\build_msvc.bat --clean
+        dir cccc
