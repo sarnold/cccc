@@ -4,7 +4,7 @@ Installation Quick Start
 cccc is currently tested on the the Github CI runners using Ubuntu, Macos,
 and Windows.  Older versions are still packaged on Debian/Ubuntu and other
 places, however, to get the latest you need to compile from source or use
-the `Launchpad PPA`_ (Ubuntu focal only).
+the `Launchpad PPA`_ (Ubuntu focal only) or the `Gentoo ebuild`_.
 
 For the latter, make sure you have the ``add-apt-repository`` command
 installed and then add the PPA:
@@ -36,8 +36,20 @@ With a build environment in place, clone the repo and build it::
   $ make cccc
   $ make test
 
+On windows you can follow the same basic procedure, but use the ``.bat``
+file to build instead of ``make``::
+
+  $ git clone https://github.com/sarnold/cccc
+  $ cd cccc
+  $ ./build_msvc.bat --clean
+
+
+.. note:: On windows the executable name is ``cccc.exe``.
+
+
 From there you can copy the executable to the ``bin`` directory of your
 choice, eg, ``$HOME/bin`` or ``/usr/local/bin``.
 
 
 .. _Launchpad PPA: https://launchpad.net/~nerdboy/+archive/ubuntu/embedded
+.. _Gentoo ebuild: https://packages.gentoo.org/packages/dev-util/cccc
