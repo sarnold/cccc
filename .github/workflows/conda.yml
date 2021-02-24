@@ -52,8 +52,8 @@ jobs:
 
       - name: Test (posix)
         if: runner.os != 'Windows'
-        run: cccc --help | grep lang
+        run: cccc
 
       - name: Test (windows)
         if: runner.os == 'Windows'
-        run: cccc.exe --help | grep lang
+        run: cccc.exe
