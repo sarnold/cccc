@@ -15,7 +15,15 @@ installed and then add the PPA:
   $ sudo add-apt-repository -y -s ppa:nerdboy/embedded
   $ sudo apt-get install cccc
 
+The latest version is now available in conda-forge_ so if you have a
+conda environment handy, you can install with::
 
+
+  $ conda config --add channels conda-forge
+  $ conda install cccc
+
+
+.. _conda-forge: https://github.com/conda-forge/cccc-feedstock
 
 Compiling from source
 ---------------------
@@ -25,9 +33,10 @@ Requirements for building the cccc from the repo source:
 * A build environment with ``gcc``, ``clang``, ``mingw64``, ``msvc``, etc.
 
   + On Ubuntu/Debian, install via ``sudo apt-get install build-essential``
-  + On Gentoo, use the usual setup
+  + On Gentoo, just build it
   + On Macos, use xcode/clang
   + On Windows, use one of the MSCV "free" editions or cygwin/msys
+
 
 With a build environment in place, clone the repo and build it::
 
@@ -36,8 +45,8 @@ With a build environment in place, clone the repo and build it::
   $ make cccc
   $ make test
 
-On windows you can follow the same basic procedure, but use the ``.bat``
-file to build instead of ``make``::
+For MSVC on windows you can follow the same basic procedure, but use the
+``.bat`` file to build instead of ``make``::
 
   $ git clone https://github.com/sarnold/cccc
   $ cd cccc
