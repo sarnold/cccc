@@ -62,7 +62,7 @@ jobs:
         uses: msys2/setup-msys2@v2     
         with:
           msystem: MINGW64
-          install: mingw-w64-x86_64-toolchain make gcc
+          install: mingw-w64-x86_64-toolchain make gcc diffutils
 
       - name: Build and test windows mingw
         if: runner.os == 'Windows' &&  matrix.compiler == 'mingw-w64'
