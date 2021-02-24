@@ -611,7 +611,7 @@ Options:
                            (default=&lt;outdir&gt;/cccc.opt)
 --lang=&lt;string&gt;          * use language specified for files specified 
                            after this option 
-                           languages supported are c,c++,ada,java
+                           languages supported are c,c++,java
                            (default=use language/extension mapping 
                            controlled by options)
 --report_mask=&lt;hex&gt;      * control report content 
@@ -626,10 +626,7 @@ qualifier. The resulting file can then be edited to customize
 behaviour and loaded into a later run of cccc using the --opt_infile
 qualifier. As of version 3.pre57, the contents of the file dumped by
 the command cccc --opt_outfile=cccc.opt are as follows:</P>
-<PRE>CCCC_FileExt@.ADA@ada.95@
-CCCC_FileExt@.ADB@ada.95@
-CCCC_FileExt@.ADS@ada.95@
-CCCC_FileExt@.C@c++.ansi@
+<PRE>CCCC_FileExt@.C@c++.ansi@
 CCCC_FileExt@.CC@c++.ansi@
 CCCC_FileExt@.CPP@c++.ansi@
 CCCC_FileExt@.CXX@c++.ansi@
@@ -641,15 +638,12 @@ CCCC_FileExt@.HXX@c++.ansi@
 CCCC_FileExt@.J@java@
 CCCC_FileExt@.JAV@java@
 CCCC_FileExt@.JAVA@java@
-CCCC_FileExt@.ada@ada.95@
-CCCC_FileExt@.adb@ada.95@
-CCCC_FileExt@.ads@ada.95@
 CCCC_FileExt@.c@c.ansi@
 CCCC_FileExt@.c++@c++.ansi@
 CCCC_FileExt@.cc@c++.ansi@
 CCCC_FileExt@.cpp@c++.ansi@
 CCCC_FileExt@.cxx@c++.ansi@
-CCCC_FileExt@.h@c++.ansi@
+CCCC_FileExt@.h@c.ansi@
 CCCC_FileExt@.h++@c++.ansi@
 CCCC_FileExt@.hh@c++.ansi@
 CCCC_FileExt@.hpp@c++.ansi@

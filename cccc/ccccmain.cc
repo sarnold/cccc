@@ -155,7 +155,7 @@ void Main::HandleArgs(int argc, char **argv)
       else if(next_arg=="--help")
 	{
 	  PrintUsage(cout);
-	  exit(1);
+	  exit(0);
 	}
       else
 	{

@@ -1,0 +1,63 @@
+name: Conda
+
+on:
+  workflow_dispatch:
+  # pull_request:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+      - '**.rst'
+      - '**.sh'
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ubuntu-latest, windows-2016, macos-latest]
+
+    runs-on: ${{ matrix.platform }}
+
+    # The setup-miniconda action needs this to activate miniconda
+    defaults:
+      run:
+        shell: "bash -l {0}"
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Cache conda
+        uses: actions/cache@v1
+        with:
+          path: ~/conda_pkgs_dir
+          key: ${{matrix.os}}-conda-pkgs-${{hashFiles('**/conda/meta.yaml')}}
+
+      - name: Get conda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: 3.9
+          channels: conda-forge
+          channel-priority: strict
+          use-only-tar-bz2: true
+          auto-activate-base: true
+
+      - name: Prepare
+        run: conda install conda-build conda-verify
+
+      - name: Build and test
+        run: conda build conda/
+
+      - name: Install
+        run: conda install -c ${CONDA_PREFIX}/conda-bld/ cccc
+
+      - name: Test install (posix)
+        if: runner.os != 'Windows'
+        run: cccc
+
+      - name: Test install (windows)
+        if: runner.os == 'Windows'
+        run: cccc.exe

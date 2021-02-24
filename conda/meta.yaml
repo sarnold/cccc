@@ -1,0 +1,28 @@
+{% set name = "cccc" %}
+{% set version = "3.1.6" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  path: ..
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - make
+
+about:
+  home: https://github.com/sarnold/cccc
+  license: GPL-2.0-only
+  license_family: GPL
+  license_file: LICENSE
+  summary: C and C++ Code Counter (complexity and other metrics)
+
+extra:
+  recipe-maintainers:
+    - sarnold
