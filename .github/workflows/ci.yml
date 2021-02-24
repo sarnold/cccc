@@ -1,46 +1,122 @@
 name: ci
 
 on:
-  push:
-    branches: [ master ]
+  workflow_dispatch:
   pull_request:
-    branches: [ master ]
+  push:
+    branches:
+      - master
 
 jobs:
   build:
-
+    name: ${{ matrix.name }}
     runs-on: ${{ matrix.os }}
-    defaults:
-      run:
-        shell: bash
 
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04, macos-latest, windows-latest]
+
+        name: [ 
+          windows-2019-cl,
+          windows-2019-mingw,
+          ubuntu-20.04-gcc,
+          ubuntu-20.04-clang,
+          macOS-10.15-clang,
+          macOS-10.15-gcc
+        ]
+
+        include:
+          - name: windows-2019-cl
+            os: windows-2019
+            compiler: cl
+
+          - name: windows-2019-mingw
+            os: windows-2019
+            compiler: mingw-w64
+
+          - name: ubuntu-20.04-gcc
+            os: ubuntu-20.04
+            compiler: gcc
+            version: "10"
+
+          - name: ubuntu-20.04-clang
+            os: ubuntu-20.04
+            compiler: clang
+            version: "10"
+
+          - name: macOS-10.15-clang
+            os: macOS-10.15
+            compiler: xcode
+            version: "12.2"
+
+          - name: macOS-10.15-gcc
+            os: macOS-10.15
+            compiler: gcc
+            version: "10"
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Add 64-bit mingw-w64 to the PATH
-      run: |
-        echo "c:/msys64/bin;c:/msys64/mingw64/bin" >> $GITHUB_PATH
-      if: startsWith(matrix.os, 'win')
+      - uses: actions/checkout@v2
 
-    - name: build
-      run: make cccc
-    - name: run test
-      run: make test
+      - name: Install and setup MSYS2 mingw
+        if: runner.os == 'Windows' && matrix.compiler == 'mingw-w64'
+        uses: msys2/setup-msys2@v2     
+        with:
+          msystem: MINGW64
+          install: mingw-w64-x86_64-toolchain make gcc
 
-  windows:
-    runs-on: windows-2016
+      - name: Build and test windows mingw
+        if: runner.os == 'Windows' &&  matrix.compiler == 'mingw-w64'
+        shell: msys2 {0}
+        run: |
+          make
 
-    steps:
-    - uses: actions/checkout@v2
+      - name: Install and setup msvc prompt
+        if: runner.os == 'Windows'
+        uses: ilammy/msvc-dev-cmd@v1
 
-    - name: Enable Developer Command Prompt
-      uses: ilammy/msvc-dev-cmd@v1
+      - name: Build and test windows MSVC
+        if: runner.os == 'Windows' &&  matrix.compiler == 'cl'
+        run: |
+          .\build_msvc.bat --clean
 
-    - name: Build
-      run: |
-        .\build_msvc.bat --clean
-        .\cccc.exe
+      - name:  Install and setup Linux packages
+        if: runner.os == 'Linux'
+        run: |
+          if [ "${{ matrix.compiler }}" = "gcc" ]; then
+            sudo apt-get install -y g++-${{ matrix.version }} g++-${{ matrix.version }}-multilib
+            echo "CC=gcc-${{ matrix.version }}" >> $GITHUB_ENV
+            echo "CCC=g++-${{ matrix.version }}" >> $GITHUB_ENV
+          else
+            sudo apt-get install -y clang-${{ matrix.version }} g++-multilib
+            echo "CC=clang-${{ matrix.version }}" >> $GITHUB_ENV
+            echo "CCC=clang++-${{ matrix.version }}" >> $GITHUB_ENV
+          fi
+
+      - name: Build and test Linux
+        if: runner.os == 'Linux'
+        run: |
+          make
+      
+      - name:  Install and setup MacOS packages
+        if: runner.os == 'macOS'
+        run: |
+          if [ "${{ matrix.compiler }}" = "gcc" ]; then
+            brew install gcc@${{ matrix.version }}
+            export "CC=gcc-${{ matrix.version }}" >> $GITHUB_ENV
+            export "CCC=g++-${{ matrix.version }}" >> $GITHUB_ENV
+          else
+            ls -ls /Applications/
+            sudo xcode-select -switch /Applications/Xcode_${{ matrix.version }}.app
+            export "CC=clang-${{ matrix.version }}" >> $GITHUB_ENV
+            export "CCC=clang++-${{ matrix.version }}" >> $GITHUB_ENV
+          fi
+
+      - name: Build and test MacOS clang
+        if: runner.os == 'MacOS' &&  matrix.compiler == 'xcode' 
+        run: |
+          make
+
+      - name: Build and test MacOS gcc
+        if: runner.os == 'MacOS' &&  matrix.compiler == 'gcc'
+        run: |
+          make

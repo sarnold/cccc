@@ -1,0 +1,46 @@
+name: ci
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-20.04, macos-latest, windows-latest]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Add 64-bit mingw-w64 to the PATH
+      run: |
+        echo "c:/msys64/bin;c:/msys64/mingw64/bin" >> $GITHUB_PATH
+      if: startsWith(matrix.os, 'win')
+
+    - name: build
+      run: make cccc
+    - name: run test
+      run: make test
+
+  windows:
+    runs-on: windows-2016
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Enable Developer Command Prompt
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: Build
+      run: |
+        .\build_msvc.bat --clean
+        .\cccc.exe
