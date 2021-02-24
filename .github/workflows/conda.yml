@@ -44,16 +44,16 @@ jobs:
       - name: Prepare
         run: conda install conda-build conda-verify
 
-      - name: Build
+      - name: Build and test
         run: conda build conda/
 
       - name: Install
         run: conda install -c ${CONDA_PREFIX}/conda-bld/ cccc
 
-      - name: Test (posix)
+      - name: Test install (posix)
         if: runner.os != 'Windows'
         run: cccc
 
-      - name: Test (windows)
+      - name: Test install (windows)
         if: runner.os == 'Windows'
         run: cccc.exe

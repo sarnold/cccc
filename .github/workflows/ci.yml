@@ -43,4 +43,4 @@ jobs:
     - name: Build
       run: |
         .\build_msvc.bat --clean
-        dir cccc
+        .\cccc.exe

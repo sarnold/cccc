@@ -13,6 +13,9 @@ set CL_ARGS=-nologo -c -D_CRT_SECURE_NO_WARNINGS -I "%INCLUDE%" -EHsc
 set LINK_EXE="link.exe"
 set LINK_ARGS=-libpath:"%LIBPATH%" -subsystem:console
 
+REM for cccc.exe install
+set BIN_DIR="%PREFIX%"\\bin
+
 set arg1=%1
 
 if "%arg1%"=="--version" (
@@ -111,6 +114,7 @@ for %%f in ( %A_SOURCES% ) do (
 )
 
 %LINK_EXE% %LINK_ARGS% *.obj -out:cccc.exe
+if exist cccc.exe copy cccc.exe ..
 cd ..
 endlocal
 
