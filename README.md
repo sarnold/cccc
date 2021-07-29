@@ -33,21 +33,21 @@ platform.  Whereas previous distributions contained only a single directory,
 containing the source code of CCCC, this distribution is divided into a number
 of subdirectories, with the following contents:
 
- - A full distribution of the Purdue Compiler Construction Toolset (PCCTS) by
-   Terence Parr and others, now maintained by Tom Moog of Polhode Inc. 
-   PCCTS is required to compile CCCC: in the past the distribution has relied
-   on the existence of a PCCTS package on the compilation platform, while this
-   distribution chooses to include it as part of CCCC's own package.
- - The source of a new version of CCCC, which I hope will turn out to be more
-   efficient, accurate and useful than previous versions, although it is very
-   similar in spirit and interface.
- - The source of an accessory program called CcccDevStudioAddIn.dll which 
-   provides integration between the command line CCCC program and the
-   Microsoft Visual Studio IDE (version 5.0 or 6.0).
- - A directory of minimal test cases for the command line CCCC tool.
- - Miscellaneous batch files, makefiles and Microsoft Visual Studio workspace 
-   and project files to support building, testing and installing the software
-   under POSIX and Win32.
+- A full distribution of the Purdue Compiler Construction Toolset (PCCTS) by
+  Terence Parr and others, now maintained by Tom Moog of Polhode Inc.
+  PCCTS is required to compile CCCC: in the past the distribution has relied
+  on the existence of a PCCTS package on the compilation platform, while this
+  distribution chooses to include it as part of CCCC's own package.
+- The source of a new version of CCCC, which I hope will turn out to be more
+  efficient, accurate and useful than previous versions, although it is very
+  similar in spirit and interface.
+- The source of an accessory program called CcccDevStudioAddIn.dll which
+  provides integration between the command line CCCC program and the
+  Microsoft Visual Studio IDE (version 5.0 or 6.0).
+- A directory of minimal test cases for the command line CCCC tool.
+- Miscellaneous batch files, makefiles and Microsoft Visual Studio workspace
+  and project files to support building, testing and installing the software
+  under POSIX and Win32.
 
 Current versions should be installed via ebuild or built using the makefile,
 however, in earlier versions (3.pre-*) the recommended way of building the 
