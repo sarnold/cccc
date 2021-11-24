@@ -1,6 +1,6 @@
 # PCCTS directory
 
-PCCTS_HOME=<your PCCTS_HOME>
+PCCTS_HOME=..
 ANTLR_SRC=$(PCCTS_HOME)\antlr
 PCCTS_H=$(PCCTS_HOME)\h
 

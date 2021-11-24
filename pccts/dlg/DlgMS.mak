@@ -1,5 +1,5 @@
 # PCCTS directory
-PCCTS_HOME=<your PCCTS_HOME>
+PCCTS_HOME=..
 DLG_SRC=$(PCCTS_HOME)\dlg
 PCCTS_H=$(PCCTS_HOME)\h
 
