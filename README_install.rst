@@ -1,12 +1,12 @@
 Installation Quick Start
 ========================
 
-cccc is currently tested on the the Github CI runners using Ubuntu, Macos,
+cccc is currently tested on the Github CI runners using Ubuntu, Macos,
 and Windows.  Older versions are still packaged on Debian/Ubuntu and other
 places, however, to get the latest you need to compile from source or use
 the `Launchpad PPA`_ (Ubuntu focal only) or the `Gentoo ebuild`_.
 
-For the latter, make sure you have the ``add-apt-repository`` command
+For the former, make sure you have the ``add-apt-repository`` command
 installed and then add the PPA:
 
 ::
@@ -28,12 +28,12 @@ conda environment handy, you can install with::
 Compiling from source
 ---------------------
 
-Requirements for building the cccc from the repo source:
+Requirements for building cccc from the repo source:
 
 * A build environment with ``gcc``, ``clang``, ``mingw64``, ``msvc``, etc.
 
   + On Ubuntu/Debian, install via ``sudo apt-get install build-essential``
-  + On Gentoo, just build it
+  + On Gentoo, just emerge it
   + On Macos, use xcode/clang
   + On Windows, use one of the MSCV "free" editions or cygwin/msys
 

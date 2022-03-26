@@ -87,11 +87,11 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           if [ "${{ matrix.compiler }}" = "gcc" ]; then
-            sudo apt-get install -y g++-${{ matrix.version }} g++-${{ matrix.version }}-multilib
+            sudo apt-get install -y --no-install-recommends g++-${{ matrix.version }}-multilib
             echo "CC=gcc-${{ matrix.version }}" >> $GITHUB_ENV
             echo "CCC=g++-${{ matrix.version }}" >> $GITHUB_ENV
           else
-            sudo apt-get install -y clang-${{ matrix.version }} g++-multilib
+            sudo apt-get install -y --no-install-recommends g++-multilib
             echo "CC=clang-${{ matrix.version }}" >> $GITHUB_ENV
             echo "CCC=clang++-${{ matrix.version }}" >> $GITHUB_ENV
           fi
