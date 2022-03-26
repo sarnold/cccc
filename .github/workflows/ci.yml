@@ -2,7 +2,7 @@ name: ci
 
 on:
   workflow_dispatch:
-  # pull_request:
+  pull_request:
   push:
     branches:
       - master
@@ -86,6 +86,7 @@ jobs:
       - name:  Install and setup Linux packages
         if: runner.os == 'Linux'
         run: |
+          sudo apt-get -y -qq update
           if [ "${{ matrix.compiler }}" = "gcc" ]; then
             sudo apt-get install -y --no-install-recommends g++-${{ matrix.version }}-multilib
             echo "CC=gcc-${{ matrix.version }}" >> $GITHUB_ENV
