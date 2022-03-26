@@ -4,7 +4,6 @@ on:
   push:
     branches: [ master ]
   pull_request:
-    branches: [ master ]
 
 jobs:
   build:
@@ -17,13 +16,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04, macos-latest, windows-latest]
+        os: [ubuntu-20.04, macos-latest, windows-2019]
 
     steps:
     - uses: actions/checkout@v2
     - name: Add 64-bit mingw-w64 to the PATH
       run: |
         echo "c:/msys64/bin;c:/msys64/mingw64/bin" >> $GITHUB_PATH
+        which gcc
       if: startsWith(matrix.os, 'win')
 
     - name: build
