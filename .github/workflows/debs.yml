@@ -48,10 +48,9 @@ jobs:
         with:
           docker-image: "debian:${{ matrix.dist }}-slim"
           buildpackage-opts: --build=binary --no-sign
-        if: startsWith(matrix.name, 'x64')
 
       - name: Upload deb files
         uses: actions/upload-artifact@v3
         with:
-          name: "packages-${{ matrix.dist }}"
-          path: ./debian/artifacts/*
+          name: "deb-packages"
+          path: ./debian/artifacts/*.deb

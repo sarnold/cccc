@@ -7,7 +7,57 @@ on:
       - '*'
 
 jobs:
+  packaging:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-20.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        name: [ 
+          x64_buster,
+          x64_bullseye,
+          x64_bookworm
+        ]
+
+        include:
+          - name: x64_buster
+            dist: buster
+
+          - name: x64_bullseye
+            dist: bullseye
+
+          - name: x64_bookworm
+            dist: bookworm
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Update debian changelog
+        run: |
+          sudo apt-get update
+          sudo apt-get install devscripts
+          debchange -v "`git describe --tags`-1${{ matrix.dist }}1" -b -M --distribution ${{ matrix.dist }} "ci build"
+
+      - name: Build deb packages
+        uses: jtdor/build-deb-action@v1
+        env:
+          DEB_BUILD_OPTIONS: noautodbgsym
+        with:
+          docker-image: "debian:${{ matrix.dist }}-slim"
+          buildpackage-opts: --build=binary --no-sign
+
+      - name: Upload deb files
+        uses: actions/upload-artifact@v3
+        with:
+          name: packages
+          path: ./debian/artifacts/*.deb
+
   create_release:
+    name: Create Release
+    needs: [packaging]
     runs-on: ubuntu-20.04
 
     steps:
@@ -21,6 +71,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      # download all artifacts to project dir
+      - uses: actions/download-artifact@v3
+
       - name: Generate changes file
         uses: sarnold/gitchangelog-action@v1
         with:
@@ -33,7 +86,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ env.VERSION }}
-          name: Release ${{ env.VERSION }}
+          name: Release v${{ env.VERSION }}
           body_path: CHANGES.md
           draft: false
           prerelease: false
+          files: |
+            packages/*.deb
