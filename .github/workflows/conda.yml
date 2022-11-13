@@ -26,12 +26,12 @@ jobs:
         shell: "bash -l {0}"
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - name: Cache conda
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/conda_pkgs_dir
           key: ${{matrix.os}}-conda-pkgs-${{hashFiles('**/conda/meta.yaml')}}
