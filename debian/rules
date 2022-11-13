@@ -31,10 +31,10 @@ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 endif
 
 override_dh_auto_clean:
-	$(MAKE) -C cccc -f posixgcc.mak clean
-	-rm cccc/CLexer.h cccc/CParser.h cccc/Ctokens.h cccc/JLexer.h \
-		cccc/JParser.h cccc/Jtokens.h cccc/parser.dlg
-	-rm -rf test/.cccc
+	-rm cccc/*.o cccc/cccc cccc/cccc.cpp cccc/java.cpp
+	-rm cccc/CLexer.* cccc/CParser.* cccc/Ctokens.h cccc/JLexer.* \
+		cccc/JParser.* cccc/Jtokens.h cccc/parser.dlg
+	-rm -rf test/.cccc test/*.xml test/*.html test/*.db
 
 override_dh_auto_install:
 	# The default 'make install' uses su!

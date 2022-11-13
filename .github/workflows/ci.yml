@@ -25,8 +25,8 @@ jobs:
           windows-2019-mingw,
           ubuntu-20.04-gcc,
           ubuntu-20.04-clang,
-          macOS-10.15-clang,
-          macOS-10.15-gcc
+          macOS-11-clang,
+          macOS-11-gcc
         ]
 
         include:
@@ -48,13 +48,13 @@ jobs:
             compiler: clang
             version: "10"
 
-          - name: macOS-10.15-clang
-            os: macOS-10.15
+          - name: macOS-11-clang
+            os: macOS-11
             compiler: xcode
-            version: "12.2"
+            version: "12.4"
 
-          - name: macOS-10.15-gcc
-            os: macOS-10.15
+          - name: macOS-11-gcc
+            os: macOS-11
             compiler: gcc
             version: "10"
 

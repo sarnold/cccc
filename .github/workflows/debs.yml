@@ -53,5 +53,5 @@ jobs:
       - name: Upload deb files
         uses: actions/upload-artifact@v3
         with:
-          name: "packages-${{ matrix.os-version }}"
+          name: "packages-${{ matrix.dist }}"
           path: ./debian/artifacts/*
