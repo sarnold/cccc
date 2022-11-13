@@ -27,7 +27,7 @@ endif
 PATHSEP=/
 
 CCC ?= g++
-INCLUDES = -I../pccts/h
+INCLUDES = -I../pccts/h -I.
 CCC_OPTS = -c $(CFLAGS) $(DEBUG_FLAGS) $(INCLUDES) -std=c++98 -x c++
 C_OFLAG = -o 
 LD_OPTS = $(LDFLAGS) $(DEBUG_LFLAGS)

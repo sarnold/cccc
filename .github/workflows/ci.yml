@@ -59,7 +59,7 @@ jobs:
             version: "10"
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Install and setup MSYS2 mingw
         if: runner.os == 'Windows' && matrix.compiler == 'mingw-w64'
