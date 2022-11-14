@@ -44,6 +44,12 @@
 #include "ALexer.h"
 #endif
 
+#if defined(VERSION_FORMAT_DEV)
+#define VERSION_INFO CCCC_VERSION_DEV
+#else
+#define VERSION_INFO CCCC_VERSION_STRING
+#endif
+
 #define NEW_PAGE "\f\n"
 
 CCCC_Project *prj=NULL;
@@ -157,6 +163,11 @@ void Main::HandleArgs(int argc, char **argv)
 	  PrintUsage(cout);
 	  exit(0);
 	}
+      else if(next_arg=="--version")
+        {
+          version(argv[0]);
+          exit(0);
+        }
       else
 	{
 	  // the options below this point are all of the form --opt=val,
@@ -603,20 +614,22 @@ void Main::PrintCredits(ostream& os)
 {
   // the principal purpose of the constructor is to set up the
   // two lots of boilerplate text that this class requires
-  string version_string="Version ";
-  version_string.append(CCCC_VERSION_STRING);
+  string version_string="CCCC version ";
+  version_string.append(VERSION_INFO);
 
   const char *credit_strings[] =
   {
     "CCCC - a code counter for C and C++",
     "===================================",
     "",
-    "A program to analyse C and C++ source code and report on",
-    "some simple software metrics",
     version_string.c_str(),
-    "Copyright Tim Littlefair, 1995, 1996, 1997, 1998, 1999, 2000", 
-    "with contributions from Bill McLean, Herman Hueni, Lynn Wilson ", 
-    "Peter Bell, Thomas Hieber and Kenneth H. Cox.", 
+    "",
+    "A program to analyse C and C++ source code and report on",
+    "some simple software metrics.",
+    "",
+    "Copyright Tim Littlefair, 1995, 1996, 1997, 1998, 1999, 2000, 2022",
+    "with contributions from Bill McLean, Herman Hueni, Lynn Wilson ",
+    "Peter Bell, Thomas Hieber, Kenneth H. Cox, and Stephen Arnold.",
     "",
     "The development of this program was heavily dependent on",
     "the Purdue Compiler Construction Tool Set (PCCTS) ",
@@ -663,6 +676,8 @@ void Main::DescribeOutput()
       cerr << endl << "No files parsed on this run" << endl << endl;
   }
 }
+
+void version(const char *prog) { std::cout << VERSION_INFO << '\n'; }
 
 /* 
 ** the usage message is printed on cerr if unexpected options are found,

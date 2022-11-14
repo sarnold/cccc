@@ -1,3 +1,3 @@
-// This version built on kepler at 20210219-220832
-#define CCCC_VERSION 3.1.6
-#define CCCC_VERSION_STRING "3.1.6"
+// This version built on lorentz at 20221113-185650
+#define CCCC_VERSION 3.2.0
+#define CCCC_VERSION_STRING "3.2.0"
