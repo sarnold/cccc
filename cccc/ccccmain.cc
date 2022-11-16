@@ -112,6 +112,7 @@ public:
   void HandleReportOption(const string&);
   void PrintCredits(ostream& os);
   void PrintUsage(ostream& os);
+  void Version(const char *prog);
   int ParseFiles();
   int DumpDatabase();
   int LoadDatabase();
@@ -165,7 +166,7 @@ void Main::HandleArgs(int argc, char **argv)
 	}
       else if(next_arg=="--version")
         {
-          version(argv[0]);
+          Version(argv[0]);
           exit(0);
         }
       else
@@ -677,7 +678,7 @@ void Main::DescribeOutput()
   }
 }
 
-void version(const char *prog) { std::cout << VERSION_INFO << '\n'; }
+void Main::Version(const char *prog) { std::cout << VERSION_INFO << '\n'; }
 
 /* 
 ** the usage message is printed on cerr if unexpected options are found,

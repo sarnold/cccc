@@ -130,7 +130,17 @@ USR_OBJ = \
 
 ALL_OBJ = $(SPAWN_OBJ) $(USR_OBJ) $(PCCTS_OBJ) 
 
+cccc_ver.h: rules.mak
+	@echo "Generating $@"
+	@echo #ifndef CCCC_VER_H_ > $@
+	@echo #define CCCC_VER_H_ >> $@
+	@echo "#define BUILD_TIME \"$(BUILD_DATE)\"" >> $@
+	@echo "#define BUILD_HOST \"$(BUILD_MACHINE)\"" >> $@
+	@echo "#define CCCC_VERSION_STRING \"$(VERSION_SEM)\"" >> $@
+	@echo "#define CCCC_VERSION_DEV \"$(VERSION_DEV)\"" >> $@
+	@echo #endif >> $@
 
+cccc.cpp : cccc_ver.h
 
 all: $(CCCC_EXE) 
 
@@ -138,7 +148,7 @@ all: $(CCCC_EXE)
 $(CCCC_EXE): $(USR_G) $(ANLTR_SPAWN) $(DLG_SPAWN) $(USR_H) $(USR_C) $(ALL_OBJ)
 	$(CCC) $(ALL_OBJ) $(LD_OPTS)  $(LD_EXTRA_LIBS) $(LD_OFLAG)$(CCCC_EXE)
 
-.SUFFIXES: .cc .$(OBJEXT) .cpp .cxx .g .g_info
+.SUFFIXES: .cc .$(OBJEXT) .cpp .cxx .g .g_info .h
 
 ## ANTLR can give us some very useful documentation including a 
 ## cross reference of the rules and a list of first token sets
@@ -148,7 +158,7 @@ $(CCCC_EXE): $(USR_G) $(ANLTR_SPAWN) $(DLG_SPAWN) $(USR_H) $(USR_C) $(ALL_OBJ)
 	$(ANTLR) $(AFLAGS) -gc -gx -pa $< > $*.1st
 	$(ANTLR) $(AFLAGS) -gc -gx -cr $< > $*.xrf
 
-ccccmain.$(OBJEXT) : ccccmain.cc 
+ccccmain.$(OBJEXT) : ccccmain.cc
 	$(CCC) $(CCC_OPTS) $(LANG_DEFINES) ccccmain.cc
 
 

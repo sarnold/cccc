@@ -71,10 +71,10 @@ docs :	Doxyfile.html_cfg $(CCCCSRC) $(DOCS)/.keep_dir
 	@echo "API docs now in $(DOCS)/html"
 
 clean	:
-	rm -rf cccc/*.o cccc/cccc $(GENSRC) pccts/bin/*
+	rm -f cccc/cccc_ver.h cccc/*.o cccc/cccc pccts/bin/*
 
 reallyclean : clean
-	rm -rf ccccout/* doxygen/html test/.cccc $(TESTOBJ)
+	rm -rf ccccout/* doxygen/html test/.cccc $(TESTOBJ) $(GENSRC)
 	make -C pccts clean
 
 clobber	: reallyclean
