@@ -60,6 +60,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get version
+        id: get_version
+        run: |
+          echo "VERSION=$(git describe --tags)" >> $GITHUB_ENV
+          echo ${{ env.VERSION }}
 
       - name: Install and setup MSYS2 mingw
         if: runner.os == 'Windows' && matrix.compiler == 'mingw-w64'
@@ -81,7 +89,7 @@ jobs:
       - name: Build and test windows MSVC
         if: runner.os == 'Windows' &&  matrix.compiler == 'cl'
         run: |
-          .\build_msvc.bat --clean
+          .\build_msvc.bat --version  ${{ env.VERSION }}
 
       - name:  Install and setup Linux packages
         if: runner.os == 'Linux'

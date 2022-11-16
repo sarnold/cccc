@@ -15,7 +15,40 @@
 ## makes including GNU Make.  The way I have dealt with this
 ## is to exclude use of preprocessor features from this file
 ## while using them freely in the platform-specific files.
-##
+
+# generate build/version info
+ifeq ($(SHELL), cmd.exe)
+BUILD_DATE := $(shell python -c "from datetime import datetime; print(datetime.utcnow().strftime('%d/%m/%Y, %H:%M'))"
+BUILD_MACHINE := $(shell echo %username%)@$(shell hostname)
+else
+BUILD_DATE := $(shell date -u +"%d/%m/%Y, %H:%M")
+BUILD_MACHINE := $(shell whoami)@$(shell hostname)
+endif
+
+version := $(subst -, ,$(shell git describe --long --dirty --tags))
+COMMIT := $(strip $(word 3, $(version)))
+COMMITS_PAST := $(strip $(word 2, $(version)))
+DIRTY := $(strip $(word 4, $(version)))
+
+ifneq ($(COMMITS_PAST), 0)
+BUILD_INFO_COMMITS := .$(COMMITS_PAST)
+endif
+
+ifneq ($(DIRTY),)
+BUILD_INFO_DIRTY :=+
+endif
+
+BUILD_INFO := $(COMMIT)$(BUILD_INFO_COMMITS)$(BUILD_INFO_DIRTY)
+VERSION_TAG :=$(strip $(word 1, $(version)))
+
+VERSION_DEV := $(VERSION_TAG)-$(BUILD_INFO)
+VERSION_SEM := $(VERSION_TAG)$(BUILD_INFO_COMMITS)
+
+$(info Build Time: $(BUILD_DATE))
+$(info Build Host: $(BUILD_MACHINE))
+$(info Build Version: $(VERSION_SEM))
+$(info Build Version Dev: $(VERSION_DEV))
+
 ## The following make variables must be defined before entering this
 ## file:
 ##

@@ -20,6 +20,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Get version
+      id: get_version
+      run: |
+        echo "VERSION=$(git describe --tags)" >> $GITHUB_ENV
+        echo ${{ env.VERSION }}
 
     - name: Add 64-bit mingw-w64 to the PATH
       run: |
@@ -31,18 +39,22 @@ jobs:
       run: make cccc
 
     - name: run test
-      run: make test
+      run: |
+        make test
+        ./cccc/cccc --version
 
   windows:
     runs-on: windows-2019
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     - name: Enable Developer Command Prompt
       uses: ilammy/msvc-dev-cmd@v1
 
     - name: Build
       run: |
-        .\build_msvc.bat --clean
-        .\cccc.exe
+        .\build_msvc.bat --version ${{ env.VERSION }}
+        .\cccc.exe --version

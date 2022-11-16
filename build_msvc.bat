@@ -17,10 +17,10 @@ REM for cccc.exe install
 set BIN_DIR="%PREFIX%"\\bin
 
 set arg1=%1
-
 if "%arg1%"=="--version" (
-   echo // This version built on %HOSTNAME% at %DATE% > cccc\cccc_ver.h
-   echo #define CCCC_VERSION %2 >> cccc\cccc_ver.h
+   echo #define BUILD_HOST %HOSTNAME% > cccc\cccc_ver.h
+   echo #define BUILD_TIME %DATE% >> cccc\cccc_ver.h
+   echo #define CCCC_VERSION_DEV %2 >> cccc\cccc_ver.h
    echo #define CCCC_VERSION_STRING "%2" >> cccc\cccc_ver.h
    set arg1=--clean
 )
@@ -28,11 +28,11 @@ if "%arg1%"=="--installer" (
    goto :buildInstaller
 )
 
-
 if "%arg1%"=="--clean" (
    for %%d in ( pccts\dlg pccts\antlr cccc ) do (
       if exist %%d\*.obj del %%d\*.obj
       if exist %%d\*.exe del %%d\*.exe
+      if exist %%d\cccc_ver.h del %%d\cccc_ver.h
    )
    if exist pccts\bin rmdir /s /q pccts\bin
    mkdir pccts\bin
