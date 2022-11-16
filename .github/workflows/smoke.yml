@@ -23,12 +23,6 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Get version
-      id: get_version
-      run: |
-        echo "VERSION=$(git describe --tags)" >> $GITHUB_ENV
-        echo ${{ env.VERSION }}
-
     - name: Add 64-bit mingw-w64 to the PATH
       run: |
         echo "c:/msys64/bin;c:/msys64/mingw64/bin" >> $GITHUB_PATH
@@ -41,20 +35,21 @@ jobs:
     - name: run test
       run: |
         make test
-        ./cccc/cccc --version
 
   windows:
     runs-on: windows-2019
 
     steps:
     - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
+
+    - name: Git describe
+      id: ghd
+      uses: proudust/gh-describe@v1
 
     - name: Enable Developer Command Prompt
       uses: ilammy/msvc-dev-cmd@v1
 
     - name: Build
       run: |
-        .\build_msvc.bat --version ${{ env.VERSION }}
+        .\build_msvc.bat --version ${{ steps.ghd.outputs.describe }}
         .\cccc.exe --version

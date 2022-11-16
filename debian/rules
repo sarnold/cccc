@@ -22,9 +22,8 @@ CFLAGS += -c -I/usr/include/pccts -x c++
 buildflags := CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)"
 
 override_dh_auto_build:
-	$(MAKE) -C cccc -f rules.mak cccc_ver.h
 	$(MAKE) -C cccc -f posixgcc.mak $(buildflags) \
-		PCCTS_H=/usr/include/pccts PCCTS_BIN=/usr/bin $(CROSS)
+		PCCTS_H=/usr/include/pccts PCCTS_BIN=/usr/bin $(CROSS) cccc
 
 override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))

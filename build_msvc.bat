@@ -32,7 +32,6 @@ if "%arg1%"=="--clean" (
    for %%d in ( pccts\dlg pccts\antlr cccc ) do (
       if exist %%d\*.obj del %%d\*.obj
       if exist %%d\*.exe del %%d\*.exe
-      if exist %%d\cccc_ver.h del %%d\cccc_ver.h
    )
    if exist pccts\bin rmdir /s /q pccts\bin
    mkdir pccts\bin
