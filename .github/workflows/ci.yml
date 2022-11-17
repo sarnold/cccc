@@ -81,7 +81,7 @@ jobs:
           make
 
       - name: Install and setup msvc prompt
-        if: runner.os == 'Windows'
+        if: runner.os == 'Windows' &&  matrix.compiler == 'cl'
         uses: ilammy/msvc-dev-cmd@v1
 
       - name: Build and test windows MSVC

@@ -29,12 +29,18 @@ jobs:
         which gcc
       if: startsWith(matrix.os, 'win')
 
-    - name: build
-      run: make cccc
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
 
-    - name: run test
+    - name: Add requirements
       run: |
-        make test
+        python -m pip install --upgrade pip
+        pip install tox
+
+    - name: Build and test
+      run: |
+        tox -e build
 
   windows:
     runs-on: windows-2019

@@ -144,8 +144,10 @@ call run_test java  prn13
 call run_test java  prn14
 call run_test java  prn15
 call run_test java  prn16
+echo All tests passed
 cd ..
 endlocal
+if not exist "c:\Program Files\My Inno Setup Extensions\iscc.exe" goto :end
 
 rem The visual C++ addin can't be built using MS Visual C++ Toolkit 2003
 rem because it doesn't provide MFC header files and libraries
@@ -184,10 +186,4 @@ echo Please rerun the script with the argument --clean to build these binaries.
 goto :end
 
 
-
 :end
-
-
-
-
-

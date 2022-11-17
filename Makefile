@@ -15,7 +15,7 @@ LD ?= g++
 DOX	= doxygen
 CCCC	= ./cccc/cccc
 CCCOPTS	= --lang=c++
-CCCCSRC = ./cccc/*.cc ./cccc/*.h
+CCCCSRC = ./cccc/*.cc ./cccc/*.cpp ./cccc/*.h
 GENSRC	= cccc/CLexer.cpp \
           cccc/CLexer.h \
           cccc/CParser.cpp \
@@ -71,11 +71,13 @@ docs :	Doxyfile.html_cfg $(CCCCSRC) $(DOCS)/.keep_dir
 	@echo "API docs now in $(DOCS)/html"
 
 clean	:
-	rm -f cccc/cccc_ver.h cccc/*.o cccc/cccc pccts/bin/*
+	rm -f cccc/*.o cccc/cccc
 
 reallyclean : clean
-	rm -rf ccccout/* doxygen/html test/.cccc $(TESTOBJ) $(GENSRC)
+	rm -f pccts/bin/* $(TESTOBJ) $(GENSRC)
+	rm -rf ccccout/ doxygen/ test/.cccc
 	make -C pccts clean
 
 clobber	: reallyclean
+	rm -f cccc/cccc_ver.h
 	make -C pccts scrub
