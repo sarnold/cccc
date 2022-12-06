@@ -2,6 +2,7 @@
 
 cccc/cccc
 
+dist/
 doxygen/*
 ccccout/*
 pccts/bin/*
