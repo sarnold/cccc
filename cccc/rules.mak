@@ -15,7 +15,40 @@
 ## makes including GNU Make.  The way I have dealt with this
 ## is to exclude use of preprocessor features from this file
 ## while using them freely in the platform-specific files.
-##
+
+# generate build/version info
+ifeq ($(SHELL), cmd.exe)
+BUILD_DATE := $(shell python -c "from datetime import datetime; print(datetime.utcnow().strftime('%d/%m/%Y, %H:%M'))"
+BUILD_MACHINE := $(shell echo %username%)@$(shell hostname)
+else
+BUILD_DATE := $(shell date -u +"%d/%m/%Y, %H:%M")
+BUILD_MACHINE := $(shell whoami)@$(shell hostname)
+endif
+
+version := $(subst -, ,$(shell git describe --long --dirty --tags))
+COMMIT := $(strip $(word 3, $(version)))
+COMMITS_PAST := $(strip $(word 2, $(version)))
+DIRTY := $(strip $(word 4, $(version)))
+
+ifneq ($(COMMITS_PAST), 0)
+BUILD_INFO_COMMITS := .$(COMMITS_PAST)
+endif
+
+ifneq ($(DIRTY),)
+BUILD_INFO_DIRTY :=+
+endif
+
+BUILD_INFO := $(COMMIT)$(BUILD_INFO_COMMITS)$(BUILD_INFO_DIRTY)
+VERSION_TAG :=$(strip $(word 1, $(version)))
+
+VERSION_DEV := $(VERSION_TAG)-$(BUILD_INFO)
+VERSION_SEM := $(VERSION_TAG)$(BUILD_INFO_COMMITS)
+
+$(info Build Time: $(BUILD_DATE))
+$(info Build Host: $(BUILD_MACHINE))
+$(info Build Version: $(VERSION_SEM))
+$(info Build Version Dev: $(VERSION_DEV))
+
 ## The following make variables must be defined before entering this
 ## file:
 ##
@@ -130,7 +163,17 @@ USR_OBJ = \
 
 ALL_OBJ = $(SPAWN_OBJ) $(USR_OBJ) $(PCCTS_OBJ) 
 
+cccc_ver.h: rules.mak
+	@echo "Generating $@"
+	@echo #ifndef CCCC_VER_H_ > $@
+	@echo #define CCCC_VER_H_ >> $@
+	@echo "#define BUILD_TIME \"$(BUILD_DATE)\"" >> $@
+	@echo "#define BUILD_HOST \"$(BUILD_MACHINE)\"" >> $@
+	@echo "#define CCCC_VERSION_STRING \"$(VERSION_SEM)\"" >> $@
+	@echo "#define CCCC_VERSION_DEV \"$(VERSION_DEV)\"" >> $@
+	@echo #endif >> $@
 
+cccc.cpp : cccc_ver.h
 
 all: $(CCCC_EXE) 
 
@@ -138,7 +181,7 @@ all: $(CCCC_EXE)
 $(CCCC_EXE): $(USR_G) $(ANLTR_SPAWN) $(DLG_SPAWN) $(USR_H) $(USR_C) $(ALL_OBJ)
 	$(CCC) $(ALL_OBJ) $(LD_OPTS)  $(LD_EXTRA_LIBS) $(LD_OFLAG)$(CCCC_EXE)
 
-.SUFFIXES: .cc .$(OBJEXT) .cpp .cxx .g .g_info
+.SUFFIXES: .cc .$(OBJEXT) .cpp .cxx .g .g_info .h
 
 ## ANTLR can give us some very useful documentation including a 
 ## cross reference of the rules and a list of first token sets
@@ -148,7 +191,7 @@ $(CCCC_EXE): $(USR_G) $(ANLTR_SPAWN) $(DLG_SPAWN) $(USR_H) $(USR_C) $(ALL_OBJ)
 	$(ANTLR) $(AFLAGS) -gc -gx -pa $< > $*.1st
 	$(ANTLR) $(AFLAGS) -gc -gx -cr $< > $*.xrf
 
-ccccmain.$(OBJEXT) : ccccmain.cc 
+ccccmain.$(OBJEXT) : ccccmain.cc
 	$(CCC) $(CCC_OPTS) $(LANG_DEFINES) ccccmain.cc
 
 

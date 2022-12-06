@@ -28,7 +28,7 @@ PATHSEP=/
 
 CCC ?= g++
 INCLUDES = -I../pccts/h -I.
-CCC_OPTS = -c $(CFLAGS) $(DEBUG_FLAGS) $(INCLUDES) -std=c++98 -x c++
+CCC_OPTS = -c $(CFLAGS) $(DEBUG_FLAGS) $(CPPFLAGS) $(INCLUDES) -std=c++98 -x c++
 C_OFLAG = -o 
 LD_OPTS = $(LDFLAGS) $(DEBUG_LFLAGS)
 LD_OFLAG = -o 

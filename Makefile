@@ -15,7 +15,7 @@ LD ?= g++
 DOX	= doxygen
 CCCC	= ./cccc/cccc
 CCCOPTS	= --lang=c++
-CCCCSRC = ./cccc/*.cc ./cccc/*.h
+CCCCSRC = ./cccc/*.cc ./cccc/*.cpp ./cccc/*.h
 GENSRC	= cccc/CLexer.cpp \
           cccc/CLexer.h \
           cccc/CParser.cpp \
@@ -30,7 +30,7 @@ GENSRC	= cccc/CLexer.cpp \
           cccc/java.cpp \
           cccc/parser.dlg
 
-.PHONY : all mini pccts cccc test
+.PHONY : all mini pccts cccc test dist clean
 
 all : mini cccc test
 
@@ -70,12 +70,21 @@ docs :	Doxyfile.html_cfg $(CCCCSRC) $(DOCS)/.keep_dir
 	$(DOX) Doxyfile.html_cfg
 	@echo "API docs now in $(DOCS)/html"
 
+# dist target requires VERSION set in build environment
+dist :	clean
+	mkdir -p dist/cccc-$(VERSION)
+	cp *.rst *.md build* LICENSE tox.ini Makefile dist/cccc-$(VERSION)/
+	cp -r cccc conda test dist/cccc-$(VERSION)/
+	tar -czf dist/cccc-$(VERSION).tar.gz -C dist cccc-$(VERSION)
+
 clean	:
-	rm -rf cccc/*.o cccc/cccc $(GENSRC) pccts/bin/*
+	rm -f cccc/*.o cccc/cccc
 
 reallyclean : clean
-	rm -rf ccccout/* doxygen/html test/.cccc $(TESTOBJ)
+	rm -f pccts/bin/* $(TESTOBJ) $(GENSRC)
+	rm -rf ccccout/ doxygen/ test/.cccc dist/
 	make -C pccts clean
 
 clobber	: reallyclean
+	rm -f cccc/cccc_ver.h
 	make -C pccts scrub

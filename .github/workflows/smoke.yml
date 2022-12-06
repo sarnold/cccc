@@ -20,6 +20,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     - name: Add 64-bit mingw-w64 to the PATH
       run: |
@@ -27,11 +29,18 @@ jobs:
         which gcc
       if: startsWith(matrix.os, 'win')
 
-    - name: build
-      run: make cccc
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
 
-    - name: run test
-      run: make test
+    - name: Add requirements
+      run: |
+        python -m pip install --upgrade pip
+        pip install tox
+
+    - name: Build and test
+      run: |
+        tox -e build
 
   windows:
     runs-on: windows-2019
@@ -39,10 +48,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Git describe
+      id: ghd
+      uses: proudust/gh-describe@v1
+
     - name: Enable Developer Command Prompt
       uses: ilammy/msvc-dev-cmd@v1
 
     - name: Build
       run: |
-        .\build_msvc.bat --clean
-        .\cccc.exe
+        .\build_msvc.bat --version ${{ steps.ghd.outputs.describe }}
+        .\cccc.exe --version

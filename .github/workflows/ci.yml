@@ -60,13 +60,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Git describe
+        id: ghd
+        uses: proudust/gh-describe@v1
 
       - name: Install and setup MSYS2 mingw
         if: runner.os == 'Windows' && matrix.compiler == 'mingw-w64'
         uses: msys2/setup-msys2@v2     
         with:
           msystem: MINGW64
-          install: mingw-w64-x86_64-toolchain make gcc diffutils
+          install: mingw-w64-x86_64-toolchain make gcc diffutils git
 
       - name: Build and test windows mingw
         if: runner.os == 'Windows' &&  matrix.compiler == 'mingw-w64'
@@ -75,13 +81,13 @@ jobs:
           make
 
       - name: Install and setup msvc prompt
-        if: runner.os == 'Windows'
+        if: runner.os == 'Windows' &&  matrix.compiler == 'cl'
         uses: ilammy/msvc-dev-cmd@v1
 
       - name: Build and test windows MSVC
         if: runner.os == 'Windows' &&  matrix.compiler == 'cl'
         run: |
-          .\build_msvc.bat --clean
+          .\build_msvc.bat --version  ${{ steps.ghd.outputs.describe }}
 
       - name:  Install and setup Linux packages
         if: runner.os == 'Linux'

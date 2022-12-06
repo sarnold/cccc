@@ -2,6 +2,7 @@
 
 cccc/cccc
 
+dist/
 doxygen/*
 ccccout/*
 pccts/bin/*
@@ -20,6 +21,7 @@ cccc/Jtokens.h
 cccc/cccc.cpp
 cccc/java.cpp
 cccc/parser.dlg
+cccc/cccc_ver.h
 
 # generated test output
 test/.cccc/*

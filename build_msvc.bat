@@ -17,17 +17,16 @@ REM for cccc.exe install
 set BIN_DIR="%PREFIX%"\\bin
 
 set arg1=%1
-
 if "%arg1%"=="--version" (
-   echo // This version built on %HOSTNAME% at %DATE% > cccc\cccc_ver.h
-   echo #define CCCC_VERSION %2 >> cccc\cccc_ver.h
+   echo #define BUILD_HOST %HOSTNAME% > cccc\cccc_ver.h
+   echo #define BUILD_TIME %DATE% >> cccc\cccc_ver.h
+   echo #define CCCC_VERSION_DEV %2 >> cccc\cccc_ver.h
    echo #define CCCC_VERSION_STRING "%2" >> cccc\cccc_ver.h
    set arg1=--clean
 )
 if "%arg1%"=="--installer" (
    goto :buildInstaller
 )
-
 
 if "%arg1%"=="--clean" (
    for %%d in ( pccts\dlg pccts\antlr cccc ) do (
@@ -145,8 +144,10 @@ call run_test java  prn13
 call run_test java  prn14
 call run_test java  prn15
 call run_test java  prn16
+echo All tests passed
 cd ..
 endlocal
+if not exist "c:\Program Files\My Inno Setup Extensions\iscc.exe" goto :end
 
 rem The visual C++ addin can't be built using MS Visual C++ Toolkit 2003
 rem because it doesn't provide MFC header files and libraries
@@ -185,10 +186,4 @@ echo Please rerun the script with the argument --clean to build these binaries.
 goto :end
 
 
-
 :end
-
-
-
-
-

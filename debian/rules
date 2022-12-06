@@ -23,7 +23,7 @@ buildflags := CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)"
 
 override_dh_auto_build:
 	$(MAKE) -C cccc -f posixgcc.mak $(buildflags) \
-		PCCTS_H=/usr/include/pccts PCCTS_BIN=/usr/bin $(CROSS)
+		PCCTS_H=/usr/include/pccts PCCTS_BIN=/usr/bin $(CROSS) cccc
 
 override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
@@ -37,7 +37,7 @@ override_dh_auto_clean:
 	-rm -rf test/.cccc test/*.xml test/*.html test/*.db
 
 override_dh_auto_install:
-	# The default 'make install' uses su!
+	# The default makefile has no install target
 
 override_dh_installdocs:
 	dh_installdocs 'cccc/CCCC User Guide.html'
