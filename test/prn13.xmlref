@@ -628,93 +628,9 @@
 <structural_summary>
 <module>
 <name>AnimatingControlsSurface</name>
-<fan_out_visible value="0" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
-<fan_in_concrete value="1" level="0" />
-<fan_in value="1" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>BasicStroke</name>
-<fan_out_visible value="0" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="1" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>BufferedImage</name>
-<fan_out_visible value="0" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="1" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>ChangeEvent</name>
-<fan_out_visible value="0" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="1" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>ChangeListener</name>
-<fan_out_visible value="0" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
-<fan_in_concrete value="1" level="0" />
-<fan_in value="1" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>Component</name>
-<fan_out_visible value="0" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="1" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>CustomControls</name>
-<fan_out_visible value="0" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
-<fan_in_concrete value="1" level="0" />
-<fan_in value="1" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>DemoControls</name>
-<fan_out_visible value="7" level="1" />
-<fan_out_concrete value="2" level="0" />
-<fan_out value="7" level="0" />
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
+<fan_out value="1" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -723,81 +639,117 @@
 <IF4 value="0" level="0" />
 </module>
 <module>
-<name>Dimension</name>
+<name>BasicStroke</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>BufferedImage</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>ChangeEvent</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>ChangeListener</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Component</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>CustomControls</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="1" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>DemoControls</name>
 <fan_out_visible value="0" level="0" />
 <fan_out_concrete value="0" level="0" />
 <fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
+<fan_in_visible value="7" level="1" />
+<fan_in_concrete value="2" level="0" />
+<fan_in value="7" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Dimension</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
-<fan_in value="1" level="0" />
+<fan_in value="0" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />
 </module>
 <module>
 <name>FadeAnim</name>
-<fan_out_visible value="8" level="1" />
-<fan_out_concrete value="1" level="0" />
-<fan_out value="8" level="0" />
-<fan_in_visible value="1" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="1" level="0" />
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="8" level="1" />
+<fan_in_concrete value="1" level="0" />
+<fan_in value="8" level="0" />
 <IF4_visible value="64" level="1" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="64" level="0" />
 </module>
 <module>
 <name>Font</name>
-<fan_out_visible value="0" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="3" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="3" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>Graphics2D</name>
-<fan_out_visible value="0" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="1" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>JSlider</name>
-<fan_out_visible value="0" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="1" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>Object</name>
-<fan_out_visible value="0" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="2" level="0" />
-<fan_in_concrete value="2" level="0" />
-<fan_in value="2" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>ObjectData</name>
 <fan_out_visible value="3" level="0" />
-<fan_out_concrete value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
 <fan_out value="3" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
@@ -807,34 +759,10 @@
 <IF4 value="0" level="0" />
 </module>
 <module>
-<name>Paint</name>
-<fan_out_visible value="0" level="0" />
+<name>Graphics2D</name>
+<fan_out_visible value="1" level="0" />
 <fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="2" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="2" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>String</name>
-<fan_out_visible value="0" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="2" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="2" level="0" />
-<IF4_visible value="0" level="0" />
-<IF4_concrete value="0" level="0" />
-<IF4 value="0" level="0" />
-</module>
-<module>
-<name>TextData</name>
-<fan_out_visible value="4" level="0" />
-<fan_out_concrete value="1" level="0" />
-<fan_out value="4" level="0" />
+<fan_out value="1" level="0" />
 <fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
 <fan_in value="0" level="0" />
@@ -843,25 +771,97 @@
 <IF4 value="0" level="0" />
 </module>
 <module>
-<name>TexturePaint</name>
+<name>JSlider</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Object</name>
+<fan_out_visible value="2" level="0" />
+<fan_out_concrete value="2" level="0" />
+<fan_out value="2" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>ObjectData</name>
 <fan_out_visible value="0" level="0" />
 <fan_out_concrete value="0" level="0" />
 <fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
+<fan_in_visible value="3" level="0" />
+<fan_in_concrete value="1" level="0" />
+<fan_in value="3" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>Paint</name>
+<fan_out_visible value="2" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="2" level="0" />
+<fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
-<fan_in value="1" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>String</name>
+<fan_out_visible value="2" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="2" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>TextData</name>
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="0" level="0" />
+<fan_in_visible value="4" level="0" />
+<fan_in_concrete value="1" level="0" />
+<fan_in value="4" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4 value="0" level="0" />
+</module>
+<module>
+<name>TexturePaint</name>
+<fan_out_visible value="1" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />
 </module>
 <module>
 <name>Vector</name>
-<fan_out_visible value="0" level="0" />
+<fan_out_visible value="1" level="0" />
 <fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="1" level="0" />
+<fan_out value="1" level="0" />
+<fan_in_visible value="0" level="0" />
 <fan_in_concrete value="0" level="0" />
-<fan_in value="1" level="0" />
+<fan_in value="0" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />
