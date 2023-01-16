@@ -97,36 +97,36 @@
 <structural_summary>
 <module>
 <name>A</name>
-<fan_out_visible value="0" level="0" />
-<fan_out_concrete value="0" level="0" />
-<fan_out value="0" level="0" />
-<fan_in_visible value="2" level="0" />
-<fan_in_concrete value="2" level="0" />
-<fan_in value="2" level="0" />
+<fan_out_visible value="2" level="0" />
+<fan_out_concrete value="2" level="0" />
+<fan_out value="2" level="0" />
+<fan_in_visible value="0" level="0" />
+<fan_in_concrete value="0" level="0" />
+<fan_in value="0" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />
 </module>
 <module>
 <name>B</name>
-<fan_out_visible value="1" level="0" />
-<fan_out_concrete value="1" level="0" />
-<fan_out value="1" level="0" />
-<fan_in_visible value="0" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="0" level="0" />
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="0" level="0" />
+<fan_in_visible value="1" level="0" />
+<fan_in_concrete value="1" level="0" />
+<fan_in value="1" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />
 </module>
 <module>
 <name>C</name>
-<fan_out_visible value="1" level="0" />
-<fan_out_concrete value="1" level="0" />
-<fan_out value="1" level="0" />
-<fan_in_visible value="0" level="0" />
-<fan_in_concrete value="0" level="0" />
-<fan_in value="0" level="0" />
+<fan_out_visible value="0" level="0" />
+<fan_out_concrete value="0" level="0" />
+<fan_out value="0" level="0" />
+<fan_in_visible value="1" level="0" />
+<fan_in_concrete value="1" level="0" />
+<fan_in value="1" level="0" />
 <IF4_visible value="0" level="0" />
 <IF4_concrete value="0" level="0" />
 <IF4 value="0" level="0" />
